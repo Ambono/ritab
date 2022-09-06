@@ -1,0 +1,262 @@
+{
+  "navbar": {
+    "home": "ACCUEIL",
+    "services": "Services",
+    "menue": "Menue",
+    "references": "References",
+    "booking": "Commander",
+    "blob": "Blog",
+    "login": "COMPTES",
+    "logout": "LOGOUT",
+    "contact": "JOINDRE",
+    "register": "ENROLLER",
+    "businesstrainings":"Formation en business",
+    "softwaredevtrainings":"Formation en development de logiciel"
+  },
+
+  "footer": {
+    "ask": "RENSEIGNEMENTS",
+    "join": "JOINDRE",
+    "about": "QUISOMMESNOUS",
+    "follow": "SUIVRE"
+  },
+  "messages": {
+    "welcome": "MarvelTech Group, technologie de pointe a votre service."
+  },
+  "pages": {
+    "home": {
+      "text": {
+        "header1": "Marvel group",
+        "header2": "",
+        "header3": "Ce que vous pouvez esperer a travers mes service",
+        "paragraph1": "Diplômée en cuisine avec près de 15 ans d’expériences dans le domaine de la gastronomie française, j’ai eu envie de partager mon univers et l’amour de mon métier. L’honneur et la satisfaction de mes clients sont les devises de ma société « perledorange »",
+        "paragraph2": "Soutenue par mon entourage, aussi bien personnel que professionnel, ma sœur, « Eliane Bonogo » et « Mémé » m’assistent souvent lors de mes prestations. A travers mon activité je mets en avant ma reconnaissance et mon mérite: Preuve de l’accomplissement de ma carrière.",
+        "paragraph3": "Spécialisée dans la cuisine française, je concocte des plats « faits maison ». Je cuisine en fonction de vos goûts, de vos restrictions alimentaires, de la saisonnalité. Je travaille des produits frais et de première qualité que je choisis chez les meilleurs fournisseurs. J’apporte à mes clients un service sur mesure qui leur permet d’organiser tout type d’évènement, je travaille également en collaboration avec des partenaires spécialisés dans l’évènementiel.",
+        "paragraph4": "",
+        "footer": "Vanessa Bonogo,"
+      }
+    },
+    "Marveltechgroup":{
+      "group":{
+        "text":{
+         "offers":"Nos Services",
+         "buttonAboutUs":"Qui sommes nous"
+        }
+      }
+    },
+    "services": {
+      "text": {
+        "header1": "Mes services",
+        "header2": "Le metier de chef à domicile, pourquoi travailler avec un chef ?",
+        "paragraph1": "Le service que je propose vous permet de recevoir vos convives à travers l’organisation d’un repas de qualité, cela vous libérera de toute contrainte et vous permettra de profiter de vos invités et de votre évènement en toute sérénité.",
+        "paragraph2": "Le service de chef à domicile est un service particulier qui se veut de qualité et qui répond à un besoin.",
+        "paragraph3": "Si vous souhaitez passer une bonne soirée avec votre conjoint, organiser un repas familial, déléguer l’organisation d’un repas d’affaire ou bien déléguer la gestion d’un évènement 2 à 20 personnes. C’est un chef indépendant qu’il vous faut, c’est Vanessa Bonogo qu’il vous faut 😀 !",
+        "paragraph4": "Mon service consiste à vous apporter toute l’assurance et la qualité liées à l’organisation de votre évènement.",
+        "paragraph5": "Lorsque vous decidez de déléguer l’organisation d’un évènement, c’est une confiance que vous accordez:",
+        "paragraph6": "Organisation d’évènement:",
+        "paragraph7": "Me déléguer votre évènement c’est profiter de votre instant en toute sérénité",
+        "listitem1": "Analyse de votre évènement",
+        "listitem2": "Proposition de menus",
+        "listitem3": "Préparation des plats",
+        "listitem4": "Dressage de la table",
+        "listitem5": "Service",
+        "listitem6": "Remise en état de votre lieu de vie",
+        "listitem7": "",
+        "footer": ""
+      }
+    },
+    "menue": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "references": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "booking": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "blob": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "login": {
+      "text": {
+        "header1": "Login",
+        "header2": "",
+        "firstname": "Prenom",
+        "firstnameph": "Votre prenom",
+        "lastname": "Nom",
+        "lastnameph": "Votre Nom",
+        "email": "Email",
+        "emailph": "Votre email",
+        "password": "Mot de passe",
+        "passwordph": "Votre mot de passe",
+        "phone": "Telephone mobile",
+        "phoneph": "Votre telephone mobile",
+        "subject": "Subjet",
+        "subjectph": "Ecrire quelque chose",
+        "submit": "Login",
+        "submitph": "",
+        "thankyou1": "Merci de m'avoir contactee.",
+        "thankyou2": "Votre message a ete recu.",
+        "thankyou3": "Je vous reviendrez le plus tot possible",
+        "footer": ""
+      }
+    },
+    "loginscreen": {
+      "text": {
+        "submit": "Login",
+        "loginmessage": "Vous avez deja un, compte veuillez login",
+        "registermessage": "Vous n'avez pas encore un compte, veuiller vous inscrire svp."
+      }
+    },
+    "contact": {
+      "text": {
+        "header1": "",
+        "header2": "",
+        "firstname": "Prenom",
+        "firstnameph": "Votre prenom",
+        "lastname": "Nom",
+        "lastnameph": "Votre Nom",
+        "email": "Email",
+        "emailph": "Votre email",
+        "phone": "Telephone mobile",
+        "phoneph": "Votre telephone mobile",
+        "subject": "Subjet",
+        "subjectph": "Ecrire quelque chose",
+        "submit": "Envoyer",
+        "submitph": "",
+        "thankyou1": "Merci de m'avoir contactee.",
+        "thankyou2": "Votre message a ete recu.",
+        "thankyou3": "Nous vous reviendrons le plus tot possible",
+        "footer": ""
+      }
+    },
+    "desserts": {
+      "text": {
+        "header1": "LES DESSERTS",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "entrees": {
+      "text": {
+        "header1": "LES ENTREES",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "plats": {
+      "text": {
+        "header1": "LES PLATS",
+        "header2": "",
+        "paragraph1": "",
+        "paragraph2": "",
+        "paragraph3": "",
+        "paragraph4": "",
+        "footer": ""
+      }
+    },
+    "register": {
+      "text": {
+        "header1": "Creez votre compte",
+        "header2": "",
+        "firstname": "Prenom",
+        "firstnameph": "Votre prenom",
+        "lastname": "Nom",
+        "lastnameph": "Votre Nom",
+        "email": "Email",
+        "emailph": "Votre email",
+        "password": "Mot de passe",
+        "passwordph": "Votre mot de passe",
+        "phone": "Telephone mobile",
+        "phoneph": "Votre telephone mobile",
+        "subject": "Subjet",
+        "subjectph": "Ecrire quelque chose",
+        "submit": "Envoyer",
+        "submitph": "",
+        "thankyou1": "Merci de vous etes inscrit",
+        "thankyou2": "Votre demande d'inscription a ete recu.",
+        "thankyou3": "Procedez a votre login avec votre username et mot de passe ",
+        "footer": ""
+      }
+    },
+  
+  "tiles":{
+    "Marvelgroup":{
+      "text":{
+        "h1":"MarvelTech group, societe de technologie, a votre service pour vous aider a developer vos affaires",
+        "content":"Contacter nous pour le developement informatique de votre entreprises. Nous avons les solutions qui vous conviennent"      
+      }
+    },
+    "solutions":{
+      "text":{
+        "h1":"",
+        "content":"Des logiciels et systemes pret-a-utiliser ou sur mesure pour gerer votre entreprise"
+      }
+    },
+    "consulting":{
+      "text":{
+        "h1":"",
+        "content":"Support et suivi pour gerer votre departement informatique"
+      }
+    },
+    "trade":{
+      "text":{
+        "h1":"",
+        "content":"Agent pour vous aider a vendre et acheter en ligne a travers le monde"
+      }
+    },
+    "gaming":{
+      "text":{
+        "h1":"",
+        "content":"Des spectacles et jeux videos"
+      }
+    },
+    "systems":{
+      "text":{
+        "h1":"",
+        "content":"Systeme intelligent pour l'environment, habitats et engins"
+      }
+    }
+  } 
+  }
+}
