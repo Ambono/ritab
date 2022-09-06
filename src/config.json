@@ -1,0 +1,36 @@
+{
+  "SENDEMAIL": {
+    "ngrok->port88": "",
+    "NGROK_HTTP": "http://d63a318818f4.ngrok.io",
+    "NGROK": "https://ca29fbf726ae.ngrok.io/",
+    "PATH_SWIFTMAILER": "SwiftMailer/",
+    "SENDEMAILPAGE": "akwabatechsendcontactusemail.php"
+  },
+
+  "BASE_URL_LOCAL": {
+    "XAMPP": "http://localhost:50/",
+    "PATH_REGISTERLOGIN": "akwabagroup/serverakwabagroup/RegisterLogin/",
+    "PATH_MESSAGES": "akwabagroup/serverakwabagroup/messages/"
+  },
+
+  "BASE_URL_LIVE": "http://groupakwabatech.com/",
+
+  "PAGES_URL": {
+    "REGISTERSIMPLE": "RegistrationMakerSimple.php",
+    "REGISTER": "RegistrationMaker.php",
+    "LOGIN": "LoginMaker.php",
+    "LOGOUT": "Logout.php",
+    "CONTACTUS": "ContactUsMessages.php",
+    "RETRIEVECONTACTUSMESSAGES": "RetrieveContactMessages.php"
+  },
+
+  "ENVIRONMENT": {
+    "DEV": "No",
+    "LIVE": "Yes"
+  },
+
+  "CREDENTIALS": {
+    "ADMIN_EMAIL": "akwabatechgroup-admin@gmail.com",
+    "TRAINEE_EMAIL": "akwabatechgroup-trainee@gmail.com"
+  }
+}
