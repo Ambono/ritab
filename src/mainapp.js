@@ -3,7 +3,7 @@ import i18n from "./services/i18n";
 import { withTranslation } from "react-i18next";
 import Main from "./mainbody";
 import Footer from "./clientapp/footer/Footer";
-import "./mainapp.css";
+import "./mainApp.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./StyleSheet.css";
 import NavBar from "./clientapp/responsive/NavBar";
