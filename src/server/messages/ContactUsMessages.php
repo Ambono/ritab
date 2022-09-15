@@ -18,8 +18,8 @@ $reason = mysqli_real_escape_string($conn, $data['reason']);
 
 $fullname = $fname . ' ' . $lname;
 
-$sql =  "INSERT INTO contactmessages( Name,Email, Phone, DateContacted, Reason) 
-       VALUES ('$fullname','$email','$phone', now(), '$reason')";
+$sql =  "INSERT INTO contactmessages( fullname, email, phone, DateContacted, Reason) 
+       VALUES ('$fullname','$email','$phone', '$reason', now())";
        
  if (!mysqli_query($conn, $sql))
   {
