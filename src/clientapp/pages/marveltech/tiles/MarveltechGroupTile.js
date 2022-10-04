@@ -6,8 +6,8 @@ class MarveltechGroupTile extends Component {
     const { t } = this.props;
     return (
       <div className="akwaba-group-tiles">
-        <p>{t("pages.tiles.akwabagroup.text.h1")}<br/> 
-        <br/>{t("pages.tiles.akwabagroup.text.content")} 
+        <p>{t("pages.tiles.marveltechgroup.text.h1")}<br/> 
+        <br/>{t("pages.tiles.marveltechgroup.text.content")} 
          </p>
       </div>
     );

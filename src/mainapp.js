@@ -14,7 +14,7 @@ function App({ t }) {
   };
 
   return (
-    <div>
+    <div>   
       <div className="akwaba-lang">
         <button onClick={() => changeLanguage("fr")} className="btn-sm">
           Fr

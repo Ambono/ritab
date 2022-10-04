@@ -18,11 +18,39 @@
     "ask": "RENSEIGNEMENTS",
     "join": "JOINDRE",
     "about": "QUISOMMESNOUS",
-    "follow": "SUIVRE"
+    "follow": "SUIVRE",
+    "disclaimer": "CLAUSE DE NON RESPONSABILITE",
+    "help": "ASSITANCE",
+    "poweredby":"@MarvelTech.com 2022"
   },
   "messages": {
     "welcome": "MarvelTech Group, technologie de pointe a votre service."
   },
+
+
+  "carousel":{
+    "atgcarousel1":{
+     "text1":"MarvelTech",
+     "text2":"Technologie de pointe",
+     "text4":"Pour vous"          
+   },
+   "atgcarousel2":{
+     "text1":"Notre passion: la technologie",
+     "text2":"Notre credo: Travaillons pour vous",
+     "text4":"Parceque vous etes ambitieux"            
+   },
+  "atgcarousel3":{
+   "text1":"Development de logiciel",
+   "text2":"Audit securite informatique",
+   "text4":"Securite par IoT"          
+  },
+ "atgcarousel4":{
+   "text1": "Pionier du ticketing",
+   "text2":"Pionier du printing online",
+   "text4": "Promoteurs de jeux videos"         
+ }
+},
+
   "pages": {
     "home": {
       "text": {
@@ -204,7 +232,7 @@
     },
   
   "tiles":{
-    "Marvelgroup":{
+    "marveltechgroup":{
       "text":{
         "h1":"MarvelTech group, societe de technologie, a votre service pour vous aider a developer vos affaires",
         "content":"Contacter nous pour le developement informatique de votre entreprises. Nous avons les solutions qui vous conviennent"      

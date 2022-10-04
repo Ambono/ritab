@@ -18,12 +18,38 @@
     "ask":"ASK",
     "join":"JOIN",
     "about":"ABOUT",
-    "follow":"FOLLOW"
+    "follow":"FOLLOW",
+    "disclaimer": "DISCLAIMER",
+    "help": "HELP",
+    "poweredby":"@MarvelTech.com 2022"
   },
 
   "messages": {
     "welcome": "MarvelTech Group, top technology at your service"
   },
+
+  "carousel":{
+           "atgcarousel1":{
+            "text1":"MarvelTech",
+            "text2":"The state-of-the-art Technology",
+            "text3":"For you"          
+          },
+          "atgcarousel2":{
+            "text1":"Our passion: Technology",
+            "text2":"Our creed: Working for you",
+            "text3":"Because you are ambitious"            
+          },
+         "atgcarousel3":{
+          "text1":"Software development",
+          "text2":"Software security audit",
+          "text3":"Iot for Security"          
+         },
+        "atgcarousel4":{
+          "text1": "Ticketing pioneer",
+          "text2":"Online prinitng pioneer",
+          "text3": "Video games pioneer"         
+        }
+  },  
   "pages": {
     "home": {
       "text": {
@@ -204,7 +230,7 @@
       }
     },
     "tiles":{
-      "Marvelgroup":{
+      "marveltechgroup":{
         "text":{
           "h1":"MarvelTech group is Technology company at your service to help you grow your businesses.",
           "content":"Please contact us to discuss how we can partner to grow your business. We have solutions that suite you."

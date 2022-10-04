@@ -17,41 +17,14 @@ class MarveltechGroup extends Component {
     const { t } = this.props;
     return (
       <div>
+        <div  className="slideshow_deploy" >
         <Row>
           <Col md={{ span: 12, offset: 0 }}>
             <CarouselMarveltech />
           </Col>
         </Row>
-        <Container>
-          <div>
-            <div>
-              <Row>
-                <Col md={{ span: 10, offset: 1 }}>
-                  <Button
-                    color="info"
-                    id="toggler"
-                    style={{ marginBottom: "1rem" }}
-                  >
-                    {t("pages.marveltechgroup.group.text.buttonAboutUs")}
-                  </Button>
-                </Col>
-              </Row>
-            </div>
-            <UncontrolledCollapse toggler="#toggler">
-              <Card>
-                <CardBody>
-                  <Row>
-                    <Col md={{ span: 10, offset: 1 }}>
-                      <div className="akwaba-container-items">
-                        <MarveltechGroupTile />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-              </Card>
-            </UncontrolledCollapse>
-          </div>
-
+        </div>
+        <Container>       
           <Row>
             <Col md={{ span: 2, offset: 5 }}>
               {" "}
@@ -115,6 +88,35 @@ class MarveltechGroup extends Component {
               </Col>
             </HashRouter>
           </Row>
+          <div>
+            <div>
+              <Row>
+                <Col md={{ span: 10, offset: 1 }}>
+                  <Button
+                    color="info"
+                    id="toggler"
+                    style={{ marginBottom: "1rem" }}
+                  >
+                    {t("pages.marveltechgroup.group.text.buttonAboutUs")}
+                  </Button>
+                </Col>
+              </Row>
+            </div>
+            <UncontrolledCollapse toggler="#toggler">
+              <Card>
+                <CardBody>
+                  <Row>
+                    <Col md={{ span: 10, offset: 1 }}>
+                      <div className="akwaba-container-items">
+                        <MarveltechGroupTile />
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+              </Card>
+            </UncontrolledCollapse>
+          </div>
+
         </Container>
         <div></div>
       </div>

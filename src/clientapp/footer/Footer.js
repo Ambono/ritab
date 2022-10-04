@@ -8,16 +8,19 @@ class Footer extends Component {
     const { t } = this.props;
     return (
       <div className ="footer-akwaba">
-       <p>@MarvelTech.com 2022</p>
+        <p>{t("footer.poweredby")}</p>
+       {/* <p>@MarvelTech.com 2022</p> */}
        <div>
          
 <Container>  
   <Row>
   <HashRouter> 
-    <Col md={{ span: 2, offset: 1}}> <div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"> <NavLink to="/contact"><span>{t("footer.ask")}</span></NavLink></div></div></Col>
+    <Col md={{ span: 1, offset: 2}}> <div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"> <NavLink to="/contact"><span>{t("footer.ask")}</span></NavLink></div></div></Col>
     <Col md={{ span: 2, offset: 0 }}><div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"><NavLink to="/register"><span>{t("footer.join")}</span></NavLink></div></div></Col>
     {/* <Col md={{ span: 2, offset: 0 }}><div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"><NavLink to="/about"><span>{t("footer.about")}</span></NavLink></div></div></Col> */}
-    <Col md={{ span: 2, offset: 0 }}><div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"><NavLink to="/followus"><span>{t("footer.follow")}</span></NavLink></div></div></Col>  
+    <Col md={{ span: 2, offset: 0 }}><div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"><NavLink to="/followus"><span>{t("footer.follow")}</span></NavLink></div></div></Col> 
+    <Col md={{ span: 2, offset: 0 }}><div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"><NavLink to="/followus"><span>{t("footer.disclaimer")}</span></NavLink></div></div></Col>  
+    <Col md={{ span: 2, offset: 0 }}><div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"><NavLink to="/followus"><span>{t("footer.help")}</span></NavLink></div></div></Col>   
   </HashRouter> 
   </Row>  
 </Container> 

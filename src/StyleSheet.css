@@ -1,3 +1,11 @@
+.carousel-text{
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: magenta;
+  text-align: left;
+}
+
 .akwaba {
   flex-direction: column;
   align-items: center;
@@ -19,20 +27,24 @@
 }
 
 .akwaba-header {
- bottom:0px;
- margin-bottom: 0px;
- padding-bottom: 0px;
+  bottom:0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  background-color: #20b29f; 
 }
+
+.akwaba-header-ul{
+  color: whitesmoke
+  }
 
 .akwaba-container-items {
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 5px;
- 
-  background-color: white;
+  border-radius: 5px; 
   width: 100%;
 }
+
 
 .akwaba-container-items-adminpage {
   align-items: center;
@@ -125,6 +137,15 @@
   width: 100%;
   background-color: #0ea1e6;
   height: 200px;
+}
+
+.akwaba-footer-items {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px; 
+  color: white;
+  width: 100%;
 }
 
 .content-akwaba {
@@ -247,14 +268,14 @@ ul.no-bullets-nav-palin li {
 }
 
 ul.no-bullets-nav-palin li a {
-  color: navy;
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }
 
 /* visited link */
 ul.no-bullets-nav-palin li a:visited {
-  color: green;
+  color: yellow;
 }
 
 /* mouse over link */
@@ -380,6 +401,10 @@ span.price {
   .col-25 {
     margin-bottom: 20px;
   }
+
+  .slideshow_deploy {
+    display: none;
+    }
   /*   
   .App {
     max-width: 420px;

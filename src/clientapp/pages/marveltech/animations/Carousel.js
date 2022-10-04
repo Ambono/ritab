@@ -10,32 +10,61 @@ import {
 import atgcarousel1 from "../../../img/atgcarousel1.png";
 import atgcarousel2 from "../../../img/atgcarousel2.png";
 import atgcarousel3 from "../../../img/atgcarousel3.png";
-import { withTranslation } from "react-i18next";
+import atgcarousel4 from "../../../img/atgcarousel4.png";
+// import { withTranslation } from "react-i18next";
+import { useTranslation  } from "react-i18next";
 
-const items = [
-  {
-    src: atgcarousel1,
-    altText: "Slide 1",
-    caption: "Slide 1",
-    text: "Slide 1 text",
-  },
-  {
-    src: atgcarousel2,
-    altText: "Slide 2",
-    caption: "Slide 2",
-    text: "Slide 2 text",
-  },
-  {
-    src: atgcarousel3,
-    altText: "Slide 3",
-    caption: "Slide 3",
-    text: "Slide 3 text",
-  },
-];
+const CarouselMarveltech = (props) => { 
 
 
-const CarouselMarveltech = (props) => {
- 
+  const { t } = useTranslation();
+  const dimensions = {
+    width:"100%",
+    height:"800px",
+  }
+  const items = [      
+    {   
+      src: atgcarousel1,
+      altText: "Slide 1",
+      caption: "",
+      text1: <p>{t("carousel.atgcarousel1.text1")}</p>,
+      text2: <p>{t("carousel.atgcarousel1.text2")}</p>,
+      text3: <p>{t("carousel.atgcarousel1.text3")}</p>,
+      width:dimensions.width,
+      height:dimensions.height,
+    },
+    {
+      src: atgcarousel2,
+      altText: "Slide 2",
+      caption: "",
+      text1: <p>{t("carousel.atgcarousel2.text1")}</p>,
+      text2: <p>{t("carousel.atgcarousel2.text2")}</p>,
+      text3: <p>{t("carousel.atgcarousel2.text3")}</p>,
+      width:dimensions.width,
+      height:dimensions.height,
+    },
+    {
+      src: atgcarousel3,
+      altText: "Slide 3",
+      caption: "",
+      text1: <p>{t("carousel.atgcarousel3.text1")}</p>,
+      text2: <p>{t("carousel.atgcarousel3.text2")}</p>,
+      text3: <p>{t("carousel.atgcarousel3.text3")}</p>,
+      width:dimensions.width,
+      height:dimensions.height,
+    },
+    {
+      src: atgcarousel4,
+      altText: "Slide 4",
+      caption: "",
+      text1: <p>{t("carousel.atgcarousel4.text1")}</p>,
+      text2: <p>{t("carousel.atgcarousel4.text2")}</p>,
+      text3: <p>{t("carousel.atgcarousel4.text3")}</p>,
+      width:dimensions.width,
+      height:dimensions.height,    
+    }
+  ];
+  
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
  
@@ -63,11 +92,18 @@ const CarouselMarveltech = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <CarouselCaption
-          captionText={item.caption}
-          // captionHeader={item.caption}
+     
+        
+     <CarouselCaption
+          captionText={item.caption}         
         />
-          <img src={item.src} alt={item.altText}/>
+
+          <img src={item.src} alt={item.altText} width={item.width} height={item.height}/>
+          <div class="carousel-text">
+           <h1>{item.text1}</h1>
+           <h1>{item.text2}</h1>
+           <h1>{item.text3}</h1>
+          </div>
       </CarouselItem>
     );
   });
@@ -94,4 +130,4 @@ const CarouselMarveltech = (props) => {
   );
 };
 
-export default withTranslation()(CarouselMarveltech);
+export default (CarouselMarveltech);
