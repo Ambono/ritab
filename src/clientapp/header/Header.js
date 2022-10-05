@@ -8,9 +8,9 @@ class Header extends Component {
     return (      
       <div>  
        <HashRouter>          
-          <ul  className ="no-bullets-nav-palin">      
+          <ul>      
             <li>
-              <NavLink to="/home"><span>{t("navbar.home")}</span></NavLink>
+              <NavLink to="/home"><span >{t("navbar.home")}</span></NavLink>
             </li>  
             <li>
               <NavLink to="/registersimple"><span>{t("navbar.register")}</span></NavLink>            
@@ -20,8 +20,7 @@ class Header extends Component {
             </li>
             <li>
               <NavLink to="/logout"><span>{t("navbar.logout")}</span></NavLink>            
-            </li>
-            
+            </li>            
             </ul>           
           </HashRouter> 
       </div>

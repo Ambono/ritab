@@ -32,22 +32,22 @@
     "atgcarousel1":{
      "text1":"MarvelTech",
      "text2":"Technologie de pointe",
-     "text4":"Pour vous"          
+     "text3":"Pour vous"          
    },
    "atgcarousel2":{
      "text1":"Notre passion: la technologie",
      "text2":"Notre credo: Travaillons pour vous",
-     "text4":"Parceque vous etes ambitieux"            
+     "text3":"Parceque vous etes ambitieux"            
    },
   "atgcarousel3":{
    "text1":"Development de logiciel",
    "text2":"Audit securite informatique",
-   "text4":"Securite par IoT"          
+   "text3":"Securite par IoT"          
   },
  "atgcarousel4":{
    "text1": "Pionier du ticketing",
    "text2":"Pionier du printing online",
-   "text4": "Promoteurs de jeux videos"         
+   "text3": "Promoteurs de jeux videos"         
  }
 },
 

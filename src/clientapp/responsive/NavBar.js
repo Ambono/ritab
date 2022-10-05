@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
-import logo from '../logo/logo.png'
+import logo from '../logo/logo.png';
+import {NavLink, HashRouter } from "react-router-dom";
 
 const Nav = styled.nav`
   width: 100%;
@@ -18,9 +19,11 @@ const Nav = styled.nav`
 const Navbar = () => {
   return (
     <Nav>
+       <HashRouter>    
       <div className="logo">
-      <img src={logo} height="84px" width="86px" />
+      <NavLink to="/home"><img src={logo} height="84px" width="86px" /></NavLink>
       </div>
+      </HashRouter>  
       <Burger />
     </Nav>
   )

@@ -2,7 +2,7 @@
   position: absolute;
   top: 8px;
   left: 16px;
-  color: magenta;
+  color: orangered;
   text-align: left;
 }
 
@@ -10,33 +10,47 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: goldenrod;
+  text-align: center;    
   min-height:250px;
   background: url("./clientapp/img/computer-algorithm.jpg");      
 }
 
+.content{ 
+ /* font-size: 92px;
+ font-weight: 900px;
+ background: -webkit-linear-gradient(orange,red,green);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;        */
+}
+
 .akwaba-lang {
   padding: 10px 16px;
-  background: #555;
-  color: #f1f1f1;
+  /*background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);*/
+  /*background-color: #0ea1e6;*/
   /* position: fixed; */
   top: 0;
-  width: 100%;
-  padding-bottom:10px
+  width: 100%; 
+  background: -webkit-linear-gradient(#eee, #333); 
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent;      */
 }
 
 .akwaba-header {
   bottom:0px;
   margin-bottom: 0px;
-  padding-bottom: 0px;
-  background-color: #20b29f; 
+  padding-bottom: 0px; 
+  font-weight: 700;
+  font-size: 24px;
+  color:#f1f1f1;
+  background-image: linear-gradient( white, #0ea1e6);
+
 }
 
 .akwaba-header-ul{
   color: whitesmoke
   }
 
+  
 .akwaba-container-items {
   align-items: center;
   justify-content: center;
@@ -265,6 +279,8 @@ ul.no-bullets-nav-palin li {
   display: inline;
   margin-inline: 6px;
   padding: 6px;
+  font-weight: bold;
+  font-size: 18px;   
 }
 
 ul.no-bullets-nav-palin li a {

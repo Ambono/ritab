@@ -15,6 +15,8 @@ function App({ t }) {
 
   return (
     <div>   
+      
+      <div className="akwaba">
       <div className="akwaba-lang">
         <button onClick={() => changeLanguage("fr")} className="btn-sm">
           Fr
@@ -23,8 +25,6 @@ function App({ t }) {
           En
         </button>
       </div>
-      <div className="akwaba">
-       
         <p id="header-text"></p>
         <div>
           <img
@@ -32,13 +32,13 @@ function App({ t }) {
             alt=""
             Style="width:100%;"
           />
-          <div class="content">
+          {/* <div className="content">
             <p></p>
             <h1>{t("messages.welcome")}</h1>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className="akwaba-header">
+      <div className = "akwaba-header">
       <NavBar /> 
       </div>
       <Suspense fallback={<div>Loading</div>}>
