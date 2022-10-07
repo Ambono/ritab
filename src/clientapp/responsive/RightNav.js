@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {NavLink, HashRouter } from "react-router-dom";
 import { useTranslation  } from "react-i18next";
+import { Row, Col } from 'react-bootstrap';
 
 const Ul = styled.ul`
   list-style: none;
@@ -30,22 +31,79 @@ const Ul = styled.ul`
 function RightNav ({ open } )  {
     const { t } = useTranslation()
   return (
-    <Ul open={open}> 
-       <HashRouter> 
-            <li>
-              <NavLink to="/home"><span>{t("navbar.home")}</span></NavLink>
-            </li>  
-            <li>
-              <NavLink to="/registersimple"><span>{t("navbar.register")}</span></NavLink>            
-            </li>
-            <li>
-              <NavLink to="/login"><span>{t("navbar.login")}</span></NavLink>            
-            </li>
-            <li>
-              <NavLink to="/logout"><span>{t("navbar.logout")}</span></NavLink>            
-            </li> 
-          </HashRouter>       
-    </Ul>
+    <div >
+      <Row>      
+       <Col md={{ span: 12, offset: 0 }}>
+        <Ul open={open} id="menu"> 
+        <HashRouter>
+        <li>
+           <NavLink to="/registersimple"><span className ="header-akwaba-tiles-navlinks">{t("navbar.register")}</span></NavLink>            
+                      {/* <ul id="menu">
+                          <li>
+                            <NavLink to="/logout"><span>CSS Development</span></NavLink> 
+                          </li>
+                          <li>
+                            <NavLink to="/logout"><span>Graphic Design</span></NavLink> 
+                            </li>
+                          <li>
+                            <NavLink to="/logout"><span>Development Tools</span></NavLink> 
+                          </li>
+                          <li>
+                            <NavLink to="/logout"><span>Web Design</span></NavLink>
+                          </li>
+                    </ul>
+              */}
+                    
+                    </li>
+                    <li>
+                      <NavLink to="/login"><span className ="header-akwaba-tiles-navlinks">{t("navbar.login")}</span></NavLink>            
+                    </li>
+                    <li>
+                          <NavLink to="/logout"><span className ="header-akwaba-tiles-navlinks">{t("navbar.logout")}</span></NavLink>            
+                        </li> 
+                      </HashRouter>       
+                </Ul>
+          </Col>
+              
+      </Row>   
+
+ 
+
+                        {/* 
+                            <Ul open={open} id="menu"> 
+                                <HashRouter> 
+                          <li>
+                            <NavLink to="/logout"><span>Home</span></NavLink>
+                          </li>
+                          <li>
+                            <NavLink to="/logout"><span>Work</span></NavLink> 
+                              <ul>
+                                  <li>
+                                    <NavLink to="/logout"><span>CSS Development</span></NavLink> 
+                                  </li>
+                                  <li>
+                                    <NavLink to="/logout"><span>Graphic Design</span></NavLink> 
+                                    </li>
+                                  <li>
+                                    <NavLink to="/logout"><span>Development Tools</span></NavLink> 
+                                  </li>
+                                  <li>
+                                    <NavLink to="/logout"><span>Web Design</span></NavLink>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <NavLink to="/logout"><span>About</span></NavLink> 
+                          </li>
+                          <li>
+                            <NavLink to="/logout"><span>Contact Us</span></NavLink> 
+                          </li>
+                          <li style="float: right;">
+                            <NavLink to="/logout"><span>Feedback</span></NavLink> 
+                          </li>
+                          </HashRouter>       
+                        </Ul> */}
+  </div>
   )
 }
   

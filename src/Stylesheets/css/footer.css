@@ -1,0 +1,28 @@
+
+ .footer {
+    background-color: #cfb53b;
+    border-radius: 3px;
+    align-content: center;
+    text-align: center;
+    height: 100px;
+    color: #ffffff;
+  }
+  
+  .footer-akwaba {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    background-color: #0ea1e6;
+    height: 200px;
+  }
+  
+  .footer-akwaba-items {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px; 
+    color: white;
+    width: 100%;
+  }

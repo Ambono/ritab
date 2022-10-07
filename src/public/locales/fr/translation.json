@@ -6,7 +6,7 @@
     "references": "References",
     "booking": "Commander",
     "blob": "Blog",
-    "login": "COMPTES",
+    "login": "LOGIN",
     "logout": "LOGOUT",
     "contact": "JOINDRE",
     "register": "ENROLLER",
@@ -16,11 +16,11 @@
 
   "footer": {
     "ask": "RENSEIGNEMENTS",
-    "join": "JOINDRE",
-    "about": "QUISOMMESNOUS",
-    "follow": "SUIVRE",
+    "join": "ETRE-AVEC-NOUS",
+    "about": "QUI SOMMES NOUS",
+    "follow": "SUIVEZ NOUS",
     "disclaimer": "CLAUSE DE NON RESPONSABILITE",
-    "help": "ASSITANCE",
+    "help": "ASSISTANCE",
     "poweredby":"@MarvelTech.com 2022"
   },
   "messages": {
@@ -60,7 +60,7 @@
         "footer": ""
       }
     },
-    "Marveltechgroup":{
+    "marveltechgroup":{
       "group":{
         "text":{
          "offers":"Nos Services",

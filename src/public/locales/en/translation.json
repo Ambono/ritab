@@ -6,7 +6,7 @@
     "references": "References",
     "booking": "Booking",
     "blob": "Blog",
-    "login": "ACCOUNTS",
+    "login": "LOGIN",
     "logout": "LOGOUT",
     "contact": "CONTACT",
     "register": "REGISTER",
@@ -15,10 +15,10 @@
   },
 
   "footer":{
-    "ask":"ASK",
-    "join":"JOIN",
-    "about":"ABOUT",
-    "follow":"FOLLOW",
+    "ask":"ASK US",
+    "join":"JOIN US",
+    "about":"ABOUT US",
+    "follow":"FOLLOW US",
     "disclaimer": "DISCLAIMER",
     "help": "HELP",
     "poweredby":"@MarvelTech.com 2022"

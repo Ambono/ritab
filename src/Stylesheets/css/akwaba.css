@@ -1,0 +1,82 @@
+
+.akwaba-top {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    
+    min-height:250px;
+    background: url("../../clientapp/img/computer-algorithm.jpg");      
+  }
+  
+  .akwaba-content{ 
+  width:100%;
+  }
+  
+  .akwaba-lang {
+    padding: 10px 16px;    
+    top: 0;
+    width: 100%; 
+    background: -webkit-linear-gradient(#eee, #0ea1e6); 
+  }
+  
+  .akwaba-container-items {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;   
+  }
+  
+  
+  .akwaba-container-items-adminpage {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+   
+    background-color: white;
+    width: 100%;
+    list-style-type:none;
+  }
+  
+  .akwaba-tiles-navlinks {
+    color: white;
+    background-color: #0ea1e6;
+    font-family: verdana;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+  }
+  .akwaba-services-title {
+    padding: 10px 10x 10px 10px;
+    font-family: verdana;
+    font-size: 26px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .akwaba-tiles {
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+    color: navy;
+    border-radius:  5px;
+    border: 5px;  
+  }
+  
+  .akwaba-group-tiles{
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+    color: navy;
+    border-radius: 5px;
+    border:  5px;
+    border-color:  #0ea1e6;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  

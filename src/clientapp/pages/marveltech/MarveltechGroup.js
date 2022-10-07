@@ -18,24 +18,35 @@ class MarveltechGroup extends Component {
     return (
       <div>
         <div  className="slideshow_deploy" >
-        <Row>
-          <Col md={{ span: 12, offset: 0 }}>
-            <CarouselMarveltech />
-          </Col>
-        </Row>
-        </div>
-        <Container>       
           <Row>
-            <Col md={{ span: 2, offset: 5 }}>
+            <Col md={{ span: 12, offset: 0 }}>
+              <CarouselMarveltech />
+            </Col>
+          </Row>
+        </div>
+        <div className="akwaba-content">             
+          <Row>
+            <Col md={{ span: 2, offset: 4 }}>
               {" "}
-              <div className="akwaba-spacing">
+              <div className="akwaba-services-title">
                 {t("pages.marveltechgroup.group.text.offers")}
               </div>
             </Col>
           </Row>
           <Row>
             <HashRouter>
-              <Col md={{ span: 2, offset: 1 }}>
+            <Col md={{ span: 2, offset: 0 }}>
+                {" "}
+                <div className="akwaba-container-items">
+                  <NavLink to="/about">
+                    <div className="akwaba-tiles-navlinks">
+                      MarvelTech about us
+                    </div>
+                  </NavLink>
+                  <MarveltechSolutionTile />
+                </div>
+              </Col>
+              <Col md={{ span: 2, offset: 0 }}>
                 {" "}
                 <div className="akwaba-container-items">
                   <NavLink to="/marveltechsolution">
@@ -45,7 +56,7 @@ class MarveltechGroup extends Component {
                   </NavLink>
                   <MarveltechSolutionTile />
                 </div>
-              </Col>
+              </Col>             
               <Col md={{ span: 2, offset: 0 }}>
                 <div className="akwaba-container-items">
                   <NavLink to="/marveltechconsulting">
@@ -60,7 +71,7 @@ class MarveltechGroup extends Component {
                 <div className="akwaba-container-items">
                   <NavLink to="/marveltechgaming">
                     <div className="akwaba-tiles-navlinks">
-                      MArvelTech Media
+                      MarvelTech Media
                     </div>
                   </NavLink>
                   <MarveltechGamingTile />
@@ -88,19 +99,19 @@ class MarveltechGroup extends Component {
               </Col>
             </HashRouter>
           </Row>
+          {/* <div>
           <div>
-            <div>
-              <Row>
-                <Col md={{ span: 10, offset: 1 }}>
+          <Row>
+              <Col md={{ span: 2, offset: 1 }}>
                   <Button
                     color="info"
                     id="toggler"
-                    style={{ marginBottom: "1rem" }}
+                    style={{ marginBottom: "1rem", fontSize:"20px", fontWeight:"bold" }}
                   >
                     {t("pages.marveltechgroup.group.text.buttonAboutUs")}
                   </Button>
                 </Col>
-              </Row>
+            </Row>
             </div>
             <UncontrolledCollapse toggler="#toggler">
               <Card>
@@ -116,9 +127,8 @@ class MarveltechGroup extends Component {
               </Card>
             </UncontrolledCollapse>
           </div>
-
-        </Container>
-        <div></div>
+         */}
+        </div>        
       </div>
     );
   }

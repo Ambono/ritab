@@ -5,7 +5,7 @@ import Main from "./mainbody";
 import Footer from "./clientapp/footer/Footer";
 import "./mainApp.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./StyleSheet.css";
+import "./Stylesheets/css/StyleSheet.css";
 import NavBar from "./clientapp/responsive/NavBar";
 
 function App({ t }) {
@@ -14,9 +14,8 @@ function App({ t }) {
   };
 
   return (
-    <div>   
-      
-      <div className="akwaba">
+    <div>
+      <div className="akwaba-top">
       <div className="akwaba-lang">
         <button onClick={() => changeLanguage("fr")} className="btn-sm">
           Fr
@@ -31,18 +30,14 @@ function App({ t }) {
             src="./clientapp/img/computer-algorithm.jpg"
             alt=""
             Style="width:100%;"
-          />
-          {/* <div className="content">
-            <p></p>
-            <h1>{t("messages.welcome")}</h1>
-          </div> */}
+          />         
         </div>
       </div>
-      <div className = "akwaba-header">
+      <div className = "header-akwaba">
       <NavBar /> 
       </div>
       <Suspense fallback={<div>Loading</div>}>
-        <Main />
+      <Main />
       </Suspense>
       <Footer />
     </div>
