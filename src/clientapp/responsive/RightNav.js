@@ -36,32 +36,25 @@ function RightNav ({ open } )  {
        <Col md={{ span: 12, offset: 0 }}>
         <Ul open={open} id="menu"> 
         <HashRouter>
-        <li>
-           <NavLink to="/registersimple"><span className ="header-akwaba-tiles-navlinks">{t("navbar.register")}</span></NavLink>            
-                      {/* <ul id="menu">
-                          <li>
-                            <NavLink to="/logout"><span>CSS Development</span></NavLink> 
-                          </li>
-                          <li>
-                            <NavLink to="/logout"><span>Graphic Design</span></NavLink> 
-                            </li>
-                          <li>
-                            <NavLink to="/logout"><span>Development Tools</span></NavLink> 
-                          </li>
-                          <li>
-                            <NavLink to="/logout"><span>Web Design</span></NavLink>
-                          </li>
-                    </ul>
-              */}
-                    
+                   <li>
+                    <NavLink to="/Marveltechpartners"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.partners")}</span></NavLink> 
                     </li>
                     <li>
-                      <NavLink to="/login"><span className ="header-akwaba-tiles-navlinks">{t("navbar.login")}</span></NavLink>            
+                      <NavLink to="/Marveltechacademy"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.academy")}</span></NavLink>            
                     </li>
                     <li>
-                          <NavLink to="/logout"><span className ="header-akwaba-tiles-navlinks">{t("navbar.logout")}</span></NavLink>            
-                        </li> 
-                      </HashRouter>       
+                      <NavLink to="/Marveltechservices"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.services")}</span></NavLink>            
+                      </li> 
+                      <li>
+                    <NavLink to="/registersimple"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.register")}</span></NavLink> 
+                    </li>
+                    <li>
+                      <NavLink to="/login"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.login")}</span></NavLink>            
+                    </li>
+                    <li>
+                      <NavLink to="/logout"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.logout")}</span></NavLink>            
+                      </li> 
+        </HashRouter>       
                 </Ul>
           </Col>
               

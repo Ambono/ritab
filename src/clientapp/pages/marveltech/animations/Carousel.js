@@ -50,6 +50,7 @@ const CarouselMarveltech = (props) => {
       text1: <p>{t("carousel.atgcarousel3.text1")}</p>,
       text2: <p>{t("carousel.atgcarousel3.text2")}</p>,
       text3: <p>{t("carousel.atgcarousel3.text3")}</p>,
+      text4: <p>{t("carousel.atgcarousel3.text4")}</p>,
       width:dimensions.width,
       height:dimensions.height,
     },
@@ -60,6 +61,7 @@ const CarouselMarveltech = (props) => {
       text1: <p>{t("carousel.atgcarousel4.text1")}</p>,
       text2: <p>{t("carousel.atgcarousel4.text2")}</p>,
       text3: <p>{t("carousel.atgcarousel4.text3")}</p>,
+      text4: <p>{t("carousel.atgcarousel4.text4")}</p>,
       width:dimensions.width,
       height:dimensions.height,    
     }
@@ -103,6 +105,7 @@ const CarouselMarveltech = (props) => {
            <h1>{item.text1}</h1>
            <h1>{item.text2}</h1>
            <h1>{item.text3}</h1>
+           <h1>{item.text4}</h1>
           </div>
       </CarouselItem>
     );

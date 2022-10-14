@@ -18,6 +18,9 @@ import MarveltechGaming from "./clientapp/pages/marveltech/MarveltechGaming";
 import MarveltechTrade from "./clientapp/pages/marveltech/MarveltechTrade";
 import MarveltechSystems from "./clientapp/pages/marveltech/MarveltechSystems";
 import MarveltechConsulting from "./clientapp/pages/marveltech/MarveltechConsulting";
+import MarveltechServices from "./clientapp/pages/marveltech/MarveltechServices";
+import MarveltechPartners from "./clientapp/pages/marveltech/MarveltechPartners";
+import MarveltechAcademy from "./clientapp/pages/marveltech/MarveltechAcademy";
 import MarveltechSell from "./clientapp/pages/marveltech/tradepages/MarveltechSell";
 import MarveltechOrder from "./clientapp/pages/marveltech/tradepages/MarveltechOrder";
 import MarveltechGadgets from "./clientapp/pages/marveltech/tradepages/MarveltechGadgets";
@@ -50,6 +53,9 @@ class Main extends Component {
           <Route path="/Marveltechgaming" component={MarveltechGaming} />
           <Route path="/Marveltechtrade" component={MarveltechTrade} />
           <Route path="/Marveltechsystems" component={MarveltechSystems} />
+          <Route path="/Marveltechacademy" component={MarveltechAcademy} />
+          <Route path="/Marveltechservices" component={MarveltechServices} />
+          <Route path="/Marveltechpartners" component={MarveltechPartners} />
           <Route path="/Marveltechsell" component={MarveltechSell} />
           <Route path="/Marveltechorder" component={MarveltechOrder} />
           <Route path="/Marveltechgadgets" component={MarveltechGadgets} />

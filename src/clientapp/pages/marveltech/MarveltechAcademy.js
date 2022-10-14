@@ -3,7 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import { withTranslation } from "react-i18next";
 
-class MarveltechSolution extends Component {
+class MarveltechAcademy extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -86,4 +86,4 @@ class MarveltechSolution extends Component {
   }
 }
 
-export default withTranslation()(MarveltechSolution);
+export default withTranslation()(MarveltechAcademy);

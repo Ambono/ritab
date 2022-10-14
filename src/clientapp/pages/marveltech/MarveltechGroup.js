@@ -28,9 +28,10 @@ class MarveltechGroup extends Component {
           <Row>
             <Col md={{ span: 2, offset: 4 }}>
               {" "}
-              <div className="akwaba-services-title">
+              {/* <div className="akwaba-services-title">
                 {t("pages.marveltechgroup.group.text.offers")}
-              </div>
+              </div> */}
+              <p></p>
             </Col>
           </Row>
           <Row>
@@ -40,7 +41,7 @@ class MarveltechGroup extends Component {
                 <div className="akwaba-container-items">
                   <NavLink to="/about">
                     <div className="akwaba-tiles-navlinks">
-                      MarvelTech about us
+                    {t("pages.marveltechgroup.group.text.about")}                  
                     </div>
                   </NavLink>
                   <MarveltechSolutionTile />
@@ -51,7 +52,7 @@ class MarveltechGroup extends Component {
                 <div className="akwaba-container-items">
                   <NavLink to="/marveltechsolution">
                     <div className="akwaba-tiles-navlinks">
-                      MarvelTech Solutions
+                    {t("pages.marveltechgroup.group.text.solutions")}                    
                     </div>
                   </NavLink>
                   <MarveltechSolutionTile />
@@ -61,7 +62,7 @@ class MarveltechGroup extends Component {
                 <div className="akwaba-container-items">
                   <NavLink to="/marveltechconsulting">
                     <div className="akwaba-tiles-navlinks">
-                      MarvelTech Consulting
+                    {t("pages.marveltechgroup.group.text.consulting")}                     
                     </div>
                   </NavLink>
                   <MarveltechConsultingTile />
@@ -71,7 +72,7 @@ class MarveltechGroup extends Component {
                 <div className="akwaba-container-items">
                   <NavLink to="/marveltechgaming">
                     <div className="akwaba-tiles-navlinks">
-                      MarvelTech Media
+                    {t("pages.marveltechgroup.group.text.media")}                   
                     </div>
                   </NavLink>
                   <MarveltechGamingTile />
@@ -81,7 +82,7 @@ class MarveltechGroup extends Component {
                 <div className="akwaba-container-items">
                   <NavLink to="/marveltechtrade">
                     <div className="akwaba-tiles-navlinks">
-                      MarvelTech E-commerce
+                    {t("pages.marveltechgroup.group.text.ecommerce")}                    
                     </div>
                   </NavLink>
                   <MarveltechTradeTile />
@@ -91,7 +92,7 @@ class MarveltechGroup extends Component {
                 <div className="akwaba-container-items">
                   <NavLink to="/marveltechsystems">
                     <div className="akwaba-tiles-navlinks">
-                      MarvelTech Systems
+                    {t("pages.marveltechgroup.group.text.systems")}                     
                     </div>
                   </NavLink>
                   <MarveltechSystemsTile />

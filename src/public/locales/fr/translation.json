@@ -1,7 +1,6 @@
 {
   "navbar": {
-    "home": "ACCUEIL",
-    "services": "Services",
+    "home": "ACCUEIL",  
     "menue": "Menue",
     "references": "References",
     "booking": "Commander",
@@ -9,6 +8,9 @@
     "login": "LOGIN",
     "logout": "LOGOUT",
     "contact": "JOINDRE",
+    "services": "NOS SERVICES",
+    "partners": "NOS PARTENAIRES",
+    "academy": "NOTRE ACADEMIE",
     "register": "ENROLLER",
     "businesstrainings":"Formation en business",
     "softwaredevtrainings":"Formation en development de logiciel"
@@ -30,9 +32,9 @@
 
   "carousel":{
     "atgcarousel1":{
-     "text1":"MarvelTech",
-     "text2":"Technologie de pointe",
-     "text3":"Pour vous"          
+     "text1":"Nos developeurs vont vous creer ",
+     "text2":"Une platforme avec une technologie de pointe",
+     "text3":"Pour votre organisation ou entreprise"          
    },
    "atgcarousel2":{
      "text1":"Notre passion: la technologie",
@@ -40,14 +42,17 @@
      "text3":"Parceque vous etes ambitieux"            
    },
   "atgcarousel3":{
-   "text1":"Development de logiciel",
-   "text2":"Audit securite informatique",
-   "text3":"Securite par IoT"          
+   "text1":"Nos specilites:",
+   "text2":"Development de logiciel",
+   "text3":"Audit securite logiciel",
+   "text4":"Architecture de reseaux IoT"
+           
   },
  "atgcarousel4":{
-   "text1": "Pionier du ticketing",
-   "text2":"Pionier du printing online",
-   "text3": "Promoteurs de jeux videos"         
+  "text1":"Nous sommes votre consultant pour",
+   "text2":"Ticketing et distribution de ticket en ligne",
+   "text3":"Creation et Printing de document en ligne",
+   "text4":"Entertainment et jeux en ligne"         
  }
 },
 
@@ -64,6 +69,12 @@
       "group":{
         "text":{
          "offers":"Nos Services",
+         "about":"Qu'est-ce que Marveltech",
+         "solutions":"Marveltech Solutions",
+         "consulting":"Marveltech consulting",
+         "media":"Marveltech Media",
+         "ecommerce":"Marveltech E-Commerce",
+         "systems":"Marveltech Systems",         
          "buttonAboutUs":"Qui sommes nous"
         }
       }

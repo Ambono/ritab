@@ -29,13 +29,13 @@ const Navbar = () => {
        <Col md={{ span: 3, offset: 0}}>           
          <NavLink to="/home"><img src={logo} height="84px" width="110px" /></NavLink>           
         </Col>
-        <Col md={{ span: 7, offset: 2}}>
+        {/* <Col md={{ span: 7, offset: 2}}>
           <ul id="menu">
             <li>
               <NavLink to="/home"><span className ="header-akwaba-tiles-navlinks">{t("navbar.home")}</span></NavLink>            
             </li>                
             </ul>
-          </Col>   
+          </Col>    */}
        </Row>
       </div>
       </HashRouter>      

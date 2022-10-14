@@ -32,8 +32,9 @@
       -webkit-box-shadow: 0 2px 1px #9c9c9c;
       box-shadow: 0 2px 1px #9c9c9c;
     }
-    .header-akwaba-tiles-navlinks {
-      color: white;
+    /*nav bar text(our partners, our academy, our services, register, login, logout) */
+    .header-akwaba-rightnavbar-navlinks {
+      color: grey;
       font-family: verdana;
       font-size: 18px;
       font-weight: bold;
@@ -113,7 +114,7 @@
   }
   
   ul.no-bullets-nav-palin li a {
-    color: white;
+    color: white; 
     font-weight: bold;
     text-decoration: none;
   }
@@ -148,7 +149,7 @@
   margin-top: 40px;
 	padding: 10px 0 0 0;
 	list-style: none;     
-  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
+  /* background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);  */
 	 /*background: #111;
    	background-image: linear-gradient(#444, #111);
  */
@@ -208,8 +209,7 @@
     left: 0;
     z-index: 99999;    
     background: #444;
-    background: -moz-linear-gradient(#444, #111);
-  
+    background: -moz-linear-gradient(#444, #111);  
     background: -webkit-linear-gradient(#444, #111);    
     background: -o-linear-gradient(#444, #111);	
     background: -ms-linear-gradient(#444, #111);	

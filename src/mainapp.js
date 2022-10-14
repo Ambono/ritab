@@ -15,7 +15,7 @@ function App({ t }) {
 
   return (
     <div>
-      <div className="akwaba-top">
+      
       <div className="akwaba-lang">
         <button onClick={() => changeLanguage("fr")} className="btn-sm">
           Fr
@@ -23,16 +23,7 @@ function App({ t }) {
         <button onClick={() => changeLanguage("en")} className="btn-sm">
           En
         </button>
-      </div>
-        <p id="header-text"></p>
-        <div>
-          <img
-            src="./clientapp/img/computer-algorithm.jpg"
-            alt=""
-            Style="width:100%;"
-          />         
-        </div>
-      </div>
+      </div> 
       <div className = "header-akwaba">
       <NavBar /> 
       </div>

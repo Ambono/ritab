@@ -1,7 +1,6 @@
 {
   "navbar": {
-    "home": "HOME",
-    "services": "Services",
+    "home": "HOME",   
     "menue": "Dishes",
     "references": "References",
     "booking": "Booking",
@@ -9,6 +8,9 @@
     "login": "LOGIN",
     "logout": "LOGOUT",
     "contact": "CONTACT",
+    "services": "SERVICES",
+    "partners": "OUR PARTNERS",
+    "academy": "OUR ACADEMY",
     "register": "REGISTER",
     "businesstrainings":"Business subject trainings",
     "softwaredevtrainings":"Software development trainings"
@@ -30,9 +32,9 @@
 
   "carousel":{
            "atgcarousel1":{
-            "text1":"MarvelTech",
+            "text1":"Our developers will build",
             "text2":"The state-of-the-art Technology",
-            "text3":"For you"          
+            "text3":"For your organisation or business"          
           },
           "atgcarousel2":{
             "text1":"Our passion: Technology",
@@ -40,14 +42,17 @@
             "text3":"Because you are ambitious"            
           },
          "atgcarousel3":{
-          "text1":"Software development",
-          "text2":"Software security audit",
-          "text3":"Iot for Security"          
+          "text1":"We specialise in: ",
+          "text2":"Software development ",
+          "text3":"Software security audit",
+          "text4":"Iot network architecture"
+                    
          },
         "atgcarousel4":{
-          "text1": "Ticketing pioneer",
-          "text2":"Online prinitng pioneer",
-          "text3": "Video games pioneer"         
+          "text1":"We are your consultant for",
+          "text2":"Ticketing and dispatching of online tickets",
+          "text3":"Creating and Printing online documents",
+          "text4":"Entertainment and online gaming."       
         }
   },  
   "pages": {
@@ -63,6 +68,12 @@
       "group":{
         "text":{
         "offers":"Our Services",
+        "about":"About Marveltech",
+        "solutions":"Marveltech Solutions",
+        "media":"Marveltech Media",
+        "consulting":"Marveltech consulting",
+        "ecommerce":"Marveltech E-Commerce",
+        "systems":"Marveltech Systems",
         "buttonAboutUs":"About us" 
         }
       }
