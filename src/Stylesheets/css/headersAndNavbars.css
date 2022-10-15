@@ -305,3 +305,10 @@
 * html #menu             { zoom: 1; } /* IE6 */
 *:first-child+html #menu { zoom: 1; } /* IE7 */
 
+#menuchild{
+	
+	display: inline;
+	font-size: 20px;
+  text-decoration: none;
+  list-style: none;
+}

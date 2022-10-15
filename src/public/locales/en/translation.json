@@ -9,11 +9,13 @@
     "logout": "LOGOUT",
     "contact": "CONTACT",
     "services": "SERVICES",
-    "partners": "OUR PARTNERS",
-    "academy": "OUR ACADEMY",
+    "partners": "PARTNERS",
+    "academy": "ACADEMY",
     "register": "REGISTER",
     "businesstrainings":"Business subject trainings",
-    "softwaredevtrainings":"Software development trainings"
+    "softwaredevtrainings":"Software development trainings",
+    "account":"ACCOUNT",
+    "youraccount":"YOUR ACCOUNT"
   },
 
   "footer":{
@@ -33,8 +35,8 @@
   "carousel":{
            "atgcarousel1":{
             "text1":"Our developers will build",
-            "text2":"The state-of-the-art Technology",
-            "text3":"For your organisation or business"          
+            "text2":"Your organisation or business",
+            "text3":"The state-of-the-art Technology "          
           },
           "atgcarousel2":{
             "text1":"Our passion: Technology",

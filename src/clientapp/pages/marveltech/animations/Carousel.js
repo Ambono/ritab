@@ -101,7 +101,7 @@ const CarouselMarveltech = (props) => {
         />
 
           <img src={item.src} alt={item.altText} width={item.width} height={item.height}/>
-          <div class="carousel-text">
+          <div className="carousel-text">
            <h1>{item.text1}</h1>
            <h1>{item.text2}</h1>
            <h1>{item.text3}</h1>

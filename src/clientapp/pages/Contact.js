@@ -185,7 +185,7 @@ class Contact extends Component {
       <div className="content-akwaba">
         <div>
           <form action="#">
-            <div class="form-group">
+            <div className="form-group">
               <label>First Name:</label>
               <input
                 type="text"
@@ -198,7 +198,7 @@ class Contact extends Component {
               <div className="text-danger">{this.state.errors.fname}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Last Name:</label>
               <input
                 type="text"
@@ -211,7 +211,7 @@ class Contact extends Component {
               <div className="text-danger">{this.state.errors.lname}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Email Address:</label>
               <input
                 type="text"
@@ -224,7 +224,7 @@ class Contact extends Component {
               <div className="text-danger">{this.state.errors.email}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Mobile teleph:</label>
               <input
                 type="text"
@@ -237,7 +237,7 @@ class Contact extends Component {
               <div className="text-danger">{this.state.errors.teleph}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Message:</label>
               <input
                 type="text"

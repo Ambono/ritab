@@ -8,12 +8,14 @@
     "login": "LOGIN",
     "logout": "LOGOUT",
     "contact": "JOINDRE",
-    "services": "NOS SERVICES",
-    "partners": "NOS PARTENAIRES",
-    "academy": "NOTRE ACADEMIE",
+    "services": "SERVICES",
+    "partners": "PARTENAIRES",
+    "academy": "ACADEMIE",
     "register": "ENROLLER",
     "businesstrainings":"Formation en business",
-    "softwaredevtrainings":"Formation en development de logiciel"
+    "softwaredevtrainings":"Formation en development de logiciel",
+    "account":"COMPTE",
+    "youraccount":"VOTRE COMPTE"
   },
 
   "footer": {
@@ -32,9 +34,9 @@
 
   "carousel":{
     "atgcarousel1":{
-     "text1":"Nos developeurs vont vous creer ",
-     "text2":"Une platforme avec une technologie de pointe",
-     "text3":"Pour votre organisation ou entreprise"          
+     "text1":"Nos developeurs vont developer ",
+     "text2":"Pour votre organisation ou entreprise",
+     "text3":"Une platforme avec une technologie de pointe"          
    },
    "atgcarousel2":{
      "text1":"Notre passion: la technologie",

@@ -192,7 +192,7 @@ class Register extends Component {
       <div className="content-akwaba">
         <div>
           <form action="#">
-            <div class="form-group">
+            <div className="form-group">
               <label>First Name:</label>
               <input
                 type="text"
@@ -205,7 +205,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.fname}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Surname:</label>
               <input
                 type="text"
@@ -218,7 +218,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.usurname}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>User Name:</label>
               <input
                 type="text"
@@ -231,7 +231,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.usname}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Email Address:</label>
               <input
                 type="text"
@@ -244,7 +244,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.email}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Telephone:</label>
               <input
                 type="text"
@@ -257,7 +257,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.teleph}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>City:</label>
               <input
                 type="text"
@@ -270,7 +270,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.city}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Country:</label>
               <input
                 type="text"
@@ -283,7 +283,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.country}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Occupation:</label>
               <input
                 type="text"
@@ -296,7 +296,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.occupation}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Password Hint:</label>
               <input
                 type="text"
@@ -309,7 +309,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.passwhint}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Password hint answer:</label>
               <input
                 type="text"
@@ -322,7 +322,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.passwhintansw}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Password:</label>
               <input
                 type="password"
@@ -335,7 +335,7 @@ class Register extends Component {
               <div className="text-danger">{this.state.errors.password}</div>
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label>Confirm Password:</label>
               <input
                 type="password"

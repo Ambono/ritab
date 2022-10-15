@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {NavLink, HashRouter } from "react-router-dom";
 import { useTranslation  } from "react-i18next";
 import { Row, Col } from 'react-bootstrap';
+import { DropdownMenu, MenuItem } from 'react-bootstrap-dropdown-menu';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const Ul = styled.ul`
   list-style: none;
@@ -28,74 +30,76 @@ const Ul = styled.ul`
   }
 `;
 
+// https://react-bootstrap.github.io/components/dropdowns/
+
 function RightNav ({ open } )  {
     const { t } = useTranslation()
   return (
     <div >
       <Row>      
        <Col md={{ span: 12, offset: 0 }}>
-        <Ul open={open} id="menu"> 
+        {/* <Ul open={open} id="menu">  */}
+        <Ul open={open} > 
         <HashRouter>
-                   <li>
-                    <NavLink to="/Marveltechpartners"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.partners")}</span></NavLink> 
+                   <li>                   
+                    <Dropdown>
+                          <Dropdown.Toggle variant="success" id="dropdown-basic">
+                          {t("navbar.partners")}
+                          </Dropdown.Toggle>
+
+                          <Dropdown.Menu>
+                           <Dropdown.Item href="#"> <NavLink to="/Marveltechpartners"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.partners")}</span></NavLink> 
+                         </Dropdown.Item>
+                          </Dropdown.Menu>
+                      </Dropdown> 
                     </li>
                     <li>
-                      <NavLink to="/Marveltechacademy"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.academy")}</span></NavLink>            
+                     <Dropdown>
+                          <Dropdown.Toggle variant="success" id="dropdown-basic">
+                          {t("navbar.academy")}
+                          </Dropdown.Toggle>
+
+                          <Dropdown.Menu>
+                           <Dropdown.Item href="#"><NavLink to="/Marveltechacademy"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.academy")}</span></NavLink>         
+                         </Dropdown.Item>
+                          </Dropdown.Menu>
+                      </Dropdown>
                     </li>
                     <li>
-                      <NavLink to="/Marveltechservices"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.services")}</span></NavLink>            
-                      </li> 
-                      <li>
-                    <NavLink to="/registersimple"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.register")}</span></NavLink> 
-                    </li>
-                    <li>
-                      <NavLink to="/login"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.login")}</span></NavLink>            
-                    </li>
-                    <li>
-                      <NavLink to="/logout"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.logout")}</span></NavLink>            
-                      </li> 
+                      <Dropdown>
+                          <Dropdown.Toggle variant="success" id="dropdown-basic">
+                          {t("navbar.services")}
+                          </Dropdown.Toggle>
+
+                          <Dropdown.Menu>
+                           <Dropdown.Item href="#">   <NavLink to="/Marveltechservices"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.services")}</span></NavLink> 
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                      </Dropdown>
+                    </li> 
+                      <li>                           
+                          <Dropdown>
+                          <Dropdown.Toggle variant="success" id="dropdown-basic">
+                          {t("navbar.account")}
+                          </Dropdown.Toggle>
+
+                          <Dropdown.Menu>
+                            <Dropdown.Item href="#"> <NavLink to="/registersimple"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.register")}</span></NavLink>
+                                </Dropdown.Item>
+                            <Dropdown.Item href="#"> <NavLink to="/login"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.login")}</span></NavLink>            
+                                 </Dropdown.Item>
+                            <Dropdown.Item href="#"> <NavLink to="/logout"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.logout")}</span></NavLink>            
+                                </Dropdown.Item>
+                                <Dropdown.Item href="#"> <NavLink to="/logout"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.youraccount")}</span></NavLink>            
+                                </Dropdown.Item>
+                          </Dropdown.Menu>
+                          </Dropdown>
+                    </li>                                               
         </HashRouter>       
-                </Ul>
-          </Col>
+        </Ul>
+      </Col>
               
-      </Row>   
-
- 
-
-                        {/* 
-                            <Ul open={open} id="menu"> 
-                                <HashRouter> 
-                          <li>
-                            <NavLink to="/logout"><span>Home</span></NavLink>
-                          </li>
-                          <li>
-                            <NavLink to="/logout"><span>Work</span></NavLink> 
-                              <ul>
-                                  <li>
-                                    <NavLink to="/logout"><span>CSS Development</span></NavLink> 
-                                  </li>
-                                  <li>
-                                    <NavLink to="/logout"><span>Graphic Design</span></NavLink> 
-                                    </li>
-                                  <li>
-                                    <NavLink to="/logout"><span>Development Tools</span></NavLink> 
-                                  </li>
-                                  <li>
-                                    <NavLink to="/logout"><span>Web Design</span></NavLink>
-                                  </li>
-                              </ul>
-                          </li>
-                          <li>
-                            <NavLink to="/logout"><span>About</span></NavLink> 
-                          </li>
-                          <li>
-                            <NavLink to="/logout"><span>Contact Us</span></NavLink> 
-                          </li>
-                          <li style="float: right;">
-                            <NavLink to="/logout"><span>Feedback</span></NavLink> 
-                          </li>
-                          </HashRouter>       
-                        </Ul> */}
+      </Row>  
   </div>
   )
 }
