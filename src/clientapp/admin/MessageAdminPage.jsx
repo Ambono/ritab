@@ -5,10 +5,10 @@ import { withTranslation } from "react-i18next";
 import { Redirect } from "react-router";
 import ConfigData from "../../config.json";
 import { useState, useEffect } from "react";
-import DataTable from './DataTable';
+import DataTable from './MessageDataTable';
 
 
-class AdminPage extends Component {
+class MessageAdminPage extends Component {
 
   constructor(props) {
     super(props);
@@ -32,14 +32,14 @@ dataTable() {
 }
 
   getApiPath = () => {
-    let environmt = ConfigData.ENVIRONMENT.DEV === "Yes" ? true : false;
+    let devenvironmt = ConfigData.ENVIRONMENT.DEV ;
+    let manualenvironmt = ConfigData.ENVIRONMENT.MANUAL; 
+    let liveenvironmt = ConfigData.ENVIRONMENT.LIVE ;
     let extension = ConfigData.PAGES_URL.RETRIEVECONTACTUSMESSAGES;
     let path = ConfigData.BASE_URL_LIVE + extension;
-    if (environmt) {
-      path =
-        ConfigData.BASE_URL_LOCAL.XAMPP +
-        ConfigData.BASE_URL_LOCAL.PATH_MESSAGES +
-        extension;
+    if (manualenvironmt) {
+      path = ConfigData.MANUAL_URL.RETRIEVECONTACTUSMESSAGES;
+        
     }
     return path;
   };
@@ -48,15 +48,19 @@ dataTable() {
     const { t } = this.props;
     return (      
       <div>
-      <table className="table table-striped table-dark">
-                        <thead className="thead-dark">
+      <table className="table table-striped table-info">
+                        <thead className="thead-info">
                             <tr>
                                 <td>Id</td>
                                 <td>DateContacted</td>
-                                <td>Name</td>
+                                <td>Title</td>
+                                <td>FirstName</td>
+                                <td>LastName</td>
                                 <td>Email</td>
                                 <td>Phone</td>
-                                <td>Reason</td>
+                                <td>Message</td>
+                                <td>Response</td>
+                                <td>Status</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -68,4 +72,4 @@ dataTable() {
   }
 }
  
-export default withTranslation()(AdminPage);
+export default withTranslation()(MessageAdminPage);

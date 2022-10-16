@@ -8,7 +8,7 @@
 include_once("../config/config.php");
 
 
-/*header("Access-Control-Allow-Origin: *");*/  
+header("Access-Control-Allow-Origin: *");
 
 
 // Create connection
@@ -20,6 +20,7 @@ $_SESSION['token_temp_user'] = session_id();
 $data = json_decode(file_get_contents("php://input"), true);
 print_r("<br> start printing data: ". $data.'<br>');
 
+
 $fname = mysqli_real_escape_string($conn, $data['fname']);
 $lname = mysqli_real_escape_string($conn, $data['lname']);
 $email = mysqli_real_escape_string($conn, $data['email']);
@@ -29,8 +30,7 @@ $title = mysqli_real_escape_string($conn, $data['title']);
 
 $fullname = $fname . ' ' . $lname;
 
-$sql =  "INSERT INTO `contactmessages`(
-    `numerodecommande`,
+$sql =  "INSERT INTO `contactmessages`(    
     `created_at`,
     `title`,
     `firstName`,
@@ -41,22 +41,23 @@ $sql =  "INSERT INTO `contactmessages`(
     `response`,
     `readstatus`
 )
-VALUES(
-    '[value-2]',
+VALUES(    
     NOW(), '$title', '$fname', '$lname', '$email', '$phone', '$message', '[value-10]', 1)";
 
   $total = mysqli_num_rows($sql);
 
 if($total==0)
-  {      
+  { 
+       
  if (!mysqli_query($conn, $sql))
   {
   die("Error inserting message in table record: ".mysqli_error()); 
   }  
 else{
-   echo "1 record added";      
+   echo "1 record added";
+   print_r("<br> printing full name: ". $fullname.' '.$email.'<br>');
    } 
+
   }
-print_r("<br> printing full name: ". $fullname.' '.$email.'<br>');
 //print json_encode($data);
 $conn->close();

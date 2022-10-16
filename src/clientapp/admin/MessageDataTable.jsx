@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-class DataTable extends Component {
+class MessageDataTable extends Component {
     render() {
-        return (
+        return (          
             <tr>
                 <td>
                     {this.props.obj.Id}
@@ -11,7 +11,13 @@ class DataTable extends Component {
                     {this.props.obj.DateContacted}
                 </td>
                 <td>
-                    {this.props.obj.Name}
+                    {this.props.obj.Title}
+                </td>
+                <td>
+                    {this.props.obj.FirstName}
+                </td>
+                <td>
+                    {this.props.obj.LastName}
                 </td>
                 <td>
                     {this.props.obj.Email}
@@ -20,11 +26,17 @@ class DataTable extends Component {
                     {this.props.obj.Phone}
                 </td>
                 <td>
-                    {this.props.obj.Reason}
+                    {this.props.obj.Message}
+                </td>
+                <td>
+                    {this.props.obj.Response}
+                </td>
+                <td>
+                    {this.props.obj.Status}
                 </td>
             </tr>
         );
     }
 }
 
-export default DataTable;
+export default MessageDataTable;

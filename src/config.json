@@ -8,10 +8,9 @@
   },
 
     "MANUAL_URL":{
-      "CONTACTUS": "http://localhost/php/contactmessage/contactmessage.php",
-      "RETRIEVEMYMESSAGES": "http://localhost/php/contactmessage/retrievecontactmessages.php",
-      "BOOKINGS": "http://localhost/php/booking/makebooking.php",
-      "RETRIEVEBOOKINGS": "http://localhost/php/booking/retrievebookingall.php"
+      "CONTACTUS": "http://localhost/dev/marveltech/src/server/messages/contactmessage.php",
+      "RETRIEVEMYMESSAGES": "http://localhost/dev/marveltech/src/server/messages/retrievecontactmessages.php",
+     "TESTCONTACTUS":"http://localhost/dev/marveltech/src/server/messages/contactmessage_test.php"
   },
 
   "BASE_URL_LOCAL": "http://localhost/php/",  

@@ -12,7 +12,7 @@ import RegisterSimple from "./clientapp/registerlogin/RegisterSimple";
 import Loginscreen from "./clientapp/registerlogin/LoginScreen";
 import Login from "./clientapp/registerlogin/Login";
 import RetrieveMyMessages from "./clientapp/pages/messages/RetrieveMyMessages";
-import MyAdmin from "./clientapp/pages/admin/MyAdmin";
+import MessageMyAdmin from "./clientapp/admin/MessageAdminPage";
 import MarveltechSolution from "./clientapp/pages/marveltech/MarveltechSolution";
 import MarveltechGaming from "./clientapp/pages/marveltech/MarveltechGaming";
 import MarveltechTrade from "./clientapp/pages/marveltech/MarveltechTrade";
@@ -26,7 +26,7 @@ import MarveltechOrder from "./clientapp/pages/marveltech/tradepages/MarveltechO
 import MarveltechGadgets from "./clientapp/pages/marveltech/tradepages/MarveltechGadgets";
 import BusinessTrainings from "./clientapp/pages/academy/Trainings/BusinessTrainings";
 import SoftwareDevTrainings from "./clientapp/pages/academy/Trainings/SoftwareDevTrainings";
-import AdminPage from "./clientapp/admin/AdminPage";
+// import AdminPage from "./clientapp/admin/AdminPage";
 import Trainings from "./clientapp/pages/academy/Trainings/Trainings";
 import Apprenticeship from "./clientapp/pages/academy/Apprenticeship/Apprenticeship";
 import Logout from "./clientapp/registerlogin/Logout";
@@ -44,7 +44,7 @@ class Main extends Component {
           <Route path="/booking" component={Booking} />
           <Route path="/register" component={Register} />
           <Route path="/registersimple" component={RegisterSimple} />
-          <Route path="/myadmin" component={MyAdmin} />
+          {/* <Route path="/myadmin" component={MyAdmin} /> */}
           <Route path="/loginscreen" component={Loginscreen} />
           <Route path="/login" component={Login} />
           <Route path="/contact" component={Contact} />
@@ -62,7 +62,7 @@ class Main extends Component {
           <Route path="/Marveltechgadgets" component={MarveltechGadgets} />
           <Route path="/businesstrainings" component={BusinessTrainings} />
           <Route path="/softwaredevtrainings" component={SoftwareDevTrainings}/>
-          <Route path="/adminpage" component={AdminPage} />
+          <Route path="/messageadmin" component={MessageMyAdmin} />
           <Route path="/trainings" component={Trainings} /> 
           <Route path="/apprenticeship" component={Apprenticeship} />            
           <Route path="/logout" component={Logout} />          
