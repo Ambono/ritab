@@ -25,11 +25,11 @@
     "follow":"FOLLOW US",
     "disclaimer": "DISCLAIMER",
     "help": "HELP",
-    "poweredby":"@MarvelTech.com 2022"
+    "poweredby":"@MarvelTechUniversal.com 2022"
   },
 
   "messages": {
-    "welcome": "MarvelTech Group, top technology at your service"
+    "welcome": "MarvelTech Universal, top technology at your service"
   },
 
   "carousel":{
@@ -76,7 +76,9 @@
         "consulting":"Marveltech consulting",
         "ecommerce":"Marveltech E-Commerce",
         "systems":"Marveltech Systems",
-        "buttonAboutUs":"About us" 
+        "buttonAboutUs":"About us" ,
+        "apprenticeship":"APPRENTICESHIP",
+        "trainings":"TRAININGS"
         }
       }
     },
@@ -165,6 +167,8 @@
     },
     "contact": {
       "text": {
+        "title":"Title",
+        "titleph":"Sir/Mm/Other",
         "header1": "",
         "header2": "",
         "firstname": "First Name",
@@ -175,8 +179,8 @@
         "emailph": "Your email",
         "phone": "Mobile phone",
         "phoneph": "Your mobile phone",
-        "subject": "Subject",
-        "subjectph": "Write something",
+        "subject": "Query",
+        "subjectph": "Your query",
         "submit": "Submit",       
         "submitph": "",
         "thankyou1": "Thank you for your enquiry.",

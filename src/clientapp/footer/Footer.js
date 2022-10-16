@@ -15,8 +15,7 @@ class Footer extends Component {
   <Row>
   <HashRouter> 
     <Col md={{ span: 2, offset: 1}}> <NavLink to="/contact"><span className="akwaba-tiles-navlinks">{t("footer.ask")}</span></NavLink></Col>
-    <Col md={{ span: 2, offset: 0 }}><NavLink to="/register"><span className="akwaba-tiles-navlinks">{t("footer.join")}</span></NavLink></Col>
-    {/* <Col md={{ span: 2, offset: 0 }}><div className="akwaba-container-items"><div className="akwaba-tiles-navlinks"><NavLink to="/about"><span>{t("footer.about")}</span></NavLink></div></div></Col> */}
+    <Col md={{ span: 2, offset: 0 }}><NavLink to="/register"><span className="akwaba-tiles-navlinks">{t("footer.join")}</span></NavLink></Col>   
     <Col md={{ span: 2, offset: 0 }}><NavLink to="/followus"><span className="akwaba-tiles-navlinks">{t("footer.follow")}</span></NavLink></Col> 
     <Col md={{ span: 2, offset: 0 }}><NavLink to="/followus"><span className="akwaba-tiles-navlinks">{t("footer.disclaimer")}</span></NavLink></Col>  
     <Col md={{ span: 2, offset: 0 }}><NavLink to="/followus"><span className="akwaba-tiles-navlinks">{t("footer.help")}</span></NavLink></Col>   

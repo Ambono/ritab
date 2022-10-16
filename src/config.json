@@ -7,30 +7,38 @@
     "SENDEMAILPAGE": "akwabatechsendcontactusemail.php"
   },
 
-  "BASE_URL_LOCAL": {
-    "XAMPP": "http://localhost:50/",
-    "PATH_REGISTERLOGIN": "akwabagroup/serverakwabagroup/RegisterLogin/",
-    "PATH_MESSAGES": "akwabagroup/serverakwabagroup/messages/"
+    "MANUAL_URL":{
+      "CONTACTUS": "http://localhost/php/contactmessage/contactmessage.php",
+      "RETRIEVEMYMESSAGES": "http://localhost/php/contactmessage/retrievecontactmessages.php",
+      "BOOKINGS": "http://localhost/php/booking/makebooking.php",
+      "RETRIEVEBOOKINGS": "http://localhost/php/booking/retrievebookingall.php"
   },
 
-  "BASE_URL_LIVE": "http://groupakwabatech.com/",
+  "BASE_URL_LOCAL": "http://localhost/php/",  
 
-  "PAGES_URL": {
-    "REGISTERSIMPLE": "RegistrationMakerSimple.php",
-    "REGISTER": "RegistrationMaker.php",
-    "LOGIN": "LoginMaker.php",
-    "LOGOUT": "Logout.php",
-    "CONTACTUS": "ContactUsMessages.php",
-    "RETRIEVECONTACTUSMESSAGES": "RetrieveContactMessages.php"
+  "BASE_URL_LIVE": "https://universalmarveltech.com/",
+
+  "PAGES_URL": {    
+    "CONTACTUS": "server/messages/ContactUsMessages.php",
+    "RETRIEVEMYMESSAGES": "server/messages/RetrieveContactMessages.php",
+    "BOOKINGS": "server/messages/MakeBooking.php",
+    "RETRIEVEBOOKINGS": "server/messages/RetrieveBooking.php",
+    "AUTHORISATIONS":{
+      "REGISTERSIMPLE": "RegistrationMakerSimple.php",
+      "REGISTER": "RegistrationMaker.php",
+      "LOGIN": "LoginMaker.php",
+      "LOGOUT": "Logout.php"
+    }
   },
 
   "ENVIRONMENT": {
-    "DEV": "No",
-    "LIVE": "Yes"
+    "DEV": false,
+    "LIVE": false,
+    "MANUAL":true
   },
 
   "CREDENTIALS": {
-    "ADMIN_EMAIL": "akwabatechgroup-admin@gmail.com",
-    "TRAINEE_EMAIL": "akwabatechgroup-trainee@gmail.com"
+    "ADMIN_EMAIL": "universalmarveltech-admin@gmail.com",
+    "TRAINEE_EMAIL": "universalmarveltech-trainee@gmail.com"
   }
 }

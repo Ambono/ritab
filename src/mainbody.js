@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 import { Route, HashRouter } from "react-router-dom";
 import Home from "./clientapp/pages/Home";
 import Services from "./clientapp/pages/Services";
-import Contact from "./clientapp/pages/Contact";
+import Contact from "./clientapp/pages/messages/Contact";
 import Menue from "./clientapp/pages/Menue";
 import References from "./clientapp/pages/References";
 import Booking from "./clientapp/pages/Booking";
@@ -20,14 +20,15 @@ import MarveltechSystems from "./clientapp/pages/marveltech/MarveltechSystems";
 import MarveltechConsulting from "./clientapp/pages/marveltech/MarveltechConsulting";
 import MarveltechServices from "./clientapp/pages/marveltech/MarveltechServices";
 import MarveltechPartners from "./clientapp/pages/marveltech/MarveltechPartners";
-import MarveltechAcademy from "./clientapp/pages/marveltech/MarveltechAcademy";
+// import MarveltechAcademy from "./clientapp/pages/marveltech/MarveltechAcademy";
 import MarveltechSell from "./clientapp/pages/marveltech/tradepages/MarveltechSell";
 import MarveltechOrder from "./clientapp/pages/marveltech/tradepages/MarveltechOrder";
 import MarveltechGadgets from "./clientapp/pages/marveltech/tradepages/MarveltechGadgets";
-import BusinessTrainings from "./clientapp/trainings/BusinessTrainings";
-import SoftwareDevTrainings from "./clientapp/trainings/SoftwareDevTrainings";
+import BusinessTrainings from "./clientapp/pages/academy/Trainings/BusinessTrainings";
+import SoftwareDevTrainings from "./clientapp/pages/academy/Trainings/SoftwareDevTrainings";
 import AdminPage from "./clientapp/admin/AdminPage";
- import Trainings from "./clientapp/admin/Trainings";
+import Trainings from "./clientapp/pages/academy/Trainings/Trainings";
+import Apprenticeship from "./clientapp/pages/academy/Apprenticeship/Apprenticeship";
 import Logout from "./clientapp/registerlogin/Logout";
 
 class Main extends Component {
@@ -53,7 +54,7 @@ class Main extends Component {
           <Route path="/Marveltechgaming" component={MarveltechGaming} />
           <Route path="/Marveltechtrade" component={MarveltechTrade} />
           <Route path="/Marveltechsystems" component={MarveltechSystems} />
-          <Route path="/Marveltechacademy" component={MarveltechAcademy} />
+          {/* <Route path="/Marveltechacademy" component={MarveltechAcademy} /> */}
           <Route path="/Marveltechservices" component={MarveltechServices} />
           <Route path="/Marveltechpartners" component={MarveltechPartners} />
           <Route path="/Marveltechsell" component={MarveltechSell} />
@@ -62,7 +63,8 @@ class Main extends Component {
           <Route path="/businesstrainings" component={BusinessTrainings} />
           <Route path="/softwaredevtrainings" component={SoftwareDevTrainings}/>
           <Route path="/adminpage" component={AdminPage} />
-          <Route path="/trainings" component={Trainings} />          
+          <Route path="/trainings" component={Trainings} /> 
+          <Route path="/apprenticeship" component={Apprenticeship} />            
           <Route path="/logout" component={Logout} />          
         </HashRouter>
       </div>

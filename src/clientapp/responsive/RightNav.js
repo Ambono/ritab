@@ -35,12 +35,41 @@ const Ul = styled.ul`
 function RightNav ({ open } )  {
     const { t } = useTranslation()
   return (
-    <div >
+    <div>
       <Row>      
        <Col md={{ span: 12, offset: 0 }}>
-        {/* <Ul open={open} id="menu">  */}
-        <Ul open={open} > 
-        <HashRouter>
+        <Ul open={open} id="menu"> 
+        <HashRouter> 
+                   <li>
+                      <Dropdown>
+                          <Dropdown.Toggle variant="success" id="dropdown-basic">
+                          {t("navbar.services")}
+                          </Dropdown.Toggle>
+
+                          <Dropdown.Menu>
+                           <Dropdown.Item href="#"><NavLink to="/marveltechsolution">
+                            <span className="header-akwaba-rightnavbar-navlinks">
+                            {t("pages.marveltechgroup.group.text.solutions")}</span></NavLink>
+                            </Dropdown.Item>
+                         
+                           <Dropdown.Item href="#">
+                            <NavLink to="/marveltechconsulting">
+                            <span className ="header-akwaba-rightnavbar-navlinks">
+                              {t("pages.marveltechgroup.group.text.consulting")}</span></NavLink>
+                            </Dropdown.Item>
+                          
+                           <Dropdown.Item href="#"><NavLink to="/marveltechgaming">
+                              <span className ="header-akwaba-rightnavbar-navlinks">
+                              {t("pages.marveltechgroup.group.text.media")}</span></NavLink>
+                            </Dropdown.Item>
+                          
+                           <Dropdown.Item href="#"> <NavLink to="/marveltechtrade">
+                           <span className ="header-akwaba-rightnavbar-navlinks">
+                            {t("pages.marveltechgroup.group.text.ecommerce")}</span></NavLink>
+                            </Dropdown.Item>
+                          </Dropdown.Menu>                         
+                      </Dropdown>
+                    </li>               
                    <li>                   
                     <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -48,7 +77,9 @@ function RightNav ({ open } )  {
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
-                           <Dropdown.Item href="#"> <NavLink to="/Marveltechpartners"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.partners")}</span></NavLink> 
+                           <Dropdown.Item href="#"> <NavLink to="/Marveltechpartners">
+                            <span className ="header-akwaba-rightnavbar-navlinks">
+                              {t("navbar.partners")}</span></NavLink> 
                          </Dropdown.Item>
                           </Dropdown.Menu>
                       </Dropdown> 
@@ -58,25 +89,34 @@ function RightNav ({ open } )  {
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
                           {t("navbar.academy")}
                           </Dropdown.Toggle>
-
                           <Dropdown.Menu>
-                           <Dropdown.Item href="#"><NavLink to="/Marveltechacademy"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.academy")}</span></NavLink>         
-                         </Dropdown.Item>
-                          </Dropdown.Menu>
+                            <Dropdown.Item href="#"><NavLink to="/apprenticeship">
+                            <span className="header-akwaba-rightnavbar-navlinks">
+                            {t("pages.marveltechgroup.group.text.apprenticeship")}</span></NavLink>
+                            </Dropdown.Item>
+                         
+                           <Dropdown.Item href="#">
+                            <NavLink to="/trainings">
+                            <span className="header-akwaba-rightnavbar-navlinks">
+                              {t("pages.marveltechgroup.group.text.trainings")}</span></NavLink>
+                            </Dropdown.Item>
+                            </Dropdown.Menu>
                       </Dropdown>
-                    </li>
-                    <li>
-                      <Dropdown>
+                    </li>                 
+                    <li>                   
+                    <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          {t("navbar.services")}
+                          {t("navbar.contact")}
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
-                           <Dropdown.Item href="#">   <NavLink to="/Marveltechservices"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.services")}</span></NavLink> 
-                            </Dropdown.Item>
+                           <Dropdown.Item href="#"> <NavLink to="/contact">
+                            <span className ="header-akwaba-rightnavbar-navlinks">
+                              {t("navbar.contact")}</span></NavLink> 
+                         </Dropdown.Item>
                           </Dropdown.Menu>
-                      </Dropdown>
-                    </li> 
+                      </Dropdown> 
+                    </li>
                       <li>                           
                           <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -84,13 +124,22 @@ function RightNav ({ open } )  {
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
-                            <Dropdown.Item href="#"> <NavLink to="/registersimple"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.register")}</span></NavLink>
+                            <Dropdown.Item href="#"> <NavLink to="/registersimple">
+                              <span className ="header-akwaba-rightnavbar-navlinks">
+                                {t("navbar.register")}</span></NavLink>
                                 </Dropdown.Item>
-                            <Dropdown.Item href="#"> <NavLink to="/login"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.login")}</span></NavLink>            
+                            <Dropdown.Item href="#"><NavLink to="/login">
+                              <span className ="header-akwaba-rightnavbar-navlinks">
+                                {t("navbar.login")}</span></NavLink>            
                                  </Dropdown.Item>
-                            <Dropdown.Item href="#"> <NavLink to="/logout"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.logout")}</span></NavLink>            
+                            <Dropdown.Item href="#"><NavLink to="/logout">
+                              <span className ="header-akwaba-rightnavbar-navlinks">
+                                {t("navbar.logout")}</span></NavLink>            
                                 </Dropdown.Item>
-                                <Dropdown.Item href="#"> <NavLink to="/logout"><span className ="header-akwaba-rightnavbar-navlinks">{t("navbar.youraccount")}</span></NavLink>            
+                                <Dropdown.Divider />
+                                <Dropdown.Item href="#"> <NavLink to="/logout">
+                                  <span className ="header-akwaba-rightnavbar-navlinks">
+                                    {t("navbar.youraccount")}</span></NavLink>            
                                 </Dropdown.Item>
                           </Dropdown.Menu>
                           </Dropdown>

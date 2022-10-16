@@ -25,16 +25,16 @@
     "follow": "SUIVEZ NOUS",
     "disclaimer": "CLAUSE DE NON RESPONSABILITE",
     "help": "ASSISTANCE",
-    "poweredby":"@MarvelTech.com 2022"
+    "poweredby":"@MarvelTechUniversal.com 2022"
   },
   "messages": {
-    "welcome": "MarvelTech Group, technologie de pointe a votre service."
+    "welcome": "MarvelTech Universal, technologie de pointe a votre service."
   },
 
 
   "carousel":{
     "atgcarousel1":{
-     "text1":"Nos developeurs vont developer ",
+     "text1":"Nos architects vont developer ",
      "text2":"Pour votre organisation ou entreprise",
      "text3":"Une platforme avec une technologie de pointe"          
    },
@@ -77,7 +77,9 @@
          "media":"Marveltech Media",
          "ecommerce":"Marveltech E-Commerce",
          "systems":"Marveltech Systems",         
-         "buttonAboutUs":"Qui sommes nous"
+         "buttonAboutUs":"Qui sommes nous",
+         "apprenticeship":"APPRENTISSAGE",
+         "trainings":"FORMATIONS"
         }
       }
     },
@@ -158,7 +160,7 @@
       }
     },
     "loginscreen": {
-      "text": {
+      "text": {        
         "submit": "Login",
         "loginmessage": "Vous avez deja un, compte veuillez login",
         "registermessage": "Vous n'avez pas encore un compte, veuiller vous inscrire svp."
@@ -166,6 +168,8 @@
     },
     "contact": {
       "text": {
+        "title":"Genre",
+        "titleph":"Mr./Mme/Autre",
         "header1": "",
         "header2": "",
         "firstname": "Prenom",
@@ -176,8 +180,8 @@
         "emailph": "Votre email",
         "phone": "Telephone mobile",
         "phoneph": "Votre telephone mobile",
-        "subject": "Subjet",
-        "subjectph": "Ecrire quelque chose",
+        "subject": "Requete",
+        "subjectph": "Votre requete",
         "submit": "Envoyer",
         "submitph": "",
         "thankyou1": "Merci de m'avoir contactee.",
