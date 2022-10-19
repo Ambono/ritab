@@ -24,7 +24,9 @@ class MarveltechGroup extends Component {
             </Col>
           </Row>
         </div>
-        <div className="akwaba-content">             
+        <div className="slideshow_deploy_web"></div>
+        
+        <div className="akwaba-content_deploy">             
           <Row>
             <Col md={{ span: 2, offset: 4 }}>
               {" "}
@@ -99,36 +101,7 @@ class MarveltechGroup extends Component {
                 </div>
               </Col>
             </HashRouter>
-          </Row>
-          {/* <div>
-          <div>
-          <Row>
-              <Col md={{ span: 2, offset: 1 }}>
-                  <Button
-                    color="info"
-                    id="toggler"
-                    style={{ marginBottom: "1rem", fontSize:"20px", fontWeight:"bold" }}
-                  >
-                    {t("pages.marveltechgroup.group.text.buttonAboutUs")}
-                  </Button>
-                </Col>
-            </Row>
-            </div>
-            <UncontrolledCollapse toggler="#toggler">
-              <Card>
-                <CardBody>
-                  <Row>
-                    <Col md={{ span: 10, offset: 1 }}>
-                      <div className="akwaba-container-items">
-                        <MarveltechGroupTile />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-              </Card>
-            </UncontrolledCollapse>
-          </div>
-         */}
+          </Row>          
         </div>        
       </div>
     );

@@ -187,9 +187,26 @@ span.price {
     margin-bottom: 20px;
   }
 
-  .slideshow_deploy {
-    display: none;
+  .slideshow_deploy {   
+   display:none
     }
+
+    .slideshow_deploy_web {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-left:100px;
+      width:300px;
+      height:300px; 
+      background: url("../../clientapp/img/atgcarousel1.png"); 
+
+    }
+
+    .akwaba-content_deploy{ 
+      width:100%;      
+      }
+   
   /*   
   .App {
     max-width: 420px;
