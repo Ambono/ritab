@@ -196,10 +196,9 @@ span.price {
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin-left:100px;
-      width:300px;
+      width: 500px;;
       height:300px; 
-      background: url("../../clientapp/img/atgcarousel1.png"); 
+      background: url("../../clientapp/img/atgcarousel2.png");    
 
     }
 
