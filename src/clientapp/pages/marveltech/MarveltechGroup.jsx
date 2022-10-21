@@ -24,15 +24,11 @@ class MarveltechGroup extends Component {
             </Col>
           </Row>
         </div>
-        <div className="slideshow_deploy_web"></div>
-        
+        <div className="slideshow_deploy_web"></div>           
         <div className="akwaba-content_deploy">             
           <Row>
             <Col md={{ span: 2, offset: 4 }}>
-              {" "}
-              {/* <div className="akwaba-services-title">
-                {t("pages.marveltechgroup.group.text.offers")}
-              </div> */}
+              {" "}             
               <p></p>
             </Col>
           </Row>

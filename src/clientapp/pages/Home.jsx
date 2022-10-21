@@ -7,7 +7,6 @@ class Home extends Component {
     const { t } = this.props;
     return (
       <div className="content-akwaba" >
-
          <MarvelTechGroup />      
       </div>
     );

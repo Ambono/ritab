@@ -39,7 +39,9 @@ function RightNav ({ open } )  {
       <Row>      
        <Col md={{ span: 12, offset: 0 }}>
         <Ul open={open} id="menu"> 
-        <HashRouter> 
+        <HashRouter>
+          <p></p>
+          <p></p>             
                    <li>
                       <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -77,9 +79,9 @@ function RightNav ({ open } )  {
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
-                           <Dropdown.Item href="#"> <NavLink to="/Marveltechpartners">
+                           <Dropdown.Item href="#"> <NavLink to="/marveltechpartners">
                             <span className ="header-akwaba-rightnavbar-navlinks">
-                              {t("navbar.partners")}</span></NavLink> 
+                              {t("navbar.ourpartners")}</span></NavLink> 
                          </Dropdown.Item>
                           </Dropdown.Menu>
                       </Dropdown> 
@@ -102,22 +104,8 @@ function RightNav ({ open } )  {
                             </Dropdown.Item>
                             </Dropdown.Menu>
                       </Dropdown>
-                    </li>                 
-                    <li>                   
-                    <Dropdown>
-                          <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          {t("navbar.contact")}
-                          </Dropdown.Toggle>
-
-                          <Dropdown.Menu>
-                           <Dropdown.Item href="#"> <NavLink to="/contact">
-                            <span className ="header-akwaba-rightnavbar-navlinks">
-                              {t("navbar.contact")}</span></NavLink> 
-                         </Dropdown.Item>
-                          </Dropdown.Menu>
-                      </Dropdown> 
                     </li>
-                      <li>                           
+                    <li>                           
                           <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
                           {t("navbar.account")}
@@ -137,13 +125,28 @@ function RightNav ({ open } )  {
                                 {t("navbar.logout")}</span></NavLink>            
                                 </Dropdown.Item>
                                 <Dropdown.Divider />
-                                <Dropdown.Item href="#"> <NavLink to="/logout">
+                                <Dropdown.Item href="#"> <NavLink to="/myplace">
                                   <span className ="header-akwaba-rightnavbar-navlinks">
                                     {t("navbar.youraccount")}</span></NavLink>            
                                 </Dropdown.Item>
                           </Dropdown.Menu>
                           </Dropdown>
-                    </li>                                               
+                    </li>                    
+                    <li>                   
+                    <Dropdown>
+                          <Dropdown.Toggle variant="success" id="dropdown-basic">
+                          {t("navbar.contact")}
+                          </Dropdown.Toggle>
+
+                          <Dropdown.Menu>
+                           <Dropdown.Item href="#"> <NavLink to="/contact">
+                            <span className ="header-akwaba-rightnavbar-navlinks">
+                              {t("navbar.contactus")}</span></NavLink> 
+                         </Dropdown.Item>
+                          </Dropdown.Menu>
+                      </Dropdown> 
+                    </li>
+                                                                 
         </HashRouter>       
         </Ul>
       </Col>

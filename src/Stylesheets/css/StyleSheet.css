@@ -192,6 +192,7 @@ span.price {
     }
 
     .slideshow_deploy_web {
+      border-radius:40px;    
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -201,20 +202,13 @@ span.price {
       width: 250px;
       height: 300px;
       margin: auto; 
-      background: url("../../clientapp/img/atgcarousel2.png");    
-
+      background: url("../../clientapp/img/mobiledisplay1.jpg");      
     }
 
     .akwaba-content_deploy{ 
       width:100%;      
-      }
-   
-  /*   
-  .App {
-    max-width: 420px;
-    margin: 0 auto;
-  }
-   */
+      }   
+  
   p {
     text-align: center;
     font-weight: 500;
