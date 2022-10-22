@@ -4,7 +4,8 @@ include_once('../config/config.php');
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 $_SESSION['token_temp_user'] = session_id();
 
- 
+// header("Access-Control-Allow-Origin: *");
+
 $data = json_decode(file_get_contents("php://input"), true);
 print_r("<br> start printing data: ". $data.'<br>');
 
@@ -12,28 +13,24 @@ print_r("<br> start printing data: ". $data.'<br>');
  $uname = mysqli_real_escape_string($conn, $data['usname']);
  $fname = mysqli_real_escape_string($conn, $data['fname']); 
  $usurname = mysqli_real_escape_string($conn, $data['usurname']);
+ $usurname = mysqli_real_escape_string($conn, $data['lname']);
  $email = mysqli_real_escape_string($conn, $data['email']);
  $upass = mysqli_real_escape_string($conn, $data['password']);
- $teleph = mysqli_real_escape_string($conn, $data['teleph']); 
- $city = mysqli_real_escape_string($conn, $data['city']);
- $country = mysqli_real_escape_string($conn, $data['country']);
- $occupation = mysqli_real_escape_string($conn, $data['occupation']);
- $upasshint = mysqli_real_escape_string($conn, $data['passwhint']);
- $upasshintanswer= mysqli_real_escape_string($conn, $data['passwhintansw']);
+ $teleph = mysqli_real_escape_string($conn, $data['phonenumber']); 
  // password encrypt using SHA256();
  $password = hash('sha256', $upass);
  
  // check email exist or not
  
- $result = mysqli_query($conn, "SELECT Email FROM users WHERE Email='$email'");
+ $result = mysqli_query($conn, "SELECT email FROM users WHERE email='$email'");
  
  $count = mysqli_num_rows($result); // if email not found then proceed 
  
  if ($count==0) {
      
-  $query = "INSERT INTO users(UserName, FirstName, LastName, UPassword, Email, PhoneNumber, DateRegistered, Country, City, Occupation, SecretQuestion, SecretAnswer ) "
-          . "VALUES('$uname','$fname', '$usurname', '$password','$email', '$teleph', Now(), '$country',"
-          . "'$city', '$occupation', '$upasshint', '$upasshintanswer')";
+  $query = "INSERT INTO users(us_name, first_name, last_name, u_password, email, phone_number, created_at, country, city, occupation, secret_question, secret_answer) "
+          . "VALUES('','$fname', '$usurname', '$password','$email', '$teleph', Now(), '',"
+          . "'', '', '', '')";
   $res = mysqli_query($conn, $query);
   
   if ($res) {

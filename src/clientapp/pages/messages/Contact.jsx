@@ -4,7 +4,7 @@
 import { useTranslation } from 'react-i18next';
 import { React,useState} from "react";
 import axios from "axios";
-import ConfigData from "../../../config.json";
+import GetApis from '../GetApis';
 
 const Contact = () => {
   const [fname, setFirstName] = useState('');
@@ -24,16 +24,11 @@ const Contact = () => {
   const [reasonerrormsg, setReasonerrormsg] = useState('');
   
    
+
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    if(ConfigData.ENVIRONMENT.DEV)
-           return ConfigData.BASE_URL_LOCAL+ConfigData.PAGES_URL.CONTACTUS;  
-    else if(ConfigData.ENVIRONMENT.LIVE)
-          return ConfigData.BASE_URL_LIVE+ConfigData.PAGES_URL.CONTACTUS;
-    else if(ConfigData.ENVIRONMENT.MANUAL)
-         return ConfigData.MANUAL_URL.CONTACTUS;
-     else return "no environment was specified";
+    return GetApis().CONTACTUS
   };
 
   const handleSubmit = event => {
@@ -208,7 +203,7 @@ const Contact = () => {
               className="btn btn-primary"
               type="submit"
               onClick={(e) =>  {handleSubmit(e)}}
-              defaultvalue={t("pages.contact.text.submit")}
+              defaultValue={t("pages.contact.text.submit")}
             />
        
         <div>

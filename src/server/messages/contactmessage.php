@@ -7,10 +7,6 @@
 
 include_once("../config/config.php");
 
-
-header("Access-Control-Allow-Origin: *");
-
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 $_SESSION['token_temp_user'] = session_id(); 

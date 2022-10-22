@@ -2,11 +2,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withTranslation } from "react-i18next";
-import { Redirect } from "react-router";
-import ConfigData from "../../config.json";
-import { useState, useEffect } from "react";
 import DataTable from './MessageDataTable';
-
+import GetApis from '../../clientapp/pages/GetApis'
 
 class MessageAdminPage extends Component {
 
@@ -31,17 +28,8 @@ dataTable() {
     });
 }
 
-  getApiPath = () => {
-    let devenvironmt = ConfigData.ENVIRONMENT.DEV ;
-    let manualenvironmt = ConfigData.ENVIRONMENT.MANUAL; 
-    let liveenvironmt = ConfigData.ENVIRONMENT.LIVE ;
-    let extension = ConfigData.PAGES_URL.RETRIEVECONTACTUSMESSAGES;
-    let path = ConfigData.BASE_URL_LIVE + extension;
-    if (manualenvironmt) {
-      path = ConfigData.MANUAL_URL.RETRIEVECONTACTUSMESSAGES;
-        
-    }
-    return path;
+  getApiPath = () => {    
+    return GetApis().RETRIEVECONTACTUSMESSAGES;
   };
 
   render() {

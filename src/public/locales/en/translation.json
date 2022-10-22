@@ -172,8 +172,8 @@
       "text": {
         "title":"Title",
         "titleph":"Sir/Mm/Other",
-        "header1": "",
-        "header2": "",
+        "header1": "Fill the fields to send us a query",
+        "header2": "Fill the fields to register",
         "firstname": "First Name",
         "firstnameph": "Your name",
         "lastname": "Last Name",
@@ -182,6 +182,10 @@
         "emailph": "Your email",
         "phone": "Mobile phone",
         "phoneph": "Your mobile phone",
+        "password":"Password",
+        "passwordph":"Your password",
+        "confirmpassword":"Confirm password",
+        "confirmpasswordph":"Confirm your password",
         "subject": "Query",
         "subjectph": "Your query",
         "submit": "Submit",       
@@ -189,7 +193,15 @@
         "thankyou1": "Thank you for your enquiry.",
         "thankyou2": "Your message was successfully sent.",
         "thankyou3": "You will here from us very soon.",
-        "footer": ""
+        "footer": "",
+        "phoneinvalidmsg":"Please enter phone number",
+        "firstnameinvalidmsg":"Please enter first name",
+        "lastnameinvalidmsg":"Please enter last name",
+       "emailpatterninvalidmsg":"Please enter a correct email address",
+       "confirmpasswordlinvalidmsg": "Please confirm password",
+       "passwordlinvalidmsg": "Please enter password",
+       "pswandconfpswdiff":"Password and confirmed password are different",
+       "msginvalidform":"Data on the form is invalid"
       }
     },
     "desserts": {

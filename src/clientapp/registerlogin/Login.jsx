@@ -5,6 +5,7 @@ import { NavLink, HashRouter } from "react-router-dom";
 import { Button } from "reactstrap";
 import { Row, Col } from "react-bootstrap";
 import { Redirect } from "react-router";
+import GetApis from '../pages/GetApis';
 import ConfigData from "../../config.json";
 
 const validEmailRegex = RegExp(
@@ -77,17 +78,8 @@ class Login extends Component {
     }
   };
 
-  getApiPath = () => {
-    let environmt = ConfigData.ENVIRONMENT.DEV === "Yes" ? true : false;
-    let extension = ConfigData.PAGES_URL.LOGIN;
-    let path = ConfigData.BASE_URL_LIVE + extension;
-    if (environmt) {
-      path =
-        ConfigData.BASE_URL_LOCAL.XAMPP +
-        ConfigData.BASE_URL_LOCAL.PATH_REGISTERLOGIN +
-        extension;
-    }
-    return path;
+  getApiPath = () => {   
+    return GetApis().LOGIN;
   };
 
   handleFormSubmit = (e) => {
@@ -99,16 +91,20 @@ class Login extends Component {
       data: this.state,
     })
       .then((result) => {
-        if (result.status === 200) {
+        if (result.status === 200 && result.data===1) {
           let resultemail = this.state.email;
+          // console.log('login data: ', result.data)
           if (resultemail === ConfigData.CREDENTIALS.ADMIN_EMAIL) {
             this.setState({ isLoggedInAsAdmin: true });
           } else if (resultemail === ConfigData.CREDENTIALS.TRAINEE_EMAIL) {
             this.setState({ isLoggedInAsTrainee: true });
           } 
-          else {
+          else{
             this.setState({ isLoggedInAsCustomer: true });
           }
+        }
+        else{
+          return;
         }
       })
       .catch(function (error) {

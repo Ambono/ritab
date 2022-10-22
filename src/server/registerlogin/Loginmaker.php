@@ -1,6 +1,6 @@
 <?php
 
-include("./Config.php");
+include_once('../config/config.php');
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -8,11 +8,12 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 $myemail = mysqli_real_escape_string($conn, $data['email']);
 
-$password = mysqli_real_escape_string($conn, $data['password']);
+$upass = mysqli_real_escape_string($conn, $data['password']);
+$password = hash('sha256', $upass);
 
 //echo 'Email: ' . $myusername.' Password:  '.$password. '<br>';
 
-$sql = "SELECT Id FROM users WHERE Email ='$myemail'  and Password = '$password'";
+$sql = "SELECT id FROM users WHERE email ='$myemail'  and u_password = '$password'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -20,17 +21,16 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
        $data = $row[0] ;
-   //   echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    //  echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+      echo "1";
     }
 } else {
-    echo "0 results";
+    echo "0";
 }
 
 $count = mysqli_num_rows($result);
 
-// If result matched $myusername and $mypassword, table row must be 1 row
-
-
+//update site visits
 function getUserIP() {
     $client = @$_SERVER['HTTP_CLIENT_IP'];
     $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -49,18 +49,23 @@ function getUserIP() {
 
 $user_ip = getUserIP();
 
+// If result matched $myusername and $mypassword, table row must be 1 row
 
-if ($count == 1) {
-  
-    $queryvisitors = "insert into sitevisits(Visitor_session, Date, Usertype, IPs) values('$myemail', now(),'registered','$user_ip')";
+if ($count == 1) {  
+    $queryvisitors = "insert into sitevisits(visitor_session, created_at, usertype, ips) values('$myemail', now(),'registered','$user_ip')";
     $result_sessions = mysqli_query($conn, $queryvisitors);
-
     if (!$result_sessions) {
         die;
-    } else {
-       // echo' <br/> row inserted';
-    }    
+    } 
+    echo'1';  
 }
-print json_encode($data);
+else if ($count == 0){
+    $queryvisitors = "insert into sitevisits(visitor_session, created_at, usertype, ips) values('$myemail', now(),'visitor','$user_ip')";
+    $result_sessions = mysqli_query($conn, $queryvisitors);
+    if (!$result_sessions) {
+        die;
+    }
+}
+//print json_encode($data);
 $conn->close();
 

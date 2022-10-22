@@ -173,8 +173,8 @@
       "text": {
         "title":"Genre",
         "titleph":"Mr./Mme/Autre",
-        "header1": "",
-        "header2": "",
+        "header1": "Renseignez les champs pour nous envoyer une requete",
+        "header2": "Renseignez les champs pour creer un compte",
         "firstname": "Prenom",
         "firstnameph": "Votre prenom",
         "lastname": "Nom",
@@ -183,6 +183,10 @@
         "emailph": "Votre email",
         "phone": "Telephone mobile",
         "phoneph": "Votre telephone mobile",
+        "password":"Mot de passe",
+        "passwordph":"Votre mot de passe",
+        "confirmpassword":"Confirmer mot de passe",
+        "confirmpasswordph":"Confirmer votre mot de passe",
         "subject": "Requete",
         "subjectph": "Votre requete",
         "submit": "Envoyer",
@@ -190,7 +194,15 @@
         "thankyou1": "Merci de m'avoir contactee.",
         "thankyou2": "Votre message a ete recu.",
         "thankyou3": "Nous vous reviendrons le plus tot possible",
-        "footer": ""
+        "footer": "",
+        "phoneinvalidmsg":"Renseigner votre numero de telephone",
+        "firstnameinvalidmsg":"Renseigner votre prenom",
+        "lastnameinvalidmsg":"Renseigner votre nom",
+       "emailpatterninvalidmsg":"L'address email n'est pas dans le correct format",
+        "confirmpasswordlinvalidmsg": "Confirmer votre mot de passe",
+        "passwordlinvalidmsg": "Renseigner votre mot de passe",
+        "pswandconfpswdiff":"mot de passe et confirmation de mot de passe sont differents",
+        "msginvalidform":"Les donnees sur la forme sont invalides"
       }
     },
     "desserts": {

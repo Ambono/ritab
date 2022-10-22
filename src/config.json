@@ -8,27 +8,30 @@
   },
 
     "MANUAL_URL":{
-      "CONTACTUS": "http://localhost/dev/marveltech/src/server/messages/contactmessage.php",
-      "RETRIEVEMYMESSAGES": "http://localhost/dev/marveltech/src/server/messages/retrievecontactmessages.php",
-     "TESTCONTACTUS":"http://localhost/dev/marveltech/src/server/messages/contactmessage_test.php"
-  },
+    "CONTACTUS": "http://localhost/dev/marveltech/src/server/messages/contactmessage.php",
+    "RETRIEVEMYMESSAGES": "http://localhost/dev/marveltech/src/server/messages/retrievecontactmessages.php",
+     "TESTCONTACTUS":"http://localhost/dev/marveltech/src/server/messages/contactmessage_test.php",  
+     "RETRIEVEBOOKINGS": "http://localhost/dev/marveltech/src/server/messages/RetrieveBooking.php",     
+     "REGISTERSIMPLE": "http://localhost/dev/marveltech/src/server/registerlogin/RegistrationMakerSimple.php",
+     "REGISTER": "http://localhost/dev/marveltech/src/server/registerlogin/RegistrationMaker.php",
+     "LOGIN": "http://localhost/dev/marveltech/src/server/registerlogin/LoginMaker.php",
+     "LOGOUT": "http://localhost/dev/marveltech/src/server/registerlogin/Logout.php"
+      },
 
   "BASE_URL_LOCAL": "http://localhost/php/",  
 
-  "BASE_URL_LIVE": "https://universalmarveltech.com/",
+  "BASE_URL_LIVE": "https://globalmarveltech.com/",
 
   "PAGES_URL": {    
-    "CONTACTUS": "server/messages/ContactUsMessages.php",
-    "RETRIEVEMYMESSAGES": "server/messages/RetrieveContactMessages.php",
-    "BOOKINGS": "server/messages/MakeBooking.php",
-    "RETRIEVEBOOKINGS": "server/messages/RetrieveBooking.php",
-    "AUTHORISATIONS":{
-      "REGISTERSIMPLE": "RegistrationMakerSimple.php",
-      "REGISTER": "RegistrationMaker.php",
-      "LOGIN": "LoginMaker.php",
-      "LOGOUT": "Logout.php"
-    }
-  },
+    "CONTACTUS": "ContactUsMessages.php",
+    "RETRIEVEMYMESSAGES": "RetrieveContactMessages.php",
+    "BOOKINGS": "MakeBooking.php",
+    "RETRIEVEBOOKINGS": "RetrieveBooking.php",    
+    "REGISTERSIMPLE": "RegistrationMakerSimple.php",
+    "REGISTER": "RegistrationMaker.php",
+    "LOGIN": "LoginMaker.php",
+    "LOGOUT": "Logout.php"
+      },
 
   "ENVIRONMENT": {
     "DEV": false,
@@ -37,7 +40,8 @@
   },
 
   "CREDENTIALS": {
-    "ADMIN_EMAIL": "universalmarveltech-admin@gmail.com",
-    "TRAINEE_EMAIL": "universalmarveltech-trainee@gmail.com"
+    "ADMIN_EMAIL": "admin-marveltech@gmail.com",
+    "CUSTOMER_EMAIL": "info@globalmarveltech.com",
+    "TRAINEE_EMAIL": "trainee-marveltech@gmail.com"
   }
 }
