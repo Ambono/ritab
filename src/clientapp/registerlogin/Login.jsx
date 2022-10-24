@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withTranslation } from "react-i18next";
-import { NavLink, HashRouter } from "react-router-dom";
-import { Button } from "reactstrap";
-import { Row, Col } from "react-bootstrap";
 import { Redirect } from "react-router";
 import GetApis from '../pages/GetApis';
-import ConfigData from "../../config.json";
+
 
 const validEmailRegex = RegExp(
   /^(([^<>()\\[\]\\.,;:\s@\\"]+(\.[^<>()\\[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@(([^<>()[\]\\.,;:\s@\\"]+\.)+[^<>()[\]\\.,;:\s@\\"]{2,})$/i
@@ -91,17 +88,19 @@ class Login extends Component {
       data: this.state,
     })
       .then((result) => {
-        if (result.status === 200 && result.data===1) {
+        if (result.status === 200) {
           let resultemail = this.state.email;
           // console.log('login data: ', result.data)
-          if (resultemail === ConfigData.CREDENTIALS.ADMIN_EMAIL) {
+          if (result.data===1) {
             this.setState({ isLoggedInAsAdmin: true });
-          } else if (resultemail === ConfigData.CREDENTIALS.TRAINEE_EMAIL) {
+          } else if (result.data===2) {
             this.setState({ isLoggedInAsTrainee: true });
           } 
           else{
             this.setState({ isLoggedInAsCustomer: true });
           }
+          this.setState({ email:'' });
+          this.setState({ password:'' });
         }
         else{
           return;
@@ -125,22 +124,6 @@ class Login extends Component {
     }
     return (
       <div className="content-akwaba">
-        <div>
-          <HashRouter>
-            <Row>
-              <Col md={{ span: 2, offset: 4 }}>
-                <Button
-                  color="secondary"
-                  id="formations"
-                  style={{ marginBottom: "3rem" }}
-                >
-                  <NavLink to="/trainings">Training</NavLink>
-                </Button>
-              </Col>
-            </Row>
-          </HashRouter>
-        </div>
-        
         <div>
           <form action="#">
             <label>Email</label>

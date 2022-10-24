@@ -15,10 +15,12 @@
     "academy": "ACADEMY",
     "ouracademy": "OUR ACADEMY",
     "register": "REGISTER",
-    "businesstrainings":"Business subject trainings",
-    "softwaredevtrainings":"Software development trainings",
+    "businesstrainings":"Business subjects",
+    "softwaredevtrainings":"Computing",
     "account":"ACCOUNT",
-    "youraccount":"YOUR ACCOUNT"
+    "youraccount":"YOUR ACCOUNT",
+    "apprenticeship":"Apprenticeship",
+    "onboardingtest":"Onboardingtest"
   },
 
   "footer":{
@@ -174,6 +176,7 @@
         "titleph":"Sir/Mm/Other",
         "header1": "Fill the fields to send us a query",
         "header2": "Fill the fields to register",
+        "header3": "Fill form to login",
         "firstname": "First Name",
         "firstnameph": "Your name",
         "lastname": "Last Name",
@@ -198,6 +201,7 @@
         "firstnameinvalidmsg":"Please enter first name",
         "lastnameinvalidmsg":"Please enter last name",
        "emailpatterninvalidmsg":"Please enter a correct email address",
+       "emailinvalidmsg":"Please enter a correct email address",       
        "confirmpasswordlinvalidmsg": "Please confirm password",
        "passwordlinvalidmsg": "Please enter password",
        "pswandconfpswdiff":"Password and confirmed password are different",

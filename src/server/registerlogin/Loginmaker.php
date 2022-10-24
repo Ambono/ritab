@@ -11,22 +11,11 @@ $myemail = mysqli_real_escape_string($conn, $data['email']);
 $upass = mysqli_real_escape_string($conn, $data['password']);
 $password = hash('sha256', $upass);
 
-//echo 'Email: ' . $myusername.' Password:  '.$password. '<br>';
+// echo 'Email: ' . $myemail.' Password:  '.$password. '<br>';
 
-$sql = "SELECT id FROM users WHERE email ='$myemail'  and u_password = '$password'";
+$sql = "SELECT id, usertype FROM users WHERE email ='$myemail'  AND u_password = '$password'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-       $data = $row[0] ;
-    //  echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-      echo "1";
-    }
-} else {
-    echo "0";
-}
 
 $count = mysqli_num_rows($result);
 
@@ -49,18 +38,36 @@ function getUserIP() {
 
 $user_ip = getUserIP();
 
-// If result matched $myusername and $mypassword, table row must be 1 row
+if ($count == 1) { 
+    $queryvisitors = "INSERT INTO sitevisits(visitor_session, created_at, usertype, ips) 
+    VALUES('$myemail', now(),'registered','$user_ip')";
+    $sessions_result = mysqli_query($conn, $queryvisitors);
 
-if ($count == 1) {  
-    $queryvisitors = "insert into sitevisits(visitor_session, created_at, usertype, ips) values('$myemail', now(),'registered','$user_ip')";
-    $result_sessions = mysqli_query($conn, $queryvisitors);
-    if (!$result_sessions) {
+    $queryloginmanager = "INSERT INTO loginmanager(visitor_session, loggedin_created_at, loginstatus, ips)
+    VALUES('$myemail', now(),'in','$user_ip')";
+   $login_result = mysqli_query($conn, $queryloginmanager);
+   
+    if (!$sessions_result) {
         die;
     } 
-    echo'1';  
+    
+    if (!$login_result) {
+        die;
+    } 
+
+
+    //echo "id: " . $row['id']. "<br>";
+    
+    if($row['usertype']=='A' )    
+    echo'1';
+    else if($row['usertype']=='T')
+    echo'2';
+    else
+    echo'3';
+  
 }
 else if ($count == 0){
-    $queryvisitors = "insert into sitevisits(visitor_session, created_at, usertype, ips) values('$myemail', now(),'visitor','$user_ip')";
+    $queryvisitors = "INSERT INTO sitevisits(visitor_session, created_at, usertype, ips) VALUES('$myemail', now(),'visitor','$user_ip')";
     $result_sessions = mysqli_query($conn, $queryvisitors);
     if (!$result_sessions) {
         die;

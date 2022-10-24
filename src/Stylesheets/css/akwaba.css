@@ -11,6 +11,11 @@
   .akwaba-content{ 
   width:100%;
   }
+  .akwaba-content-training{ 
+    width:100%;
+    height: 250px;
+    background-color: aqua;
+    }
   
   .akwaba-lang {
     padding: 10px 16px;    

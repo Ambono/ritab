@@ -30,6 +30,8 @@ import MyAdmin from "./clientapp/admin/MyAdminPage";
 import Trainings from "./clientapp/academy/Trainings/Trainings";
 import Apprenticeship from "./clientapp/academy/Apprenticeship/Apprenticeship";
 import Logout from "./clientapp/registerlogin/Logout";
+import Authservice from "./clientapp/Authentication/AuthService";
+import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests"; 
 
 class Main extends Component {
   render() {
@@ -64,8 +66,11 @@ class Main extends Component {
           <Route path="/softwaredevtrainings" component={SoftwareDevTrainings}/>
           <Route path="/messageadmin" component={MessageMyAdmin} />
           <Route path="/trainings" component={Trainings} /> 
-          <Route path="/apprenticeship" component={Apprenticeship} />            
-          <Route path="/logout" component={Logout} />          
+          <Route path="/apprenticeship" component={Apprenticeship} />
+          <Route path="/onboardingtests" component={Onboardingtests} />  
+                    
+          <Route path="/logout" component={Logout} /> 
+          <Route path="/authservice" component={Authservice} />                
         </HashRouter>
       </div>
     );

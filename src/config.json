@@ -15,6 +15,7 @@
      "REGISTERSIMPLE": "http://localhost/dev/marveltech/src/server/registerlogin/RegistrationMakerSimple.php",
      "REGISTER": "http://localhost/dev/marveltech/src/server/registerlogin/RegistrationMaker.php",
      "LOGIN": "http://localhost/dev/marveltech/src/server/registerlogin/LoginMaker.php",
+     "LOGINMANAGER":"http://localhost/dev/marveltech/src/server/registerlogin/LoginManager.php",
      "LOGOUT": "http://localhost/dev/marveltech/src/server/registerlogin/Logout.php"
       },
 
@@ -30,6 +31,7 @@
     "REGISTERSIMPLE": "RegistrationMakerSimple.php",
     "REGISTER": "RegistrationMaker.php",
     "LOGIN": "LoginMaker.php",
+    "LOGINMANAGER":"LoginManager.php",
     "LOGOUT": "Logout.php"
       },
 
@@ -40,8 +42,8 @@
   },
 
   "CREDENTIALS": {
-    "ADMIN_EMAIL": "admin-marveltech@gmail.com",
+    "ADMIN_EMAIL": "admin.marveltech@gmail.com",
     "CUSTOMER_EMAIL": "info@globalmarveltech.com",
-    "TRAINEE_EMAIL": "trainee-marveltech@gmail.com"
+    "TRAINEE_EMAIL": "trainee.marveltech@gmail.com"
   }
 }

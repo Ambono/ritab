@@ -15,10 +15,12 @@
     "academy": "ACADEMIE",
     "ouracademy": "NOTRE ACADEMIE",
     "register": "ENROLLER",
-    "businesstrainings":"Formation en business",
-    "softwaredevtrainings":"Formation en development de logiciel",
+    "businesstrainings":"Business",
+    "softwaredevtrainings":"Informatique",
     "account":"COMPTE",
-    "youraccount":"VOTRE COMPTE"
+    "youraccount":"VOTRE COMPTE",
+    "apprenticeship":"Apprentissage",
+    "onboardingtest":"Tests de selection"
   },
 
   "footer": {
@@ -175,6 +177,7 @@
         "titleph":"Mr./Mme/Autre",
         "header1": "Renseignez les champs pour nous envoyer une requete",
         "header2": "Renseignez les champs pour creer un compte",
+        "header3": "Renseigner le formulaire pour login",
         "firstname": "Prenom",
         "firstnameph": "Votre prenom",
         "lastname": "Nom",
@@ -199,6 +202,7 @@
         "firstnameinvalidmsg":"Renseigner votre prenom",
         "lastnameinvalidmsg":"Renseigner votre nom",
        "emailpatterninvalidmsg":"L'address email n'est pas dans le correct format",
+       "emailinvalidmsg":"Please enter a correct email address", 
         "confirmpasswordlinvalidmsg": "Confirmer votre mot de passe",
         "passwordlinvalidmsg": "Renseigner votre mot de passe",
         "pswandconfpswdiff":"mot de passe et confirmation de mot de passe sont differents",
