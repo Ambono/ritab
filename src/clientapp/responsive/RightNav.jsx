@@ -1,10 +1,12 @@
-import React from 'react';
+import {React, useState} from 'react';
 import styled from 'styled-components';
 import {NavLink, HashRouter } from "react-router-dom";
 import { useTranslation  } from "react-i18next";
 import { Row, Col } from 'react-bootstrap';
-import { DropdownMenu, MenuItem } from 'react-bootstrap-dropdown-menu';
 import Dropdown from 'react-bootstrap/Dropdown';
+import LoginStatus from '../Authentication/LoginStatus';
+import Authservice2 from '../Authentication/AuthService2';
+import Authservice from '../Authentication/AuthService';
 
 const Ul = styled.ul`
   list-style: none;
@@ -32,12 +34,16 @@ const Ul = styled.ul`
 
 // https://react-bootstrap.github.io/components/dropdowns/
 
-function RightNav ({ open } )  {
-    const { t } = useTranslation()
-  return (
-    <div>
+function RightNav ({open } )  {
+    const { t } = useTranslation();
+    const apprenticelink =  Authservice2().loginStatus === 'out' ? '/login':'/apprenticeship';
+    const traininglink =  Authservice2().loginStatus === 'out' ? '/login':'/trainings';
+    const account = Authservice2().loginStatus === 'out' ? <span>{t("navbar.login")}</span>:<p id='signedin'>SIGNED IN</p>;
+    return (
+    <div>      
       <Row>      
        <Col md={{ span: 12, offset: 0 }}>
+       <LoginStatus/>
         <Ul open={open} id="menu"> 
         <HashRouter>
           <p></p>
@@ -92,13 +98,13 @@ function RightNav ({ open } )  {
                           {t("navbar.academy")}
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
-                            <Dropdown.Item href="#"><NavLink to="/apprenticeship">
+                            <Dropdown.Item href="#"><NavLink to={apprenticelink}>
                             <span className="header-akwaba-rightnavbar-navlinks">
                             {t("pages.marveltechgroup.group.text.apprenticeship")}</span></NavLink>
                             </Dropdown.Item>
                          
                            <Dropdown.Item href="#">
-                            <NavLink to="/trainings">
+                            <NavLink to={traininglink}>
                             <span className="header-akwaba-rightnavbar-navlinks">
                               {t("pages.marveltechgroup.group.text.trainings")}</span></NavLink>
                             </Dropdown.Item>
@@ -118,7 +124,7 @@ function RightNav ({ open } )  {
                                 </Dropdown.Item>
                             <Dropdown.Item href="#"><NavLink to="/login">
                               <span className ="header-akwaba-rightnavbar-navlinks">
-                                {t("navbar.login")}</span></NavLink>            
+                                {/* {t("navbar.login")} */}{account}</span></NavLink>            
                                  </Dropdown.Item>
                             <Dropdown.Item href="#"><NavLink to="/logout">
                               <span className ="header-akwaba-rightnavbar-navlinks">
@@ -130,7 +136,7 @@ function RightNav ({ open } )  {
                                     {t("navbar.youraccount")}</span></NavLink>            
                                 </Dropdown.Item>
                           </Dropdown.Menu>
-                          </Dropdown>
+                          </Dropdown>                         
                     </li>                    
                     <li>                   
                     <Dropdown>
@@ -155,5 +161,4 @@ function RightNav ({ open } )  {
   </div>
   )
 }
-  
 export default (RightNav);

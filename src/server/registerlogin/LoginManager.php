@@ -26,13 +26,13 @@ function getUserIP() {
 $user_ip = getUserIP();
 
 $sql = "SELECT ips,loggedin_created_at, loginstatus FROM loginmanager WHERE ips ='$user_ip' 
-        AND DATE(loggedin_created_at) = CURDATE()";
+        AND DATE(loggedin_created_at) = CURDATE() LIMIT 1";
 $result = mysqli_query($conn, $sql);
 
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 $countip = mysqli_num_rows($result);
-
+//echo 'countip: '.$countip;
     if ($countip != 0) {     
         echo $row['loginstatus'];   
     }

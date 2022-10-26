@@ -23,6 +23,12 @@
     "onboardingtest":"Tests de selection"
   },
 
+  "admin":{
+    "messageadmin":"MESSAGES",
+    "trainings":"FORMATIONS",
+    "usefulllinks":"LIENS UTILS"
+  },
+
   "footer": {
     "ask": "RENSEIGNEMENTS",
     "join": "ETRE-AVEC-NOUS",

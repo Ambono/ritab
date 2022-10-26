@@ -31,6 +31,7 @@ import Trainings from "./clientapp/academy/Trainings/Trainings";
 import Apprenticeship from "./clientapp/academy/Apprenticeship/Apprenticeship";
 import Logout from "./clientapp/registerlogin/Logout";
 import Authservice from "./clientapp/Authentication/AuthService";
+import Authservice2 from "./clientapp/Authentication/AuthService2";
 import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests"; 
 
 class Main extends Component {
@@ -67,10 +68,10 @@ class Main extends Component {
           <Route path="/messageadmin" component={MessageMyAdmin} />
           <Route path="/trainings" component={Trainings} /> 
           <Route path="/apprenticeship" component={Apprenticeship} />
-          <Route path="/onboardingtests" component={Onboardingtests} />  
-                    
+          <Route path="/onboardingtests" component={Onboardingtests} />                     
           <Route path="/logout" component={Logout} /> 
-          <Route path="/authservice" component={Authservice} />                
+          <Route path="/authservice" component={Authservice} />
+          <Route path="/authservice2" component={Authservice2} />                        
         </HashRouter>
       </div>
     );

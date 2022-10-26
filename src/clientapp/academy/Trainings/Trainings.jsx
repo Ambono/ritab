@@ -4,16 +4,17 @@ import { withTranslation  } from "react-i18next";
 import { Redirect } from "react-router";
 import Authservice from "../../Authentication/AuthService";
 import { Row, Col } from "react-bootstrap";
+
 class Trainings extends Component { 
   constructor(props){
     super(props);
     this.state = {
-      logginstatus: this.props.logginstatus
+      loginstatus: this.props.loginstatus
     }
 }
 
   render() {
-  const userIsLoggedIn = this.props.logginstatus=='in'? true:false;
+  const userIsLoggedIn = this.props.loginstatus=='in'? true:false;
     console.log('loggin status: ', userIsLoggedIn)
     const { t } = this.props;
     // return userIsLoggedIn ? (  
@@ -106,7 +107,8 @@ class Trainings extends Component {
       {/* </div>): (      
       <Redirect to={{ pathname: "/login" }} />
     ); */}
-    </div>)
+    </div>
+    )
   }
 }
  

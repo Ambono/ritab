@@ -22,7 +22,11 @@
     "apprenticeship":"Apprenticeship",
     "onboardingtest":"Onboardingtest"
   },
-
+    "admin":{
+      "messageadmin":"MESSAGES",
+      "trainings":"TRAININGS",
+      "usefulllinks":"USEFUL LINKS"
+    },
   "footer":{
     "ask":"ASK US",
     "join":"JOIN US",

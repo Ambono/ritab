@@ -3,13 +3,15 @@ import GetApis from '../pages/GetApis';
 import axios from "axios";
 import { React, Component, useEffect} from "react";
 import Trainings from '../academy/Trainings/Trainings';
+import LoginStatus from '../Authentication/LoginStatus';
+import RightNav from '../responsive/RightNav';
 
 class Authservice extends Component { 
   constructor(props){
     super(props);
     this.state = {
       isLoggedIn: false,
-      logginstatus:''
+      loginstatus:''
     }
 }
  
@@ -47,11 +49,12 @@ class Authservice extends Component {
        }
 
      render() {
-      const logginstat = this.state.isLoggedIn == true? 'in': 'out';
-      console.log('loginstat render: ', logginstat);
+      const loginstat = this.state.isLoggedIn === true? 'in': 'out';
+      console.log('loginstat render authservice: ', loginstat);
           return(
             <div>
-              <Trainings logginstatus = {logginstat}></Trainings>
+              <Trainings loginstatus = {loginstat}></Trainings>
+              <LoginStatus loginstatus = {loginstat}></LoginStatus>            
             </div>  
           ) 
           }
