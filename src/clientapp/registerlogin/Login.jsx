@@ -63,6 +63,9 @@ class Login extends Component {
     this.setState({ errors, [name]: value });
   };
 
+  register = () => {
+      this.props.history.push('/registersimple');
+  }
   execute = (event) => {
     event.preventDefault();
     if (validateForm(this.state.errors) && this.validate()) {
@@ -77,6 +80,7 @@ class Login extends Component {
   };
 
   getApiPath = () => {   
+   // return "http://globalmarveltech.com/Loginmaker.php";// GetApis().LOGIN;
     return GetApis().LOGIN;
   };
 
@@ -165,8 +169,16 @@ class Login extends Component {
               type="submit"
               onClick={(e) => this.execute(e)}
               value={t("pages.contact.text.submit")}
+            />      
+
+            <br />
+            <div>{t("pages.contact.text.notregisteredyet")}</div>
+            <input
+              type="submit"
+              onClick={(e) => this.register()}
+              value={t("pages.contact.text.register")}
             />
-            <div>{/* <div>Thank you, submitted</div>               */}</div>
+
           </form>
         </div>
       </div>

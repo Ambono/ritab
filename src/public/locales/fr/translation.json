@@ -15,7 +15,7 @@
     "partnersrvice": "SERVICE DES PARTENAIRES ",
     "academy": "ACADEMIE",
     "ouracademy": "NOTRE ACADEMIE",
-    "register": "ENROLLER",
+    "register": "SOUSCRIRE",
     "businesstrainings":"Business",
     "softwaredevtrainings":"Informatique",
     "account":"COMPTE",
@@ -37,7 +37,7 @@
     "follow": "SUIVEZ NOUS",
     "disclaimer": "CLAUSE DE NON RESPONSABILITE",
     "help": "ASSISTANCE",
-    "poweredby":"@globalmarveltech.com.com 2022"
+    "poweredby":"@globalmarveltech.com.com 2022  Email us: info@globalmarveltech.com"
   },
   "messages": {
     "welcome": "MarvelTech Universal, technologie de pointe a votre service."
@@ -178,6 +178,14 @@
         "registermessage": "Vous n'avez pas encore un compte, veuiller vous inscrire svp."
       }
     },
+    "categories":{
+      "default":"Selectionez",
+      "trainee":"Stagiaire",
+      "employee":"Employe",
+      "partner":"Partenaire",
+      "customer":"Client",
+      "other":"Autre"
+    },
     "contact": {
       "text": {
         "title":"Genre",
@@ -193,6 +201,9 @@
         "emailph": "Votre email",
         "phone": "Telephone mobile",
         "phoneph": "Votre telephone mobile",
+        "usertypedefault":"Je suis",
+        "usertype":"Categorie",       
+        "usertypeererrormsg":"Selectionnez s'il vous plait",
         "password":"Mot de passe",
         "passwordph":"Votre mot de passe",
         "confirmpassword":"Confirmer mot de passe",
@@ -207,13 +218,17 @@
         "footer": "",
         "phoneinvalidmsg":"Renseigner votre numero de telephone",
         "firstnameinvalidmsg":"Renseigner votre prenom",
+        "usertypeinvalidmsg":"Selectionnez votre unite svp",   
         "lastnameinvalidmsg":"Renseigner votre nom",
        "emailpatterninvalidmsg":"L'address email n'est pas dans le correct format",
        "emailinvalidmsg":"Please enter a correct email address", 
         "confirmpasswordlinvalidmsg": "Confirmer votre mot de passe",
         "passwordlinvalidmsg": "Renseigner votre mot de passe",
         "pswandconfpswdiff":"mot de passe et confirmation de mot de passe sont differents",
-        "msginvalidform":"Les donnees sur la forme sont invalides"
+        "msginvalidform":"Les donnees sur la forme sont invalides",
+        "notregisteredyet":"Pas encore souscrit? souscrire maintenant",
+        "register":"Souscrire"
+
       }
     },
     "desserts": {

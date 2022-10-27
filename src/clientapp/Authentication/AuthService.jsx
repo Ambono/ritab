@@ -14,16 +14,7 @@ class Authservice extends Component {
       loginstatus:''
     }
 }
- 
-    // const {isLoggedIn} = this.state.isLoggedIn;
-      // const [isLoggedIn, setLoggedIn] = useState('');
-
-      // componentDidMount(){
-      //   GetUrlForApis() ;
-      // }
-  //useEffect =()=>{this.GetUrlForApis() };
-
- // GetUrlForApis = () => {  
+  
   componentDidMount(){
         const API_PATH = GetApis().LOGINMANAGER;
         const loginstatus = this.state.isLoggedIn;

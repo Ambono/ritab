@@ -35,7 +35,7 @@
     "follow":"FOLLOW US",
     "disclaimer": "DISCLAIMER",
     "help": "HELP",
-    "poweredby":"@globalmarveltech.com 2022"
+    "poweredby":"@globalmarveltech.com 2022  Email us: info@globalmarveltech.com"
   },
 
   "messages": {
@@ -175,6 +175,16 @@
         "registermessage": "Not registered yet, Register Now"
       }
     },
+
+    "categories":{
+      "default":"Select",
+      "trainee":"Trainee",
+      "employee":"Employee",
+      "partner":"Partner",
+      "customer":"Customer",
+      "other":"Other"
+    },
+    
     "contact": {
       "text": {
         "title":"Title",
@@ -190,6 +200,8 @@
         "emailph": "Your email",
         "phone": "Mobile phone",
         "phoneph": "Your mobile phone",
+        "usertypedefault":"I am",
+        "usertype":"Category",
         "password":"Password",
         "passwordph":"Your password",
         "confirmpassword":"Confirm password",
@@ -206,11 +218,14 @@
         "firstnameinvalidmsg":"Please enter first name",
         "lastnameinvalidmsg":"Please enter last name",
        "emailpatterninvalidmsg":"Please enter a correct email address",
-       "emailinvalidmsg":"Please enter a correct email address",       
+       "emailinvalidmsg":"Please enter a correct email address",
+       "usertypeinvalidmsg":"Please select user type",       
        "confirmpasswordlinvalidmsg": "Please confirm password",
        "passwordlinvalidmsg": "Please enter password",
        "pswandconfpswdiff":"Password and confirmed password are different",
-       "msginvalidform":"Data on the form is invalid"
+       "msginvalidform":"Data on the form is invalid",
+       "notregisteredyet":"Not registered yet? register now",
+       "register":"Register"
       }
     },
     "desserts": {

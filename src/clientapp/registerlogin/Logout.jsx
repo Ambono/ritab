@@ -18,6 +18,7 @@ class Logout extends Component {
   };
 
   getApiPath = () => {   
+    //return "https://globalmarveltech.com/Logout.php";//GetApis().LOGOUT;
     return GetApis().LOGOUT;
   };
 

@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { React,useState} from "react";
 import axios from "axios";
 import GetApis from '../pages/GetApis';
+import Select from 'react-select';
+
 
 const RegisterSimple = () => {
   const [fname, setFirstName] = useState('');
@@ -12,27 +14,30 @@ const RegisterSimple = () => {
   const [email, setEmail] = useState('');
   const [phonenumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmpassword, setConfirmPassword] = useState(''); 
+  const [confirmpassword, setConfirmPassword] = useState('');
+  const [usertype, setUserType] = useState('');  
   const [messageSent, setMessageSent] = useState('');
   const [clickedButtonButNotPosted, setClickedButtonButNotPosted] = useState('');
   const [clickedNotPostedMessage, setClickedNotPostedMessage] = useState('');
   const [fnameerrormsg, setFirstNameerrormsg] = useState('');
-  const [lnameerrormsg, setLastNameerrormsg] = useState('');  
+  const [lnameerrormsg, setLastNameerrormsg] = useState('');
+  const [usertypeerrormsg, setUserTypeerrormsg] = useState('');    
   const [emailerrormsg, setEmailerrormsg] = useState('');
   const [phonenumbererrormsg, setPhoneNumbererrormsg] = useState('');
   const [passworderrormsg, setPassworderrormsg] = useState('');
   const [confirmpassworderrormsg, setConfirmPassworderrormsg] = useState('');
   const [pswandconfpswdiff, setConfPswandpswdiff] = useState('');
    
-  const { t } = useTranslation();  
+  const { t } = useTranslation();
 
   const handleSubmit = event => {
     console.log('handleSubmit ran');
-    event.preventDefault(); // 👈️ prevent page refresh
-   const body ={fname, lname, email, phonenumber, password, confirmpassword}; 
-    
+   // event.preventDefault(); // 👈️ prevent page refresh
+   const body ={fname, lname, email, phonenumber, usertype,  password, confirmpassword}; 
+
    setClickedButtonButNotPosted(<p>{t("pages.contact.text.msginvalidform")} </p>);
      if (validate()) {
+      //const API_PATH = "https://globalmarveltech.com/RegistrationMakerSimple.php"; 
       const API_PATH = GetApis().REGISTERSIMPLE; 
       console.log('pi path: ', API_PATH )
       axios({
@@ -47,7 +52,9 @@ const RegisterSimple = () => {
             setEmail('');
             setPhoneNumber('');
             setPassword('');
-            setConfirmPassword('');                
+            setConfirmPassword('');
+            setUserType('');            
+            setUserTypeerrormsg('');                
             setPassworderrormsg('');
             setConfirmPassworderrormsg('');                
             setEmailerrormsg('');
@@ -93,6 +100,11 @@ const RegisterSimple = () => {
       setEmailerrormsg(<p>{t("pages.contact.text.emailinvalidmsg")}</p>);
     }
 
+    if (!usertype) {
+      isValid = false;
+      setUserTypeerrormsg(<p>{t("pages.contact.text.usertypeinvalidmsg")}</p>);
+    }
+
     if (!password) {
       isValid = false;
       setPassworderrormsg(<p>{t("pages.contact.text.passwordlinvalidmsg")}</p>);
@@ -126,7 +138,19 @@ const RegisterSimple = () => {
     <div  className="content-akwaba">
       <form action="#">
         <div><p>{t("pages.contact.text.header2")}</p></div>
-     
+        <div className="form-group"> 
+             <label>{t("pages.contact.text.usertype")}</label> 
+             <select name= "user_type" id="user_type" value={usertype}  onChange={event => setUserType(event.target.value)} >
+                <option value="">{t("pages.categories.default")}</option>
+                <option value="T">{t("pages.categories.trainee")}</option>
+                <option value="A">{t("pages.categories.employee")}</option>
+                <option value="P">{t("pages.categories.partner")}</option>
+                <option value="C">{t("pages.categories.customer")}</option>
+                <option value="O">{t("pages.categories.other")}</option>
+              </select>
+          <div className="text-danger">{usertypeerrormsg}</div>
+     </div>
+
         <div className="form-group">
         <label>{t("pages.contact.text.firstname")} </label>
         <input
@@ -167,20 +191,20 @@ const RegisterSimple = () => {
       </div>
 
       <div className="form-group">
-              <label>{t("pages.contact.text.phone")}</label>
+        <label>{t("pages.contact.text.phone")}</label>
          <input
-          id="phone number"
-          name="phone number"
+          id="phone_number"
+          name="phone_number"
           type="text"
           onChange={event => setPhoneNumber(event.target.value)}
           placeholder={t("pages.contact.text.phoneph")}
           value={phonenumber}
         />
           <div className="text-danger">{phonenumbererrormsg}</div>
-     </div>
+     </div>   
 
             <div className="form-group">
-              <label>{t("pages.contact.text.password")}:</label>
+              <label>{t("pages.contact.text.password")}</label>
                <input
                  type="password"
                  name="password"

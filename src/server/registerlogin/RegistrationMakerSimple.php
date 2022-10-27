@@ -16,7 +16,8 @@ print_r("<br> start printing data: ". $data.'<br>');
  $usurname = mysqli_real_escape_string($conn, $data['lname']);
  $email = mysqli_real_escape_string($conn, $data['email']);
  $upass = mysqli_real_escape_string($conn, $data['password']);
- $teleph = mysqli_real_escape_string($conn, $data['phonenumber']); 
+ $teleph = mysqli_real_escape_string($conn, $data['phonenumber']);
+ $usertype = mysqli_real_escape_string($conn, $data['usertype']);  
  // password encrypt using SHA256();
  $password = hash('sha256', $upass);
  
@@ -28,9 +29,9 @@ print_r("<br> start printing data: ". $data.'<br>');
  
  if ($count==0) {
      
-  $query = "INSERT INTO users(us_name, first_name, last_name, u_password, email, phone_number, created_at, country, city, occupation, secret_question, secret_answer) "
+  $query = "INSERT INTO users(us_name, first_name, last_name, u_password, email, phone_number, created_at, country, city, occupation, secret_question, secret_answer, usertype) "
           . "VALUES('','$fname', '$usurname', '$password','$email', '$teleph', Now(), '',"
-          . "'', '', '', '')";
+          . "'', '', '', '', '$usertype')";
   $res = mysqli_query($conn, $query);
   
   if ($res) {
