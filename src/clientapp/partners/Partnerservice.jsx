@@ -2,10 +2,10 @@ import React from "react";
 import {NavLink, HashRouter } from "react-router-dom";
 import { useTranslation  } from "react-i18next";
 import { Row, Col } from "react-bootstrap";
-import Authservice2 from '../../Authentication/AuthService2';
-import LoginStatus from '../../Authentication/LoginStatus';
+import Authservice2 from '../Authentication/AuthService2';
+import LoginStatus from '../Authentication/LoginStatus';
  
-  function Apprenticeship(){
+  function Partnerservice(){
   const loggedin =  Authservice2().loginStatus === 'in' ? true : false;
  
   const { t } = useTranslation();
@@ -23,7 +23,7 @@ import LoginStatus from '../../Authentication/LoginStatus';
       <Row>
         <HashRouter>
         <Col md={{ span: 3, offset: 1 }}>
-         <p>This apprenticeship</p>
+           <p>Partners</p>
           </Col>
          
         </HashRouter>
@@ -40,4 +40,4 @@ import LoginStatus from '../../Authentication/LoginStatus';
    </div>
   ); 
   }
-export default (Apprenticeship);
+export default (Partnerservice);

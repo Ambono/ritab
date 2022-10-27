@@ -71,8 +71,10 @@ if ($count == 1) {
     echo'1';
     else if($row['usertype']=='T')
     echo'2';
-    else
+    else if($row['usertype']=='T')
     echo'3';
+    else
+    echo'4';
   
 } //end count >0
 else if ($count == 0){

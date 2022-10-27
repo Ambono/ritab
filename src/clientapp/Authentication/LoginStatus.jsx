@@ -11,12 +11,12 @@ class LoginStatus extends Component {
   
     render() {
     const userIsLoggedIn = this.props.loginstatus==='in'? true:false;
-      console.log('loggin status: ', userIsLoggedIn)
+      console.log('loggin status loginstatus : ', userIsLoggedIn)
       const { t } = this.props;
 
         return (
             <div> 
-               <p> {userIsLoggedIn === true? 'Signed in' : ''}</p>
+               { this.props.loginstatus}
              </div>
           )}
         }

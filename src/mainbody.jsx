@@ -33,6 +33,7 @@ import Logout from "./clientapp/registerlogin/Logout";
 import Authservice from "./clientapp/Authentication/AuthService";
 import Authservice2 from "./clientapp/Authentication/AuthService2";
 import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests"; 
+import Partnerservice from "./clientapp/partners/Partnerservice";
 
 class Main extends Component {
   render() {
@@ -66,12 +67,14 @@ class Main extends Component {
           <Route path="/businesstrainings" component={BusinessTrainings} />
           <Route path="/softwaredevtrainings" component={SoftwareDevTrainings}/>
           <Route path="/messageadmin" component={MessageMyAdmin} />
-          <Route path="/trainings" component={Trainings} /> 
+          <Route path="/trainings" component={Trainings} />         
           <Route path="/apprenticeship" component={Apprenticeship} />
-          <Route path="/onboardingtests" component={Onboardingtests} />                     
+          <Route path="/onboardingtests" component={Onboardingtests} />
+          <Route path="/partnerservice" component={Partnerservice} />                               
           <Route path="/logout" component={Logout} /> 
           <Route path="/authservice" component={Authservice} />
-          <Route path="/authservice2" component={Authservice2} />                        
+          <Route path="/authservice2" component={Authservice2} /> 
+          <Route />                       
         </HashRouter>
       </div>
     );

@@ -1,14 +1,31 @@
-import React, { Component } from "react";
-import { NavLink, HashRouter } from "react-router-dom";
-import { withTranslation } from "react-i18next";
+
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
-
-class BusinessTrainings extends Component {
-  render() {
-    const { t } = this.props;
-    return (
-      <div className="content-akwaba">
+import React from "react";
+import {NavLink, HashRouter } from "react-router-dom";
+import { useTranslation  } from "react-i18next";
+import { Row, Col } from "react-bootstrap";
+import Authservice2 from '../../Authentication/AuthService2';
+import LoginStatus from '../../Authentication/LoginStatus';
+ 
+  function BusinessTrainings(){
+  const loggedin =  Authservice2().loginStatus === 'in' ? true : false;
+ 
+  const { t } = useTranslation();
+   return ( 
+    <div> 
+     {loggedin && 
+    <div className="akwaba-content-training"> 
+       <Row>
+        <LoginStatus/>
+        <Col md={{ span: 2, offset: 4 }}>
+          {" "}             
+          <p></p>
+        </Col>
+      </Row>
+      <Row>
+        <HashRouter>
+        <Col md={{ span: 3, offset: 1 }}>
         <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -44,9 +61,20 @@ class BusinessTrainings extends Component {
             </Accordion.Collapse>
           </Card>
         </Accordion>
-      </div>
-    );
-  }
-}
+          </Col>
+         
+        </HashRouter>
+      </Row> 
 
-export default withTranslation()(BusinessTrainings);
+      <Row>
+        <Col md={{ span: 2, offset: 4 }}>
+          {" "}             
+          <p></p>
+        </Col>
+      </Row> 
+   </div>
+  }
+   </div>
+  ); 
+  }
+export default (BusinessTrainings);

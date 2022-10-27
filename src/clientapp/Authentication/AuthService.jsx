@@ -49,7 +49,7 @@ class Authservice extends Component {
        }
 
      render() {
-      const loginstat = this.state.isLoggedIn === true? 'in': 'out';
+      const loginstat = this.state.isLoggedIn;
       console.log('loginstat render authservice: ', loginstat);
           return(
             <div>

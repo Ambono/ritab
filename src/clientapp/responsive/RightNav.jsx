@@ -43,7 +43,7 @@ function RightNav ({open } )  {
     <div>      
       <Row>      
        <Col md={{ span: 12, offset: 0 }}>
-       <LoginStatus/>
+       {/* <LoginStatus/> */}
         <Ul open={open} id="menu"> 
         <HashRouter>
           <p></p>
@@ -88,6 +88,10 @@ function RightNav ({open } )  {
                            <Dropdown.Item href="#"> <NavLink to="/marveltechpartners">
                             <span className ="header-akwaba-rightnavbar-navlinks">
                               {t("navbar.ourpartners")}</span></NavLink> 
+                         </Dropdown.Item>
+                         <Dropdown.Item href="#"> <NavLink to="/partnerservice">
+                            <span className ="header-akwaba-rightnavbar-navlinks">
+                              {t("navbar.partnersrvice")}</span></NavLink> 
                          </Dropdown.Item>
                           </Dropdown.Menu>
                       </Dropdown> 

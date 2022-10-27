@@ -27,6 +27,7 @@ class Login extends Component {
       isLoggedInAsAdmin: false,
       isLoggedInAsTrainee: false,
       isLoggedInAsCustomer: false,
+      isLoggedInAsPartner: false,
       mailSent: false,
       error: null,
       errors: { password: "", email: "" },
@@ -93,14 +94,16 @@ class Login extends Component {
           // console.log('login data: ', result.data)
           if (result.data===1) {
             this.setState({ isLoggedInAsAdmin: true });
-          } else if (result.data===2) {
+          } else if (result.data===2){
             this.setState({ isLoggedInAsTrainee: true });
+          } else if (result.data===3) {
+            this.setState({ isLoggedInAsPartner: true });
           } 
           else{
             this.setState({ isLoggedInAsCustomer: true });
           }
           this.setState({ email:'' });
-          this.setState({ password:'' });
+          this.setState({ password:'' });        
         }
         else{
           return;
@@ -118,7 +121,10 @@ class Login extends Component {
       return <Redirect to={{ pathname: "/adminpage" }} />;
     }else if (this.state.isLoggedInAsTrainee) {
       return <Redirect to={{ pathname: "/trainings" }} />;
-    } 
+    }
+   else if (this.state.isLoggedInAsPartner) {
+    return <Redirect to={{ pathname: "/partnerservice" }} />;
+  }  
     else if (this.state.isLoggedInAsCustomer) {
       return <Redirect to={{ pathname: "/home" }} />;
     }
