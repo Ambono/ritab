@@ -46,8 +46,8 @@
 
   "ENVIRONMENT": {
     "DEV": false,
-    "LIVE": false,
-    "MANUAL":true
+    "LIVE": true,
+    "MANUAL":false
   },
 
   "CREDENTIALS": {

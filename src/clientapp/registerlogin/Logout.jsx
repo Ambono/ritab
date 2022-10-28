@@ -19,8 +19,8 @@ class Logout extends Component {
   };
 
   getApiPath = () => {   
-   //return  CONFIG.DIRECT_LIVE.LOGOUT;
-    return GetApis().LOGOUT;
+   return  CONFIG.DIRECT_LIVE.LOGOUT;
+  //  return GetApis().LOGOUT;
   };
 
   

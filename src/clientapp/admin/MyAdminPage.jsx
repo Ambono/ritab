@@ -6,23 +6,11 @@ import { Row, Col } from "react-bootstrap";
 import Authservice2 from '../Authentication/AuthService2';
 import LoginStatus from '../Authentication/LoginStatus';
 
-// class MyAdmin extends Component { 
-//   constructor(props){
-//     super(props);
-//     this.state = { 
-//       loggedin : false     
-//     }
-// }
 
 function MyAdmin(){
 
-  const loggedin =  Authservice2().loginStatus === 'in' ? true : false;
-  // const usersMessages: [], 
-  const { t } = useTranslation();
-  //console.log('loged in 1: ', loggedin)
-  // render() { 
-  //   const { t } = this.props;
-  //   this.setState({loggedin : Authservice2().loginStatus === 'in' ? true : false });   
+  const loggedin =  Authservice2().loginStatus === 'in' ? true : false;  
+  const { t } = useTranslation(); 
       return (       
         <div>     
         {loggedin &&  
@@ -62,8 +50,7 @@ function MyAdmin(){
                     <div className="akwaba-tiles-navlinks">
                     {t("admin.usefulllinks")}                    
                     </div>
-                  </NavLink>
-                  {/* <MarveltechConsultingTile /> */}
+                  </NavLink>                 
                 </div>
               </Col> 
             </HashRouter>

@@ -81,8 +81,8 @@ class Login extends Component {
   };
 
   getApiPath = () => {   
-    return GetApis().LOGIN;
-    //return CONFIG.DIRECT_LIVE.LOGIN;
+    //return GetApis().LOGIN;
+    return CONFIG.DIRECT_LIVE.LOGIN;
   };
 
   handleFormSubmit = (e) => {

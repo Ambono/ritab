@@ -5,34 +5,34 @@ class MessageDataTable extends Component {
         return (          
             <tr>
                 <td>
-                    {this.props.obj.Id}
+                    {this.props.obj.id}
                 </td>
                 <td>
-                    {this.props.obj.DateContacted}
+                    {this.props.obj.created_at}
                 </td>
                 <td>
-                    {this.props.obj.Title}
+                    {this.props.obj.title}
                 </td>
                 <td>
-                    {this.props.obj.FirstName}
+                    {this.props.obj.firstName}
                 </td>
                 <td>
-                    {this.props.obj.LastName}
+                    {this.props.obj.lastName}
                 </td>
                 <td>
-                    {this.props.obj.Email}
+                    {this.props.obj.email}
                 </td>
                 <td>
-                    {this.props.obj.Phone}
+                    {this.props.obj.phoneNumber}
                 </td>
                 <td>
-                    {this.props.obj.Message}
+                    {this.props.obj.yourmessage}
                 </td>
                 <td>
-                    {this.props.obj.Response}
+                    {this.props.obj.response}
                 </td>
                 <td>
-                    {this.props.obj.Status}
+                    {this.props.obj.readstatus}
                 </td>
             </tr>
         );
