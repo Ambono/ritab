@@ -1,6 +1,7 @@
 <?php
 
-include_once('../config/config.php');
+//include_once('../config/config.php');
+include_once('./config.php');
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -44,7 +45,7 @@ $user_ip = getUserIP();
 
 if ($count == 1) { 
 
-    //clean up
+    //clean up and delete previous logins
     $Delete_login = "DELETE FROM loginmanager WHERE ips = '$user_ip' AND visitor_session = '$myemail'  OR visitor_session = '' ";
     $deletelogin = mysqli_query($conn, $Delete_login );    
   
@@ -67,14 +68,32 @@ if ($count == 1) {
 
     //echo "id: " . $row['id']. "<br>";
     
-    if($row['usertype']=='A' )    
-    echo'1';
+    if($row['usertype']=='A' ) 
+    {
+        echo'1';
+        $query_logoutmanagerupdate = "UPDATE loginmanager
+   SET loggedout_created_at = now(),  loginstatus = 'out'
+   WHERE   DATE(loggedIn_created_at) = SUBDATE(CURDATE(),1)";
+    $logout_result = mysqli_query($conn, $query_logoutmanagerupdate);
+    }   
     else if($row['usertype']=='T')
+    {
     echo'2';
-    else if($row['usertype']=='T')
+    }
+    else if($row['usertype']=='P')
+    {
     echo'3';
-    else
+    }
+    else if($row['usertype']=='C')
+    {
     echo'4';
+    }
+    else if($row['usertype']=='O') 
+    {
+    echo'5';
+    }
+    else
+    echo'6';
   
 } //end count >0
 else if ($count == 0){

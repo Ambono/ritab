@@ -17,15 +17,11 @@ import LoginStatus from '../../Authentication/LoginStatus';
      {loggedin && 
     <div className="akwaba-content-training"> 
        <Row>
-        <LoginStatus/>
-        <Col md={{ span: 2, offset: 4 }}>
-          {" "}             
-          <p></p>
-        </Col>
+        <LoginStatus/>        
       </Row>
       <Row>
         <HashRouter>
-        <Col md={{ span: 3, offset: 1 }}>
+        <Col md={{ span: 12, offset: 0 }}>
 
         <Accordion defaultActiveKey="0">
           <Card>
@@ -90,13 +86,6 @@ import LoginStatus from '../../Authentication/LoginStatus';
           </Col>
          
         </HashRouter>
-      </Row> 
-
-      <Row>
-        <Col md={{ span: 2, offset: 4 }}>
-          {" "}             
-          <p></p>
-        </Col>
       </Row> 
    </div>
   }

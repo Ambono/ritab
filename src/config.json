@@ -12,8 +12,7 @@
     "RETRIEVEMYMESSAGES": "http://localhost/dev/marveltech/src/server/messages/retrievecontactmessages.php",
      "TESTCONTACTUS":"http://localhost/dev/marveltech/src/server/messages/contactmessage_test.php",  
      "RETRIEVEBOOKINGS": "http://localhost/dev/marveltech/src/server/messages/RetrieveBooking.php",     
-     "REGISTERSIMPLE": "http://localhost/dev/marveltech/src/server/registerlogin/RegistrationMakerSimple.php",
-     "REGISTER": "http://localhost/dev/marveltech/src/server/registerlogin/RegistrationMaker.php",
+     "REGISTERSIMPLE": "http://localhost/dev/marveltech/src/server/registerlogin/RegistrationMakerSimple.php",     
      "LOGIN": "http://localhost/dev/marveltech/src/server/registerlogin/LoginMaker.php",
      "LOGINMANAGER":"http://localhost/dev/marveltech/src/server/registerlogin/LoginManager.php",
      "LOGOUT": "http://localhost/dev/marveltech/src/server/registerlogin/Logout.php"
@@ -29,10 +28,20 @@
     "BOOKINGS": "MakeBooking.php",
     "RETRIEVEBOOKINGS": "RetrieveBooking.php",    
     "REGISTERSIMPLE": "RegistrationMakerSimple.php",
-    "REGISTER": "RegistrationMaker.php",
     "LOGIN": "LoginMaker.php",
     "LOGINMANAGER":"LoginManager.php",
     "LOGOUT": "Logout.php"
+      },
+
+      "DIRECT_LIVE":{
+        "CONTACTUS": "https://globalmarveltech.com/Contactmessage.php",
+        "RETRIEVEMYMESSAGES": "https://globalmarveltech.com/Retrievecontactmessages.php",
+        "BOOKINGS": "https://globalmarveltech.com/MakeBooking.php",
+        "RETRIEVEBOOKINGS": "https://globalmarveltech.com/RetrieveBooking.php",    
+        "REGISTERSIMPLE": "https://globalmarveltech.com/RegistrationMakerSimple.php",        
+        "LOGIN": "https://globalmarveltech.com/LoginMaker.php",
+        "LOGINMANAGER":"https://globalmarveltech.com/LoginManager.php",
+        "LOGOUT": "https://globalmarveltech.com/Logout.php"
       },
 
   "ENVIRONMENT": {

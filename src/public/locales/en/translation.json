@@ -226,7 +226,12 @@
        "msginvalidform":"Data on the form is invalid",
        "notregisteredyet":"Not registered yet? register now",
        "register":"Register"
-      }
+      },
+      "sir":"Sir",
+       "madam":"Miss/Madam",
+       "unspecified":"Unspecified",
+       "other":"Other",
+       "default":"Your title" 
     },
     "desserts": {
       "text": {

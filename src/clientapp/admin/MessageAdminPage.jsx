@@ -1,41 +1,56 @@
 
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import DataTable from './MessageDataTable';
 import GetApis from '../../clientapp/pages/GetApis'
+import CONFIG from '../../config.json';
+import Authservice2 from '../Authentication/AuthService2';
+import LoginStatus from '../Authentication/LoginStatus';
 
-class MessageAdminPage extends Component {
+//class MessageAdminPage extends Component {
+  function MessageAdminPage(){
 
-  constructor(props) {
-    super(props);
-    this.state = { usersMessages: [] };
-}
+    const [usersMessages, setUsageMessage] = useState([]); 
+    const loggedin =  Authservice2().loginStatus === 'in' ? true : false;
+    console.log('loged in 1: ', loggedin);
+    const { t } = useTranslation();
+//   constructor(props) {
+//     super(props);
+//     this.state = { 
+//       usersMessages: [],      
+//       loggedin : false
+//      };
+// }
 
-componentDidMount() {
-    axios.get(this.getApiPath())
+useEffect(() => {
+  //this.setState({loggedin : Authservice2().loginStatus === 'in' ? true : false });  
+    axios.get(getApiPath())
         .then(res => {
-            this.setState({ usersMessages: res.data });           
+            setUsageMessage(res.data );                   
         })
         .catch(function (error) {
             console.log(error);
         })
-}
+})
 
-dataTable() {
-    return this.state.usersMessages.map((data, i) => {
+const dataTable = ()=> {
+    return usersMessages.map((data, i) => {
         return <DataTable obj={data} key={i} />;
     });
 }
 
-  getApiPath = () => {    
+ const  getApiPath = () => {    
     return GetApis().RETRIEVECONTACTUSMESSAGES;
+ // return CONFIG.DIRECT_LIVE.RETRIEVEMYMESSAGES;
   };
-
-  render() {
-    const { t } = this.props;
-    return (      
+ // console.log('loged in 2: ', loggedin)
+  // render() {
+  //   const { t } = this.props;
+    return (     
       <div>
+        <LoginStatus/>     
+     {loggedin &&  <div>
       <table className="table table-striped table-info">
                         <thead className="thead-info">
                             <tr>
@@ -52,12 +67,16 @@ dataTable() {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.dataTable()}
+                            {dataTable()}
                         </tbody>
                     </table>       
       </div>
+     }
+      </div>
     );
   }
-}
+//}
  
-export default withTranslation()(MessageAdminPage);
+
+export default (MessageAdminPage);
+//export default withTranslation()(MessageAdminPage);

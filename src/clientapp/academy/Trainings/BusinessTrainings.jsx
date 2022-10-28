@@ -18,14 +18,10 @@ import LoginStatus from '../../Authentication/LoginStatus';
     <div className="akwaba-content-training"> 
        <Row>
         <LoginStatus/>
-        <Col md={{ span: 2, offset: 4 }}>
-          {" "}             
-          <p></p>
-        </Col>
       </Row>
       <Row>
         <HashRouter>
-        <Col md={{ span: 3, offset: 1 }}>
+        <Col md={{ span: 12, offset: 0 }}>
         <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -64,13 +60,6 @@ import LoginStatus from '../../Authentication/LoginStatus';
           </Col>
          
         </HashRouter>
-      </Row> 
-
-      <Row>
-        <Col md={{ span: 2, offset: 4 }}>
-          {" "}             
-          <p></p>
-        </Col>
       </Row> 
    </div>
   }

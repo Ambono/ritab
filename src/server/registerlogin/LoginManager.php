@@ -1,6 +1,7 @@
 <?php
 
-include_once('../config/config.php');
+//include_once('../config/config.php');
+include_once('./config.php');
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -26,7 +27,7 @@ function getUserIP() {
 $user_ip = getUserIP();
 
 $sql = "SELECT ips,loggedin_created_at, loginstatus FROM loginmanager WHERE ips ='$user_ip' 
-        AND DATE(loggedin_created_at) = CURDATE() LIMIT 1";
+        AND DATE(loggedin_created_at) = CURDATE() ORDER BY loggedin_created_at DESC  LIMIT 1";
 $result = mysqli_query($conn, $sql);
 
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);

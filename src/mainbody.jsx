@@ -34,6 +34,7 @@ import Authservice from "./clientapp/Authentication/AuthService";
 import Authservice2 from "./clientapp/Authentication/AuthService2";
 import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests"; 
 import Partnerservice from "./clientapp/partners/Partnerservice";
+import UsefullLinks from "./clientapp/admin/UsefullLinks";
 
 class Main extends Component {
   render() {
@@ -70,6 +71,7 @@ class Main extends Component {
           <Route path="/trainings" component={Trainings} />         
           <Route path="/apprenticeship" component={Apprenticeship} />
           <Route path="/onboardingtests" component={Onboardingtests} />
+          <Route path="/usefulllinks" component={UsefullLinks} />          
           <Route path="/partnerservice" component={Partnerservice} />                               
           <Route path="/logout" component={Logout} /> 
           <Route path="/authservice" component={Authservice} />

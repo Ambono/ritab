@@ -1,5 +1,6 @@
 <?php 
-  include_once('../config/config.php');
+include_once('./config.php');
+  //include_once('../config/config.php');
   // Create connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -25,7 +26,7 @@ $user_ip = getUserIP();
 $query_deletesession_with_nul_email = "DELETE FROM   sitevisits WHERE visitor_session =''";
 $result = mysqli_query($conn, $query_deletesession_with_nul_email);
 
-$query_getvisitorsession = "SELECT  visitor_session FROM sitevisits WHERE DATE(created_at) = CURDATE() AND visitor_session IS NOT NULL  AND ips = '$user_ip' LIMIT 1";
+$query_getvisitorsession = "SELECT  visitor_session FROM sitevisits WHERE DATE(created_at) = CURDATE() AND visitor_session IS NOT NULL  AND ips = '$user_ip' ORDER BY created_at DESC LIMIT 1";
 $result = mysqli_query($conn, $query_getvisitorsession);
 
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -40,7 +41,7 @@ $count_session = mysqli_num_rows($result);
 
  $query_logoutmanagerupdate = "UPDATE loginmanager
    SET loggedout_created_at = now(),  loginstatus = 'out'
-   WHERE  ips = '$user_ip'  AND  visitor_session = '$visitor_session'";
+   WHERE  ips = '$user_ip'  AND  visitor_session = '$visitor_session' ORDER BY loggedin_created_at DESC LIMIT 1 ";
 
  $logout_result = mysqli_query($conn, $query_logoutmanagerupdate);
  

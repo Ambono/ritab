@@ -3,6 +3,7 @@ import axios from "axios";
 import { withTranslation } from "react-i18next";
 import { Redirect } from "react-router";
 import GetApis from '../pages/GetApis';
+import CONFIG from '../../config.json';
 
 class Logout extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Logout extends Component {
   };
 
   getApiPath = () => {   
-    //return "https://globalmarveltech.com/Logout.php";//GetApis().LOGOUT;
+   //return  CONFIG.DIRECT_LIVE.LOGOUT;
     return GetApis().LOGOUT;
   };
 

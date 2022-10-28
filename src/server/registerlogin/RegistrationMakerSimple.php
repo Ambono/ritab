@@ -1,5 +1,6 @@
 <?php 
-include_once('../config/config.php');
+//include_once('../config/config.php');
+include_once('./config.php');
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 $_SESSION['token_temp_user'] = session_id();

@@ -5,7 +5,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include_once("../config/config.php");
+//include_once("../config/config.php");
+include_once('./config.php');
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);

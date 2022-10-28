@@ -2,9 +2,9 @@
 import GetApis from '../pages/GetApis';
 import axios from "axios";
 import React, {useState} from 'react';
-
+import CONFIG from '../../config.json';
 function  Authservice2 ()  {  
-       // const API_PATH = "https://globalmarveltech.com/LoginManager.php"
+       //const API_PATH = CONFIG.DIRECT_LIVE.LOGINMANAGER;//"https://globalmarveltech.com/LoginManager.php"
         const API_PATH = GetApis().LOGINMANAGER;
          const [loginStatus, setLoginStatus] = useState(''); 
         

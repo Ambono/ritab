@@ -6,7 +6,7 @@ import { React,useState} from "react";
 import axios from "axios";
 import GetApis from '../pages/GetApis';
 import Select from 'react-select';
-
+import CONFIG from '../../config.json';
 
 const RegisterSimple = () => {
   const [fname, setFirstName] = useState('');
@@ -37,8 +37,8 @@ const RegisterSimple = () => {
 
    setClickedButtonButNotPosted(<p>{t("pages.contact.text.msginvalidform")} </p>);
      if (validate()) {
-      //const API_PATH = "https://globalmarveltech.com/RegistrationMakerSimple.php"; 
-      const API_PATH = GetApis().REGISTERSIMPLE; 
+      const API_PATH = CONFIG.DIRECT_LIVE.REGISTERSIMPLE;//"https://globalmarveltech.com/RegistrationMakerSimple.php"; 
+     // const API_PATH = GetApis().REGISTERSIMPLE; 
       console.log('pi path: ', API_PATH )
       axios({
         method: "post",

@@ -3,7 +3,7 @@ import axios from "axios";
 import { withTranslation } from "react-i18next";
 import { Redirect } from "react-router";
 import GetApis from '../pages/GetApis';
-
+import CONFIG from '../../config.json';
 
 const validEmailRegex = RegExp(
   /^(([^<>()\\[\]\\.,;:\s@\\"]+(\.[^<>()\\[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@(([^<>()[\]\\.,;:\s@\\"]+\.)+[^<>()[\]\\.,;:\s@\\"]{2,})$/i
@@ -27,7 +27,8 @@ class Login extends Component {
       isLoggedInAsAdmin: false,
       isLoggedInAsTrainee: false,
       isLoggedInAsCustomer: false,
-      isLoggedInAsPartner: false,
+      isLoggedInAsPartner: false,     
+      isLoggedInAsOther:false,
       mailSent: false,
       error: null,
       errors: { password: "", email: "" },
@@ -80,8 +81,8 @@ class Login extends Component {
   };
 
   getApiPath = () => {   
-   // return "http://globalmarveltech.com/Loginmaker.php";// GetApis().LOGIN;
     return GetApis().LOGIN;
+    //return CONFIG.DIRECT_LIVE.LOGIN;
   };
 
   handleFormSubmit = (e) => {
@@ -101,10 +102,12 @@ class Login extends Component {
           } else if (result.data===2){
             this.setState({ isLoggedInAsTrainee: true });
           } else if (result.data===3) {
-            this.setState({ isLoggedInAsPartner: true });
+            this.setState({ isLoggedInAsPartner: true });          
+          } else if (result.data===4) {
+          this.setState({ isLoggedInAsCustomer: true });
           } 
           else{
-            this.setState({ isLoggedInAsCustomer: true });
+            this.setState({ isLoggedInAsOther: true });
           }
           this.setState({ email:'' });
           this.setState({ password:'' });        
@@ -126,10 +129,10 @@ class Login extends Component {
     }else if (this.state.isLoggedInAsTrainee) {
       return <Redirect to={{ pathname: "/trainings" }} />;
     }
-   else if (this.state.isLoggedInAsPartner) {
+    else if (this.state.isLoggedInAsPartner) {
     return <Redirect to={{ pathname: "/partnerservice" }} />;
-  }  
-    else if (this.state.isLoggedInAsCustomer) {
+    }  
+    else if (this.state.isLoggedInAsCustomer || this.state.isLoggedInAsOther) {
       return <Redirect to={{ pathname: "/home" }} />;
     }
     return (

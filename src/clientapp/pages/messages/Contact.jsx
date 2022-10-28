@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { React,useState} from "react";
 import axios from "axios";
 import GetApis from '../GetApis';
+import Select from 'react-select';
+import CONFIG from '../../../config.json';
 
 const Contact = () => {
   const [fname, setFirstName] = useState('');
@@ -28,7 +30,8 @@ const Contact = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    return GetApis().CONTACTUS
+    //return GetApis().CONTACTUS;
+    return CONFIG.DIRECT_LIVE.CONTACTUS;
   };
 
   const handleSubmit = event => {
@@ -124,14 +127,13 @@ const Contact = () => {
         <div><p>{t("pages.contact.text.header1")}</p></div>
       <div className="form-group">
         <label>{t("pages.contact.text.title")} </label>
-         <input
-          id="title"
-          name="title"
-          type="text"
-          value={title}
-          onChange={event => setTitle(event.target.value)}
-          placeholder={t("pages.contact.text.titleph")}
-        />
+             <select name= "title" id="tile" value={title}  onChange={event => setTitle(event.target.value)} >
+                <option value="">{t("pages.contact.default")}</option>
+                <option value={t("pages.contact.sir")}>{t("pages.contact.sir")}</option>
+                <option value={t("pages.contact.madam")}>{t("pages.contact.madam")}</option>
+                <option value={t("pages.contact.unspecified")}>{t("pages.contact.unspecified")}</option>  
+                <option value={t("pages.contact.other")}>{t("pages.contact.other")}</option>                
+              </select>
           <div className="text-danger">{titleerrormsg}</div>
         </div>
 

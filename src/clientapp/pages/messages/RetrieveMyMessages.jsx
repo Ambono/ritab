@@ -2,6 +2,7 @@ import React, { Component, useEffect, useState } from "react";
 import axios from "axios";
 import MessagesDisplay from './MessagesDisplay';
 import GetApis from '../GetApis';
+import CONFIG from '../../../config.json';
 
 export default function RetrieveMyMessages() {
  const [myMessages, getMyMessages] = useState('');
@@ -12,7 +13,8 @@ export default function RetrieveMyMessages() {
 
      
    const getApiPath = () => { 
-       return GetApis().RETRIEVEMYMESSAGES;
+       //return GetApis().RETRIEVEMYMESSAGES;
+       return CONFIG.DIRECT_LIVE.RETRIEVEMYMESSAGES;
       };
       
 
