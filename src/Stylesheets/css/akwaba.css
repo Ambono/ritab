@@ -28,7 +28,7 @@
     padding: 10px 16px;    
     top: 0;
     width: 100%; 
-    background: -webkit-linear-gradient(#eee, #0ea1e6); 
+    background: -webkit-linear-gradient(#eee, #808080); 
   }
   
   .akwaba-container-items {
@@ -51,7 +51,7 @@
   
   .akwaba-tiles-navlinks {
     color: white;
-    background-color: #0ea1e6;
+    background-color: #808080;
     font-family: verdana;
     font-size: 16px;
     font-weight: bold;
@@ -86,11 +86,24 @@
     color: navy;
     border-radius: 5px;
     border:  5px;
-    border-color:  #0ea1e6;
+    border-color: #808080;
     margin-top: 10px;
     margin-bottom: 10px;
   }
   
   #signedin{
     color:magenta;
+  }
+
+  .loadmore{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: navy;
+    border-radius: 5px;
+    border:  5px;
+    border-color: #808080;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }

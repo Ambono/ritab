@@ -5,7 +5,7 @@
     font-weight: 700;
     font-size: 24px;
     color:#f1f1f1;  
-    background-image: linear-gradient( #0ea1e6, white);
+    background-image: linear-gradient( #808080, white);
   
   }
   
@@ -49,8 +49,8 @@
   }
   
   ul.no-bullets-nav {
-    background-color: #0ea1e6;
-    background-image: url("../../clientapp/img/computer-algorithm.jpg");
+    background-color:  #808080;
+   background-image: url("../../clientapp/img/computer-algorithm.jpg");
     min-height: 6vh;
     flex-direction: column;
     align-items: center;
@@ -94,7 +94,7 @@
   }
   
   ul.no-bullets-nav-palin {
-    background-color: #0ea1e6;
+    background-color: #808080;
     min-height: 6vh;
     flex-direction: column;
     align-items: center;
@@ -139,7 +139,7 @@
     cursor: pointer;
     border: solid 1px #f2f2f2;
     padding: 15px;
-    background-color: #0089cc;
+    background-color: #808080;
     color: #fff;
     font-family: verdana;
   }
@@ -256,7 +256,7 @@
 }
 
 #menu ul a:hover{
-        background: #0186ba;
+        background: #808080;
 	background: -moz-linear-gradient(#04acec,  #0186ba);	
 	/* background: -webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
 	background: -webkit-linear-gradient(#04acec,  #0186ba);
@@ -284,7 +284,7 @@
 }
 
 #menu ul li:first-child a:hover:after{
-    border-bottom-color: #04acec; 
+    border-bottom-color:#808080;; 
 }
 
 #menu ul li:last-child a{

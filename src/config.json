@@ -8,19 +8,21 @@
   },
 
     "MANUAL_URL":{
-    "CONTACTUS": "http://localhost/dev/marveltech/src/server/messages/contactmessage.php",
-    "RETRIEVEMYMESSAGES": "http://localhost/dev/marveltech/src/server/messages/retrievecontactmessages.php",
-     "TESTCONTACTUS":"http://localhost/dev/marveltech/src/server/messages/contactmessage_test.php",  
-     "RETRIEVEBOOKINGS": "http://localhost/dev/marveltech/src/server/messages/RetrieveBooking.php",     
-     "REGISTERSIMPLE": "http://localhost/dev/marveltech/src/server/registerlogin/RegistrationMakerSimple.php",     
-     "LOGIN": "http://localhost/dev/marveltech/src/server/registerlogin/LoginMaker.php",
-     "LOGINMANAGER":"http://localhost/dev/marveltech/src/server/registerlogin/LoginManager.php",
-     "LOGOUT": "http://localhost/dev/marveltech/src/server/registerlogin/Logout.php"
+      "RETRIEVECAR": "http://localhost/dev/koneautoci/src/server/cars/retrievecars.php",
+      "CREATECAR": "http://localhost/dev/koneautoci/src/server/cars/insertcars.php",
+    "CONTACTUS": "http://localhost/dev/koneautoci/src/server/messages/contactmessage.php",
+    "RETRIEVEMYMESSAGES": "http://localhost/dev/koneautoci/src/server/messages/retrievecontactmessages.php",
+     "TESTCONTACTUS":"http://localhost/dev/koneautoci/src/server/messages/contactmessage_test.php",  
+     "RETRIEVEBOOKINGS": "http://localhost/dev/koneautoci/src/server/messages/RetrieveBooking.php",     
+     "REGISTERSIMPLE": "http://localhost/dev/koneautoci/src/server/registerlogin/RegistrationMakerSimple.php",     
+     "LOGIN": "http://localhost/dev/koneautoci/src/server/registerlogin/LoginMaker.php",
+     "LOGINMANAGER":"http://localhost/dev/koneautoci/src/server/registerlogin/LoginManager.php",
+     "LOGOUT": "http://localhost/dev/koneautoci/src/server/registerlogin/Logout.php"
       },
 
   "BASE_URL_LOCAL": "http://localhost/php/",  
 
-  "BASE_URL_LIVE": "https://globalmarveltech.com/",
+  "BASE_URL_LIVE": "https://koneautoci.com/",
 
   "PAGES_URL": {    
     "CONTACTUS": "ContactUsMessages.php",
@@ -34,25 +36,24 @@
       },
 
       "DIRECT_LIVE":{
-        "CONTACTUS": "https://globalmarveltech.com/Contactmessage.php",
-        "RETRIEVEMYMESSAGES": "https://globalmarveltech.com/Retrievecontactmessages.php",
-        "BOOKINGS": "https://globalmarveltech.com/MakeBooking.php",
-        "RETRIEVEBOOKINGS": "https://globalmarveltech.com/RetrieveBooking.php",    
-        "REGISTERSIMPLE": "https://globalmarveltech.com/RegistrationMakerSimple.php",        
-        "LOGIN": "https://globalmarveltech.com/LoginMaker.php",
-        "LOGINMANAGER":"https://globalmarveltech.com/LoginManager.php",
-        "LOGOUT": "https://globalmarveltech.com/Logout.php"
+        "CONTACTUS": "https://koneautoci.com/Contactmessage.php",
+        "RETRIEVEMYMESSAGES": "https://koneautoci.com/Retrievecontactmessages.php",
+        "BOOKINGS": "https://koneautoci.com/MakeBooking.php",
+        "RETRIEVEBOOKINGS": "https://koneautoci.com/RetrieveBooking.php",    
+        "REGISTERSIMPLE": "https://koneautoci.com/RegistrationMakerSimple.php",        
+        "LOGIN": "https://koneautoci.com/LoginMaker.php",
+        "LOGINMANAGER":"https://koneautoci.com/LoginManager.php",
+        "LOGOUT": "https://koneautoci.com/Logout.php"
       },
 
   "ENVIRONMENT": {
     "DEV": false,
-    "LIVE": true,
-    "MANUAL":false
+    "LIVE": false,
+    "MANUAL":true
   },
 
   "CREDENTIALS": {
-    "ADMIN_EMAIL": "admin.marveltech@gmail.com",
-    "CUSTOMER_EMAIL": "info@globalmarveltech.com",
-    "TRAINEE_EMAIL": "trainee.marveltech@gmail.com"
+    "ADMIN_EMAIL": "admin.koneauto@gmail.com",
+    "CUSTOMER_EMAIL": "info@koneautoci.com"
   }
 }

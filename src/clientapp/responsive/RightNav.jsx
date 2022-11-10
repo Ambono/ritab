@@ -5,8 +5,8 @@ import { useTranslation  } from "react-i18next";
 import { Row, Col } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import LoginStatus from '../Authentication/LoginStatus';
-import Authservice2 from '../Authentication/AuthService2';
-import Authservice from '../Authentication/AuthService';
+import Authservice2 from '../Authentication/AuthService';
+import Authservice from '../Authentication/AuthService_Delete';
 
 const Ul = styled.ul`
   list-style: none;
@@ -96,25 +96,7 @@ function RightNav ({open } )  {
                           </Dropdown.Menu>
                       </Dropdown> 
                     </li>
-                    <li>
-                     <Dropdown>
-                          <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          {t("navbar.academy")}
-                          </Dropdown.Toggle>
-                          <Dropdown.Menu>
-                            <Dropdown.Item href="#"><NavLink to={apprenticelink}>
-                            <span className="header-akwaba-rightnavbar-navlinks">
-                            {t("pages.marveltechgroup.group.text.apprenticeship")}</span></NavLink>
-                            </Dropdown.Item>
-                         
-                           <Dropdown.Item href="#">
-                            <NavLink to={traininglink}>
-                            <span className="header-akwaba-rightnavbar-navlinks">
-                              {t("pages.marveltechgroup.group.text.trainings")}</span></NavLink>
-                            </Dropdown.Item>
-                            </Dropdown.Menu>
-                      </Dropdown>
-                    </li>
+                   
                     <li>                           
                           <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">

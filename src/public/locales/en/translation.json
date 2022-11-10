@@ -35,36 +35,36 @@
     "follow":"FOLLOW US",
     "disclaimer": "DISCLAIMER",
     "help": "HELP",
-    "poweredby":"@globalmarveltech.com 2022  Email us: info@globalmarveltech.com"
+    "poweredby":"@koneautoci.com 2022  Email us: info@koneautoci.com"
   },
 
   "messages": {
-    "welcome": "MarvelTech Universal, top technology at your service"
+    "welcome": "koneautoci, best cars in the country"
   },
 
   "carousel":{
            "atgcarousel1":{
-            "text1":"Our developers will build",
-            "text2":"Your organisation or business",
-            "text3":"The state-of-the-art Technology "          
+            "text1":"We will deliver you the greatest car",
+            "text2":"You will enjot driving",
+            "text3":"The state-of-the-art features"          
           },
           "atgcarousel2":{
-            "text1":"Our passion: Technology",
-            "text2":"Our creed: Working for you",
-            "text3":"Because you are ambitious"            
+            "text1":"Our passion: Satisfy you",
+            "text2":"Our creed: Great cars",
+            "text3":"Because you deserve it"            
           },
          "atgcarousel3":{
           "text1":"We specialise in: ",
-          "text2":"Software development ",
-          "text3":"Software security audit",
-          "text4":"Iot network architecture"
+          "text2":"Berlines",
+          "text3":"SUVs",
+          "text4":"Pick ups and vans"
                     
          },
         "atgcarousel4":{
-          "text1":"We are your consultant for",
-          "text2":"Ticketing and dispatching of online tickets",
-          "text3":"Creating and Printing online documents",
-          "text4":"Entertainment and online gaming."       
+          "text1":"We are your car dealer for",
+          "text2":"City cars",
+          "text3":"Country cars",
+          "text4":"Heavy duty cars."       
         }
   },  
   "pages": {
@@ -80,12 +80,12 @@
       "group":{
         "text":{
         "offers":"Our Services",
-        "about":"About Marveltech",
-        "solutions":"Marveltech Solutions",
-        "media":"Marveltech Media",
-        "consulting":"Marveltech consulting",
-        "ecommerce":"Marveltech E-Commerce",
-        "systems":"Marveltech Systems",
+        "about":"About Kone auto",
+        "solutions":"Kone auto company",
+        "media":"Kone auto location",
+        "consulting":"Kone auto garage",
+        "ecommerce":"Kone auto sales",
+        "systems":"Kone auto spare parts",
         "buttonAboutUs":"About us" ,
         "apprenticeship":"APPRENTICESHIP",
         "trainings":"TRAININGS"

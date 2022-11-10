@@ -10,4 +10,20 @@
     background: linear-gradient(transparent, gray);
     border-radius: 8px;
   }
+
+
+  .car_carousel{    
+    align-items: left;
+    justify-content: center;
+    align-self:center;
+    position:relative;
+    border-radius: 5px;
+    border:  5px;
+    height: auto; 
+    width: auto; 
+    max-width: 1000px; 
+    max-height: 700px;
+  
+    image-rendering: high-quality;
+  }
   

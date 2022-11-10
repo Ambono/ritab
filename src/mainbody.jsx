@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 import { Route, HashRouter } from "react-router-dom";
 import Home from "./clientapp/pages/Home";
 import Services from "./clientapp/pages/Services";
-import Contact from "./clientapp/pages/messages/Contact";
+import Contact from "./clientapp/pages/messages/SendContactMessage";
 import Menue from "./clientapp/pages/Menue";
 import References from "./clientapp/pages/References";
 import Booking from "./clientapp/pages/Booking";
@@ -11,7 +11,7 @@ import Register from "./clientapp/registerlogin/Register";
 import RegisterSimple from "./clientapp/registerlogin/RegisterSimple";
 import Loginscreen from "./clientapp/registerlogin/LoginScreen";
 import Login from "./clientapp/registerlogin/Login";
-import RetrieveMyMessages from "./clientapp/pages/messages/RetrieveMyMessages";
+import RetrieveMyMessages from "./clientapp/pages/messages/RetrieveMyMessages_Delete";
 import MessageMyAdmin from "./clientapp/admin/MessageAdminPage";
 import MarveltechSolution from "./clientapp/pages/marveltech/MarveltechSolution";
 import MarveltechGaming from "./clientapp/pages/marveltech/MarveltechGaming";
@@ -20,7 +20,6 @@ import MarveltechSystems from "./clientapp/pages/marveltech/MarveltechSystems";
 import MarveltechConsulting from "./clientapp/pages/marveltech/MarveltechConsulting";
 import MarveltechServices from "./clientapp/pages/marveltech/MarveltechServices";
 import MarveltechPartners from "./clientapp/pages/marveltech/MarveltechPartners";
-// import MarveltechAcademy from "./clientapp/pages/marveltech/MarveltechAcademy";
 import MarveltechSell from "./clientapp/pages/marveltech/tradepages/MarveltechSell";
 import MarveltechOrder from "./clientapp/pages/marveltech/tradepages/MarveltechOrder";
 import MarveltechGadgets from "./clientapp/pages/marveltech/tradepages/MarveltechGadgets";
@@ -30,11 +29,19 @@ import MyAdmin from "./clientapp/admin/MyAdminPage";
 import Trainings from "./clientapp/academy/Trainings/Trainings";
 import Apprenticeship from "./clientapp/academy/Apprenticeship/Apprenticeship";
 import Logout from "./clientapp/registerlogin/Logout";
-import Authservice from "./clientapp/Authentication/AuthService";
-import Authservice2 from "./clientapp/Authentication/AuthService2";
+import Authservice from "./clientapp/Authentication/AuthService_Delete";
+import Authservice2 from "./clientapp/Authentication/AuthService";
 import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests"; 
 import Partnerservice from "./clientapp/partners/Partnerservice";
 import UsefullLinks from "./clientapp/admin/UsefullLinks";
+import LoadMoreCars from "./clientapp/Auto/LoadMoreCars";
+import InsertCar from "./clientapp/Auto/InsertCar";
+import Car1 from "./clientapp/Auto/carpages/Car1";
+import Car2 from "./clientapp/Auto/carpages/Car2";
+import Car3 from "./clientapp/Auto/carpages/Car3";
+import Car4 from "./clientapp/Auto/carpages/Car4";
+import Car5 from "./clientapp/Auto/carpages/Car5";
+// import Car6 from "./clientapp/Auto/carpages/Car6";
 
 class Main extends Component {
   render() {
@@ -42,7 +49,15 @@ class Main extends Component {
       <div>
         <HashRouter>
           <Route exact path="/" component={Home} />
-          <Route path="/home" component={Home} />
+          <Route path="/home" component={Home} />          
+          <Route path="/insertcar" component={InsertCar} />
+
+          <Route path="/car1" component={Car1} />
+          <Route path="/car2" component={Car2} />
+          <Route path="/car3" component={Car3} />
+          <Route path="/car4" component={Car4} />
+          <Route path="/car5" component={Car5} />
+
           <Route path="/services" component={Services} />
           <Route path="/menue" component={Menue} />
           <Route path="/reference" component={References} />
@@ -58,8 +73,7 @@ class Main extends Component {
           <Route path="/marveltechconsulting" component={MarveltechConsulting} />
           <Route path="/marveltechgaming" component={MarveltechGaming} />
           <Route path="/marveltechtrade" component={MarveltechTrade} />
-          <Route path="/marveltechsystems" component={MarveltechSystems} />
-          {/* <Route path="/Marveltechacademy" component={MarveltechAcademy} /> */}
+          <Route path="/marveltechsystems" component={MarveltechSystems} /> 
           <Route path="/marveltechservices" component={MarveltechServices} />
           <Route path="/marveltechpartners" component={MarveltechPartners} />
           <Route path="/marveltechsell" component={MarveltechSell} />
@@ -75,7 +89,9 @@ class Main extends Component {
           <Route path="/partnerservice" component={Partnerservice} />                               
           <Route path="/logout" component={Logout} /> 
           <Route path="/authservice" component={Authservice} />
-          <Route path="/authservice2" component={Authservice2} /> 
+          <Route path="/authservice2" component={Authservice2} />
+          <Route path="/loadmorecars" component={LoadMoreCars} />
+           
           <Route />                       
         </HashRouter>
       </div>

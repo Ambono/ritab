@@ -1,4 +1,4 @@
 <?php
 
 
-echo 'morning';
+echo 'morning kone auto ci';

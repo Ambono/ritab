@@ -9,8 +9,7 @@ class Footer extends Component {
     return (
       <div className ="footer-akwaba">
         <p>{t("footer.poweredby")}</p>      
-       <div>
-         
+       <div>         
 <Container>  
   <Row>
   <HashRouter> 

@@ -11,74 +11,79 @@ import MarveltechConsultingTile from "./tiles/MarveltechConsultingTile";
 import MarveltechGroupTile from "./tiles/MarveltechGroupTile";
 import CarouselMarveltech from "./animations/Carousel";
 import { UncontrolledCollapse, Button, CardBody, Card } from "reactstrap";
-
+import car1 from "../../Auto/carpics/car1/car1.webp";
+import car2 from "../../Auto/carpics/car2/car2.webp";
+import car3 from "../../Auto/carpics/car3/car3.webp";
+import car4 from "../../Auto/carpics/car4/car4.jpeg";
 class MarveltechGroup extends Component {
   render() {
     const { t } = this.props;
+    const width = "300px";
+    const height = "250px";
     return (
       <div>
         <div  className="slideshow_deploy" >
-          <Row>
+          {/* <Row>
             <Col md={{ span: 12, offset: 0 }}>
               <CarouselMarveltech />
             </Col>
-          </Row>
+          </Row> */}
         </div>
         <div className="slideshow_deploy_web"></div>           
         <div className="akwaba-content_deploy">             
           <Row>
-            <Col md={{ span: 2, offset: 4 }}>
+            <Col md={{ span: 3, offset: 4 }}>
               {" "}             
               <p></p>
             </Col>
           </Row>
           <Row>
             <HashRouter>
-            <Col md={{ span: 2, offset: 0 }}>
+            <Col md={{ span: 3, offset: 0 }}>
                 {" "}
                 <div className="akwaba-container-items">
-                  <NavLink to="/about">
+                  <NavLink to="/car1">
                     <div className="akwaba-tiles-navlinks">
-                    {t("pages.marveltechgroup.group.text.about")}                  
+                    <p>BMW CFA1000000</p>                
                     </div>
                   </NavLink>
-                  <MarveltechSolutionTile />
+                  <img src={car1} widht={width} height ={height}/>
                 </div>
               </Col>
-              <Col md={{ span: 2, offset: 0 }}>
+              <Col md={{ span: 3, offset: 0 }}>
                 {" "}
                 <div className="akwaba-container-items">
-                  <NavLink to="/marveltechsolution">
+                  <NavLink to="/car2">
                     <div className="akwaba-tiles-navlinks">
-                    {t("pages.marveltechgroup.group.text.solutions")}                    
+                    <p>FORD CFA1000000</p>                    
                     </div>
                   </NavLink>
-                  <MarveltechSolutionTile />
+                  <img src={car2} widht={width} height ={height}/>
                 </div>
               </Col>             
-              <Col md={{ span: 2, offset: 0 }}>
+              <Col md={{ span: 3, offset: 0 }}>
                 <div className="akwaba-container-items">
-                  <NavLink to="/marveltechconsulting">
+                  <NavLink to="/car3">
                     <div className="akwaba-tiles-navlinks">
-                    {t("pages.marveltechgroup.group.text.consulting")}                     
+                    <p>BMW CFA1000000</p>                       
                     </div>
                   </NavLink>
-                  <MarveltechConsultingTile />
+                  <img src={car3}widht="100px" height ="200px"/>
                 </div>
               </Col>
-              <Col md={{ span: 2, offset: 0 }}>
+              <Col md={{ span: 3, offset: 0 }}>
                 <div className="akwaba-container-items">
-                  <NavLink to="/marveltechgaming">
+                  <NavLink to="/car4">
                     <div className="akwaba-tiles-navlinks">
-                    {t("pages.marveltechgroup.group.text.media")}                   
+                    <p>BMW CFA1000000</p>                                    
                     </div>
                   </NavLink>
-                  <MarveltechGamingTile />
+                  <img src={car4}  widht={width} height ={height} />
                 </div>
               </Col>
-              <Col md={{ span: 2, offset: 0 }}>
+              {/* <Col md={{ span: 2, offset: 0 }}>
                 <div className="akwaba-container-items">
-                  <NavLink to="/marveltechtrade">
+                  <NavLink to="/car5">
                     <div className="akwaba-tiles-navlinks">
                     {t("pages.marveltechgroup.group.text.ecommerce")}                    
                     </div>
@@ -95,7 +100,7 @@ class MarveltechGroup extends Component {
                   </NavLink>
                   <MarveltechSystemsTile />
                 </div>
-              </Col>
+              </Col> */}
             </HashRouter>
           </Row>          
         </div>        

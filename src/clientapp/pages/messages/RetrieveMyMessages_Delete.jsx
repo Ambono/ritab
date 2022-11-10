@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import axios from "axios";
-import MessagesDisplay from './MessagesDisplay';
+import MessagesDisplay from './MessagesDisplay_Delete';
 import GetApis from '../GetApis';
 import CONFIG from '../../../config.json';
 

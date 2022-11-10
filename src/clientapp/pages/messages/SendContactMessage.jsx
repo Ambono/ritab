@@ -30,8 +30,8 @@ const Contact = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    //return GetApis().CONTACTUS;
-    return CONFIG.DIRECT_LIVE.CONTACTUS;
+    return GetApis().CONTACTUS;
+    //return CONFIG.DIRECT_LIVE.CONTACTUS;
   };
 
   const handleSubmit = event => {
@@ -195,6 +195,7 @@ const Contact = () => {
           id="reason"
           name="reason"
           type="text"
+          rows={4}
           value={reason}          
           onChange={event => setReason(event.target.value)}
           placeholder={t("pages.contact.text.subjectph")}
