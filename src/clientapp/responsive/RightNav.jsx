@@ -47,7 +47,8 @@ function RightNav ({open } )  {
         <Ul open={open} id="menu"> 
         <HashRouter>
           <p></p>
-          <p></p>             
+          <p><NavLink to="/adminpagetemp">
+                           My admin</NavLink></p>             
                    <li>
                       <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">

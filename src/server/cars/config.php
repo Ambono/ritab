@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "koneauto";
+$dbname = "ritoab";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
 ?>

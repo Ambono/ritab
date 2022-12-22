@@ -37,10 +37,10 @@
     "follow": "SUIVEZ NOUS",
     "disclaimer": "CLAUSE DE NON RESPONSABILITE",
     "help": "ASSISTANCE",
-    "poweredby":"@globalmarveltech.com 2022  Email us: info@koneautoci.com"
+    "poweredby":"@globalmarveltech.com 2022  Email us: info@ritab.com"
   },
   "messages": {
-    "welcome": "Kone auto, technologie de pointe a votre service."
+    "welcome": "ritab, technologie de pointe a votre service."
   },
 
 
@@ -227,7 +227,8 @@
         "pswandconfpswdiff":"mot de passe et confirmation de mot de passe sont differents",
         "msginvalidform":"Les donnees sur la forme sont invalides",
         "notregisteredyet":"Pas encore souscrit? souscrire maintenant",
-        "register":"Souscrire"
+        "register":"Souscrire",
+        "subjectinvalidmsg":"Contenu non valide"
       },      
       "sir":"Sir",
        "madam":"Miss/Madam",

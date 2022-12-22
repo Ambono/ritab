@@ -7,13 +7,13 @@ import Authservice2 from '../Authentication/AuthService';
 import LoginStatus from '../Authentication/LoginStatus';
 
 
-function MyAdmin(){
+function MyAdminTemp(){
 
-  const loggedin =  Authservice2().loginStatus === 'in' ? true : false;  
+ 
   const { t } = useTranslation(); 
       return (       
         <div>     
-        {loggedin &&  
+     
      <div className="akwaba-content-admin"> 
            <Row>
            <LoginStatus/>
@@ -74,9 +74,9 @@ function MyAdmin(){
             </Col>
           </Row>         
         </div>
-   }
+   
     </div>
     )
   }
  
-export default (MyAdmin);
+export default (MyAdminTemp);

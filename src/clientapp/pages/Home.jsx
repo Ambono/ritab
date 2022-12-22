@@ -9,9 +9,8 @@ class Home extends Component {
     const { t } = this.props;
     return (
       <div className="content-akwaba" >
-         <KoneautoMaster /> 
-         {/* <LoadMoreCars/>
-        <CarDisplayPage/>      */}
+         <KoneautoMaster/>  
+          <LoadMoreCars/>         
         <p></p>
       </div>
     );

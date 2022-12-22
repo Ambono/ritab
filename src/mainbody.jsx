@@ -26,6 +26,7 @@ import MarveltechGadgets from "./clientapp/pages/marveltech/tradepages/Marveltec
 import BusinessTrainings from "./clientapp/academy/Trainings/BusinessTrainings";
 import SoftwareDevTrainings from "./clientapp/academy/Trainings/SoftwareDevTrainings";
 import MyAdmin from "./clientapp/admin/MyAdminPage";
+import MyAdminTemp from "./clientapp/admin/MyAdminPageTemp";
 import Trainings from "./clientapp/academy/Trainings/Trainings";
 import Apprenticeship from "./clientapp/academy/Apprenticeship/Apprenticeship";
 import Logout from "./clientapp/registerlogin/Logout";
@@ -42,6 +43,8 @@ import Car3 from "./clientapp/Auto/carpages/Car3";
 import Car4 from "./clientapp/Auto/carpages/Car4";
 import Car5 from "./clientapp/Auto/carpages/Car5";
 // import Car6 from "./clientapp/Auto/carpages/Car6";
+
+import UploadAssets from "./clientapp/uploadimages/UploadAssets";
 
 class Main extends Component {
   render() {
@@ -65,6 +68,7 @@ class Main extends Component {
           <Route path="/register" component={Register} />
           <Route path="/registersimple" component={RegisterSimple} />
           <Route path="/adminpage" component={MyAdmin} />
+          <Route path="/adminpagetemp" component={MyAdminTemp} />
           <Route path="/loginscreen" component={Loginscreen} />
           <Route path="/login" component={Login} />
           <Route path="/contact" component={Contact} />
@@ -91,7 +95,8 @@ class Main extends Component {
           <Route path="/authservice" component={Authservice} />
           <Route path="/authservice2" component={Authservice2} />
           <Route path="/loadmorecars" component={LoadMoreCars} />
-           
+          <Route path="/uploadassets" component={UploadAssets} />
+          
           <Route />                       
         </HashRouter>
       </div>

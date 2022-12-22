@@ -35,11 +35,11 @@
     "follow":"FOLLOW US",
     "disclaimer": "DISCLAIMER",
     "help": "HELP",
-    "poweredby":"@koneautoci.com 2022  Email us: info@koneautoci.com"
+    "poweredby":"@ritab.com 2022  Email us: info@ritab.com"
   },
 
   "messages": {
-    "welcome": "koneautoci, best cars in the country"
+    "welcome": "ritab, best cars in the country"
   },
 
   "carousel":{
@@ -80,12 +80,12 @@
       "group":{
         "text":{
         "offers":"Our Services",
-        "about":"About Kone auto",
-        "solutions":"Kone auto company",
-        "media":"Kone auto location",
-        "consulting":"Kone auto garage",
-        "ecommerce":"Kone auto sales",
-        "systems":"Kone auto spare parts",
+        "about":"About Ritab auto",
+        "solutions":"Ritab auto company",
+        "media":"Ritab auto location",
+        "consulting":"Ritab auto garage",
+        "ecommerce":"Ritab auto sales",
+        "systems":"Ritab auto spare parts",
         "buttonAboutUs":"About us" ,
         "apprenticeship":"APPRENTICESHIP",
         "trainings":"TRAININGS"
@@ -225,7 +225,8 @@
        "pswandconfpswdiff":"Password and confirmed password are different",
        "msginvalidform":"Data on the form is invalid",
        "notregisteredyet":"Not registered yet? register now",
-       "register":"Register"
+       "register":"Register",
+       "subjectinvalidmsg":"Invalid content"
       },
       "sir":"Sir",
        "madam":"Miss/Madam",
