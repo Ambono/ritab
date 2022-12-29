@@ -110,6 +110,10 @@ $userEmail =  $row["SellerEmail"];
 
 
 /////////////Checks///////////////////////
+// if (!file_exists('uploads2')) {
+//   mkdir("/documents/gfg/articles/", 0770, true);
+// }
+
  $target_dir = "uploads/";
  $target_file = $target_dir . basename($_FILES["mainimage"]["name"]);
  $target_fileopt1 = $target_dir . basename($_FILES["firstoptionalimage"]["name"]);

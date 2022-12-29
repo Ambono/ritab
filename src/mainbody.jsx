@@ -32,7 +32,7 @@ import Apprenticeship from "./clientapp/academy/Apprenticeship/Apprenticeship";
 import Logout from "./clientapp/registerlogin/Logout";
 import Authservice from "./clientapp/Authentication/AuthService_Delete";
 import Authservice2 from "./clientapp/Authentication/AuthService";
-import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests"; 
+import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests";
 import Partnerservice from "./clientapp/partners/Partnerservice";
 import UsefullLinks from "./clientapp/admin/UsefullLinks";
 import LoadMoreCars from "./clientapp/Auto/LoadMoreCars";
@@ -42,6 +42,7 @@ import Car2 from "./clientapp/Auto/carpages/Car2";
 import Car3 from "./clientapp/Auto/carpages/Car3";
 import Car4 from "./clientapp/Auto/carpages/Car4";
 import Car5 from "./clientapp/Auto/carpages/Car5";
+import ThankUploadeded from "./clientapp/uploadimages/ThankyouAfterUploaded";
 // import Car6 from "./clientapp/Auto/carpages/Car6";
 
 import UploadAssets from "./clientapp/uploadimages/UploadAssets";
@@ -52,7 +53,7 @@ class Main extends Component {
       <div>
         <HashRouter>
           <Route exact path="/" component={Home} />
-          <Route path="/home" component={Home} />          
+          <Route path="/home" component={Home} />
           <Route path="/insertcar" component={InsertCar} />
 
           <Route path="/car1" component={Car1} />
@@ -60,6 +61,7 @@ class Main extends Component {
           <Route path="/car3" component={Car3} />
           <Route path="/car4" component={Car4} />
           <Route path="/car5" component={Car5} />
+          <Route path="/thankuploadeded" component={ThankUploadeded} />
 
           <Route path="/services" component={Services} />
           <Route path="/menue" component={Menue} />
@@ -77,27 +79,27 @@ class Main extends Component {
           <Route path="/marveltechconsulting" component={MarveltechConsulting} />
           <Route path="/marveltechgaming" component={MarveltechGaming} />
           <Route path="/marveltechtrade" component={MarveltechTrade} />
-          <Route path="/marveltechsystems" component={MarveltechSystems} /> 
+          <Route path="/marveltechsystems" component={MarveltechSystems} />
           <Route path="/marveltechservices" component={MarveltechServices} />
           <Route path="/marveltechpartners" component={MarveltechPartners} />
           <Route path="/marveltechsell" component={MarveltechSell} />
           <Route path="/marveltechorder" component={MarveltechOrder} />
           <Route path="/marveltechgadgets" component={MarveltechGadgets} />
           <Route path="/businesstrainings" component={BusinessTrainings} />
-          <Route path="/softwaredevtrainings" component={SoftwareDevTrainings}/>
+          <Route path="/softwaredevtrainings" component={SoftwareDevTrainings} />
           <Route path="/messageadmin" component={MessageMyAdmin} />
-          <Route path="/trainings" component={Trainings} />         
+          <Route path="/trainings" component={Trainings} />
           <Route path="/apprenticeship" component={Apprenticeship} />
           <Route path="/onboardingtests" component={Onboardingtests} />
-          <Route path="/usefulllinks" component={UsefullLinks} />          
-          <Route path="/partnerservice" component={Partnerservice} />                               
-          <Route path="/logout" component={Logout} /> 
+          <Route path="/usefulllinks" component={UsefullLinks} />
+          <Route path="/partnerservice" component={Partnerservice} />
+          <Route path="/logout" component={Logout} />
           <Route path="/authservice" component={Authservice} />
           <Route path="/authservice2" component={Authservice2} />
           <Route path="/loadmorecars" component={LoadMoreCars} />
           <Route path="/uploadassets" component={UploadAssets} />
-          
-          <Route />                       
+
+          <Route />
         </HashRouter>
       </div>
     );

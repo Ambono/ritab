@@ -469,10 +469,17 @@ const UploadAssets = () => {
               type="submit"
               onClick={(e) =>  {handleSubmit(e)}}
               defaultValue={t("pages.contact.text.submit")}
+              value="Save and continue"
             />
           )}
         <div>
-          
+
+        {clickedButtonButNotPosted && (
+                <div>
+                  {clickedNotPostedMessage} <br />                  
+                </div>
+                 )}
+
                {messageSent && (
                 <div>
                 <div>
@@ -487,13 +494,8 @@ const UploadAssets = () => {
                 </div>
         
                 </div>
-              )}
-              
-              {clickedButtonButNotPosted && (
-                <div>
-                  {clickedNotPostedMessage} <br />                  
-                </div>
-                 )}
+              )}              
+            
          </div>
 
       </form>
