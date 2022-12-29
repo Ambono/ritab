@@ -15,6 +15,7 @@
     "react-animations": "^1.0.0",
     "react-bootstrap": "^1.4.0",
     "react-bootstrap-dropdown-menu": "^1.1.23",
+    "react-datetime-picker": "^4.1.1",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.7.3",
     "react-images-upload": "^1.2.8",

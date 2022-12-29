@@ -1,334 +1,3 @@
-// <?php
-// include("../session/sessionmanager.php") ; 
-// ?> 
-// <!DOCTYPE html>
-// <HTML>
-// <HEAD>
-//     <?php include("../head/header.php")?>
-// <?php include("../head/header_angulars.php")?>
-// <?php include("../head/header_css.php")?>
-// <?php include("../head/header_searchenginescript.php")?>
-// <?php include("../head/header_standardlibrary.php")?>
-// <?php include("../head/header_jqueriesscript.php")?>
-// <?php include("../head/header_standardlibrary.php")?>
-// <?php include("../head/header_common.php")?>
-// <TITLE>Gifter online</TITLE>
-// </HEAD>
-// <BODY>
-
-    
-   
-//  <?php include("../navbars/navbar_sell.php")?>     
-//   <div class="container col-md-10 col-md-offset-1" style ="border-radius:5px; margin-bottom:10px;">
- 
-//   <div ng-app="myappInsert">    
- 
-//  <form action="../insertsinDB/insertproductdetailsinDB.php" method="POST" enctype="multipart/form-data">
-    
-//  <div class="col-md-6 col-md-offset-3">
-//  <table class="table"> 	 
-
-//   <tr class="success">          
-//  <div class="form-group">  
-//  <td><label for="Gender">Gender:</label></td>   
-//  <td>
-// <select class="form-control" id="gender" placeholder="Enter Gender:" name="gender" required>
-
-// </select>
-//  </td> 
-//  </div>
-//  </tr> 
-     	
-// <tr class="success">		  
-// <div class="form-group">    
-//  <td>
-//  <label for="Category">Category:</label></td>   
-//  <td><select class="form-control" id="productcategory" name="productcategory">
-// </select></td> 
-//  </div>
-//  </tr> 
-//   </table>
-          
-//  </div><!--end div for form group col 6-->     
-          
-              
-//  <div class="col-md-6 col-md-offset-3">
-// 	       <table class="table"> 	     	
-//          <tr class="success">		  
-// 		 <div class="form-group">
-//         <td><label for="countryorigin">Country origin:</label></td> 
-  
-//          <td><select class="form-control" id="country_origin" name="country_origin">   
-//           </select></td> 
-//           </div>
-//          </tr> 
-	
-// 	  <tr class="success">		  
-// 		 <div class="form-group">
-//      <td><label for="countrydestin">Country destination:</label></td> 
-  
-//       <td><select class="form-control" id="country_destin" name="country_destin"> 
-//       </select></td> 
-//         </div>
-//       </tr> 
-	
-// 	    <tr class="success">
-// 	    <td> <label for="citydestination">City destination: </label> </td> 
-// 	       <td> 
-//           <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-plane"></span></span>
-//                <input type="text" name="citydestin" class="form-control" placeholder="City destination" required />
-//                 </div>
-//            </div>
-// 			  </td> 
-// 	 	      </tr> 
-		   
-// 	      </table>
-	  
-// 	        <div class="form-group">
-//              <hr />
-//             </div>
-	  
-// 	      <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-//              <input type="text" name="sellerEmail" class="form-control" placeholder="Enter Email:(required)" required />
-//                 </div>
-//             </div>
-	  
-//             <div class="form-group">
-//              <hr />
-//             </div>
-	  
-// 	       <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
-//              <input type="text" name="sellerPhone" class="form-control" placeholder="Enter Telephone + extension:(optional)" />
-//                 </div>
-//             </div>
-	 
-// 	       <div class="form-group">
-//              <hr />
-//             </div>
-	 
-//              <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></span>
-//              <input type="text" name="item_name" class="form-control" placeholder="Enter item Name:(required)" required />
-//                 </div>
-//             </div>
-	
-// 	       <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></span>
-//              <input type="text" name="desc" class="form-control" placeholder="Enter Description:(required)" required />
-//                 </div>
-//             </div>
-	  
-	  
-//             <div class="form-group">
-//              <hr />
-//             </div>
-			
-	  
-// 	  	   <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-resize-vertical"></span></span>
-//              <input type="text" name="size" class="form-control" placeholder="Enter Size:(optional)" />
-//                 </div>
-//             </div>
-	  
-	  
-// 	        <div class="form-group">
-//              <hr />
-//             </div>
-	  
-// 	        <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-tint"></span></span>
-//              <input type="text" name="colour" class="form-control" placeholder="Enter Colour:(optional)" />
-//                 </div>
-//             </div>
-	  
-// 	        <div class="form-group">
-//              <hr />
-//             </div>
-	  
-// 	         <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-check"></span></span>
-//              <input type="text" name="prodcond" class="form-control" placeholder="Enter prod condition:(required)" required />
-//                 </div>
-//             </div>
-	  
-	  
-// 	        <div class="form-group">
-//              <hr />
-//             </div>
-   
-	 
-// 	        <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-picture">Primary image:</span></span>
-//              <input type="file" name="myimage" class="form-control" placeholder="Primary image:" required />
-//                 </div>
-//             </div>
-	 
-// 	        <div class="form-group">
-//              <hr />
-//             </div>
-
-	  
-// 	        <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-picture">First Optional Image:</span></span>
-//              <input type="file" name="firstoptionalimage" class="form-control" placeholder="First Optional Image:" />
-//                 </div>
-//             </div>
-      
-//             <div class="form-group">
-//              <hr />
-//             </div>
-			
-	  
-// 	        <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-picture">Second Optional Image:</span></span>
-//              <input type="file" name="secondoptionalimage" class="form-control" placeholder="Second Optional Image:"  />
-//                 </div>
-//             </div>
-
-// 	       <div class="form-group">
-//              <hr />
-//             </div>
-	
-	  
-// 	    <div class="form-group">
-//              <hr />
-//             </div>
-	
-     
-     
-//  <?php include("../common/calendar.php")?>
-     
-   	
-// 	    <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-//              <input type="text"  id="datepickeravailfrom" name="datepickeravailfrom" class="form-control" placeholder="Available from: (yyyy-mm-dd)" required />
-//                 </div>
-//             </div>
-	  
-//         <div class="form-group">
-//              <hr />
-//             </div>
-			
-	  
-// 	   <div class="form-group">
-//              <div class="input-group">
-//                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-//              <input type="text" name="datepickeravailto" id="datepickeravailto" class="form-control" placeholder="Available until: (yyyy-mm-dd)" required />
-//                 </div>
-//             </div>
-	  
-// 		  <div class="form-group">
-//                   <hr/>
-//                  </div>
-
-           
-//      <script type="text/javascript">
-
-// function transactionIntention() {
-//     if (document.getElementById('sellCheck').checked) {
-//      //   document.getElementById('sell_div').style.display = 'block';
-//       //  document.getElementById('gift_div').style.display = 'none';
-//         document.getElementById('swap_div').style.display = 'none';
-//     }
-//     else if (document.getElementById('swapCheck').checked) {
-//       //  document.getElementById('gift_div').style.display = 'none';
-//         document.getElementById('swap_div').style.display = 'block';
-//         // document.getElementById('sell_div').style.display = 'none';
-//     }
-    
-//    // else if (document.getElementById('giftCheck').checked) {
-//        // document.getElementById('gift_div').style.display = 'block';
-//         //document.getElementById('swap_div').style.display = 'none';
-//        //  document.getElementById('sell_div').style.display = 'none';
-//    // }
-// }
-
-// </script>
-
-
-//  <div class="form-group">
-//              <div class="radio"> 
-               
-//               <label> <input type="radio" onclick="javascript:transactionIntention();" name="itemaction" id="sellCheck" value="sell" checked="checked"  > Giveaway</label><br>
-              
-            
-             
-//             </div>
-//     </div>
-     
-//             <div class="form-group">
-//              <hr />
-//             </div>
-			
-// 	  <div class="form-group">
-//              <div class="input-group">
-//                <label for="deliveryPlace">Collection place:</label>
-//              <textarea cols="40" row="100" name="deliveryPlace" id="deliveryPlace" class="form-control" placeholder="Your collection place:(optional)"/></textarea>
-//                 </div>
-//             </div>
-// 	       <div class="form-group">
-//              <div class="input-group">
-//                <label for="comment">Your note:</label>
-//              <textarea cols="40" row="100" name="sellerNote" id="sellerNote" class="form-control" placeholder="Your note:(optional)"  /></textarea>
-//                 </div>
-//             </div>
-// 	     <div class="form-group">
-//              <hr />
-//             </div>
-//            <div class="form-group">
-//              <button type="submit" class="btn btn-success" name="btnInsert">Submit</button>
-//             </div>
-// 	    <div class="form-group">
-//              <hr />
-//             </div>
-//          </div>
-//           </form>
-//          </div> 
-//   </div>
-
-//        </BODY>
-//   <?php include("../footerPages/footer_page.php")?>
-//     </HTML>
-
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-
-            // gender countrydestin
-            // size
-            // colour
-            // prodcond
-            // <input type="file" name="myimage" class="form-control" placeholder="Primary image:" required />
-
-            // <input type="file" name="firstoptionalimage" class="form-control" placeholder="First Optional Image:" />
-
-            // <input type="file" name="secondoptionalimage" class="form-control" placeholder="Second Optional Image:"  />
-            // <input type="text"  id="datepickeravailfrom" name="datepickeravailfrom" class="form-control" placeholder="Available from: (yyyy-mm-dd)" required />
-            // <input type="text" name="datepickeravailto" id="datepickeravailto" class="form-control" placeholder="Available until: (yyyy-mm-dd)" required />
-            // deliveryPlace" id="deliveryPlace" class="form-control" placeholder="Your collection place:(optional)"/></textarea>
-            // <textarea cols="40" row="100" name="sellerNote" id="sellerNote" class="form-control" placeholder="Your note:(optional)"  /></textarea>
-
-
-
-
-
-
-
 
 //https://www.itsolutionstuff.com/post/password-and-confirm-password-validation-in-reactexample.html
 
@@ -340,6 +9,8 @@ import Select from 'react-select';
 import CONFIG from '../../config.json';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
+import DateTimePicker from 'react-datetime-picker';
+import Uploader from './Uploader';
 
 const UploadAssets = () => {
   const [fname, setFirstName] = useState('');
@@ -355,13 +26,14 @@ const UploadAssets = () => {
   const [size, setSize] = useState('');
   const [state, setState] = useState('');
   const [colour, setColour] = useState('');
-  const [myimage, setImage] = useState('');
+  const [image, setImage] = useState('');
   const [firstoptionalimage, setOptionalImage1] = useState('');
   const [secondoptionalimage, setOptionalImage2] = useState('');
-  const [datepickeravailfrom, setAvailfrom] = useState('');
-  const [datepickeravailto, setavailto] = useState('');
+  const [datepickeravailfrom, setAvailfrom] = useState();
+  const [datepickeravailto, setavailto] = useState();
   const [note, setNote] = useState('');
   const [messageSent, setMessageSent] = useState('');
+  const [seesubmitbutton, setSeesubmitbutton] = useState(true);  
   const [clickedButtonButNotPosted, setClickedButtonButNotPosted] = useState('');
   const [clickedNotPostedMessage, setClickedNotPostedMessage] = useState('');
   const [fnameerrormsg, setFirstNameerrormsg] = useState('');
@@ -374,8 +46,8 @@ const UploadAssets = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    //return GetApis().CONTACTUS;
-    return CONFIG.DIRECT_LIVE.CONTACTUS;
+    return GetApis().UPLOADASSET;
+    //return CONFIG.DIRECT_LIVE.CONTACTUS;
   };
 
 
@@ -384,13 +56,13 @@ const UploadAssets = () => {
     event.preventDefault(); // 👈️ prevent page refresh
    const body ={fname, lname, title,
     note,category,country,city, contactEmail,contactPhone,
-    itemName,description,size,state, colour, myimage, 
+    itemName,description,size,state, colour, image, 
     firstoptionalimage,  secondoptionalimage,  datepickeravailfrom, 
      datepickeravailto }; 
     
    setClickedButtonButNotPosted(<p>{t("pages.contact.text.msginvalidform")} </p>);
      if (validate()) {            
-      const API_PATH = getApiPath();
+      const API_PATH = getApiPath();    
       axios({
         method: "post",
         url: `${API_PATH}`,
@@ -416,8 +88,7 @@ const UploadAssets = () => {
             setAvailfrom('');
             setavailto('');
             setState('');
-            setNote('');
-            setEmailerrormsg('');
+            setNote('');         
             setFirstNameerrormsg('');
             setLastNameerrormsg('');
             setTitleerrormsg('');
@@ -425,6 +96,7 @@ const UploadAssets = () => {
             setPhoneNumbererrormsg('');
             setReasonerrormsg('');
             setMessageSent(true);
+            setSeesubmitbutton(false);
             setClickedButtonButNotPosted(false);
             setClickedNotPostedMessage('');            
           }
@@ -466,7 +138,7 @@ const UploadAssets = () => {
       setEmailerrormsg(<p>{t("pages.contact.text.emailinvalidmsg")}</p>);
     }
 
-    if (typeof email !== "undefined") {
+    if (typeof contactEmail !== "undefined") {
       var pattern = new RegExp(
         /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
       );
@@ -576,6 +248,7 @@ const UploadAssets = () => {
     </Accordion.Collapse>
   </Card>
 
+
   <Card>
     <Accordion.Toggle as={Card.Header} eventKey="1">
         Item info      
@@ -596,6 +269,84 @@ const UploadAssets = () => {
           <div className="text-danger">{fnameerrormsg}</div>
         </div>
 
+
+        <div className="form-group">
+        <label>{t("itemName, pages.contact.text.firstname")} </label>
+        <input
+          id="itemName"
+          name="itemName"
+          type="text"
+          value={itemName}
+          onChange={event => setItemName(event.target.value)}          
+          placeholder={t("itemName, pages.contact.text.firstnameph")}
+        />
+          <div className="text-danger">{fnameerrormsg}</div>
+        </div>
+
+
+        <div className="form-group">
+        <label>{t(" description, pages.contact.text.firstname")} </label>
+        <input
+          id="description"
+          name="description"
+          type="text"
+          value={description}
+          onChange={event =>setDescription(event.target.value)}          
+          placeholder={t(" description, pages.contact.text.firstnameph")}
+        />
+          <div className="text-danger">{fnameerrormsg}</div>
+        </div>
+
+
+        <div className="form-group">
+        <label>{t("size, pages.contact.text.firstname")} </label>
+        <input
+          id="size"
+          name="size"
+          type="text"
+          value={size}
+          onChange={event => setSize(event.target.value)}          
+          placeholder={t("size, pages.contact.text.firstnameph")}
+        />
+          <div className="text-danger">{fnameerrormsg}</div>
+        </div>
+
+        <div className="form-group">
+        <label>{t("State, pages.contact.text.title")} </label>
+             <select name= "State" id="state" value={state}  onChange={event => setState(event.target.value)} >
+                <option value="">Choose state</option>
+                <option value="new">New</option>
+                <option value="secondHand">Second hand</option>
+                <option value="classic">Classic</option>     
+                <option value="vintage">Vintage</option>                                
+              </select>
+          <div className="text-danger">{fnameerrormsg}</div>
+        </div>
+
+
+        <div className="form-group">
+        <label>{t("colour, pages.contact.text.firstname")} </label>
+        <input
+          id="colour"
+          name="colour"
+          type="text"
+          value={colour}
+          onChange={event =>  setColour(event.target.value)}          
+          placeholder={t("colour, pages.contact.text.firstnameph")}
+        />
+          <div className="text-danger">{fnameerrormsg}</div>
+        </div>        
+        </Card.Body>
+    </Accordion.Collapse>
+  </Card>
+
+  <Card>
+    <Accordion.Toggle as={Card.Header} eventKey="2">
+       Delivery info    
+    </Accordion.Toggle>
+    <Accordion.Collapse eventKey="2">
+      <Card.Body className="content-accordion">
+        
         <div className="form-group">
         <label>{t("country, pages.contact.text.firstname")} </label>
         <input
@@ -621,95 +372,27 @@ const UploadAssets = () => {
         />
           <div className="text-danger">{fnameerrormsg}</div>
         </div>
-
-        <div className="form-group">
-        <label>{t("itemName, pages.contact.text.firstname")} </label>
-        <input
-          id="itemName"
-          name="itemName"
-          type="text"
-          value={fname}
-          onChange={event => setItemName(event.target.value)}          
-          placeholder={t("itemName, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-
-
-        <div className="form-group">
-        <label>{t(" description, pages.contact.text.firstname")} </label>
-        <input
-          id="description"
-          name="description"
-          type="text"
-          value={fname}
-          onChange={event =>setDescription(event.target.value)}          
-          placeholder={t(" description, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-
-
-        <div className="form-group">
-        <label>{t("size, pages.contact.text.firstname")} </label>
-        <input
-          id="size"
-          name="size"
-          type="text"
-          value={size}
-          onChange={event => setSize(event.target.value)}          
-          placeholder={t("size, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-
-
-
-        <div className="form-group">
-        <label>{t("state, pages.contact.text.firstname")} </label>
-        <input
-          id="state"
-          name="state"
-          type="text"
-          value={state}
-          onChange={event => setState(event.target.value)}          
-          placeholder={t("state, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-
-
-        <div className="form-group">
-        <label>{t("colour, pages.contact.text.firstname")} </label>
-        <input
-          id="colour"
-          name="colour"
-          type="text"
-          value={colour}
-          onChange={event =>  setColour(event.target.value)}          
-          placeholder={t("colour, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>        
+         
         </Card.Body>
     </Accordion.Collapse>
   </Card>
-  <Card>
-    <Accordion.Toggle as={Card.Header} eventKey="2">
+
+  {/* <Card>
+    <Accordion.Toggle as={Card.Header} eventKey="3">
     Upload info     
     </Accordion.Toggle>
-    <Accordion.Collapse eventKey="2">
+    <Accordion.Collapse eventKey="3">
       <Card.Body className="content-accordion">        
       
       <div className="form-group">
-        <label>{t("myimage, pages.contact.text.firstname")} </label>
+        <label>{t("image choose image to upload, pages.contact.text.firstname")} </label>
         <input
-          id="myimage"
-          name="myimage"
+          id="image"
+          name="image"
           type="file"
-          value={myimage}
+          value={image}
           onChange={event => setImage(event.target.value)}          
-          placeholder={t("myimage, pages.contact.text.firstnameph")}
+          placeholder={t("image, pages.contact.text.firstnameph")}
         />
           <div className="text-danger">{fnameerrormsg}</div>
         </div>
@@ -742,53 +425,13 @@ const UploadAssets = () => {
         
         </Card.Body>
     </Accordion.Collapse>
-  </Card> 
+  </Card>  */}
 
   <Card>
-    <Accordion.Toggle as={Card.Header} eventKey="3">
-   Availabilty    
-    </Accordion.Toggle>
-    <Accordion.Collapse eventKey="3">
-      <Card.Body className="content-accordion">  
-
-      <div className="form-group">
-        <label>{t("datepickeravailfrom, pages.contact.text.firstname")} </label>
-        <input
-          id="datepickeravailfrom"
-          name="datepickeravailfrom"
-          type="text"
-          value={fname}
-          onChange={event =>  setAvailfrom(event.target.value)}          
-          placeholder={t("datepickeravailfrom, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-
-        <div className="form-group">
-        <label>{t("datepickeravailto,  pages.contact.text.firstname")} </label>
-        <input
-          id="datepickeravailto"
-          name="datepickeravailto"
-          type="text"
-          value={fname}
-          onChange={event => setavailto(event.target.value)}          
-          placeholder={t("datepickeravailto, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-       
-        
-        
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card> 
-
-
-  <Card>
-    <Accordion.Toggle as={Card.Header} eventKey="4">
+    <Accordion.Toggle as={Card.Header} eventKey="5">
    Additional info    
     </Accordion.Toggle>
-    <Accordion.Collapse eventKey="4">
+    <Accordion.Collapse eventKey="5">
       <Card.Body className="content-accordion">
         
       <div className="form-group">
@@ -808,22 +451,41 @@ const UploadAssets = () => {
         </Card.Body>
     </Accordion.Collapse>
   </Card> 
+{/*  
+  <Card>
+    <Accordion.Toggle as={Card.Header} eventKey="5">
+ Uploader 
+    </Accordion.Toggle>
+    <Accordion.Collapse eventKey="5">
+      <Card.Body className="content-accordion">
+  <Uploader/>
+  </Card.Body>
+    </Accordion.Collapse>
+  </Card>  */}
 </Accordion>
 
-      
-       <input
+          {seesubmitbutton && (  <input
               className="btn btn-primary"
               type="submit"
               onClick={(e) =>  {handleSubmit(e)}}
               defaultValue={t("pages.contact.text.submit")}
             />
-       
+          )}
         <div>
+          
                {messageSent && (
                 <div>
-                  {t("pages.contact.text.thankyou1")} <br />
+                <div>
+                  Please now upload images for your asset
+                  {/* {t("pages.contact.text.thankyou1")} <br />
                   {t("pages.contact.text.thankyou2")} <br />                 
-                  {t("pages.contact.text.thankyou3")}{" "}
+                  {t("pages.contact.text.thankyou3")}{" "} */}
+           
+                </div>
+                <div>
+                <Uploader/>
+                </div>
+        
                 </div>
               )}
               

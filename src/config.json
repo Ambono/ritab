@@ -17,7 +17,9 @@
      "REGISTERSIMPLE": "http://localhost/dev/koneautoci/src/server/registerlogin/RegistrationMakerSimple.php",     
      "LOGIN": "http://localhost/dev/koneautoci/src/server/registerlogin/LoginMaker.php",
      "LOGINMANAGER":"http://localhost/dev/koneautoci/src/server/registerlogin/LoginManager.php",
-     "LOGOUT": "http://localhost/dev/koneautoci/src/server/registerlogin/Logout.php"
+     "LOGOUT": "http://localhost/dev/koneautoci/src/server/registerlogin/Logout.php",
+     "UPLOADASSET":"http://localhost/htdocdev/ritab/src/server/assets/insertasset.php",
+     "DISPLAYASSET":"http://localhost/htdocdev/ritab/src/server/assets/displayasset.php"
       },
 
   "BASE_URL_LOCAL": "http://localhost/php/",  

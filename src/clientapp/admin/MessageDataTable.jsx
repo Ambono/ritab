@@ -12,7 +12,7 @@ class MessageDataTable extends Component {
                 </td>
                 <td>
                     {this.props.obj.title}
-                </td>
+                   </td>
                 <td>
                     {this.props.obj.firstName}
                 </td>
