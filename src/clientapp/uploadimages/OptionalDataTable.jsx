@@ -3,7 +3,7 @@ import { NavLink, HashRouter } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Row, Col } from "react-bootstrap";
 
-class DisplayDataTable extends Component {
+class OptionalDataTable extends Component {
     render() {
         //let str3 = "src/server/assets/".concat(this.props.obj.PathMainImage); 
         // const mainimage = require('../../server/assets/images/modpleh/cardacia.main.PNG').default; 
@@ -12,7 +12,7 @@ class DisplayDataTable extends Component {
 
             <tr>
                 <td>
-                    <NavLink to="/assetoptionals">
+                    <NavLink to="/specificasset">
                         {/* <div className="akwaba-tiles-navlinks">
                             <img src={mainimage} width="300" height="auto" />
                         </div> */}
@@ -31,4 +31,4 @@ class DisplayDataTable extends Component {
     }
 }
 
-export default DisplayDataTable;
+export default OptionalDataTable;

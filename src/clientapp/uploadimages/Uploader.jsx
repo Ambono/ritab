@@ -18,6 +18,7 @@ const Uploader = () => {
     const [mainimage, setImage] = useState('');
     const [firstoptionalimage, setOptionalImage1] = useState('');
     const [secondoptionalimage, setOptionalImage2] = useState('');
+    const [thirdoptionalimage, setOptionalImage3] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [emailerrormsg, setEmailerrormsg] = useState('');
 
@@ -88,6 +89,17 @@ const Uploader = () => {
           type="file"
           value={secondoptionalimage}
           onChange={event => setOptionalImage2(event.target.value)}  
+        />       
+        </div>
+
+        <div className="form-group">
+        <label>{t("thirdoptionalimage, pages.contact.text.firstname")} </label>
+        <input
+          id="thirdoptionalimage"
+          name="thirdoptionalimage"
+          type="file"
+          value={thirdoptionalimage}
+          onChange={event => setOptionalImage3(event.target.value)}  
         />       
         </div>
         

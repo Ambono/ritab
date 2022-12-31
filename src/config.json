@@ -19,6 +19,7 @@
      "LOGINMANAGER":"http://localhost/dev/koneautoci/src/server/registerlogin/LoginManager.php",
      "LOGOUT": "http://localhost/dev/koneautoci/src/server/registerlogin/Logout.php",
      "UPLOADASSET":"http://localhost/htdocdev/ritab/src/server/assets/insertasset.php",
+     "RETRIEVEASSET":"http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php",
      "DISPLAYASSET":"http://localhost/htdocdev/ritab/src/server/assets/displayasset.php"
       },
 

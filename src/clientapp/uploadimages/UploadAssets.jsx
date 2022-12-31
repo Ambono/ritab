@@ -174,7 +174,7 @@ const UploadAssets = () => {
 
 
         <Accordion defaultActiveKey="0">  
-  <Card>
+    <Card>
     <Accordion.Toggle as={Card.Header} eventKey="0">
     Your personal info   
     </Accordion.Toggle>
@@ -428,10 +428,10 @@ const UploadAssets = () => {
   </Card>  */}
 
   <Card>
-    <Accordion.Toggle as={Card.Header} eventKey="5">
+    <Accordion.Toggle as={Card.Header} eventKey="3">
    Additional info    
     </Accordion.Toggle>
-    <Accordion.Collapse eventKey="5">
+    <Accordion.Collapse eventKey="3">
       <Card.Body className="content-accordion">
         
       <div className="form-group">

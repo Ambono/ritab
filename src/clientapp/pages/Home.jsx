@@ -3,13 +3,13 @@ import KoneautoMaster from "./marveltech/Koneautomaster";
 import { withTranslation } from "react-i18next";
 import LoadMoreCars from '../Auto/LoadMoreCars';
 import CarDisplayPage from '../Auto/CarDisplayPage';
-
+import AssetMaster from '../uploadimages/DisplayAssetPage';
 class Home extends Component {
   render() {
     const { t } = this.props;
     return (
       <div className="content-akwaba" >
-         <KoneautoMaster/>  
+         <AssetMaster/>  
           <LoadMoreCars/>         
         <p></p>
       </div>

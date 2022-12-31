@@ -37,15 +37,10 @@ import Partnerservice from "./clientapp/partners/Partnerservice";
 import UsefullLinks from "./clientapp/admin/UsefullLinks";
 import LoadMoreCars from "./clientapp/Auto/LoadMoreCars";
 import InsertCar from "./clientapp/Auto/InsertCar";
-import Car1 from "./clientapp/Auto/carpages/Car1";
-import Car2 from "./clientapp/Auto/carpages/Car2";
-import Car3 from "./clientapp/Auto/carpages/Car3";
-import Car4 from "./clientapp/Auto/carpages/Car4";
-import Car5 from "./clientapp/Auto/carpages/Car5";
 import ThankUploadeded from "./clientapp/uploadimages/ThankyouAfterUploaded";
-// import Car6 from "./clientapp/Auto/carpages/Car6";
-
+import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage";
 import UploadAssets from "./clientapp/uploadimages/UploadAssets";
+import AssetOptionals from "./clientapp/uploadimages/AssetOptionalPage";
 
 class Main extends Component {
   render() {
@@ -55,14 +50,10 @@ class Main extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/insertcar" component={InsertCar} />
-
-          <Route path="/car1" component={Car1} />
-          <Route path="/car2" component={Car2} />
-          <Route path="/car3" component={Car3} />
-          <Route path="/car4" component={Car4} />
-          <Route path="/car5" component={Car5} />
+          <Route path="/assetmaster" component={AssetMaster} />        
           <Route path="/thankuploadeded" component={ThankUploadeded} />
-
+          <Route path="/assetoptionals" component={AssetOptionals} />
+          
           <Route path="/services" component={Services} />
           <Route path="/menue" component={Menue} />
           <Route path="/reference" component={References} />
