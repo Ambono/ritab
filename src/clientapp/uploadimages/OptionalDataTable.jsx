@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, HashRouter } from "react-router-dom";
+import { NavLink, HashRouter,   BrowserRouter as Router  } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Row, Col } from "react-bootstrap";
 

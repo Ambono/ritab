@@ -45,8 +45,6 @@ const AssetOptionalPage = (props) => {
 //console.log("props.location.state: ", mainimagepath);
 //console.log("mainimage: ", mainimage);
 
-
-
   const { t } = useTranslation();
 
   useEffect(() => {

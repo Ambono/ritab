@@ -11,10 +11,10 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 
 $result = mysqli_query($conn,"SELECT DISTINCT il.Name, il.PathMainImage, il.Useremail, il.PathFirstOptionalImage, 
-    il.PathSecondOptionalImage, pd.Sellernote
+    il.PathSecondOptionalImage, il.PathThirdOptionalImage, pd.Sellernote, pd.Description, pd.Price
     FROM imagelocation il
      inner join productdetails pd on pd.SellerEmail = il.Useremail 
-        where pd.Availuntil >= DATE_SUB(now(), INTERVAL 90 DAY) AND il.Name is not null ");
+        where pd.Availuntil >= DATE_SUB(now(), INTERVAL 90 DAY) AND il.Name is not null GROUP BY il.Useremail ORDER BY il.Id DESC; ");
      
 $data = array();
 while ($row = mysqli_fetch_array($result)) {

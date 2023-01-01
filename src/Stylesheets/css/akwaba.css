@@ -1,3 +1,18 @@
+.text_descriptor_name{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 100px;   
+}
+
+.text_descriptor_note{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px  
+}
 
 .akwaba-top {
     flex-direction: column;

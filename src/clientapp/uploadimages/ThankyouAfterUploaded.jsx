@@ -53,7 +53,7 @@ const handleSubmit = event => {
 thank you your images are uploaded
 
     </div>
-    <NavLink to="/">
+    <NavLink to="/home">
     <input
          className="btn btn-primary"
          type="submit" 
