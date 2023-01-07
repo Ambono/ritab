@@ -1,8 +1,5 @@
 <?php 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ritoab";
+include("./config.php");
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
 

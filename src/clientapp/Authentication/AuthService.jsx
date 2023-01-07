@@ -4,8 +4,8 @@ import axios from "axios";
 import React, {useState} from 'react';
 import CONFIG from '../../config.json';
 function  Authservice2 ()  {  
-       //const API_PATH = CONFIG.DIRECT_LIVE.LOGINMANAGER;
-       const API_PATH = GetApis().LOGINMANAGER;
+       const API_PATH = CONFIG.DIRECT_LIVE.LOGINMANAGER;
+      // const API_PATH = GetApis().LOGINMANAGER;
          const [loginStatus, setLoginStatus] = useState(''); 
         
               axios.get(`${API_PATH}`,{                          

@@ -1,7 +1,3 @@
-
-
-
-
 import { useTranslation } from 'react-i18next';
 import { React,useState} from "react";
 import axios from "axios";
@@ -11,10 +7,7 @@ import CONFIG from '../../config.json';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
 
-
-
 const Uploader = () => {
- 
     const [mainimage, setImage] = useState('');
     const [firstoptionalimage, setOptionalImage1] = useState('');
     const [secondoptionalimage, setOptionalImage2] = useState('');
@@ -43,10 +36,10 @@ const Uploader = () => {
         const { t } = useTranslation();    
         return (             
         <div>
-  <form action="http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDir.php" method="post" enctype="multipart/form-data">
-  Select image to upload:
-
-   
+  {/* <form action="http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDir.php" method="post" enctype="multipart/form-data">
+   */}
+  <form action="http://groupakwabatech.com/uploaderMkDir.php" method="post" enctype="multipart/form-data">
+    Select image to upload:   
   <div className="form-group">
         <label>{t("pages.contact.text.email")}</label>
         <input

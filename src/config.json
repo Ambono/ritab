@@ -25,7 +25,7 @@
 
   "BASE_URL_LOCAL": "http://localhost/php/",  
 
-  "BASE_URL_LIVE": "https://koneautoci.com/",
+  "BASE_URL_LIVE": "https://ritoab.com/",
 
   "PAGES_URL": {    
     "CONTACTUS": "ContactUsMessages.php",
@@ -39,24 +39,27 @@
       },
 
       "DIRECT_LIVE":{
-        "CONTACTUS": "https://koneautoci.com/Contactmessage.php",
-        "RETRIEVEMYMESSAGES": "https://koneautoci.com/Retrievecontactmessages.php",
-        "BOOKINGS": "https://koneautoci.com/MakeBooking.php",
-        "RETRIEVEBOOKINGS": "https://koneautoci.com/RetrieveBooking.php",    
-        "REGISTERSIMPLE": "https://koneautoci.com/RegistrationMakerSimple.php",        
-        "LOGIN": "https://koneautoci.com/LoginMaker.php",
-        "LOGINMANAGER":"https://koneautoci.com/LoginManager.php",
-        "LOGOUT": "https://koneautoci.com/Logout.php"
+        "CONTACTUS": "http://groupakwabatech.com/Contactmessage.php",
+        "RETRIEVEMYMESSAGES": "http://groupakwabatech.com/Retrievecontactmessages.php",
+        "BOOKINGS": "http://groupakwabatech.com/MakeBooking.php",
+        "RETRIEVEBOOKINGS": "http://groupakwabatech.com/RetrieveBooking.php",    
+        "REGISTERSIMPLE": "http://groupakwabatech.com/RegistrationMakerSimple.php",        
+        "LOGIN": "http://groupakwabatech.com/LoginMaker.php",
+        "LOGINMANAGER":"http://groupakwabatech.com/LoginManager.php",
+        "LOGOUT": "http://groupakwabatech.com/Logout.php",
+        "UPLOADASSET":"http://groupakwabatech.com/insertasset.php",
+        "RETRIEVEASSET":"http://groupakwabatech.com/retrieveasset.php",
+        "DISPLAYASSET":"http://groupakwabatech.com/displayasset.php"
       },
 
   "ENVIRONMENT": {
     "DEV": false,
-    "LIVE": false,
-    "MANUAL":true
+    "LIVE": true,
+    "MANUAL":false
   },
 
   "CREDENTIALS": {
-    "ADMIN_EMAIL": "admin.koneauto@gmail.com",
-    "CUSTOMER_EMAIL": "info@koneautoci.com"
+    "ADMIN_EMAIL": "admin.ritoab@gmail.com",
+    "CUSTOMER_EMAIL": "info@ritoab.com"
   }
 }

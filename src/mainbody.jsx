@@ -35,9 +35,7 @@ import Authservice2 from "./clientapp/Authentication/AuthService";
 import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests";
 import Partnerservice from "./clientapp/partners/Partnerservice";
 import UsefullLinks from "./clientapp/admin/UsefullLinks";
-import LoadMoreCars from "./clientapp/Auto/LoadMoreCars";
-import InsertCar from "./clientapp/Auto/InsertCar";
-import ThankUploadeded from "./clientapp/uploadimages/ThankyouAfterUploaded";
+import ThankUploaded from "./clientapp/uploadimages/ThankyouAfterUploaded";
 import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage_redundant";
 import UploadAssets from "./clientapp/uploadimages/UploadAssets";
 import AssetOptionals from "./clientapp/uploadimages/AssetOptionalPage";
@@ -48,12 +46,10 @@ class Main extends Component {
       <div>
         <HashRouter>
           <Route exact path="/" component={Home} />
-          <Route path="/home" component={Home} />
-          <Route path="/insertcar" component={InsertCar} />
+          <Route path="/home" component={Home} />         
           <Route path="/assetmaster" component={AssetMaster} />        
-          <Route path="/thankuploadeded" component={ThankUploadeded} />
-          <Route path="/assetoptionals" component={AssetOptionals} />
-          
+          <Route path="/thanksuploaded" component={ThankUploaded} />
+          <Route path="/assetoptionals" component={AssetOptionals} />          
           <Route path="/services" component={Services} />
           <Route path="/menue" component={Menue} />
           <Route path="/reference" component={References} />
@@ -86,8 +82,7 @@ class Main extends Component {
           <Route path="/partnerservice" component={Partnerservice} />
           <Route path="/logout" component={Logout} />
           <Route path="/authservice" component={Authservice} />
-          <Route path="/authservice2" component={Authservice2} />
-          <Route path="/loadmorecars" component={LoadMoreCars} />
+          <Route path="/authservice2" component={Authservice2} />         
           <Route path="/uploadassets" component={UploadAssets} />
 
           <Route />

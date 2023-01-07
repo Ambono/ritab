@@ -1,5 +1,5 @@
 <?php 
-include("../config.php");
+include("./config.php");
 
 
 $result = mysqli_query($connect,"SELECT pd.Id as Id, pd.Description as Description , pd.Name as Name, Size, Colour, Gender, ProdCondition, ProdImage, FirstOptionalImage, SecondOptionalImage, pc.CountryOrig CountryOrig, pc.CountryDestin as CountryDestin, pc.CityDestin as CityDestin, ProdImagePath, Availfrom, Availuntil, Price, s.SellerEmail as SellerEmail, s.SellerPhone as SellerPhone, DeliveryPlace, 

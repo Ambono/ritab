@@ -46,8 +46,8 @@ const UploadAssets = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    return GetApis().UPLOADASSET;
-    //return CONFIG.DIRECT_LIVE.CONTACTUS;
+    //return GetApis().UPLOADASSET;
+    return CONFIG.DIRECT_LIVE.UPLOADASSET;
   };
 
 
