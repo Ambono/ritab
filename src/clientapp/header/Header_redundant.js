@@ -7,7 +7,7 @@ class Header extends Component {
     const { t } = this.props;
     return (      
       <div>  
-       <HashRouter>          
+       {/* <HashRouter>          
           <ul>      
             <li>
               <NavLink to="/home"><span >{t("navbar.home")}</span></NavLink>
@@ -22,7 +22,7 @@ class Header extends Component {
               <NavLink to="/logout"><span>{t("navbar.logout")}</span></NavLink>            
             </li>            
             </ul>           
-          </HashRouter> 
+          </HashRouter>  */}
       </div>
     );
   }

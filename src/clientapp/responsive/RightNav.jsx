@@ -47,8 +47,8 @@ function RightNav ({open } )  {
         <Ul open={open} id="menu"> 
         <HashRouter>
           <p></p>
-          <p><NavLink to="/adminpagetemp">
-                           My admin</NavLink></p>             
+          {/* <p><NavLink to="/adminpagetemp">
+                My admin</NavLink></p>              */}
                    <li>
                       <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -56,12 +56,14 @@ function RightNav ({open } )  {
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
-                           <Dropdown.Item href="#"><NavLink to="/marveltechsolution">
+                           <Dropdown.Item href="#"><NavLink to="/adminpagetemp">
                             <span className="header-akwaba-rightnavbar-navlinks">
-                            {t("pages.marveltechgroup.group.text.solutions")}</span></NavLink>
+                            My admin
+                            {/* {t("pages.marveltechgroup.group.text.solutions")}*/}
+                            </span></NavLink> 
                             </Dropdown.Item>
                          
-                           <Dropdown.Item href="#">
+                           {/* <Dropdown.Item href="#">
                             <NavLink to="/marveltechconsulting">
                             <span className ="header-akwaba-rightnavbar-navlinks">
                               {t("pages.marveltechgroup.group.text.consulting")}</span></NavLink>
@@ -75,11 +77,11 @@ function RightNav ({open } )  {
                            <Dropdown.Item href="#"> <NavLink to="/marveltechtrade">
                            <span className ="header-akwaba-rightnavbar-navlinks">
                             {t("pages.marveltechgroup.group.text.ecommerce")}</span></NavLink>
-                            </Dropdown.Item>
-                          </Dropdown.Menu>                         
+                            </Dropdown.Item>   */}
+                          </Dropdown.Menu>                       
                       </Dropdown>
                     </li>               
-                   <li>                   
+                   {/* <li>                   
                     <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
                           {t("navbar.partners")}
@@ -96,7 +98,7 @@ function RightNav ({open } )  {
                          </Dropdown.Item>
                           </Dropdown.Menu>
                       </Dropdown> 
-                    </li>
+                    </li> */}
                    
                     <li>                           
                           <Dropdown>

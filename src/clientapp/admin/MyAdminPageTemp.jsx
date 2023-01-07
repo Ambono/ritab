@@ -24,46 +24,17 @@ function MyAdminTemp(){
           </Row>
           <Row>
             <HashRouter>
-            <Col md={{ span: 3, offset: 1 }}>
-                {" "}
-                <div className="akwaba-container-items">
-                  <NavLink to="/messageadmin">
-                    <div className="akwaba-tiles-navlinks">
-                    {t("admin.messageadmin")}                
-                    </div>
-                  </NavLink>                 
-                </div>
-              </Col>
-
               <Col md={{ span: 2, offset: 0}}>
                 {" "}
                 <div className="akwaba-container-items">
                   <NavLink to="/uploadassets">
                     <div className="akwaba-tiles-navlinks">
-                    Upload assets, {t("admin.messageadmin")}                
+                    Upload assets               
                     </div>
                   </NavLink>                 
                 </div>
               </Col>
-              <Col md={{ span: 2, offset: 0 }}>
-                {" "}
-                <div className="akwaba-container-items">
-                  <NavLink to="/trainings">
-                    <div className="akwaba-tiles-navlinks">
-                    {t("admin.trainings")}                   
-                    </div>
-                  </NavLink>                  
-                </div>
-              </Col>             
-              <Col md={{ span: 3, offset: 0 }}>
-                <div className="akwaba-container-items">
-                  <NavLink to="/usefulllinks">
-                    <div className="akwaba-tiles-navlinks">
-                    {t("admin.usefulllinks")}                    
-                    </div>
-                  </NavLink>                 
-                </div>
-              </Col> 
+             
             </HashRouter>
           </Row> 
 
