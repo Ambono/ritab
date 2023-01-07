@@ -447,13 +447,13 @@ else{
     // VALUES ('$name', '$mainimagepath','$userEmail','$randomUniqueId')";
       
     if(empty($upload_imageoptional1))     
-    $firstimageoptional ="";
+    $firstimageoptional ="images/noimage/noimage.PNG";
 
     if(empty($upload_imageoptional2))
-     $secondimageoptional ="";
+     $secondimageoptional ="images/noimage/noimage.PNG";
 
      if(empty($upload_imageoptional3))
-     $thirdimageoptional ="";
+     $thirdimageoptional ="images/noimage/noimage.PNG";
 
     $sql = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`, `PathSecondOptionalImage`,`PathThirdOptionalImage`,`Date_Created`)
     VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional','$secondimageoptional','$thirdimageoptional', Now())";

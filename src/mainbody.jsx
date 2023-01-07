@@ -38,7 +38,7 @@ import UsefullLinks from "./clientapp/admin/UsefullLinks";
 import LoadMoreCars from "./clientapp/Auto/LoadMoreCars";
 import InsertCar from "./clientapp/Auto/InsertCar";
 import ThankUploadeded from "./clientapp/uploadimages/ThankyouAfterUploaded";
-import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage";
+import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage_redundant";
 import UploadAssets from "./clientapp/uploadimages/UploadAssets";
 import AssetOptionals from "./clientapp/uploadimages/AssetOptionalPage";
 

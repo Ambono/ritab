@@ -10,7 +10,7 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 
 
-$result = mysqli_query($conn,"SELECT DISTINCT il.Name, il.PathMainImage, il.Useremail, il.PathFirstOptionalImage, 
+$result = mysqli_query($conn,"SELECT DISTINCT il.Id, il.Name, il.PathMainImage, il.Useremail, il.PathFirstOptionalImage, 
     il.PathSecondOptionalImage, il.PathThirdOptionalImage, pd.Sellernote, pd.Description, pd.Price
     FROM imagelocation il
      inner join productdetails pd on pd.SellerEmail = il.Useremail 
