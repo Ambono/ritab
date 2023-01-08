@@ -7,6 +7,8 @@
     "SENDEMAILPAGE": "akwabatechsendcontactusemail.php"
   },
 
+   "homepage": "groupakwabatech.com",
+
     "MANUAL_URL":{
       "RETRIEVECAR": "http://localhost/dev/koneautoci/src/server/cars/retrievecars.php",
       "CREATECAR": "http://localhost/dev/koneautoci/src/server/cars/insertcars.php",

@@ -180,7 +180,7 @@ function Posts() {
     axios.get('http://groupakwabatech.com/retrieveasset.php')
       .then(res => {
         setPost(res.data)
-        console.log("response in LMA: ", res.data)
+       // console.log("response in LMA: ", res.data)
       })
       .catch((e) => console.log(e))
   }
@@ -206,11 +206,25 @@ function Posts() {
 
       <h2 className="mb-3">Available properties</h2>
       {initialPosts.map((item) => {
+        /////////dev env
+        // const mainimage = require(`../../server/assets/${item.PathMainImage}`).default;
+        // const opt1image = require(`../../server/assets/${item.PathFirstOptionalImage}`).default;
+        // const opt2image = require(`../../server/assets/${item.PathSecondOptionalImage}`).default;
+        // const opt3image = require(`../../server/assets/${item.PathThirdOptionalImage}`).default;
+        
+        ////live
+        // const myApp ="groupakwabatech.com";
+        // const mainimage = require(`/${myApp}/${item.PathMainImage}`).default;
+        // const opt1image = require(`/${myApp}/${item.PathFirstOptionalImage}`).default;
+        // const opt2image = require(`/${myApp}/${item.PathSecondOptionalImage}`).default;
+        // const opt3image = require(`/${myApp}/${item.PathThirdOptionalImage}`).default;
 
-        const mainimage = require(`../../server/assets/${item.PathMainImage}`).default;
-        const opt1image = require(`../../server/assets/${item.PathFirstOptionalImage}`).default;
-        const opt2image = require(`../../server/assets/${item.PathSecondOptionalImage}`).default;
-        const opt3image = require(`../../server/assets/${item.PathThirdOptionalImage}`).default;
+        const myApp ="groupakwabatech.com";
+        const mainimage = `/${item.PathMainImage}`;
+        const opt1image = `/${item.PathFirstOptionalImage}`;
+        const opt2image = `/${item.PathSecondOptionalImage}`;
+        const opt3image = `/${item.PathThirdOptionalImage}`;
+        
         const assetNote = item.Sellernote;
         const assetDescription = item.Description;
         const assetName = item.Name;
@@ -261,3 +275,5 @@ function Posts() {
   )
 }
 export default Posts
+
+

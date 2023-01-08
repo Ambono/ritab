@@ -27,7 +27,7 @@ function getUserIP() {
 $user_ip = getUserIP();
 
 $contactEmail = $_POST["contactEmail"];
-echo 'email: '.$contactEmail;
+//echo 'email: '.$contactEmail;
 
 // $sqlRandomId = "SELECT `SellerEmail`,  `randomUniqueID` FROM `productdetails` WHERE `SellerEmail` = \'modpleh@yahoo.co.uk\' ORDER BY Id LIMIT 1;";
 
@@ -43,7 +43,7 @@ if (!mysqli_query($conn, $sqlRandomId))
 die("<br/>Error While getting inserter code "); 
 }  
 else{
- echo "1 record pulled "; 
+ echo "1 record pulled from uploader mkdir "; 
  // $latestinsertedid = mysqli_insert_id($conn); 
 }
 
@@ -52,7 +52,9 @@ $row = mysqli_fetch_assoc($result);
 $randomUniqueId = $row["randomUniqueID"];
 $userEmail =  $row["SellerEmail"];
 $name =  $row["Name"];
-
+echo "rui: ".$randomUniqueId;
+echo " userEmail: ".$userEmail;
+echo " name: ".$name;
 
   $firstuploadimageoptional ="";
   $seconduploadimageoptional="";
@@ -88,6 +90,8 @@ if(!is_dir($directoryname)){
  if(isset($_POST["submit"])) {
    $check = getimagesize($_FILES["mainimage"]["tmp_name"]);
 
+   echo " in submit ";
+
    if(!empty($_FILES["firstoptionalimage"]["tmp_name"] )) 
    $check1 = getimagesize($_FILES["firstoptionalimage"]["tmp_name"]);
 
@@ -96,78 +100,76 @@ if(!is_dir($directoryname)){
 
    if(!empty($_FILES["thirdoptionalimage"]["tmp_name"])) 
    $check3 = getimagesize($_FILES["thirdoptionalimage"]["tmp_name"]);
-   
-   if($check !== false) {
-     echo "File -check- is an image - " . $check["mime"] . ".";
+
+   $canupload = false;
+   if($check !== false) {    
      $uploadOk = 1;
-   } else {
-     echo "File  -check- is not an image.";
+     echo " uploadOk: 1";
+     $canupload = true;
+   } else {    
      $uploadOk = 0;
+     echo " uploadOk: 0";
    }
 
-   if($check1 !== false) {
-    echo "File  -check1- is an image - " . $check1["mime"] . ".";
+   if($check1 !== false) {   
     $uploadOk1 = 1;
-  } else {
-    echo "File  -check1- is not an image.";
+  } else {    
     $uploadOk1 = 0;
   }
 
-  if($check2 !== false) {
-    echo "File  -check2- is an image - " . $check2["mime"] . ".";
+  if($check2 !== false) {    
     $uploadOk2 = 1;
-  } else {
-    echo "File  -check2- is not an image.";
+  } else {   
     $uploadOk2 = 0;
   }
 
-  if($check3 !== false) {
-    echo "File  -check3- is an image - " . $check3["mime"] . ".";
+  if($check3 !== false) {   
     $uploadOk3 = 1;
-  } else {
-    echo "File  -check3- is not an image.";
+  } else {    
     $uploadOk3 = 0;
   }
  }
  
  // Check if file already exists
- if (file_exists($target_file)) {
-   echo "Sorry, file already exists.";
+ if (file_exists($target_file)) {  
    $uploadOk = 0;
+   echo " file already exist ";
  }
  
  // Check file size
- if ($_FILES["mainimage"]["size"] > 500000) {
-   echo "Sorry, your file is too large.";
+ if ($_FILES["mainimage"]["size"] > 500000) {  
    $uploadOk = 0;
  }
 
- if ($_FILES["firstoptionalimage"]["size"] > 500000) {
-  echo "Sorry, your file is too large.";
+ if ($_FILES["firstoptionalimage"]["size"] > 500000) { 
   $uploadOk = 0;
 }
 
-if ($_FILES["secondoptionalimage"]["size"] > 500000) {
-  echo "Sorry, your file is too large.";
+if ($_FILES["secondoptionalimage"]["size"] > 500000) { 
   $uploadOk = 0;
 }
 
 if ($_FILES["thirdoptionalimage"]["size"] > 500000) {
-  echo "Sorry, your file is too large.";
   $uploadOk = 0;
 }
  
  // Allow certain file formats
- if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
- && $imageFileType != "gif" ) {
-   echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-   $uploadOk = 0;
+ 
+ if($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg"
+ || $imageFileType == "gif" || $imageFileType =="webp") {   
+   $uploadOk = 1;
+ }
+ else{
+  echo " image file type: 0";
  }
  
  ///////////////Check ends ////////////////////
 
 
-if ($uploadOk == 1) {
+if ($canupload) {
+
+  echo " in check uploads: ";
+
    ////////mainimage
  if (isset($_FILES["mainimage"]) && !empty($_FILES["mainimage"])) {
   $upload_image=$_FILES["mainimage"]["name"];
@@ -306,11 +308,10 @@ if ($uploadOk == 1) {
         
         if (!mysqli_query($conn, $sql123))
            {
-           die("Error While uploading image on the server: "); 
+           die("Error While uploading image on the server 3 images: "); 
            }  
-         else{
-            echo "1 record added "; 
-             $latestinsertedid = mysqli_insert_id($conn); 
+         else{           
+            // $latestinsertedid = mysqli_insert_id($conn); 
              header("location: http://groupakwabatech.com/#/thanksuploaded");
            }
                 
@@ -325,11 +326,10 @@ if ($uploadOk == 1) {
        
        if (!mysqli_query($conn, $sql12))
         {
-        die("Error While uploading image on the server: "); 
+        die("Error While uploading image on the server 2 images: "); 
         }  
-      else{
-         echo "1 record added "; 
-          $latestinsertedid = mysqli_insert_id($conn); 
+      else{        
+        //  $latestinsertedid = mysqli_insert_id($conn); 
           header("location: http://groupakwabatech.com/#/thanksuploaded");
         }
           
@@ -347,11 +347,10 @@ if ($uploadOk == 1) {
 ////end optional 1
 if (!mysqli_query($conn, $sql1))
   {
-  die("Error While uploading image on the server: "); 
+  die("Error While uploading image on the server 1 image: "); 
   }  
-else{
-   echo "1 record added "; 
-    $latestinsertedid = mysqli_insert_id($conn); 
+else{  
+   // $latestinsertedid = mysqli_insert_id($conn); 
     header("location: http://groupakwabatech.com/#/thanksuploaded");
   }
    
@@ -363,11 +362,10 @@ else{
     VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$secondimageoptional', Now())";
      if (!mysqli_query($conn, $sql2))
      {
-     die("Error While uploading image on the server: "); 
+     die("Error While uploading image on the server: only second image "); 
      }  
-   else{
-      echo "1 record added "; 
-       $latestinsertedid = mysqli_insert_id($conn); 
+   else{      
+      // $latestinsertedid = mysqli_insert_id($conn); 
        header("location: http://groupakwabatech.com/#/thanksuploaded");
      }
          
@@ -383,11 +381,10 @@ else{
 
    if (!mysqli_query($conn, $sql3))
   {
-  die("Error While uploading image on the server: "); 
+  die("Error While uploading image on the server only third image: "); 
   }  
-else{
-   echo "1 record added "; 
-    $latestinsertedid = mysqli_insert_id($conn); 
+else{   
+  //  $latestinsertedid = mysqli_insert_id($conn); 
     //header("location: http://localhost:3000/#/thanksuploaded");
     header("location: http://groupakwabatech/#/thanksuploaded");
   }
@@ -418,11 +415,10 @@ else{
        
  if (!mysqli_query($conn, $sql))
   {
-  die("Error While uploading image on the server: "); 
+  die("Error While uploading image on the server: default"); 
   }  
-else{
-   echo "1 record added "; 
-    $latestinsertedid = mysqli_insert_id($conn); 
+else{  
+   // $latestinsertedid = mysqli_insert_id($conn); 
     header("location: http://groupakwabatech.com/#/thanksuploaded");
   }
    
@@ -436,7 +432,10 @@ else{
 }
  }
 }
+}else{
+  echo " did not jump in uploadOk: 0";
 }
+
 
 ?>
 

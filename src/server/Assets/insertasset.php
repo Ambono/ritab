@@ -46,8 +46,7 @@ $user_ip = getUserIP();
  $state = mysqli_real_escape_string($conn, $data['state']);
  $category = mysqli_real_escape_string($conn, $data['category']);
  $sellerEmail = mysqli_real_escape_string($conn, $data['contactEmail']);
- $contactPhone = mysqli_real_escape_string($conn, $data['contactPhone']);
- //$upload_image = mysqli_real_escape_string($conn, $data['myimage']);
+ $contactPhone = mysqli_real_escape_string($conn, $data['contactPhone']); 
  $deliveryPlace1 = mysqli_real_escape_string($conn, $data['country']);
  $deliveryPlace2 = mysqli_real_escape_string($conn, $data['city']);
  $deliveryPlace = $deliveryPlace1.' '.$deliveryPlace2;
@@ -66,17 +65,12 @@ $user_ip = getUserIP();
        
  if (!mysqli_query($conn, $sql))
   {
-  die("Error While uploading image on the server: "); 
+  die("Error While uploading image on the server: in product details table"); 
   }  
 else{
    echo "1 record added "; 
     $latestinsertedid = mysqli_insert_id($conn); 
-  }
- 
-  
-    
-   
-    
+  }     
 ?>
 
 

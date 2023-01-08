@@ -47,7 +47,8 @@ const UploadAssets = () => {
 
   const getApiPath = () => { 
     //return GetApis().UPLOADASSET;
-    return CONFIG.DIRECT_LIVE.UPLOADASSET;
+    //return CONFIG.DIRECT_LIVE.UPLOADASSET;
+    return "http://groupakwabatech.com/insertasset.php";
   };
 
 
