@@ -76,27 +76,22 @@ function Posts() {
             className="mb-3 card bg-primary p-2 text-dark bg-opacity-25"
             key={item.Id}
           >
-            <div className="">
-              <span Style='color: white; font-weight: bold; font-size: 16px'>{item.Name} has published: </span>
-              <Link to={{
-                pathname: "/assetoptionals", state: {
-                  mainimage, opt1image, opt2image, opt3image,
-                  assetNote, assetDescription, assetName, assetPrice, reply, replyerName
-                }
-              }}>
-              </Link>
-            </div>
-            <Link to={{
-              pathname: "/assetoptionals", state: {
-                mainimage, opt1image, opt2image, opt3image,
-                assetNote, assetDescription, assetName, assetPrice, reply, replyerName
-              }
+            <div class="">            
+              <div class =""  Style='color: white; font-weight: bold; font-size: 16px'><h1>{item.Name} has published: </h1></div>
+              <div class ="" >               
+                <Link to={{
+                  pathname: "/assetoptionals", state: {
+                    mainimage, opt1image, opt2image, opt3image,
+                    assetNote, assetDescription, assetName, assetPrice, reply, replyerName
+                  }
             }}>
-              <img src={mainimage} width="300" height="300" />
-              <div class="reply-link-homepage">See {replyerName}'s reply.</div>
+              <img src={mainimage} width="300" height="300" />                           
+               <div Style='color: white;' class=""> <h4>See {replyerName}'s reply.</h4></div>
             </Link>
-            
-          </div>
+            </div>
+            </div>
+            </div>
+          
         )
       })}
       <div className="d-grid mt-3 mb-5">
