@@ -377,56 +377,6 @@ const UploadAssets = () => {
     </Accordion.Collapse>
   </Card>
 
-  {/* <Card>
-    <Accordion.Toggle as={Card.Header} eventKey="3">
-    Upload info     
-    </Accordion.Toggle>
-    <Accordion.Collapse eventKey="3">
-      <Card.Body className="content-accordion">        
-      
-      <div className="form-group">
-        <label>{t("image choose image to upload, pages.contact.text.firstname")} </label>
-        <input
-          id="image"
-          name="image"
-          type="file"
-          value={image}
-          onChange={event => setImage(event.target.value)}          
-          placeholder={t("image, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-
-        <div className="form-group">
-        <label>{t("firstoptionalimage, pages.contact.text.firstname")} </label>
-        <input
-          id="firstoptionalimage"
-          name="firstoptionalimage"
-          type="file"
-          value={firstoptionalimage}
-          onChange={event => setOptionalImage1(event.target.value)}          
-          placeholder={t("firstoptionalimage, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-
-        <div className="form-group">
-        <label>{t("secondoptionalimage, pages.contact.text.firstname")} </label>
-        <input
-          id="secondoptionalimage"
-          name="secondoptionalimage"
-          type="file"
-          value={secondoptionalimage}
-          onChange={event => setOptionalImage2(event.target.value)}          
-          placeholder={t("secondoptionalimage, pages.contact.text.firstnameph")}
-        />
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-        
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>  */}
-
   <Card>
     <Accordion.Toggle as={Card.Header} eventKey="3">
    Additional info    
