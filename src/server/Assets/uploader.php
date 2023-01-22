@@ -1,6 +1,7 @@
 <?php
 
 include("./config.php");
+include("./config_local.php");
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
 
@@ -289,7 +290,8 @@ $sql = "INSERT INTO `imagelocation`(`PathMainImage`, `Useremail`, `RandomId`, `P
 else{
    echo "1 record added "; 
     $latestinsertedid = mysqli_insert_id($conn); 
-    header("location: http://groupakwabatech.com/#/thanksuploaded");
+    header("location: http://localhost:3000/#/thanksuploaded");
+   // header("location: http://groupakwabatech.com/#/thanksuploaded");
   }
    
     }

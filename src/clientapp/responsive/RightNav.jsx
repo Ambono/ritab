@@ -6,7 +6,6 @@ import { Row, Col } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import LoginStatus from '../Authentication/LoginStatus';
 import Authservice2 from '../Authentication/AuthService';
-import Authservice from '../Authentication/AuthService_Delete';
 
 const Ul = styled.ul`
   list-style: none;

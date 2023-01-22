@@ -10,7 +10,7 @@ import CONFIG from '../../config.json';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
 import DateTimePicker from 'react-datetime-picker';
-import Uploader from './Uploader';
+import Uploader from './UploadPictures';
 
 const UploadAssets = () => {
   const [fname, setFirstName] = useState('');
@@ -46,9 +46,8 @@ const UploadAssets = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    //return GetApis().UPLOADASSET;
-    //return CONFIG.DIRECT_LIVE.UPLOADASSET;
-    return "http://groupakwabatech.com/insertasset.php";
+    return GetApis().UPLOADASSET;  
+    //return "http://groupakwabatech.com/insertasset.php";
   };
 
 
@@ -441,7 +440,7 @@ const UploadAssets = () => {
           id="note"
           name="note"
           type="text"
-          rows={10}
+          rows={15}
           value={note}          
           onChange={event => setNote(event.target.value)}
           placeholder={t("pages.contact.text.subjectph")}

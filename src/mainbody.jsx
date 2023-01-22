@@ -30,14 +30,13 @@ import MyAdminTemp from "./clientapp/admin/MyAdminPageTemp";
 import Trainings from "./clientapp/academy/Trainings/Trainings";
 import Apprenticeship from "./clientapp/academy/Apprenticeship/Apprenticeship";
 import Logout from "./clientapp/registerlogin/Logout";
-import Authservice from "./clientapp/Authentication/AuthService_Delete";
 import Authservice2 from "./clientapp/Authentication/AuthService";
 import Onboardingtests from "./clientapp/academy/Apprenticeship/Onboardingtests";
 import Partnerservice from "./clientapp/partners/Partnerservice";
 import UsefullLinks from "./clientapp/admin/UsefullLinks";
 import ThankUploaded from "./clientapp/uploadimages/ThankyouAfterUploaded";
 import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage_redundant";
-import UploadAssets from "./clientapp/uploadimages/UploadAssets";
+import UploadAssets from "./clientapp/uploadimages/UploadTextInputs";
 import AssetOptionals from "./clientapp/uploadimages/AssetOptionalPage";
 
 class Main extends Component {
@@ -80,8 +79,7 @@ class Main extends Component {
           <Route path="/onboardingtests" component={Onboardingtests} />
           <Route path="/usefulllinks" component={UsefullLinks} />
           <Route path="/partnerservice" component={Partnerservice} />
-          <Route path="/logout" component={Logout} />
-          <Route path="/authservice" component={Authservice} />
+          <Route path="/logout" component={Logout} />         
           <Route path="/authservice2" component={Authservice2} />         
           <Route path="/uploadassets" component={UploadAssets} />
 

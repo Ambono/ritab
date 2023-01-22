@@ -6,30 +6,29 @@
     "PATH_SWIFTMAILER": "SwiftMailer/",
     "SENDEMAILPAGE": "akwabatechsendcontactusemail.php"
   },
+ 
 
-   "homepage": "groupakwabatech.com",
-
-    "MANUAL_URL":{
-      "RETRIEVECAR": "http://localhost/dev/koneautoci/src/server/cars/retrievecars.php",
-      "CREATECAR": "http://localhost/dev/koneautoci/src/server/cars/insertcars.php",
-    "CONTACTUS": "http://localhost/dev/koneautoci/src/server/messages/contactmessage.php",
-    "RETRIEVEMYMESSAGES": "http://localhost/dev/koneautoci/src/server/messages/retrievecontactmessages.php",
-     "TESTCONTACTUS":"http://localhost/dev/koneautoci/src/server/messages/contactmessage_test.php",  
-     "RETRIEVEBOOKINGS": "http://localhost/dev/koneautoci/src/server/messages/RetrieveBooking.php",     
-     "REGISTERSIMPLE": "http://localhost/dev/koneautoci/src/server/registerlogin/RegistrationMakerSimple.php",     
-     "LOGIN": "http://localhost/dev/koneautoci/src/server/registerlogin/LoginMaker.php",
-     "LOGINMANAGER":"http://localhost/dev/koneautoci/src/server/registerlogin/LoginManager.php",
-     "LOGOUT": "http://localhost/dev/koneautoci/src/server/registerlogin/Logout.php",
+    "MANUAL_URL":{ 
+    "CONTACTUS": "http://localhost/htdocdev/ritab/src/server/messages/contactmessage.php",
+    "RETRIEVEMYMESSAGES": "http://localhost/htdocdev/ritab/src/server/messages/retrievecontactmessages.php",
+     "TESTCONTACTUS":"http://localhost/htdocdev/ritab/src/server/messages/contactmessage_test.php",  
+     "RETRIEVEBOOKINGS": "http://localhost/htdocdev/ritab/src/server/messages/RetrieveBooking.php",     
+     "REGISTERSIMPLE": "http://localhost/htdocdev/ritab/src/server/registerlogin/RegistrationMakerSimple.php",     
+     "LOGIN": "http://localhost/htdocdev/ritab/src/server/registerlogin/LoginMaker.php",
+     "LOGINMANAGER":"http://localhost/htdocdev/ritab/src/server/registerlogin/LoginManager.php",
+     "LOGOUT": "http://localhost/htdocdev/ritab/src/server/registerlogin/Logout.php",
      "UPLOADASSET":"http://localhost/htdocdev/ritab/src/server/assets/insertasset.php",
      "RETRIEVEASSET":"http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php",
      "DISPLAYASSET":"http://localhost/htdocdev/ritab/src/server/assets/displayasset.php"
       },
 
-  "BASE_URL_LOCAL": "http://localhost/php/",  
+  "TEST_BASE": "groupakwabatech.com",
+  
+  "BASE_URL_LOCAL": "http://localhost/htdocdev/ritab/src/server/",  
 
   "BASE_URL_LIVE": "https://ritoab.com/",
 
-  "PAGES_URL": {    
+    "PAGES_URL_EXTENSIONS": {    
     "CONTACTUS": "ContactUsMessages.php",
     "RETRIEVEMYMESSAGES": "RetrieveContactMessages.php",
     "BOOKINGS": "MakeBooking.php",
@@ -40,7 +39,7 @@
     "LOGOUT": "Logout.php"
       },
 
-      "DIRECT_LIVE":{
+      "DIRECT_TEST":{
         "CONTACTUS": "http://groupakwabatech.com/Contactmessage.php",
         "RETRIEVEMYMESSAGES": "http://groupakwabatech.com/Retrievecontactmessages.php",
         "BOOKINGS": "http://groupakwabatech.com/MakeBooking.php",
@@ -54,10 +53,14 @@
         "DISPLAYASSET":"http://groupakwabatech.com/displayasset.php"
       },
 
+      "DIRECT_LIVE":{
+
+      },
+
   "ENVIRONMENT": {
     "DEV": false,
-    "LIVE": true,
-    "MANUAL":false
+    "LIVE": false,
+    "MANUAL":true
   },
 
   "CREDENTIALS": {

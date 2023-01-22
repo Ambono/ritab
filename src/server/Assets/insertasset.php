@@ -1,5 +1,6 @@
  <?php
 include("./config.php");
+include("./config_local.php");
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
 
@@ -47,17 +48,22 @@ $user_ip = getUserIP();
  $category = mysqli_real_escape_string($conn, $data['category']);
  $sellerEmail = mysqli_real_escape_string($conn, $data['contactEmail']);
  $contactPhone = mysqli_real_escape_string($conn, $data['contactPhone']); 
+ $shopName = mysqli_real_escape_string($conn, $data['first_name']); 
+ $shopSurName = mysqli_real_escape_string($conn, $data['last_name']); 
+ $shoptitle = mysqli_real_escape_string($conn, $data['title']);
  $deliveryPlace1 = mysqli_real_escape_string($conn, $data['country']);
  $deliveryPlace2 = mysqli_real_escape_string($conn, $data['city']);
+ $note = mysqli_real_escape_string($conn, $data['note']);
  $deliveryPlace = $deliveryPlace1.' '.$deliveryPlace2;
  
+  $fullname =$shoptitle +" " + $shopName + " " + $shopSurName;
   $firstuploadimageoptional ="";
   $seconduploadimageoptional="";
   $newuploadimage="";
   
  
  $sql = "INSERT INTO `productdetails` (`Description`, `Name`, `Size`, `Colour`, `Gender`, `ProdCondition`, `ProdImage`, `CountryOrig`, `CountryDestin`, `CityDestin`, `ProdImagePath`, `Availfrom`, `Availuntil`, `productcategory`, `Price`, `FirstOptionalImage`, `SecondOptionalImage`, `Sellernote`, `SellerEmail`, `SellerPhone`, `Shopname`, `DeliveryPlace`, `InserterCode`, `InsertionDate`, `randomUniqueID`) 
-  VALUES('$description','$itemName','$size','$colour','value-6', '$state','value-8','value-9','value-10','value-11','$newuploadimage',Now(),DATE_ADD(Now(), INTERVAL 3 MONTH),'$category ','value-16','value-17','value-18','value-19','$sellerEmail','$contactPhone','value-22','$deliveryPlace','$user_ip',Now(),'$randomID')"; 
+  VALUES('$description','$itemName','$size','$colour','value-6', '$state','value-8','value-9','value-10','value-11','$newuploadimage',Now(),DATE_ADD(Now(), INTERVAL 3 MONTH),'$category ','value-16','value-17','value-18','$note','$sellerEmail','$contactPhone','$fullname','$deliveryPlace','$user_ip',Now(),'$randomID')"; 
 
 //SET @latestinsertedid = LAST_INSERT_ID();
  

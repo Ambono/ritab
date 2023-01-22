@@ -36,9 +36,10 @@ const Uploader = () => {
         const { t } = useTranslation();    
         return (             
         <div>
-  {/* <form action="http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDir.php" method="post" enctype="multipart/form-data">
-   */}
-  <form action="http://groupakwabatech.com/uploaderMkDir.php" method="post" enctype="multipart/form-data">
+  <form action="http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDir.php" method="post" enctype="multipart/form-data">
+  
+  {/* <form action="http://groupakwabatech.com/uploaderMkDir.php" method="post" enctype="multipart/form-data">
+    */}
     Select image to upload:   
   <div className="form-group">
         <label>{t("pages.contact.text.email")}</label>
