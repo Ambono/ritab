@@ -46,8 +46,8 @@ const UploadAssets = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    return GetApis().UPLOADASSET;  
-    //return "http://groupakwabatech.com/insertasset.php";
+    //return GetApis().UPLOADASSET;  
+    return "http://groupakwabatech.com/insertasset.php";
   };
 
 
@@ -401,17 +401,7 @@ const UploadAssets = () => {
         </Card.Body>
     </Accordion.Collapse>
   </Card> 
-{/*  
-  <Card>
-    <Accordion.Toggle as={Card.Header} eventKey="5">
- Uploader 
-    </Accordion.Toggle>
-    <Accordion.Collapse eventKey="5">
-      <Card.Body className="content-accordion">
-  <Uploader/>
-  </Card.Body>
-    </Accordion.Collapse>
-  </Card>  */}
+
 </Accordion>
 
           {seesubmitbutton && (  <input
@@ -434,10 +424,6 @@ const UploadAssets = () => {
                 <div>
                 <div>
                   Please now upload images for your asset
-                  {/* {t("pages.contact.text.thankyou1")} <br />
-                  {t("pages.contact.text.thankyou2")} <br />                 
-                  {t("pages.contact.text.thankyou3")}{" "} */}
-           
                 </div>
                 <div>
                 <Uploader/>

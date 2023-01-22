@@ -61,50 +61,9 @@ $userEmail =  $row["SellerEmail"];
   $newuploadimage="";
   
   
-  // //////////mandatory image
-  // if (strpos($upload_image, '.jpg') !== false) {
-  //    $newuploadimage =chop($upload_image,".jpg");
-  //   } 
-  //  if (strpos($upload_image, '.JPG') !== false) {
-  //    $newuploadimage =chop($upload_image,".JPG");
-  //   }  
-    
-  //   if (strpos($upload_image, '.tiff') !== false) {
-  //    $newuploadimage =chop($upload_image,".tiff");
-  //   }
-
-  //   if (strpos($upload_image, '.png') !== false) {
-  //    $newuploadimage =chop($upload_image,".png");
-  //   }
-
-  //   if (strpos($upload_image, '.jpeg') !== false) {
-  //    // echo'upload image: '.$upload_image;
-  //    $newuploadimage =chop($upload_image,".jpeg");
-  //    $newuploadimage = substr($newuploadimage, strrpos($newuploadimage, '\\') + 1);
-  //    $newuploadimage = $newuploadimage.'.JPG';
-  //   }  
-
-  //   if (strpos($upload_image, '.JPEG') !== false) {
-  //    // echo'upload image: '.$upload_image;
-  //     $newuploadimage =chop($upload_image,".JPEG");
-  //     $newuploadimage = substr($newuploadimage, strrpos($newuploadimage, '\\') + 1);
-  //     $newuploadimage = $newuploadimage.'.JPG';
-  //   }  
- 
-  //   if (strpos($upload_image, '.gif') !== false) {
-  //    $newuploadimage =chop($upload_image,".gif");
-  //    $newuploadimage = substr($newuploadimage, strrpos($newuploadimage, '\\') + 1);
-  //    $newuploadimage = $newuploadimage.'.JPG';
-  //   }
-  
 
  $folder = "uploads/";
  $folderPath =   $folder.uniqid(); 
-
-//  $file_tmp = $_FILES["mainimage"]["tmp_name"];
-//  $file_name = $_FILES["mainimage"]["name"];
-//  $file_ext = strtolower(end(explode('.',$_FILES["mainimage"]["name"])));
-//  $filemain = $folderPath .'.'.$file_ext;
 
 
 /////////////Checks///////////////////////
@@ -290,8 +249,8 @@ $sql = "INSERT INTO `imagelocation`(`PathMainImage`, `Useremail`, `RandomId`, `P
 else{
    echo "1 record added "; 
     $latestinsertedid = mysqli_insert_id($conn); 
-    header("location: http://localhost:3000/#/thanksuploaded");
-   // header("location: http://groupakwabatech.com/#/thanksuploaded");
+   // header("location: http://localhost:3000/#/thanksuploaded");
+    header("location: http://groupakwabatech.com/#/thanksuploaded");
   }
    
     }

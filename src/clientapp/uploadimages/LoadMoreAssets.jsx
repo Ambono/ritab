@@ -23,8 +23,8 @@ function Posts() {
     return GetApis().RETRIEVEASSET;   
   }
   const getData = () => {
-    axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
-    //axios.get('http://groupakwabatech.com/retrieveasset.php')
+   // axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
+    axios.get('http://groupakwabatech.com/retrieveasset.php')
       .then(res => {
         setPost(res.data)
        // console.log("response in LMA: ", res.data)
@@ -52,17 +52,17 @@ function Posts() {
       <h2 className="mb-3">Current hit backs</h2>
       {initialPosts.map((item) => {
         /////////dev env
-        const mainimage = require(`../../server/assets/${item.PathMainImage}`).default;
-        const opt1image = require(`../../server/assets/${item.PathFirstOptionalImage}`).default;
-        const opt2image = require(`../../server/assets/${item.PathSecondOptionalImage}`).default;
-        const opt3image = require(`../../server/assets/${item.PathThirdOptionalImage}`).default;
+        // const mainimage = require(`../../server/assets/${item.PathMainImage}`).default;
+        // const opt1image = require(`../../server/assets/${item.PathFirstOptionalImage}`).default;
+        // const opt2image = require(`../../server/assets/${item.PathSecondOptionalImage}`).default;
+        // const opt3image = require(`../../server/assets/${item.PathThirdOptionalImage}`).default;
         
         ////live       
-        // const myApp ="groupakwabatech.com";
-        // const mainimage = `/${item.PathMainImage}`;
-        // const opt1image = `/${item.PathFirstOptionalImage}`;
-        // const opt2image = `/${item.PathSecondOptionalImage}`;
-        // const opt3image = `/${item.PathThirdOptionalImage}`;
+        const myApp ="groupakwabatech.com";
+        const mainimage = `/${item.PathMainImage}`;
+        const opt1image = `/${item.PathFirstOptionalImage}`;
+        const opt2image = `/${item.PathSecondOptionalImage}`;
+        const opt3image = `/${item.PathThirdOptionalImage}`;
         
         const assetNote = item.Sellernote;
         const assetDescription = item.Description;

@@ -165,13 +165,8 @@ const AssetOptionalPage = (props) => {
     </Carousel>
     </Col>
     <Col md={{ span: 6, offset: 0 }}>
-    <div className="car-description">
-      {/* <h1>{assetName}</h1>
-      <p>{assetDescription}</p> 
-      <p>{assetNote}</p>
-      <h1>{assetPrice}</h1> */}  
-      <h3> {replyerName} hits back with: </h3>
-    
+    <div className="car-description">     
+      <h3> {replyerName} hits back with: </h3>    
         <p>{reply}</p>
      </div>
     </Col>

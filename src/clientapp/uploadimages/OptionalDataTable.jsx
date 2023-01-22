@@ -12,10 +12,7 @@ class OptionalDataTable extends Component {
 
             <tr>
                 <td>
-                    <NavLink to="/specificasset">
-                        {/* <div className="akwaba-tiles-navlinks">
-                            <img src={mainimage} width="300" height="auto" />
-                        </div> */}
+                    <NavLink to="/specificasset">                       
                         <img src={mainimage} width="300" height="auto" />
                     </NavLink>
 
