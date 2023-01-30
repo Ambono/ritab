@@ -24,9 +24,9 @@ function MyAdminTemp(){
           </Row>
           <Row>
             <HashRouter>
-              <Col md={{ span: 2, offset: 0}}>
+              <Col md={{ span: 4 , offset: 3}}>
                 {" "}
-                <div className="akwaba-container-items">
+                <div className="akwaba-container-items justify-content">
                   <NavLink to="/uploadassets">
                     <div className="akwaba-tiles-navlinks">
                     Upload assets               

@@ -10,11 +10,11 @@ import {
 import { Row, Col } from "react-bootstrap";
 import { useTranslation  } from "react-i18next";
 import { createBrowserHistory } from 'history';
-
+import AssetOptionalVideos from './AssetOptionalVideos' ;
 
 //https://codesandbox.io/s/c53q2?file=/src/App.js:58-172
 
-const AssetOptionalPage = (props) => { 
+  const AssetOptionalPage = (props) => { 
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [imageextension, setImageextension] = useState('');
@@ -32,7 +32,8 @@ const AssetOptionalPage = (props) => {
   const [firstOptsrc, setFirstOptsrc] = useState();
   const [secondOptsrc, setSecondOptsrc] = useState();
   const [thirdOptsrc, setThirdOptsrc] = useState();
- 
+  const [contactEmail, setContactEmail] = useState();
+ const [videoPath, setVideoPath] = useState();
   const mainimagepath = props.location.state;
 
   const { t } = useTranslation();
@@ -44,17 +45,18 @@ const AssetOptionalPage = (props) => {
   const setImageSource = () =>  {    
     const imagepaths = props.location.state;  
     if(imagepaths){
-    const mainimage = imagepaths.mainimage;
-    const opt1image = imagepaths.opt1image;
-    const opt2image = imagepaths.opt2image;
-    const opt3image = imagepaths.opt3image;
-    const assetName = imagepaths.assetName;
-    const assetPrice = imagepaths.assetPrice;
-    const assetNote = imagepaths.assetNote;
-    const assetDescription = imagepaths.assetDescription;
-    const replyerName = imagepaths.replyerName;
-    const reply = imagepaths.reply;
-    
+    const mainimage = imagepaths.mainimage; //this.props.prop_mainimage;//  
+    const opt1image = imagepaths.opt1image;//this.props.prop_opt1image;//
+    const opt2image = imagepaths.opt2image; //this.props.prop_opt2image;//
+    const opt3image = imagepaths.opt3image;//this.props.prop_opt2image;//
+    const assetName = imagepaths.assetName; //this.props.prop_assetName;//
+    const assetPrice = imagepaths.assetPrice;//this.props.prop_assetPrice;//
+    const assetNote = imagepaths.assetNote;//this.props.prop_assetNote;//
+    const assetDescription = imagepaths.assetDescription;//this.props.prop_assetDescription;//
+    const replyerName = imagepaths.replyerName;//this.props.prop_replyerName;//
+    const reply = imagepaths.reply;//this.props.prop_reply;//
+    const videoPath = imagepaths.video;
+    console.log('videopath: ', videoPath, imagepaths.video)
    setMainImagesrc(mainimage);
    
    setFirstOptsrc(opt1image);
@@ -68,7 +70,8 @@ const AssetOptionalPage = (props) => {
    setAssetDescription(assetDescription); 
    setReplyerName(replyerName);
    setReply(reply);
-    }   
+   setVideoPath(videoPath);
+   }   
    }
   
   const dimensions = {
@@ -138,13 +141,11 @@ const AssetOptionalPage = (props) => {
       </CarouselItem>
     );
   });
-
-
-
+ 
   return ( 
-    <div> 
-    <Row>    
-    <Col md={{ span: 6, offset: 0 }}>
+    <div>
+    <Row className="margin-maker">    
+    <Col md={{ span: 6, offset: 0}}>
     <Carousel activeIndex={activeIndex} next={next} previous={previous}>
       <CarouselIndicators
         items={items}
@@ -165,18 +166,27 @@ const AssetOptionalPage = (props) => {
     </Carousel>
     </Col>
     <Col md={{ span: 6, offset: 0 }}>
-    <div className="car-description">
-      {/* <h1>{assetName}</h1>
-      <p>{assetDescription}</p> 
-      <p>{assetNote}</p>
-      <h1>{assetPrice}</h1> */}  
+    <div className="hitback-description">
+   
       <h3> {replyerName} hits back with: </h3>
     
         <p>{reply}</p>
      </div>
     </Col>
     </Row> 
-    </div>  
+    <Row>  
+    <Col>
+    {/* <AssetOptionalVideos/>   */}
+
+  <div className="body-pannel">
+       <video width="300px" height="400px" controls>
+           <source src={videoPath} type="video/mp4" />
+      </video>
+  </div>
+  </Col>   
+    </Row> 
+    
+    </div>    
   );
 };
 

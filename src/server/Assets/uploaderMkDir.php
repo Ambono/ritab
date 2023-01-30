@@ -44,7 +44,7 @@ if (!mysqli_query($conn, $sqlRandomId))
 die("<br/>Error While getting inserter code "); 
 }  
 else{
- echo "1 record pulled from uploader mkdir "; 
+ echo "1 record pulled from uploader mkdir for picture and text upload "; 
  // $latestinsertedid = mysqli_insert_id($conn); 
 }
 
@@ -80,13 +80,17 @@ if(!is_dir($directoryname)){
 //   mkdir("uploads2/gfg.txt", 0777, true);
 // }
 
-  $target_dir =  $folderPath;
+ $target_dir =  $folderPath;
  $target_file = $target_dir . basename($_FILES["mainimage"]["name"]);
  //$target_fileopt1 = $target_dir . basename($_FILES["firstoptionalimage"]["name"]);
 //  $target_fileopt2 = $target_dir . basename($_FILES["secondoptionalimage"]["name"]);
  $uploadOk = 1;
- $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
- 
+ $check = false;
+ $check1 = false;
+ $check2 = false;
+ $check3 = false;
+
+ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION)); 
  // Check if image file is a actual image or fake image
  if(isset($_POST["submit"])) {
    $check = getimagesize($_FILES["mainimage"]["tmp_name"]);
@@ -207,6 +211,7 @@ if ($canupload) {
   //////////upload main image   
  if( move_uploaded_file($temp_name, $mainimagepath))
  { 
+  echo' on line 214 in move upload mainimange';
   
   /////////////set up optional image 1  
   if (isset($_FILES["firstoptionalimage"]) && !empty($_FILES["firstoptionalimage"]) && ($uploadOk1 == 1)) {
@@ -237,7 +242,7 @@ if ($canupload) {
     }  	
     
     //echo'new 1st opt: '.$firstuploadimageoptional;
-
+echo'on line 245 ';
    //////////set up optional image 2
     if (isset($_FILES["secondoptionalimage"]) && !empty($_FILES["secondoptionalimage"]) && ($uploadOk2 == 1)) {
     
@@ -313,9 +318,11 @@ if ($canupload) {
            }  
          else{           
             // $latestinsertedid = mysqli_insert_id($conn); 
-            
-            header("location: http://localhost:3000/#/thanksuploaded");
-            // header("location: http://groupakwabatech.com/#/thanksuploaded");
+            echo'header location part 1';
+           // $latestinsertedid = mysqli_insert_id($conn); 
+           // header("location: http://localhost:3000/#/thanksuploaded");
+           // header("location: http://groupakwabatech.com/#/thanksuploaded");
+            header("location: http://localhost:3000/#/uploadvideos");
            }
                 
       //SET @latestinsertedid = LAST_INSERT_ID();
@@ -331,10 +338,12 @@ if ($canupload) {
         {
         die("Error While uploading image on the server 2 images: "); 
         }  
-      else{        
-        //  $latestinsertedid = mysqli_insert_id($conn);
-        header("location: http://localhost:3000/#/thanksuploaded");
-         // header("location: http://groupakwabatech.com/#/thanksuploaded");
+      else{     
+        echo'header location part 2';   
+       // $latestinsertedid = mysqli_insert_id($conn); 
+       // header("location: http://localhost:3000/#/thanksuploaded");
+       // header("location: http://groupakwabatech.com/#/thanksuploaded");
+       header("location: http://localhost:3000/#/uploadvideos");
         }
           
 //SET @latestinsertedid = LAST_INSERT_ID();
@@ -354,9 +363,11 @@ if (!mysqli_query($conn, $sql1))
   die("Error While uploading image on the server 1 image: "); 
   }  
 else{  
-   // $latestinsertedid = mysqli_insert_id($conn); 
-   header("location: http://localhost:3000/#/thanksuploaded");
-  //  header("location: http://groupakwabatech.com/#/thanksuploaded");
+  echo'header location part 3';
+    // $latestinsertedid = mysqli_insert_id($conn); 
+    // header("location: http://localhost:3000/#/thanksuploaded");
+    // header("location: http://groupakwabatech.com/#/thanksuploaded");
+    header("location: http://localhost:3000/#/uploadvideos");
   }
    
 
@@ -369,10 +380,12 @@ else{
      {
      die("Error While uploading image on the server: only second image "); 
      }  
-   else{      
+   else{   
+    echo'header location part 4';   
       // $latestinsertedid = mysqli_insert_id($conn); 
-      header("location: http://localhost:3000/#/thanksuploaded");
-     //  header("location: http://groupakwabatech.com/#/thanksuploaded");
+      // header("location: http://localhost:3000/#/thanksuploaded");
+      // header("location: http://groupakwabatech.com/#/thanksuploaded");
+      header("location: http://localhost:3000/#/uploadvideos");
      }
          
 //@latestinsertedid = LAST_INSERT_ID();    
@@ -389,10 +402,12 @@ else{
   {
   die("Error While uploading image on the server only third image: "); 
   }  
-else{   
-  //  $latestinsertedid = mysqli_insert_id($conn); 
-    header("location: http://localhost:3000/#/thanksuploaded");
-   // header("location: http://groupakwabatech/#/thanksuploaded");
+else{  
+  echo'header location part 5'; 
+    // $latestinsertedid = mysqli_insert_id($conn); 
+    // header("location: http://localhost:3000/#/thanksuploaded");
+    // header("location: http://groupakwabatech.com/#/thanksuploaded");
+    header("location: http://localhost:3000/#/uploadvideos");
   }
    
 //@latestinsertedid = LAST_INSERT_ID();    
@@ -424,9 +439,11 @@ else{
   die("Error While uploading image on the server: default"); 
   }  
 else{  
-   // $latestinsertedid = mysqli_insert_id($conn); 
-   header("location: http://localhost:3000/#/thanksuploaded");
-   // header("location: http://groupakwabatech.com/#/thanksuploaded");
+  echo'header location part 6';
+    // $latestinsertedid = mysqli_insert_id($conn); 
+    // header("location: http://localhost:3000/#/thanksuploaded");
+    // header("location: http://groupakwabatech.com/#/thanksuploaded");
+     header("location: http://localhost:3000/#/uploadvideos");
   }
    
     }
@@ -438,11 +455,15 @@ else{
   }
 }
  }
+ echo'only main image';
+ // $latestinsertedid = mysqli_insert_id($conn); 
+ // header("location: http://localhost:3000/#/thanksuploaded");
+ // header("location: http://groupakwabatech.com/#/thanksuploaded");
+  header("location: http://localhost:3000/#/uploadvideos");
+
 }
 }else{
   echo " did not jump in uploadOk: 0";
 }
-
-
 ?>
 

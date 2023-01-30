@@ -23,6 +23,7 @@ import ThankUploaded from "./clientapp/uploadimages/ThankyouAfterUploaded";
 import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage_redundant";
 import UploadAssets from "./clientapp/uploadimages/UploadTextInputs";
 import AssetOptionals from "./clientapp/uploadimages/AssetOptionalPage";
+import UploadVideo from "./clientapp/uploadimages/UploadVideo";
 
 class Main extends Component {
   render() {
@@ -52,7 +53,8 @@ class Main extends Component {
           <Route path="/logout" component={Logout} />         
           <Route path="/authservice2" component={Authservice2} />         
           <Route path="/uploadassets" component={UploadAssets} />
-
+          <Route path="/uploadvideos" component={UploadVideo} />
+          
           <Route />
         </HashRouter>
       </div>

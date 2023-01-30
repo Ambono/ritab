@@ -6,14 +6,16 @@ import Select from 'react-select';
 import CONFIG from '../../config.json';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
+import UploadVideo from './UploadVideo';
 
-const Uploader = () => {
+const UploadPictures = () => {
     const [mainimage, setImage] = useState('');
     const [firstoptionalimage, setOptionalImage1] = useState('');
     const [secondoptionalimage, setOptionalImage2] = useState('');
     const [thirdoptionalimage, setOptionalImage3] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [emailerrormsg, setEmailerrormsg] = useState('');
+    const [picturesSent, setPicturesSent] = useState();
 
     const  validate = ()=> {
         let isValid = true; 
@@ -31,18 +33,20 @@ const Uploader = () => {
           setEmailerrormsg(<p>{t("pages.contact.text.emailpatterninvalidmsg")}</p>);
         }
     }
+
+    setPicturesSent(true);
 }
   
         const { t } = useTranslation();    
         return (             
-        <div>
+        <div className='col-md-9'>
   <form action="http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDir.php" method="post" enctype="multipart/form-data">
   
   {/* <form action="http://groupakwabatech.com/uploaderMkDir.php" method="post" enctype="multipart/form-data">
     */}
-    Select image to upload:   
+   
   <div className="form-group">
-        <label>{t("pages.contact.text.email")}</label>
+        <label>Re-enter your {t("pages.contact.text.email")}</label>
         <input
           id="contactEmail"
           name="contactEmail"
@@ -54,7 +58,7 @@ const Uploader = () => {
           <div className="text-danger">{emailerrormsg}</div>
       </div>
       <div className="form-group">
-        <label>{t("image choose image to upload, pages.contact.text.firstname")} </label>
+        <label>{t("Choose image to upload, pages.contact.text.firstname")} </label>
         <input
           id="mainimage"
           name="mainimage"
@@ -99,16 +103,16 @@ const Uploader = () => {
         
         {/* {  validate() && (    */}
         <div> 
-         <input type="submit" value="Upload Image and finish" name="submit"/>
-        </div>
-        {/* )} */}
+         <input type="submit" value="Upload Image" name="submit" />
+         {/* onClick={ validate()} */}
+        </div>       
 </form>
 </div>
          )
     }  
 
 
-export default Uploader
+export default UploadPictures
 
 
 

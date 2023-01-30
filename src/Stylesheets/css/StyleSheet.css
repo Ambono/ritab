@@ -1,4 +1,4 @@
-@import url("akwaba.css");
+@import url("bodycontent.css");
 @import url("footer.css");
 @import url("headersAndNavbars.css");
 @import url("carousels.css");
@@ -8,14 +8,14 @@
   width: auto;
   margin-bottom: 5%;  
 }
-.car-description{
-  width:100%;
- 
+.hitback-description{
+  width:100%; 
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
   text-align: center;
-  background-image: linear-gradient(to right, red,orange,violet);  
+  background-image: linear-gradient(to right, red,orange,violet); 
+  min-height:500px;
 	 
 }
 .comingsoon{
@@ -256,4 +256,9 @@ span.price {
     border-top-color: red !important;
     border-left-color: red !important;
 }
+}
+
+.body-pannel{
+  display:flex;
+  justify-content: center;
 }

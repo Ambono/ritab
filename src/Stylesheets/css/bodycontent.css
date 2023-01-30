@@ -149,3 +149,20 @@
     
   }
   
+.margin-maker{
+  margin-left: 20px;
+}
+
+.justify-content{ 
+  justify-content: center;
+  align-content: center;  
+  display: flex; 
+  width:auto;
+}
+
+.case-form{
+  border: solid cyan 1px;
+   border-radius: 10px; 
+   color: blue;
+    background-color: cyan;
+}

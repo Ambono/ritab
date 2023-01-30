@@ -10,9 +10,9 @@ import CONFIG from '../../config.json';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
 import DateTimePicker from 'react-datetime-picker';
-import Uploader from './UploadPictures';
+import UploadPictures from './UploadPictures';
 
-const UploadAssets = () => {
+const UploadTextInputs = () => {
   const [fname, setFirstName] = useState('');
   const [lname, setLastName] = useState('');
   const [title, setTitle] = useState('');
@@ -169,10 +169,7 @@ const UploadAssets = () => {
   return (
     <div  className="content-akwaba">
       <form action="#">
-        <div><p>{t("pages.contact.text.header1")}</p></div>
-     
-
-
+        <div className="case-form" Style=""><p>Fill this form to populate your case</p></div>   
         <Accordion defaultActiveKey="0">  
     <Card>
     <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -180,6 +177,7 @@ const UploadAssets = () => {
     </Accordion.Toggle>
     <Accordion.Collapse eventKey="0">
       <Card.Body className="content-accordion" >
+        <div className="col-md-9 offset-3">
       <div className="form-group">
         <label>{t("pages.contact.text.title")} </label>
              <select name= "title" id="tile" value={title}  onChange={event => setTitle(event.target.value)} >
@@ -243,7 +241,7 @@ const UploadAssets = () => {
         />
           <div className="text-danger">{phonenumbererrormsg}</div>
         </div>
-        
+        </div>
         </Card.Body>
     </Accordion.Collapse>
   </Card>
@@ -256,6 +254,7 @@ const UploadAssets = () => {
     <Accordion.Collapse eventKey="1">
       <Card.Body className="content-accordion">
         
+        <div className ="col-md-9 offset-3">
       <div className="form-group">
         <label>{t("category pages.contact.text.firstname")} </label>
         <input
@@ -335,7 +334,8 @@ const UploadAssets = () => {
           placeholder={t("colour, pages.contact.text.firstnameph")}
         />
           <div className="text-danger">{fnameerrormsg}</div>
-        </div>        
+      </div>
+      </div>        
         </Card.Body>
     </Accordion.Collapse>
   </Card>
@@ -346,7 +346,7 @@ const UploadAssets = () => {
     </Accordion.Toggle>
     <Accordion.Collapse eventKey="2">
       <Card.Body className="content-accordion">
-        
+      <div className ="col-md-9 offset-3">
         <div className="form-group">
         <label>{t("country, pages.contact.text.firstname")} </label>
         <input
@@ -372,7 +372,7 @@ const UploadAssets = () => {
         />
           <div className="text-danger">{fnameerrormsg}</div>
         </div>
-         
+       </div>  
         </Card.Body>
     </Accordion.Collapse>
   </Card>
@@ -383,8 +383,9 @@ const UploadAssets = () => {
     </Accordion.Toggle>
     <Accordion.Collapse eventKey="3">
       <Card.Body className="content-accordion">
-        
-      <div className="form-group">
+
+      <div className ="col-md-9 offset-3"> 
+      <div className="form-group ">
         <label>{t("pages.contact.text.subject")}</label>
         <textarea
           id="note"
@@ -398,62 +399,49 @@ const UploadAssets = () => {
           <div className="text-danger">{reasonerrormsg}</div>      
        </div>
         
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card> 
-{/*  
-  <Card>
-    <Accordion.Toggle as={Card.Header} eventKey="5">
- Uploader 
-    </Accordion.Toggle>
-    <Accordion.Collapse eventKey="5">
-      <Card.Body className="content-accordion">
-  <Uploader/>
-  </Card.Body>
-    </Accordion.Collapse>
-  </Card>  */}
-</Accordion>
-
-          {seesubmitbutton && (  <input
+       {seesubmitbutton && (  <input
               className="btn btn-primary"
               type="submit"
               onClick={(e) =>  {handleSubmit(e)}}
               defaultValue={t("pages.contact.text.submit")}
               value="Save and continue"
             />
-          )}
+          )}      
+        </div>
+        </Card.Body>
+    </Accordion.Collapse>
+  </Card> 
+  
+  <Card>
+    <Accordion.Toggle as={Card.Header} eventKey="4"> 
+    Picture upload
+    </Accordion.Toggle>
+    <Accordion.Collapse eventKey="4">
+      <Card.Body className="content-accordion">
+      <div>      
+       {messageSent && (
+        <div className="justify-content">    
+        <div className='col-md-9 offset-3'>
+        <UploadPictures/>
+        </div>
+        </div>
+      )} 
+      </div>
+      </Card.Body>
+    </Accordion.Collapse>
+  </Card>  
+</Accordion>      
+{clickedButtonButNotPosted && (
         <div>
-
-        {clickedButtonButNotPosted && (
-                <div>
-                  {clickedNotPostedMessage} <br />                  
-                </div>
-                 )}
-
-               {messageSent && (
-                <div>
-                <div>
-                  Please now upload images for your asset
-                  {/* {t("pages.contact.text.thankyou1")} <br />
-                  {t("pages.contact.text.thankyou2")} <br />                 
-                  {t("pages.contact.text.thankyou3")}{" "} */}
-           
-                </div>
-                <div>
-                <Uploader/>
-                </div>
-        
-                </div>
-              )}              
-            
-         </div>
-
+          {clickedNotPostedMessage} <br />                  
+        </div>
+         )}
       </form>
     </div>
   );
 };
 
-export default UploadAssets;
+export default UploadTextInputs;
 
 
 
