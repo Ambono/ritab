@@ -7,15 +7,22 @@ import CONFIG from '../../config.json';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
 import UploadVideo from './UploadVideo';
+import { useEffect } from 'react';
 
 const UploadPictures = () => {
     const [mainimage, setImage] = useState('');
     const [firstoptionalimage, setOptionalImage1] = useState('');
     const [secondoptionalimage, setOptionalImage2] = useState('');
     const [thirdoptionalimage, setOptionalImage3] = useState('');
-    const [contactEmail, setContactEmail] = useState('');
+    const [contactEmail, setContactEmail] = useState(localStorage.getItem('userEmail'));
     const [emailerrormsg, setEmailerrormsg] = useState('');
     const [picturesSent, setPicturesSent] = useState();
+  
+
+    useEffect(() =>{
+      // setContactEmailFromLocalStorage(localStorage.getItem('userEmail'));
+      // setContactEmail(contactEmailFromLocalStorage);
+    },[]);
 
     const  validate = ()=> {
         let isValid = true; 
@@ -45,7 +52,7 @@ const UploadPictures = () => {
   {/* <form action="http://groupakwabatech.com/uploaderMkDir.php" method="post" enctype="multipart/form-data">
     */}
    
-  <div className="form-group">
+    <div className="form-group">
         <label>Re-enter your {t("pages.contact.text.email")}</label>
         <input
           id="contactEmail"
@@ -57,6 +64,7 @@ const UploadPictures = () => {
         />
           <div className="text-danger">{emailerrormsg}</div>
       </div>
+
       <div className="form-group">
         <label>{t("Choose image to upload, pages.contact.text.firstname")} </label>
         <input

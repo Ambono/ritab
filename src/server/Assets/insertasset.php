@@ -54,6 +54,8 @@ $user_ip = getUserIP();
  $deliveryPlace1 = mysqli_real_escape_string($conn, $data['country']);
  $deliveryPlace2 = mysqli_real_escape_string($conn, $data['city']);
  $note = mysqli_real_escape_string($conn, $data['note']);
+ $dateOfEvents = mysqli_real_escape_string($conn, $data['dateOfEvents']);
+ 
  $deliveryPlace = $deliveryPlace1.' '.$deliveryPlace2;
  
   $fullname =$shoptitle +" " + $shopName + " " + $shopSurName;
@@ -62,8 +64,61 @@ $user_ip = getUserIP();
   $newuploadimage="";
   
  
- $sql = "INSERT INTO `productdetails` (`Description`, `Name`, `Size`, `Colour`, `Gender`, `ProdCondition`, `ProdImage`, `CountryOrig`, `CountryDestin`, `CityDestin`, `ProdImagePath`, `Availfrom`, `Availuntil`, `productcategory`, `Price`, `FirstOptionalImage`, `SecondOptionalImage`, `Sellernote`, `SellerEmail`, `SellerPhone`, `Shopname`, `DeliveryPlace`, `InserterCode`, `InsertionDate`, `randomUniqueID`) 
-  VALUES('$description','$itemName','$size','$colour','value-6', '$state','value-8','value-9','value-10','value-11','$newuploadimage',Now(),DATE_ADD(Now(), INTERVAL 3 MONTH),'$category ','value-16','value-17','value-18','$note','$sellerEmail','$contactPhone','$fullname','$deliveryPlace','$user_ip',Now(),'$randomID')"; 
+ $sql = "INSERT INTO `productdetails` (
+  `Description`,
+  `Name`,
+  `Size`,
+  `Colour`,
+  `Gender`, 
+  `ProdCondition`, 
+  `ProdImage`, 
+  `CountryOrig`, 
+  `CountryDestin`, 
+  `CityDestin`, 
+  `ProdImagePath`, 
+  `Availfrom`, 
+  `Availuntil`, 
+  `productcategory`, 
+  `Price`, 
+  `FirstOptionalImage`, 
+  `SecondOptionalImage`, 
+  `Sellernote`, 
+  `SellerEmail`, 
+  `SellerPhone`, 
+  `Shopname`, 
+  `DeliveryPlace`, 
+  `InserterCode`, 
+  `InsertionDate`, 
+  `randomUniqueID`, 
+  `date_parution`) 
+  VALUES(
+    '$description',
+    '$itemName',
+    '$size',
+    '$colour',
+    'value-6', 
+    '$state',
+    'value-8',
+    'value-9',
+    'value-10',
+    'value-11',
+    '$newuploadimage',
+    Now(),
+    DATE_ADD(Now(),INTERVAL 3 MONTH),
+    '$category ',
+    'value-16',
+    'value-17',
+    'value-18',
+    '$note',
+    '$sellerEmail',
+    '$contactPhone',
+    '$fullname',
+    '$deliveryPlace',
+    '$user_ip',
+     Now(),
+    '$randomID',
+    '$dateOfEvents'
+    )"; 
 
 //SET @latestinsertedid = LAST_INSERT_ID();
  

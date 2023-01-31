@@ -8,12 +8,8 @@ import { createBrowserHistory } from 'history';
 
 //https://codesandbox.io/s/c53q2?file=/src/App.js:58-172
 
-  function AssetOptionalVideos ({propsvideopath})  {
-
-  const [mainImagesrc, setMainImagesrc] = useState();
+  function AssetOptionalVideos ({propsvideopath})  {  
   const [videopath, setVideosrc] = useState();
-
- //const mainimagepath = props.location.state;
 
   const { t } = useTranslation();
 
@@ -21,10 +17,7 @@ import { createBrowserHistory } from 'history';
     setImageSource();
   }, [])
 
-  const setImageSource = () =>  {    
-    //const imagepaths = props.location.state;  
-   
-    //const vieopath = this.props.videopath;
+  const setImageSource = () =>  { 
    setVideosrc(propsvideopath);
 
     }   
@@ -48,15 +41,13 @@ import { createBrowserHistory } from 'history';
     Your browser does not support the video tag.
     </video>
     </div>
-
-      <div>
-            <video width="300px" height="400px" controls>
-{/*                 <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-              */}
-                  <source src={videopath} type="video/mp4" />
-           
- </video>
-        </div>
+        <div>
+        <video width="300px" height="400px" controls>
+        {/*                 <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                      */}
+          <source src={videopath} type="video/mp4" />
+        </video>
+        </div>
     </Col>
     </Row>  
     </div>    

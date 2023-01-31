@@ -32,16 +32,18 @@ const UploadTextInputs = () => {
   const [datepickeravailfrom, setAvailfrom] = useState();
   const [datepickeravailto, setavailto] = useState();
   const [note, setNote] = useState('');
+  const [dateOfEvents, setDateOfEvents] = useState('');
   const [messageSent, setMessageSent] = useState('');
   const [seesubmitbutton, setSeesubmitbutton] = useState(true);  
   const [clickedButtonButNotPosted, setClickedButtonButNotPosted] = useState('');
   const [clickedNotPostedMessage, setClickedNotPostedMessage] = useState('');
   const [fnameerrormsg, setFirstNameerrormsg] = useState('');
   const [lnameerrormsg, setLastNameerrormsg] = useState('');
-  const [titleerrormsg, setTitleerrormsg] = useState('');
+  const [titleerrormsg, setTitleerrormsg] = useState(''); 
   const [emailerrormsg, setEmailerrormsg] = useState('');
   const [phonenumbererrormsg, setPhoneNumbererrormsg] = useState('');
   const [reasonerrormsg, setReasonerrormsg] = useState('');
+  const [seenote, setSeenote] = useState(true);
   
   const { t } = useTranslation();
 
@@ -53,12 +55,12 @@ const UploadTextInputs = () => {
 
   const handleSubmit = event => {
     console.log('handleSubmit ran');
-    event.preventDefault(); // 👈️ prevent page refresh
+   event.preventDefault(); // 👈️ prevent page refresh
    const body ={fname, lname, title,
     note,category,country,city, contactEmail,contactPhone,
     itemName,description,size,state, colour, image, 
-    firstoptionalimage,  secondoptionalimage,  datepickeravailfrom, 
-     datepickeravailto }; 
+    firstoptionalimage, secondoptionalimage,  datepickeravailfrom, 
+     datepickeravailto , dateOfEvents}; 
     
    setClickedButtonButNotPosted(<p>{t("pages.contact.text.msginvalidform")} </p>);
      if (validate()) {            
@@ -69,7 +71,8 @@ const UploadTextInputs = () => {
         data: body,
       })
         .then((result) => {
-          if (result.status === 200) {         
+          if (result.status === 200) {  
+            localStorage.setItem('userEmail', contactEmail);       
             setFirstName('');
             setLastName('');
             setTitle('');
@@ -88,7 +91,9 @@ const UploadTextInputs = () => {
             setAvailfrom('');
             setavailto('');
             setState('');
-            setNote('');         
+            setNote('');
+            setSeenote(false);
+            setDateOfEvents('');          
             setFirstNameerrormsg('');
             setLastNameerrormsg('');
             setTitleerrormsg('');
@@ -191,7 +196,7 @@ const UploadTextInputs = () => {
         </div>
 
       <div className="form-group">
-        <label>{t("pages.contact.text.firstname")} </label>
+        <label>Your first name</label>
         <input
           id="first_name"
           name="first_name"
@@ -204,7 +209,7 @@ const UploadTextInputs = () => {
         </div>
 
         <div className="form-group">
-         <label>{t("pages.contact.text.lastname")}</label>
+         <label>Your last name</label>
         <input
           id="last_name"
           name="last_name"
@@ -217,7 +222,7 @@ const UploadTextInputs = () => {
         </div>
 
         <div className="form-group">
-        <label>{t("pages.contact.text.email")}</label>
+        <label>Your email</label>
         <input
           id="contactEmail"
           name="contactEmail"
@@ -230,7 +235,7 @@ const UploadTextInputs = () => {
       </div>
 
       <div className="form-group">
-              <label>{t("pages.contact.text.phone")}</label>
+              <label>Your phone</label>
          <input
           id="contactPhone"
           name="contactPhone"
@@ -257,20 +262,30 @@ const UploadTextInputs = () => {
         <div className ="col-md-9 offset-3">
       <div className="form-group">
         <label>{t("category pages.contact.text.firstname")} </label>
-        <input
+        {/* <input
           id="category"
           name="category"
           type="text"
           value={category}
           onChange={event => setCategory(event.target.value)}          
           placeholder={t("category pages.contact.text.firstnameph")}
-        />
+        /> */}
+
+          <select name= "category" id="category" value={category}  onChange={event => setCategory(event.target.value)} >
+            <option value="">Select default category</option>
+            <option value="Tabloids">Tabloids</option>
+            <option value="Standard news papers">Standard news papers</option>
+            <option value="TV">TV</option>  
+            <option value="Social medias">Social medias</option>                
+          </select>
+
+
           <div className="text-danger">{fnameerrormsg}</div>
         </div>
 
 
         <div className="form-group">
-        <label>{t("itemName, pages.contact.text.firstname")} </label>
+        <label>Name of media</label>
         <input
           id="itemName"
           name="itemName"
@@ -284,7 +299,21 @@ const UploadTextInputs = () => {
 
 
         <div className="form-group">
-        <label>{t(" description, pages.contact.text.firstname")} </label>
+        <label>Date of publication</label>
+        <input
+          id="dateCreated"
+          name="dateCreated"
+          type="text"
+          value={dateOfEvents}
+          onChange={event => setDateOfEvents(event.target.value)}          
+          placeholder="Date of publication"
+        />
+          <div className="text-danger">{fnameerrormsg}</div>
+        </div>
+
+
+        <div className="form-group">
+        <label>Summary of facts </label>
         <input
           id="description"
           name="description"
@@ -298,41 +327,62 @@ const UploadTextInputs = () => {
 
 
         <div className="form-group">
-        <label>{t("size, pages.contact.text.firstname")} </label>
-        <input
+        <label>Type of incident </label>
+        {/* <input
           id="size"
           name="size"
           type="text"
           value={size}
           onChange={event => setSize(event.target.value)}          
           placeholder={t("size, pages.contact.text.firstnameph")}
+        /> */}
+          <select name= "size" id="size" value={size}  onChange={event => setSize(event.target.value)} >
+            <option value="">Select incident</option>
+            <option value="Diffamation">Diffamation</option>
+            <option value="Insult">Insult</option>
+            <option value="Threat">Threat</option>  
+            <option value="Praise">Lie</option>
+            <option value="Praise">Praise</option>                  
+          </select>
+          <div className="text-danger">{fnameerrormsg}</div>
+        </div>
+
+        <div className="form-group">
+        <label>Geographic location </label>
+          <input
+          id="state"
+          name="state"
+          type="text"
+          value={state}
+          onChange={event => setState(event.target.value)}          
+          placeholder={t("size, pages.contact.text.firstnameph")}
         />
           <div className="text-danger">{fnameerrormsg}</div>
         </div>
 
         <div className="form-group">
-        <label>{t("State, pages.contact.text.title")} </label>
-             <select name= "State" id="state" value={state}  onChange={event => setState(event.target.value)} >
-                <option value="">Choose state</option>
-                <option value="new">New</option>
-                <option value="secondHand">Second hand</option>
-                <option value="classic">Classic</option>     
-                <option value="vintage">Vintage</option>                                
-              </select>
-          <div className="text-danger">{fnameerrormsg}</div>
-        </div>
-
-
-        <div className="form-group">
-        <label>{t("colour, pages.contact.text.firstname")} </label>
-        <input
+        <label>Nature of facts </label>
+        {/* <input
           id="colour"
           name="colour"
           type="text"
           value={colour}
           onChange={event =>  setColour(event.target.value)}          
           placeholder={t("colour, pages.contact.text.firstnameph")}
-        />
+        /> */}
+
+             <select name= "colour" id="colour" value={colour}  onChange={event => setColour(event.target.value)} >
+                <option value="">Choose nature of facts</option>
+                <option value="Racism">Racism</option>
+                <option value="Mysogeny">Mysogeny</option>
+                <option value="Bully">Bully</option>
+                <option value="Disrepect">Disrepect</option> 
+                <option value="Condescendence">Condescendence</option>
+                <option value="Ignorance">Ignorance</option> 
+                <option value="Unprovoked">Unprovoked attack</option> 
+                <option value="Crualty">Crualty</option>
+                <option value="Jealousy">Jealousy</option>       
+              </select>
           <div className="text-danger">{fnameerrormsg}</div>
       </div>
       </div>        
@@ -379,14 +429,13 @@ const UploadTextInputs = () => {
 
   <Card>
     <Accordion.Toggle as={Card.Header} eventKey="3">
-   Additional info    
+     Additional info    
     </Accordion.Toggle>
     <Accordion.Collapse eventKey="3">
       <Card.Body className="content-accordion">
-
-      <div className ="col-md-9 offset-3"> 
-      <div className="form-group ">
+       <div className ="col-md-9 offset-3">      
         <label>{t("pages.contact.text.subject")}</label>
+        {seenote && (<div className="form-group ">
         <textarea
           id="note"
           name="note"
@@ -397,7 +446,7 @@ const UploadTextInputs = () => {
           placeholder={t("pages.contact.text.subjectph")}
         />
           <div className="text-danger">{reasonerrormsg}</div>      
-       </div>
+       </div>)}
         
        {seesubmitbutton && (  <input
               className="btn btn-primary"

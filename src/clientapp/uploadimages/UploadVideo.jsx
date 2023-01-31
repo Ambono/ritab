@@ -10,7 +10,7 @@ import { createBrowserHistory } from 'history';
    const UploadVideo = (props) => { 
  
   const [videoFile, setVideoFile] = useState();
-  const [contactEmail, setContactEmail] = useState('');
+  const [contactEmail, setContactEmail] = useState(localStorage.getItem('userEmail'));
   const [emailerrormsg, setEmailerrormsg] = useState('');
 
 

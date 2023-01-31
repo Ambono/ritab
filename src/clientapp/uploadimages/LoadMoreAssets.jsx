@@ -57,7 +57,7 @@ function Posts() {
         const opt2image = require(`../../server/assets/${item.PathSecondOptionalImage}`).default;
         const opt3image = require(`../../server/assets/${item.PathThirdOptionalImage}`).default;
         const video = require(`../../server/assets/${item.Videopath}`).default;
-        console.log('video: ', video);
+      
         ////live       
         // const myApp ="groupakwabatech.com";
         // const mainimage = `/${item.PathMainImage}`;
@@ -71,9 +71,20 @@ function Posts() {
         const assetName = item.Name;
         const assetPrice = item.Price;
         const reply = item.Sellernote;
-         const replyerName = item.Shopname;
-        // const video = item.Videopath;
+        const replyerName = item.Shopname;
+        
 
+         localStorage.setItem('mainimage', mainimage);
+         localStorage.setItem('opt1image', opt1image);
+         localStorage.setItem('opt2image', opt2image);
+         localStorage.setItem('opt3image', opt3image);
+         localStorage.setItem('video', video);
+         localStorage.setItem('assetNote', assetNote);
+         localStorage.setItem('assetDescription', assetDescription);
+         localStorage.setItem('assetName', assetName);
+         localStorage.setItem('assetPrice', assetPrice);
+         localStorage.setItem('reply', reply);
+         localStorage.setItem('replyerName', replyerName); 
         return (
           <div
             className="mb-3 card bg-primary p-2 text-dark bg-opacity-25"

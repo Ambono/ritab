@@ -1,5 +1,5 @@
 <?php
-include("./config.php");
+//include("./config.php");
 include("./config_local.php");
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
@@ -94,9 +94,6 @@ if(!is_dir($directoryname)){
  // Check if image file is a actual image or fake image
  if(isset($_POST["submit"])) {
    $check = getimagesize($_FILES["mainimage"]["tmp_name"]);
-
-   echo " in submit ";
-
    if(!empty($_FILES["firstoptionalimage"]["tmp_name"] )) 
    $check1 = getimagesize($_FILES["firstoptionalimage"]["tmp_name"]);
 
@@ -171,299 +168,303 @@ if ($_FILES["thirdoptionalimage"]["size"] > 500000) {
  ///////////////Check ends ////////////////////
 
 
-if ($canupload) {
+if ($canupload) 
+{
+      ////////mainimage
+    if (isset($_FILES["mainimage"]) && !empty($_FILES["mainimage"])) 
+      {
+          $upload_image=$_FILES["mainimage"]["name"];
+          $temp_name =$_FILES["mainimage"]["tmp_name"]; 
 
-  echo " in check uploads: ";
 
-   ////////mainimage
- if (isset($_FILES["mainimage"]) && !empty($_FILES["mainimage"])) {
-  $upload_image=$_FILES["mainimage"]["name"];
-  $temp_name =$_FILES["mainimage"]["tmp_name"]; 
-
-
-    if (strpos($upload_image, '.jpg') !== false) {
-      $newuploadimage =chop($upload_image,".jpg");
-     } 
-    if (strpos($upload_image, '.JPG') !== false) {
-      $newuploadimage =chop($upload_image,".JPG");
-     }  
-     
-     if (strpos($upload_image, '.tiff') !== false) {
-      $newuploadimage =chop($upload_image,".tiff");
-     }
- 
-     if (strpos($upload_image, '.png') !== false) {
-      $newuploadimage =chop($upload_image,".png");
-     }
- 
-     if (strpos($upload_image, '.JPEG') !== false) {
-      $newuploadimage =chop($upload_image,".JPEG");
-     }  
-  
-       if (strpos($upload_image, '.gif') !== false) {
-      $newuploadimage =chop($upload_image,".gif");
-     }
-      
-    // echo'new upload: '.$newuploadimage;
-
-    $mainimagepath =  $folderPath.'.'.$newuploadimage.'main'.'.PNG';
-  
-  //////////upload main image   
- if( move_uploaded_file($temp_name, $mainimagepath))
- { 
-  echo' on line 214 in move upload mainimange';
-  
-  /////////////set up optional image 1  
-  if (isset($_FILES["firstoptionalimage"]) && !empty($_FILES["firstoptionalimage"]) && ($uploadOk1 == 1)) {
-   $upload_imageoptional1=$_FILES["firstoptionalimage"]["name"];
-   $temp_namefirstoptional =$_FILES["firstoptionalimage"]["tmp_name"];
- 
-   if (strpos($upload_imageoptional1, '.jpg') !== false) {
-     $firstuploadimageoptional = chop($upload_imageoptional1,".jpg");
-    } 
-   if (strpos($upload_imageoptional1, '.JPG') !== false) {
-     $firstuploadimageoptional =chop($upload_imageoptional1,".JPG");
-    }  
-    
-    if (strpos($upload_imageoptional1, '.tiff') !== false) {
-     $firstuploadimageoptional =chop($upload_imageoptional1,".tiff");
-    }
-
-    if (strpos($upload_imageoptional1, '.png') !== false) {
-     $firstuploadimageoptional =chop($upload_imageoptional1,".png");
-    }
-
-    if (strpos($upload_imageoptional1, '.JPEG') !== false) {
-     $firstuploadimageoptional =chop($upload_imageoptional1,".JPEG");
-    }  
- 
-      if (strpos($upload_imageoptional1, '.gif') !== false) {
-     $firstuploadimageoptional =chop($upload_imageoptional1,".gif");
-    }  	
-    
-    //echo'new 1st opt: '.$firstuploadimageoptional;
-echo'on line 245 ';
-   //////////set up optional image 2
-    if (isset($_FILES["secondoptionalimage"]) && !empty($_FILES["secondoptionalimage"]) && ($uploadOk2 == 1)) {
-    
-     $upload_imageoptional2=$_FILES["secondoptionalimage"]["name"];
-     $temp_namesecondoptional =$_FILES["secondoptionalimage"]["tmp_name"];
- 
-     if (strpos($upload_imageoptional2, '.jpg') !== false) {
-     $seconduploadimageoptional = chop($upload_imageoptional2,".jpg");
-     } 
-     if (strpos($upload_imageoptional2, '.JPG') !== false) {
-     $seconduploadimageoptional =chop($upload_imageoptional2,".JPG");
-     }  
-    
-     if (strpos($upload_imageoptional2, '.tiff') !== false) {
-     $seconduploadimageoptional =chop($upload_imageoptional2,".tiff");
-     }
-
-     if (strpos($upload_imageoptional2, '.png') !== false) {
-     $seconduploadimageoptional =chop($upload_imageoptional2,".png");
-     }
-
-     if (strpos($upload_imageoptional2, '.JPEG') !== false) {
-     $seconduploadimageoptional =chop($upload_imageoptional2,".JPEG");
-     }  
- 
-      if (strpos($upload_imageoptional2, '.gif') !== false) {
-     $seconduploadimageoptional =chop($upload_imageoptional2,".gif");
-    } 
-
-    if (isset($_FILES["thirdoptionalimage"]) && !empty($_FILES["thirdoptionalimage"]) && ($uploadOk3 == 1)) {
-    
-      $upload_imageoptional3=$_FILES["thirdoptionalimage"]["name"];
-      $temp_namethirdoptional =$_FILES["thirdoptionalimage"]["tmp_name"];
-  
-      if (strpos($upload_imageoptional3, '.jpg') !== false) {
-      $thirduploadimageoptional = chop($upload_imageoptional3,".jpg");
-      } 
-      if (strpos($upload_imageoptional3, '.JPG') !== false) {
-      $thirduploadimageoptional =chop($upload_imageoptional3,".JPG");
-      }  
-     
-      if (strpos($upload_imageoptional3, '.tiff') !== false) {
-      $thirduploadimageoptional =chop($upload_imageoptional3,".tiff");
-      }
- 
-      if (strpos($upload_imageoptional3, '.png') !== false) {
-      $thirduploadimageoptional =chop($upload_imageoptional3,".png");
-      }
- 
-      if (strpos($upload_imageoptional3, '.JPEG') !== false) {
-      $thirduploadimageoptional =chop($upload_imageoptional3,".JPEG");
-      }  
-  
-       if (strpos($upload_imageoptional3, '.gif') !== false) {
-      $thirduploadimageoptional =chop($upload_imageoptional3,".gif");
-     } 
- 
-   ///declare path for optional image1 and optional image 2
-    $firstimageoptional = $folderPath.'.'.$firstuploadimageoptional.'opt1'.'.PNG';
-    $secondimageoptional = $folderPath.'.'.$seconduploadimageoptional.'opt2'.'.PNG';
-    $thirdimageoptional = $folderPath.'.'.$thirduploadimageoptional.'opt3'.'.PNG';
-
-    if( move_uploaded_file($temp_namefirstoptional,  $firstimageoptional)&&
-     move_uploaded_file($temp_namesecondoptional, $secondimageoptional) && move_uploaded_file($temp_namethirdoptional, $thirdimageoptional))
-       {
-    
-      $sql123 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`, `PathSecondOptionalImage`, `PathThirdOptionalImage`,`Date_Created`)
-       VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional','$secondimageoptional','$thirdimageoptional',Now())";
-        
-        if (!mysqli_query($conn, $sql123))
-           {
-           die("Error While uploading image on the server 3 images: "); 
-           }  
-         else{           
-            // $latestinsertedid = mysqli_insert_id($conn); 
-            echo'header location part 1';
-           // $latestinsertedid = mysqli_insert_id($conn); 
-           // header("location: http://localhost:3000/#/thanksuploaded");
-           // header("location: http://groupakwabatech.com/#/thanksuploaded");
-            header("location: http://localhost:3000/#/uploadvideos");
-           }
-                
-      //SET @latestinsertedid = LAST_INSERT_ID();
+          if (strpos($upload_image, '.jpg') !== false) {
+            $newuploadimage =chop($upload_image,".jpg");
+          } 
+          if (strpos($upload_image, '.JPG') !== false) {
+            $newuploadimage =chop($upload_image,".JPG");
+          }  
+              
+        if (strpos($upload_image, '.tiff') !== false) {
+          $newuploadimage =chop($upload_image,".tiff");
         }
-
-    /////// upload and save optional image 1 and optional image 2
-    elseif( move_uploaded_file($temp_namefirstoptional,  $firstimageoptional)&& move_uploaded_file($temp_namesecondoptional, $secondimageoptional))  {
     
-    $sql12 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`, `PathSecondOptionalImage`,`Date_Created`)
-    VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional','$secondimageoptional',Now())";
-       
-       if (!mysqli_query($conn, $sql12))
-        {
-        die("Error While uploading image on the server 2 images: "); 
+        if (strpos($upload_image, '.png') !== false) {
+          $newuploadimage =chop($upload_image,".png");
+        }
+    
+        if (strpos($upload_image, '.JPEG') !== false) {
+          $newuploadimage =chop($upload_image,".JPEG");
         }  
-      else{     
-        echo'header location part 2';   
-       // $latestinsertedid = mysqli_insert_id($conn); 
-       // header("location: http://localhost:3000/#/thanksuploaded");
-       // header("location: http://groupakwabatech.com/#/thanksuploaded");
-       header("location: http://localhost:3000/#/uploadvideos");
-        }
-          
-//SET @latestinsertedid = LAST_INSERT_ID();
-  }
-   
-
- ////upload and save optional image 1
-	elseif( move_uploaded_file($temp_namefirstoptional, $firstimageoptional))
-    { 
-      $sql1 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`)
-       VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional')";
-        
-//SET @latestinsertedid = LAST_INSERT_ID();
-////end optional 1
-if (!mysqli_query($conn, $sql1))
-  {
-  die("Error While uploading image on the server 1 image: "); 
-  }  
-else{  
-  echo'header location part 3';
-    // $latestinsertedid = mysqli_insert_id($conn); 
-    // header("location: http://localhost:3000/#/thanksuploaded");
-    // header("location: http://groupakwabatech.com/#/thanksuploaded");
-    header("location: http://localhost:3000/#/uploadvideos");
-  }
-   
-
- ////upload and save optional image 2
-  }elseif( move_uploaded_file($temp_namesecondoptional, $secondimageoptional))
-  {
-    $sql2 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathSecondOptionalImage`,`Date_Created`) 
-    VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$secondimageoptional', Now())";
-     if (!mysqli_query($conn, $sql2))
-     {
-     die("Error While uploading image on the server: only second image "); 
-     }  
-   else{   
-    echo'header location part 4';   
-      // $latestinsertedid = mysqli_insert_id($conn); 
-      // header("location: http://localhost:3000/#/thanksuploaded");
-      // header("location: http://groupakwabatech.com/#/thanksuploaded");
-      header("location: http://localhost:3000/#/uploadvideos");
-     }
-         
-//@latestinsertedid = LAST_INSERT_ID();    
-
-/////// save Main image
-  } elseif( move_uploaded_file($temp_namethirdoptional, $thirdimageoptional))
-  {
-    $sql3 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathThirdOptionalImage`,`Date_Created`) 
-    VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$thirdimageoptional', Now())";
-   
-   
-
-   if (!mysqli_query($conn, $sql3))
-  {
-  die("Error While uploading image on the server only third image: "); 
-  }  
-else{  
-  echo'header location part 5'; 
-    // $latestinsertedid = mysqli_insert_id($conn); 
-    // header("location: http://localhost:3000/#/thanksuploaded");
-    // header("location: http://groupakwabatech.com/#/thanksuploaded");
-    header("location: http://localhost:3000/#/uploadvideos");
-  }
-   
-//@latestinsertedid = LAST_INSERT_ID();    
-
-/////// save Main image
-  } else {
-    // $sql = "INSERT INTO `imagelocation`( `Name`,`PathMainImage`, `Useremail`, `RandomId`) 
-    // VALUES ('$name', '$mainimagepath','$userEmail','$randomUniqueId')";
       
-    if(empty($upload_imageoptional1))     
-    $firstimageoptional ="images/noimage/noimage.PNG";
+          if (strpos($upload_image, '.gif') !== false) {
+          $newuploadimage =chop($upload_image,".gif");
+        }
+      
+       // echo'new upload: '.$newuploadimage;
 
-    if(empty($upload_imageoptional2))
-     $secondimageoptional ="images/noimage/noimage.PNG";
-
-     if(empty($upload_imageoptional3))
-     $thirdimageoptional ="images/noimage/noimage.PNG";
-
-    $sql = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`, `PathSecondOptionalImage`,`PathThirdOptionalImage`,`Date_Created`)
-    VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional','$secondimageoptional','$thirdimageoptional', Now())";
-          
-
-//SET @latestinsertedid = LAST_INSERT_ID();
- 
-    //    }
-       
- if (!mysqli_query($conn, $sql))
-  {
-  die("Error While uploading image on the server: default"); 
-  }  
-else{  
-  echo'header location part 6';
-    // $latestinsertedid = mysqli_insert_id($conn); 
-    // header("location: http://localhost:3000/#/thanksuploaded");
-    // header("location: http://groupakwabatech.com/#/thanksuploaded");
-     header("location: http://localhost:3000/#/uploadvideos");
-  }
-   
-    }
+        $mainimagepath =  $folderPath.'.'.$newuploadimage.'main'.'.PNG';
   
-    }
-    else{
-      echo'failed to get file info';
-    }
-  }
-}
- }
- echo'only main image';
- // $latestinsertedid = mysqli_insert_id($conn); 
- // header("location: http://localhost:3000/#/thanksuploaded");
- // header("location: http://groupakwabatech.com/#/thanksuploaded");
-  header("location: http://localhost:3000/#/uploadvideos");
+        //////////upload main image   
+        if( move_uploaded_file($temp_name, $mainimagepath))
+        { 
+          /////////////set up optional image 1  
+          if (isset($_FILES["firstoptionalimage"]) && !empty($_FILES["firstoptionalimage"]) && ($uploadOk1 == 1)) {
+        $upload_imageoptional1=$_FILES["firstoptionalimage"]["name"];
+        $temp_namefirstoptional =$_FILES["firstoptionalimage"]["tmp_name"];
+      
+        if (strpos($upload_imageoptional1, '.jpg') !== false) {
+          $firstuploadimageoptional = chop($upload_imageoptional1,".jpg");
+          } 
+        if (strpos($upload_imageoptional1, '.JPG') !== false) {
+          $firstuploadimageoptional =chop($upload_imageoptional1,".JPG");
+          }  
+          
+          if (strpos($upload_imageoptional1, '.tiff') !== false) {
+          $firstuploadimageoptional =chop($upload_imageoptional1,".tiff");
+          }
 
-}
-}else{
-  echo " did not jump in uploadOk: 0";
-}
+          if (strpos($upload_imageoptional1, '.png') !== false) {
+          $firstuploadimageoptional =chop($upload_imageoptional1,".png");
+          }
+
+          if (strpos($upload_imageoptional1, '.JPEG') !== false) {
+          $firstuploadimageoptional =chop($upload_imageoptional1,".JPEG");
+          }  
+      
+            if (strpos($upload_imageoptional1, '.gif') !== false) {
+          $firstuploadimageoptional =chop($upload_imageoptional1,".gif");
+          }  	
+          
+          //echo'new 1st opt: '.$firstuploadimageoptional;
+          //echo'on line 245 ';
+          //////////set up optional image 2
+          if (isset($_FILES["secondoptionalimage"]) && !empty($_FILES["secondoptionalimage"]) && ($uploadOk2 == 1)) {
+          
+          $upload_imageoptional2=$_FILES["secondoptionalimage"]["name"];
+          $temp_namesecondoptional =$_FILES["secondoptionalimage"]["tmp_name"];
+      
+          if (strpos($upload_imageoptional2, '.jpg') !== false) {
+          $seconduploadimageoptional = chop($upload_imageoptional2,".jpg");
+          } 
+          if (strpos($upload_imageoptional2, '.JPG') !== false) {
+          $seconduploadimageoptional =chop($upload_imageoptional2,".JPG");
+          }  
+          
+          if (strpos($upload_imageoptional2, '.tiff') !== false) {
+          $seconduploadimageoptional =chop($upload_imageoptional2,".tiff");
+          }
+
+          if (strpos($upload_imageoptional2, '.png') !== false) {
+          $seconduploadimageoptional =chop($upload_imageoptional2,".png");
+          }
+
+          if (strpos($upload_imageoptional2, '.JPEG') !== false) {
+          $seconduploadimageoptional =chop($upload_imageoptional2,".JPEG");
+          }  
+      
+            if (strpos($upload_imageoptional2, '.gif') !== false) {
+          $seconduploadimageoptional =chop($upload_imageoptional2,".gif");
+          } 
+
+        if (isset($_FILES["thirdoptionalimage"]) && !empty($_FILES["thirdoptionalimage"]) && ($uploadOk3 == 1)) {
+        
+          $upload_imageoptional3=$_FILES["thirdoptionalimage"]["name"];
+          $temp_namethirdoptional =$_FILES["thirdoptionalimage"]["tmp_name"];
+      
+          if (strpos($upload_imageoptional3, '.jpg') !== false) {
+          $thirduploadimageoptional = chop($upload_imageoptional3,".jpg");
+          } 
+          if (strpos($upload_imageoptional3, '.JPG') !== false) {
+          $thirduploadimageoptional =chop($upload_imageoptional3,".JPG");
+          }  
+        
+          if (strpos($upload_imageoptional3, '.tiff') !== false) {
+          $thirduploadimageoptional =chop($upload_imageoptional3,".tiff");
+          }
+    
+          if (strpos($upload_imageoptional3, '.png') !== false) {
+          $thirduploadimageoptional =chop($upload_imageoptional3,".png");
+          }
+    
+          if (strpos($upload_imageoptional3, '.JPEG') !== false) {
+          $thirduploadimageoptional =chop($upload_imageoptional3,".JPEG");
+          }  
+      
+          if (strpos($upload_imageoptional3, '.gif') !== false) {
+          $thirduploadimageoptional =chop($upload_imageoptional3,".gif");
+        } 
+    
+      ///declare path for optional image1 and optional image 2
+        $firstimageoptional = $folderPath.'.'.$firstuploadimageoptional.'opt1'.'.PNG';
+        $secondimageoptional = $folderPath.'.'.$seconduploadimageoptional.'opt2'.'.PNG';
+        $thirdimageoptional = $folderPath.'.'.$thirduploadimageoptional.'opt3'.'.PNG';
+
+        if( move_uploaded_file($temp_namefirstoptional,  $firstimageoptional)&&
+        move_uploaded_file($temp_namesecondoptional, $secondimageoptional) && move_uploaded_file($temp_namethirdoptional, $thirdimageoptional))
+          {
+        
+              $sql123 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`, `PathSecondOptionalImage`, `PathThirdOptionalImage`,`Date_Created`)
+              VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional','$secondimageoptional','$thirdimageoptional',Now())";
+            
+              if (!mysqli_query($conn, $sql123))
+              {
+              die("Error While uploading image on the server 3 images: "); 
+              }  
+              else{           
+                // $latestinsertedid = mysqli_insert_id($conn); 
+                echo'header location part 1';
+              // $latestinsertedid = mysqli_insert_id($conn); 
+              // header("location: http://localhost:3000/#/thanksuploaded");
+              // header("location: http://groupakwabatech.com/#/thanksuploaded");
+                header("location: http://localhost:3000/#/uploadvideos");
+              }
+                    
+              //SET @latestinsertedid = LAST_INSERT_ID();
+            }
+
+        /////// upload and save optional image 1 and optional image 2
+        elseif( move_uploaded_file($temp_namefirstoptional,  $firstimageoptional)&& move_uploaded_file($temp_namesecondoptional, $secondimageoptional)) 
+        {    
+          $sql12 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`, `PathSecondOptionalImage`,`Date_Created`)
+          VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional','$secondimageoptional',Now())";
+          
+          if (!mysqli_query($conn, $sql12))
+            {
+            die("Error While uploading image on the server 2 images: "); 
+            }  
+          else{     
+            echo'header location part 2';   
+          // $latestinsertedid = mysqli_insert_id($conn); 
+          // header("location: http://localhost:3000/#/thanksuploaded");
+          // header("location: http://groupakwabatech.com/#/thanksuploaded");
+          header("location: http://localhost:3000/#/uploadvideos");
+            }
+              
+          //SET @latestinsertedid = LAST_INSERT_ID();
+        }  ////upload and save optional image 1
+        elseif( move_uploaded_file($temp_namefirstoptional, $firstimageoptional))
+        { 
+            $sql1 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`)
+          VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional')";
+            
+            //SET @latestinsertedid = LAST_INSERT_ID();
+            ////end optional 1
+          if (!mysqli_query($conn, $sql1))
+          {
+            die("Error While uploading image on the server 1 image: "); 
+          }  
+          else{  
+          echo'header location part 3';
+          // $latestinsertedid = mysqli_insert_id($conn); 
+          // header("location: http://localhost:3000/#/thanksuploaded");
+          // header("location: http://groupakwabatech.com/#/thanksuploaded");
+            header("location: http://localhost:3000/#/uploadvideos");
+          }
+            ////upload and save optional image 2
+          }elseif( move_uploaded_file($temp_namesecondoptional, $secondimageoptional))
+          {
+              $sql2 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathSecondOptionalImage`,`Date_Created`) 
+              VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$secondimageoptional', Now())";
+              if (!mysqli_query($conn, $sql2))
+              {
+              die("Error While uploading image on the server: only second image "); 
+              }  
+            else{   
+              echo'header location part 4';   
+              // $latestinsertedid = mysqli_insert_id($conn); 
+              // header("location: http://localhost:3000/#/thanksuploaded");
+                // header("location: http://groupakwabatech.com/#/thanksuploaded");
+                header("location: http://localhost:3000/#/uploadvideos");
+                }
+            
+                //@latestinsertedid = LAST_INSERT_ID();
+                /////// save third optinal image
+          } elseif( move_uploaded_file($temp_namethirdoptional, $thirdimageoptional))
+          {
+            $sql3 = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathThirdOptionalImage`,`Date_Created`) 
+            VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$thirdimageoptional', Now())";
+      
+            if (!mysqli_query($conn, $sql3))
+              {
+                die("Error While uploading image on the server only third image: "); 
+              }  
+            else{  
+              echo'header location part 5'; 
+                // $latestinsertedid = mysqli_insert_id($conn); 
+                // header("location: http://localhost:3000/#/thanksuploaded");
+                // header("location: http://groupakwabatech.com/#/thanksuploaded");
+                header("location: http://localhost:3000/#/uploadvideos");
+              }
+      
+              //@latestinsertedid = LAST_INSERT_ID(); 
+              /////// save Main image
+          } else {
+              //  $sql = "INSERT INTO `imagelocation`( `Name`,`PathMainImage`, `Useremail`, `RandomId`) 
+              //   VALUES ('$name', '$mainimagepath','$userEmail','$randomUniqueId')";
+          
+              if(empty($upload_imageoptional1))     
+                $firstimageoptional ="images/noimage/noimage.PNG";
+
+                if(empty($upload_imageoptional2))
+                $secondimageoptional ="images/noimage/noimage.PNG";
+
+                if(empty($upload_imageoptional3))
+                $thirdimageoptional ="images/noimage/noimage.PNG";
+
+                $sqlMainOnly = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`, `PathSecondOptionalImage`,`PathThirdOptionalImage`,`Date_Created`)
+                VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional','$secondimageoptional','$thirdimageoptional', Now())";
+              
+
+                if (!mysqli_query($conn, $sqlMainOnly))
+                  {
+                  die("Error While uploading main image only on the server only third image: "); 
+                  }  
+                else{  
+                  echo'header location part 6'; 
+                  // $latestinsertedid = mysqli_insert_id($conn); 
+                  // header("location: http://localhost:3000/#/thanksuploaded");
+                  // header("location: http://groupakwabatech.com/#/thanksuploaded");
+                  header("location: http://localhost:3000/#/uploadvideos");
+                  }
+            } //end upload main image only
+      
+          }else{
+              echo'failed to get file info';
+              }
+          }
+          }
+        } //can upload at least main and first option
+          echo'only main image';      
+          if(empty($upload_imageoptional1))     
+          $firstimageoptional ="images/noimage/noimage.PNG";
+
+          if(empty($upload_imageoptional2))
+          $secondimageoptional ="images/noimage/noimage.PNG";
+
+          if(empty($upload_imageoptional3))
+          $thirdimageoptional ="images/noimage/noimage.PNG";
+
+          $sqlMainOnly = "INSERT INTO `imagelocation`(`Name`,`PathMainImage`, `Useremail`, `RandomId`, `PathFirstOptionalImage`, `PathSecondOptionalImage`,`PathThirdOptionalImage`,`Date_Created`)
+          VALUES ('$name','$mainimagepath','$userEmail','$randomUniqueId','$firstimageoptional','$secondimageoptional','$thirdimageoptional', Now())";
+        
+
+          if (!mysqli_query($conn, $sqlMainOnly))
+            {
+            die("Error While uploading main image only on the server only third image: "); 
+            }  
+          else{  
+            echo'header location part 6'; 
+            // $latestinsertedid = mysqli_insert_id($conn); 
+            // header("location: http://localhost:3000/#/thanksuploaded");
+            // header("location: http://groupakwabatech.com/#/thanksuploaded");
+            header("location: http://localhost:3000/#/uploadvideos");
+            }
+
+    } //end  isset mainimage
+        
+  } ///end if can upload  
+  else{ //else can upload
+      echo " did not jump in can upload/uploadOk: 0";
+       } //end else can upload
 ?>
 
