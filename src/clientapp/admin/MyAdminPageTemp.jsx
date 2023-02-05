@@ -12,7 +12,7 @@ function MyAdminTemp(){
  
   const { t } = useTranslation(); 
       return (       
-        <div>     
+        <div className="container">    
      
      <div className="akwaba-content-admin"> 
            <Row>
@@ -26,12 +26,18 @@ function MyAdminTemp(){
             <HashRouter>
               <Col md={{ span: 4 , offset: 3}}>
                 {" "}
-                <div className="akwaba-container-items justify-content">
+                <div>
                   <NavLink to="/uploadassets">
-                    <div className="akwaba-tiles-navlinks">
-                    Upload assets               
+                    <div className="admin-link-to-post">
+                    Click to post your hit back <br/>                            
                     </div>
-                  </NavLink>                 
+                  </NavLink> 
+                  <div className="admin-home">
+                    1-Fill your personal info<br/>
+                    2-Fill the info about the incident<br/>
+                    3-Fill info about the Place where you are<br/>
+                    4-Upload mandatory picture and optional picture(maximum 3)<br/>
+                    5-Upload a 1mn authentication video of yourself explaining the incident <br/> </div>                
                 </div>
               </Col>
              

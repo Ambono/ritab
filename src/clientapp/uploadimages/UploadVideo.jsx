@@ -13,6 +13,10 @@ import { createBrowserHistory } from 'history';
   const [contactEmail, setContactEmail] = useState(localStorage.getItem('userEmail'));
   const [emailerrormsg, setEmailerrormsg] = useState('');
 
+  const getApiPath = () => { 
+    // return GetApis().UPLOADASSET;  
+     return "http://groupakwabatech.com/uploaderMkDirVideo.php";
+   };
 
   const { t } = useTranslation();
 
@@ -34,7 +38,7 @@ import { createBrowserHistory } from 'history';
     <Row>    
     <Col md={{ span: 9, offset: 2}}> 
     <div>
-  <form action="http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
+  <form action="http://groupakwabatech.com/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
     
        <div className="form-group">
         <label>Re-enter Email</label>

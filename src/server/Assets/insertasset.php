@@ -1,6 +1,6 @@
  <?php
 include("./config.php");
-include("./config_local.php");
+//include("./config_local.php");
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
 
@@ -58,7 +58,7 @@ $user_ip = getUserIP();
  
  $deliveryPlace = $deliveryPlace1.' '.$deliveryPlace2;
  
-  $fullname =$shoptitle +" " + $shopName + " " + $shopSurName;
+  $fullname = $shoptitle .' '. $shopName.' '.$shopSurName;
   $firstuploadimageoptional ="";
   $seconduploadimageoptional="";
   $newuploadimage="";

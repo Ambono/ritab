@@ -1,6 +1,6 @@
 <?php
-//include("./config.php");
-include("./config_local.php");
+include("./config.php");
+//include("./config_local.php");
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
 
@@ -41,6 +41,7 @@ $sqlRandomId = "SELECT `SellerEmail`,  `randomUniqueID`, `Name` FROM `productdet
      
 if (!mysqli_query($conn, $sqlRandomId))
 {
+  echo 'contact email: '.$contactEmail;
 die("<br/>Error While getting inserter code "); 
 }  
 else{
@@ -312,11 +313,12 @@ if ($canupload)
               }  
               else{           
                 // $latestinsertedid = mysqli_insert_id($conn); 
-                echo'header location part 1';
+               // echo'header location part 1';
               // $latestinsertedid = mysqli_insert_id($conn); 
               // header("location: http://localhost:3000/#/thanksuploaded");
               // header("location: http://groupakwabatech.com/#/thanksuploaded");
-                header("location: http://localhost:3000/#/uploadvideos");
+              //  header("location: http://localhost:3000/#/uploadvideos");
+                header("location: http://groupakwabatech.com/#/uploadvideos");
               }
                     
               //SET @latestinsertedid = LAST_INSERT_ID();
@@ -336,8 +338,9 @@ if ($canupload)
             echo'header location part 2';   
           // $latestinsertedid = mysqli_insert_id($conn); 
           // header("location: http://localhost:3000/#/thanksuploaded");
-          // header("location: http://groupakwabatech.com/#/thanksuploaded");
-          header("location: http://localhost:3000/#/uploadvideos");
+           //header("location: http://groupakwabatech.com/#/thanksuploaded");
+         // header("location: http://localhost:3000/#/uploadvideos");
+          header("location: http://groupakwabatech.com/#/uploadvideos");
             }
               
           //SET @latestinsertedid = LAST_INSERT_ID();
@@ -358,7 +361,8 @@ if ($canupload)
           // $latestinsertedid = mysqli_insert_id($conn); 
           // header("location: http://localhost:3000/#/thanksuploaded");
           // header("location: http://groupakwabatech.com/#/thanksuploaded");
-            header("location: http://localhost:3000/#/uploadvideos");
+           // header("location: http://localhost:3000/#/uploadvideos");
+            header("location: http://groupakwabatech.com/#/uploadvideos");
           }
             ////upload and save optional image 2
           }elseif( move_uploaded_file($temp_namesecondoptional, $secondimageoptional))
@@ -373,8 +377,9 @@ if ($canupload)
               echo'header location part 4';   
               // $latestinsertedid = mysqli_insert_id($conn); 
               // header("location: http://localhost:3000/#/thanksuploaded");
-                // header("location: http://groupakwabatech.com/#/thanksuploaded");
-                header("location: http://localhost:3000/#/uploadvideos");
+                /// header("location: http://groupakwabatech.com/#/thanksuploaded");
+               // header("location: http://localhost:3000/#/uploadvideos");
+                header("location: http://groupakwabatech.com/#/uploadvideos");
                 }
             
                 //@latestinsertedid = LAST_INSERT_ID();
@@ -393,7 +398,8 @@ if ($canupload)
                 // $latestinsertedid = mysqli_insert_id($conn); 
                 // header("location: http://localhost:3000/#/thanksuploaded");
                 // header("location: http://groupakwabatech.com/#/thanksuploaded");
-                header("location: http://localhost:3000/#/uploadvideos");
+               // header("location: http://localhost:3000/#/uploadvideos");
+                header("location: http://groupakwabatech.com/#/uploadvideos");
               }
       
               //@latestinsertedid = LAST_INSERT_ID(); 
@@ -424,7 +430,8 @@ if ($canupload)
                   // $latestinsertedid = mysqli_insert_id($conn); 
                   // header("location: http://localhost:3000/#/thanksuploaded");
                   // header("location: http://groupakwabatech.com/#/thanksuploaded");
-                  header("location: http://localhost:3000/#/uploadvideos");
+                 // header("location: http://localhost:3000/#/uploadvideos");
+                 header("location: http://groupakwabatech.com/#/uploadvideos");
                   }
             } //end upload main image only
       
@@ -457,7 +464,8 @@ if ($canupload)
             // $latestinsertedid = mysqli_insert_id($conn); 
             // header("location: http://localhost:3000/#/thanksuploaded");
             // header("location: http://groupakwabatech.com/#/thanksuploaded");
-            header("location: http://localhost:3000/#/uploadvideos");
+            //header("location: http://localhost:3000/#/uploadvideos");
+            header("location: http://groupakwabatech.com/#/uploadvideos");
             }
 
     } //end  isset mainimage

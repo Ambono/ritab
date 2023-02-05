@@ -1,6 +1,6 @@
 <?php 
 include("./config.php");
-include("./config_local.php");
+//include("./config_local.php");
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
 

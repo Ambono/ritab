@@ -1,6 +1,6 @@
 <?php
-//include("./config.php");
-include("./config_local.php");
+include("./config.php");
+//include("./config_local.php");
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);  
 
@@ -56,7 +56,7 @@ if(!is_dir($directoryname)){
  $uploadOk = 1;
  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
  
-echo " before submit line 56"; 
+//echo " before submit line 56"; 
 
 // require_once('../getid3/getid3.php');
 // $getID3 = new getID3;
@@ -107,7 +107,7 @@ echo " before submit line 56";
 
 
 //if ($canupload) {
-  echo " in check uploads: ";
+ // echo " in check uploads: ";
    ////////mainimage
  if (isset($_FILES["videoFile"]) && !empty($_FILES["videoFile"])) {
   $upload_image=$_FILES["videoFile"]["name"];
@@ -138,8 +138,8 @@ echo " before submit line 56";
       }  
     else{  
       // $latestinsertedid = mysqli_insert_id($conn); 
-      header("location: http://localhost:3000/#/thanksuploaded");
-      // header("location: http://groupakwabatech.com/#/thanksuploaded");
+     // header("location: http://localhost:3000/#/thanksuploaded");
+       header("location: http://groupakwabatech.com/#/uploadedthanks");
       }
       
         }

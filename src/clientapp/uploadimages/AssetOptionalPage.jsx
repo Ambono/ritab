@@ -33,7 +33,8 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
   const [secondOptsrc, setSecondOptsrc] = useState();
   const [thirdOptsrc, setThirdOptsrc] = useState();
   const [contactEmail, setContactEmail] = useState();
- const [videoPath, setVideoPath] = useState();
+  const [videoPath, setVideoPath] = useState();
+  const [videoPathStatus, setVideoPathStatus] = useState(false);
   const mainimagepath = props.location.state;
 
   const { t } = useTranslation();
@@ -41,24 +42,39 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
   useEffect(() => {
     setImageSource();
   }, [])
+  const imagepaths = props.location.state; 
 
-  const setImageSource = () =>  {    
-    const imagepaths = props.location.state;  
-    const mainimage = localStorage.getItem('mainimage')==null?imagepaths.mainimage:localStorage.getItem('mainimage');//this.props.prop_mainimage;//  
-    const opt1image = localStorage.getItem('opt1image')==null?imagepaths.opt1image:localStorage.getItem('opt1image');//this.props.prop_opt1image;//
-    const opt2image = localStorage.getItem('opt2image')==null?imagepaths.opt2image:localStorage.getItem('opt2image'); //this.props.prop_opt2image;//
-    const opt3image = localStorage.getItem('opt3image')==null?imagepaths.opt3image:localStorage.getItem('opt3image');//this.props.prop_opt2image;//
-    const assetName = localStorage.getItem('assetName')==null?imagepaths.assetName:localStorage.getItem('assetName'); //this.props.prop_assetName;//
-    const assetPrice = localStorage.getItem('assetPrice')==null?imagepaths.assetPrice:localStorage.getItem('assetPrice');//this.props.prop_assetPrice;//
-    const assetNote = localStorage.getItem('assetNote')==null?imagepaths.assetNote:localStorage.getItem('assetNote');//this.props.prop_assetNote;//
-    const assetDescription = localStorage.getItem('assetDescription')==null?imagepaths.assetDescription:localStorage.getItem('assetDescription');//this.props.prop_assetDescription;//
-    const replyerName = localStorage.getItem('replyerName')==null?imagepaths.replyerName:localStorage.getItem('replyerName');//this.props.prop_replyerName;//
-    const reply = localStorage.getItem('reply')==null?imagepaths.reply:localStorage.getItem('reply'); //this.props.prop_reply;//
-    const videoPath = localStorage.getItem('video')==null?imagepaths.video:localStorage.getItem('video');
+ 
+
+  localStorage.setItem('mainimage', imagepaths.mainimage);
+  localStorage.setItem('opt1image', imagepaths.opt1image);
+  localStorage.setItem('opt2image', imagepaths.opt2image);
+  localStorage.setItem('opt3image', imagepaths.opt3image);
+  localStorage.setItem('video', imagepaths.video);
+  localStorage.setItem('assetNote', imagepaths.assetNote);
+  localStorage.setItem('assetDescription', imagepaths.assetDescription);
+  localStorage.setItem('assetName', imagepaths.assetName);
+  localStorage.setItem('assetPrice', imagepaths.assetPrice);
+  localStorage.setItem('reply', imagepaths.reply);
+  localStorage.setItem('replyerName', imagepaths.replyerName); 
+
+
+  const setImageSource = () =>  {      
+    const mainimage = imagepaths.mainimage??localStorage.getItem('mainimage');//this.props.prop_mainimage;//  
+    const opt1image = imagepaths.opt1image??localStorage.getItem('opt1image');//this.props.prop_opt1image;//
+    const opt2image = imagepaths.opt2image??localStorage.getItem('opt2image'); //this.props.prop_opt2image;//
+    const opt3image = imagepaths.opt3image??localStorage.getItem('opt3image');//this.props.prop_opt2image;//
+    const assetName = imagepaths.assetName??localStorage.getItem('assetName'); //this.props.prop_assetName;//
+    const assetPrice = imagepaths.assetPrice??localStorage.getItem('assetPrice');//this.props.prop_assetPrice;//
+    const assetNote = imagepaths.assetNote??localStorage.getItem('assetNote');//this.props.prop_assetNote;//
+    const assetDescription = imagepaths.assetDescription??localStorage.getItem('assetDescription');//this.props.prop_assetDescription;//
+    const replyerName = imagepaths.replyerName??localStorage.getItem('replyerName');//this.props.prop_replyerName;//
+    const reply = imagepaths.reply??localStorage.getItem('reply'); //this.props.prop_reply;//
+    const videoPath = imagepaths.video??localStorage.getItem('video');
    
    setMainImagesrc(mainimage);
    
-   setFirstOptsrc(opt1image);
+   setFirstOptsrc(opt1image); 
 
    setSecondOptsrc(opt2image);
   
@@ -70,6 +86,9 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
    setReplyerName(replyerName);
    setReply(reply);
    setVideoPath(videoPath);
+
+   let videoPathBool = videoPath==''||videoPath==null;
+   setVideoPathStatus(videoPathBool);
    
    }
   
@@ -175,13 +194,14 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
     </Row> 
     <Row>  
     <Col>
-    {/* <AssetOptionalVideos/>   */}
+    {!videoPathStatus &&(
 
   <div className="body-pannel">
        <video width="300px" height="400px" controls>
            <source src={videoPath} type="video/mp4" />
       </video>
   </div>
+  )}
   </Col>   
     </Row> 
     

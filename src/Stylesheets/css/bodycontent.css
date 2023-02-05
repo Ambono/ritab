@@ -34,8 +34,7 @@
     }
 
     .akwaba-content-admin{ 
-      width:100%;
-      height: 250px;
+      width:100%;     
       background-color: goldenrod;
       }
   
@@ -153,11 +152,22 @@
   margin-left: 20px;
 }
 
-.justify-content{ 
-  justify-content: center;
-  align-content: center;  
-  display: flex; 
-  width:auto;
+  .admin-home{
+    color: #fff;
+    background-color: grey;
+    font-family: verdana;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .admin-link-to-post{ 
+    background-color:white;
+    border: solid #e31b50 4px;
+    border-radius: 15px;
+    justify-content: center;
+    text-align: center;
 }
 
 .case-form{

@@ -48,8 +48,8 @@ const UploadTextInputs = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    return GetApis().UPLOADASSET;  
-    //return "http://groupakwabatech.com/insertasset.php";
+   // return GetApis().UPLOADASSET;  
+    return "http://groupakwabatech.com/insertasset.php";
   };
 
 
@@ -341,7 +341,8 @@ const UploadTextInputs = () => {
             <option value="Diffamation">Diffamation</option>
             <option value="Insult">Insult</option>
             <option value="Threat">Threat</option>  
-            <option value="Praise">Lie</option>
+            <option value="Lie">Lie</option>
+            <option value="Criticism">Criticism</option>
             <option value="Praise">Praise</option>                  
           </select>
           <div className="text-danger">{fnameerrormsg}</div>
@@ -392,13 +393,13 @@ const UploadTextInputs = () => {
 
   <Card>
     <Accordion.Toggle as={Card.Header} eventKey="2">
-       Delivery info    
+       Where did you know about this   
     </Accordion.Toggle>
     <Accordion.Collapse eventKey="2">
       <Card.Body className="content-accordion">
       <div className ="col-md-9 offset-3">
         <div className="form-group">
-        <label>{t("country, pages.contact.text.firstname")} </label>
+        <label>Country </label>
         <input
           id="country"
           name="country"
@@ -411,7 +412,7 @@ const UploadTextInputs = () => {
         </div>
 
         <div className="form-group">
-        <label>{t("city, pages.contact.text.firstname")} </label>
+        <label>City </label>
         <input
           id="city"
           name="city"
@@ -433,9 +434,9 @@ const UploadTextInputs = () => {
     </Accordion.Toggle>
     <Accordion.Collapse eventKey="3">
       <Card.Body className="content-accordion">
-       <div className ="col-md-9 offset-3">      
-        <label>{t("pages.contact.text.subject")}</label>
-        {seenote && (<div className="form-group ">
+       <div className ="col-md-9 offset-3"> 
+        {seenote && (<div className="form-group ">               
+        <label>Hit back here</label>
         <textarea
           id="note"
           name="note"
@@ -447,6 +448,7 @@ const UploadTextInputs = () => {
         />
           <div className="text-danger">{reasonerrormsg}</div>      
        </div>)}
+      {messageSent && (<span>Click 'picture Uploads' below to continue</span>)} 
         
        {seesubmitbutton && (  <input
               className="btn btn-primary"

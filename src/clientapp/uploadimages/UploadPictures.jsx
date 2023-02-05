@@ -43,15 +43,19 @@ const UploadPictures = () => {
 
     setPicturesSent(true);
 }
+
+const getApiPath = () => { 
+  // return GetApis().UPLOADASSET;  
+   return "http://groupakwabatech.com/uploaderMkDir.php";
+ };
   
-        const { t } = useTranslation();    
+  const { t } = useTranslation();    
         return (             
         <div className='col-md-9'>
-  <form action="http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDir.php" method="post" enctype="multipart/form-data">
+  {/* <form action={getApiPath} method="post" enctype="multipart/form-data"> */}
   
-  {/* <form action="http://groupakwabatech.com/uploaderMkDir.php" method="post" enctype="multipart/form-data">
-    */}
-   
+  <form action="http://groupakwabatech.com/uploaderMkDir.php" method="post" enctype="multipart/form-data">
+     
     <div className="form-group">
         <label>Re-enter your {t("pages.contact.text.email")}</label>
         <input

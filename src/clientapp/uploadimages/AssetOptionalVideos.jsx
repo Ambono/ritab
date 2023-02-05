@@ -20,31 +20,19 @@ import { createBrowserHistory } from 'history';
   const setImageSource = () =>  { 
    setVideosrc(propsvideopath);
 
-    }   
-   
+    }      
   
   const dimensions = {
     width:"500px",
     height:"500px",
   } 
 
-
   return ( 
     <div>
     <Row className="margin-maker">    
-    <Col md={{ span: 6, offset: 0}}>
-    <div>    
-    <video width="300px" height="400px"  controls="controls" >
-    {/* /Applications/XAMPP/xamppfiles/htdocs/htdocdev/ritab/src/server/assets/images/main.mp4 */}
-    <source src="/Applications/XAMPP/xamppfiles/htdocs/htdocdev/ritab/src/server/assets/images/main.mp4" type="video/mp4"/>
-    {/* <source src="../../server/assets/images/main.mp4" type="video/mp4"/> */}
-    Your browser does not support the video tag.
-    </video>
-    </div>
+    <Col md={{ span: 6, offset: 0}}>   
         <div>
-        <video width="300px" height="400px" controls>
-        {/*                 <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                      */}
+        <video width="300px" height="400px" controls>       
           <source src={videopath} type="video/mp4" />
         </video>
         </div>
@@ -53,7 +41,6 @@ import { createBrowserHistory } from 'history';
     </div>    
   );
   }
-
 
 export default (AssetOptionalVideos);
 

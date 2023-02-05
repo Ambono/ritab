@@ -23,8 +23,8 @@ function Posts() {
     return GetApis().RETRIEVEASSET;   
   }
   const getData = () => {
-    axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
-    //axios.get('http://groupakwabatech.com/retrieveasset.php')
+    //axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
+    axios.get('http://groupakwabatech.com/retrieveasset.php')
       .then(res => {
         setPost(res.data)
        // console.log("response in LMA: ", res.data)
@@ -52,39 +52,40 @@ function Posts() {
       <h2 className="mb-3">Current hit backs</h2>
       {initialPosts.map((item) => {
         /////////dev env
-        const mainimage = require(`../../server/assets/${item.PathMainImage}`).default;
-        const opt1image = require(`../../server/assets/${item.PathFirstOptionalImage}`).default;
-        const opt2image = require(`../../server/assets/${item.PathSecondOptionalImage}`).default;
-        const opt3image = require(`../../server/assets/${item.PathThirdOptionalImage}`).default;
-        const video = require(`../../server/assets/${item.Videopath}`).default;
+        // const mainimage = require(`../../server/assets/${item.PathMainImage}`).default;
+        // const opt1image = require(`../../server/assets/${item.PathFirstOptionalImage}`).default;
+        // const opt2image = require(`../../server/assets/${item.PathSecondOptionalImage}`).default;
+        // const opt3image = require(`../../server/assets/${item.PathThirdOptionalImage}`).default;
+        // const video = require(`../../server/assets/${item.Videopath}`).default;
       
         ////live       
-        // const myApp ="groupakwabatech.com";
-        // const mainimage = `/${item.PathMainImage}`;
-        // const opt1image = `/${item.PathFirstOptionalImage}`;
-        // const opt2image = `/${item.PathSecondOptionalImage}`;
-        // const opt3image = `/${item.PathThirdOptionalImage}`;
-        // const video = `/${item.Videopath}`;
+        const myApp ="groupakwabatech.com";
+        const mainimage = `/${item.PathMainImage}`;
+        const opt1image = `/${item.PathFirstOptionalImage}`;
+        const opt2image = `/${item.PathSecondOptionalImage}`;
+        const opt3image = `/${item.PathThirdOptionalImage}`;
+        const video = `/${item?.Videopath}`??'';
         
         const assetNote = item.Sellernote;
         const assetDescription = item.Description;
         const assetName = item.Name;
         const assetPrice = item.Price;
         const reply = item.Sellernote;
-        const replyerName = item.Shopname;
-        
+        const replyerName = item?.Shopname;
 
-         localStorage.setItem('mainimage', mainimage);
-         localStorage.setItem('opt1image', opt1image);
-         localStorage.setItem('opt2image', opt2image);
-         localStorage.setItem('opt3image', opt3image);
-         localStorage.setItem('video', video);
-         localStorage.setItem('assetNote', assetNote);
-         localStorage.setItem('assetDescription', assetDescription);
-         localStorage.setItem('assetName', assetName);
-         localStorage.setItem('assetPrice', assetPrice);
-         localStorage.setItem('reply', reply);
-         localStorage.setItem('replyerName', replyerName); 
+        localStorage.clear();// need this to ensure redirect destination in detail page can reload
+
+        //  localStorage.setItem('mainimage', mainimage);
+        //  localStorage.setItem('opt1image', opt1image);
+        //  localStorage.setItem('opt2image', opt2image);
+        //  localStorage.setItem('opt3image', opt3image);
+        //  localStorage.setItem('video', video);
+        //  localStorage.setItem('assetNote', assetNote);
+        //  localStorage.setItem('assetDescription', assetDescription);
+        //  localStorage.setItem('assetName', assetName);
+        //  localStorage.setItem('assetPrice', assetPrice);
+        //  localStorage.setItem('reply', reply);
+        //  localStorage.setItem('replyerName', replyerName); 
         return (
           <div
             className="mb-3 card bg-primary p-2 text-dark bg-opacity-25"
