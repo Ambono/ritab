@@ -71,7 +71,7 @@ function Posts() {
         const assetName = item.Name;
         const assetPrice = item.Price;
         const reply = item.Sellernote;
-        const replyerName = item?.Shopname;
+        const replyerName = item?.ShopOwnerTitle +' '+item?.ShopOwnerName+' '+item?.ShopOwnerSurname;
 
         localStorage.clear();// need this to ensure redirect destination in detail page can reload
 
@@ -105,7 +105,7 @@ function Posts() {
                     assetNote, assetDescription, assetName, assetPrice, reply, replyerName, video
                   }
             }}>
-              <img src={mainimage} width="300" height="300" />                           
+              <img src={mainimage} width="600" height="400" />                           
                <div Style='color: white;' class=""> <h4>See {replyerName}'s reply.</h4></div>
             </Link>
             </div>

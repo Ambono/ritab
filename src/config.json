@@ -48,9 +48,10 @@
         "LOGIN": "http://groupakwabatech.com/LoginMaker.php",
         "LOGINMANAGER":"http://groupakwabatech.com/LoginManager.php",
         "LOGOUT": "http://groupakwabatech.com/Logout.php",
-        "UPLOADASSET":"http://groupakwabatech.com/insertasset.php",
+        "INSERTASSET":"http://groupakwabatech.com/insertasset.php",
         "RETRIEVEASSET":"http://groupakwabatech.com/retrieveasset.php",
-        "DISPLAYASSET":"http://groupakwabatech.com/displayasset.php"
+        "DISPLAYASSET":"http://groupakwabatech.com/displayasset.php",
+        "UPLOADMkDirVideo": "http://groupakwabatech.com/uploaderMkDir.php"        
       },
 
       "DIRECT_LIVE":{
@@ -59,8 +60,8 @@
 
   "ENVIRONMENT": {
     "DEV": false,
-    "LIVE": false,
-    "MANUAL":true
+    "LIVE": true,
+    "MANUAL":false
   },
 
   "CREDENTIALS": {

@@ -48,8 +48,8 @@ $user_ip = getUserIP();
  $category = mysqli_real_escape_string($conn, $data['category']);
  $sellerEmail = mysqli_real_escape_string($conn, $data['contactEmail']);
  $contactPhone = mysqli_real_escape_string($conn, $data['contactPhone']); 
- $shopName = mysqli_real_escape_string($conn, $data['first_name']); 
- $shopSurName = mysqli_real_escape_string($conn, $data['last_name']); 
+ $shopName = mysqli_real_escape_string($conn, $data['firstname']); 
+ $shopSurName = mysqli_real_escape_string($conn, $data['lastname']); 
  $shoptitle = mysqli_real_escape_string($conn, $data['title']);
  $deliveryPlace1 = mysqli_real_escape_string($conn, $data['country']);
  $deliveryPlace2 = mysqli_real_escape_string($conn, $data['city']);
@@ -58,7 +58,7 @@ $user_ip = getUserIP();
  
  $deliveryPlace = $deliveryPlace1.' '.$deliveryPlace2;
  
-  $fullname = $shoptitle .' '. $shopName.' '.$shopSurName;
+ // $fullname = $shoptitle.' '.$shopName.' '.$shopSurName;
   $firstuploadimageoptional ="";
   $seconduploadimageoptional="";
   $newuploadimage="";
@@ -90,7 +90,10 @@ $user_ip = getUserIP();
   `InserterCode`, 
   `InsertionDate`, 
   `randomUniqueID`, 
-  `date_parution`) 
+  `date_parution`,
+  `ShopOwnerTitle`, 
+  `ShopOwnerName`, 
+  `ShopOwnerSurname`) 
   VALUES(
     '$description',
     '$itemName',
@@ -112,12 +115,15 @@ $user_ip = getUserIP();
     '$note',
     '$sellerEmail',
     '$contactPhone',
-    '$fullname',
+    'value-22',
     '$deliveryPlace',
     '$user_ip',
      Now(),
     '$randomID',
-    '$dateOfEvents'
+    '$dateOfEvents',
+    '$shoptitle',
+    '$shopName',
+    '$shopSurName'
     )"; 
 
 //SET @latestinsertedid = LAST_INSERT_ID();

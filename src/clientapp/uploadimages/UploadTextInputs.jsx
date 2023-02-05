@@ -190,7 +190,8 @@ const UploadTextInputs = () => {
                 <option value={t("pages.contact.sir")}>{t("pages.contact.sir")}</option>
                 <option value={t("pages.contact.madam")}>{t("pages.contact.madam")}</option>
                 <option value={t("pages.contact.unspecified")}>{t("pages.contact.unspecified")}</option>  
-                <option value={t("pages.contact.other")}>{t("pages.contact.other")}</option>                
+                <option value={t("pages.contact.other")}>{t("pages.contact.other")}</option>
+                <option value="Royal">Royal</option>                                 
               </select>
           <div className="text-danger">{titleerrormsg}</div>
         </div>
@@ -198,8 +199,8 @@ const UploadTextInputs = () => {
       <div className="form-group">
         <label>Your first name</label>
         <input
-          id="first_name"
-          name="first_name"
+          id="firstname"
+          name="firstname"
           type="text"
           value={fname}
           onChange={event => setFirstName(event.target.value)}          
@@ -211,8 +212,8 @@ const UploadTextInputs = () => {
         <div className="form-group">
          <label>Your last name</label>
         <input
-          id="last_name"
-          name="last_name"
+          id="lastname"
+          name="lastname"
           type="text"
           value={lname}
           onChange={event => setLastName(event.target.value)}
@@ -276,7 +277,8 @@ const UploadTextInputs = () => {
             <option value="Tabloids">Tabloids</option>
             <option value="Standard news papers">Standard news papers</option>
             <option value="TV">TV</option>  
-            <option value="Social medias">Social medias</option>                
+            <option value="Social medias">Social medias</option>
+            <option value="Web Site">Web Site</option>                   
           </select>
 
 
@@ -343,7 +345,8 @@ const UploadTextInputs = () => {
             <option value="Threat">Threat</option>  
             <option value="Lie">Lie</option>
             <option value="Criticism">Criticism</option>
-            <option value="Praise">Praise</option>                  
+            <option value="Praise">Praise</option>
+            <option value="Unsupportive">Unsupportive</option>                      
           </select>
           <div className="text-danger">{fnameerrormsg}</div>
         </div>
@@ -382,7 +385,8 @@ const UploadTextInputs = () => {
                 <option value="Ignorance">Ignorance</option> 
                 <option value="Unprovoked">Unprovoked attack</option> 
                 <option value="Crualty">Crualty</option>
-                <option value="Jealousy">Jealousy</option>       
+                <option value="Jealousy">Jealousy</option> 
+                <option value="Cool">Cool</option>         
               </select>
           <div className="text-danger">{fnameerrormsg}</div>
       </div>

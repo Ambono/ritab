@@ -19,7 +19,7 @@ import Logout from "./clientapp/registerlogin/Logout";
 import Authservice2 from "./clientapp/Authentication/AuthService";
 import Partnerservice from "./clientapp/partners/Partnerservice";
 import UsefullLinks from "./clientapp/admin/UsefullLinks";
-import ThankUploaded from "./clientapp/uploadimages/ThankyouAfterUploaded";
+import ThankYouUploaded from "./clientapp/uploadimages/ThankyouAfterUploaded";
 import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage_redundant";
 import UploadAssets from "./clientapp/uploadimages/UploadTextInputs";
 import AssetOptionals from "./clientapp/uploadimages/AssetOptionalPage";
@@ -33,7 +33,7 @@ class Main extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />         
           <Route path="/assetmaster" component={AssetMaster} />        
-          <Route path="/thanksuploaded" component={ThankUploaded} />
+          <Route path="/uploadedthanks" component={ThankYouUploaded} />
           <Route path="/assetoptionals" component={AssetOptionals} />          
           <Route path="/services" component={Services} />
           <Route path="/menue" component={Menue} />

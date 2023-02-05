@@ -42,10 +42,9 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
   useEffect(() => {
     setImageSource();
   }, [])
+
+  const setImageSource = () =>  {   
   const imagepaths = props.location.state; 
-
- 
-
   localStorage.setItem('mainimage', imagepaths.mainimage);
   localStorage.setItem('opt1image', imagepaths.opt1image);
   localStorage.setItem('opt2image', imagepaths.opt2image);
@@ -58,8 +57,7 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
   localStorage.setItem('reply', imagepaths.reply);
   localStorage.setItem('replyerName', imagepaths.replyerName); 
 
-
-  const setImageSource = () =>  {      
+  ////set the picture paths
     const mainimage = imagepaths.mainimage??localStorage.getItem('mainimage');//this.props.prop_mainimage;//  
     const opt1image = imagepaths.opt1image??localStorage.getItem('opt1image');//this.props.prop_opt1image;//
     const opt2image = imagepaths.opt2image??localStorage.getItem('opt2image'); //this.props.prop_opt2image;//

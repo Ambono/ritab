@@ -9,8 +9,14 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 
 $result = mysqli_query($conn,
-    "SELECT DISTINCT il.Id, il.Name, il.PathMainImage, il.Useremail, il.PathFirstOptionalImage, 
-     il.PathSecondOptionalImage, il.PathThirdOptionalImage, pd.Sellernote, pd.Description, pd.Price, pd.Shopname, vu.Videopath
+    "SELECT DISTINCT il.Id, il.Name,
+     il.PathMainImage, il.Useremail,
+     il.PathFirstOptionalImage, 
+     il.PathSecondOptionalImage,
+     il.PathThirdOptionalImage,
+     pd.Sellernote, pd.Description, 
+     pd.Price, pd.ShopOwnerTitle, pd.ShopOwnerName,pd.ShopOwnerSurname, 
+     vu.Videopath
      FROM productdetails pd 
      inner join imagelocation il on il.Useremail = pd.SellerEmail
      left join videouploads vu on  vu.Useremail = pd.SellerEmail 
