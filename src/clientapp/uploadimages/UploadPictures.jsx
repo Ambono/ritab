@@ -59,6 +59,7 @@ const getApiPath = () => {
     <div className="form-group">
         <label>Re-enter your {t("pages.contact.text.email")}</label>
         <input
+          readonly 
           id="contactEmail"
           name="contactEmail"
           type="text"

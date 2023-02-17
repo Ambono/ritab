@@ -8,15 +8,17 @@
   width: auto;
   margin-bottom: 5%;  
 }
-.hitback-description{
+.hitback-description{  
   width:100%; 
+  height: auto;
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
   text-align: center;
   background-image: linear-gradient(to right, red,orange,violet); 
-  min-height:500px;
-	 
+  min-height:200px;
+  min-width:210px;
+  border-radius: 15px;	 
 }
 .comingsoon{
   flex-direction: column;
@@ -260,5 +262,18 @@ span.price {
 
 .body-pannel{
   display:flex;
-  justify-content: center;
+  justify-content: center;  
+}
+
+.carousel-panel{
+  min-width: 220px;
+  left: 25%;
+  top: 10%;
+  margin-bottom: 30%;  
+}
+
+.Container-detail-page{
+  border-radius: 15px;
+  background-color: teal;
+  min-width:220px;
 }

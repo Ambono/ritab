@@ -14,42 +14,72 @@ import { NavLink, Link, HashRouter } from "react-router-dom";
 function Posts() {
   const [post, setPost] = useState([])
   const [isCompleted, setIsCompleted] = useState(false)
-  const [index, setIndex] = useState(2)
+  const [index, setIndex] = useState(2) 
+  const [search,  setSearch] = useState(false)
+  const [isSearchValid,  setIsSearchValid] = useState(true)
+  const [siteSearch,  setSiteSearch] = useState('')
+  const [siteSearchIndex,  setSiteSearchIndex] = useState('')
   const initialPosts = slice(post, 0, index)
-
-
+  
 
   const getApiPath = () => {     
     return GetApis().RETRIEVEASSET;   
   }
-  const getData = () => {
+
+  const getData = () => {    
     //axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
-    axios.get('http://groupakwabatech.com/retrieveasset.php')
+           axios.get('http://groupakwabatech.com/retrieveasset.php')
       .then(res => {
         setPost(res.data)
-       // console.log("response in LMA: ", res.data)
       })
-      .catch((e) => console.log(e))
+      .catch((e) => console.log(e)) 
   }
 
   const loadMore = () => {
     setIndex(index + 1)
     console.log(index)
-    if (index >= post.length) {
+    if(index >= post.length){
       setIsCompleted(true)
     } else {
       setIsCompleted(false)
     }
   }
+
   useEffect(() => {
     getData()
   }, [])
 
+  const  startSearch = (e) =>{
+    if(siteSearch=="")
+    {
+      setIndex(0);
+      setIsSearchValid(false);
+      return
+    }
+     // axios.post('http://localhost/htdocdev/ritab/src/server/assets/retrieveassetwithsearch.php', {      
+      axios.post('http://groupakwabatech.com/retrieveassetwithsearch.php', { 
+              siteSearch: siteSearch           
+          })
+          .then(res => {  
+           setPost(res.data);
+           setSearch(true); 
+           setSiteSearch('');
+       })
+       .catch((e) => console.log(e))    
+  }
   // const mainimage = require(`../../server/assets/${this.props.obj.PathMainImage}`).default;
   return (
     <div>
-
-      <h2 className="mb-3">Current hit backs</h2>
+      <row>
+        <div class="col-md4 col-offset-0"><h2 className="mb-3">Recent hit backs</h2></div>
+        <div class="col-md3 col-offset-2"><label for="site-search">Search the site:</label>
+        <input type="search"   value={siteSearch} id="siteSearch"
+          onChange={event => setSiteSearch(event.target.value)}
+         ></input>
+        <button class="home-search-button" onClick ={startSearch}>Search</button>
+        </div>
+      </row>
+      <p></p>
       {initialPosts.map((item) => {
         /////////dev env
         // const mainimage = require(`../../server/assets/${item.PathMainImage}`).default;
@@ -72,7 +102,7 @@ function Posts() {
         const assetPrice = item.Price;
         const reply = item.Sellernote;
         const replyerName = item?.ShopOwnerTitle +' '+item?.ShopOwnerName+' '+item?.ShopOwnerSurname;
-
+              
         localStorage.clear();// need this to ensure redirect destination in detail page can reload
 
         //  localStorage.setItem('mainimage', mainimage);
@@ -87,17 +117,17 @@ function Posts() {
         //  localStorage.setItem('reply', reply);
         //  localStorage.setItem('replyerName', replyerName); 
         return (
+          <div>         
           <div
-            className="mb-3 card bg-primary p-2 text-dark bg-opacity-25"
+            class="mb-3 card bg-secondary p-2 text-dark bg-opacity-25"
             key={item.Id}
           >
             {/* <AssetOptionalVideos propsvideopath ={video}  /> */}
             {/* <AssetOptionalPage  prop_mainimage = {mainimage} prop_opt1image ={opt1image} prop_opt2image ={opt2image} prop_opt3image ={opt3image} 
             prop_assetNote ={assetNote}  prop_assetDescription ={assetDescription}  prop_assetName ={assetName}  prop_assetPrice ={assetPrice}  
             prop_reply ={reply}  prop_replyerName ={replyerName} 
-            /> */}
-            <div class="">            
-              <div class =""  Style='color: white; font-weight: bold; font-size: 16px'><h1>{item.Name} has published: </h1></div>
+            /> */}                   
+              <div class =""  Style='color: white; font-weight: bold; font-size: 16px'><h1>{item.Name}  published an article about {item.Description} </h1></div>
               <div class ="" >               
                 <Link to={{
                   pathname: "/assetoptionals", state: {
@@ -105,30 +135,32 @@ function Posts() {
                     assetNote, assetDescription, assetName, assetPrice, reply, replyerName, video
                   }
             }}>
-              <img src={mainimage} width="600" height="400" />                           
-               <div Style='color: white;' class=""> <h4>See {replyerName}'s reply.</h4></div>
+              <img src={mainimage} class="home-page-image" width="100%" height="100%" />                           
+               <div Style='color: white;' className=""> <h4>See {replyerName}'s reply.</h4></div>
             </Link>
             </div>
-            </div>
+            </div>           
             </div>
           
         )
       })}
-      <div className="d-grid mt-3 mb-5">
+
+{isSearchValid && ( <div className="d-grid mt-3 mb-5">
         {isCompleted ? (
           <button
             onClick={loadMore}
             type="button"
             className="btn btn-danger disabled"
           >
-            That's It
+            No more Hit back
           </button>
         ) : (
           <button onClick={loadMore} type="button" className="btn btn-danger">
-            Load More +
+            More Hit backs
           </button>
         )}
       </div>
+      )}
     </div>
   )
 }

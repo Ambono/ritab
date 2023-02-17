@@ -34,7 +34,7 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
   const [thirdOptsrc, setThirdOptsrc] = useState();
   const [contactEmail, setContactEmail] = useState();
   const [videoPath, setVideoPath] = useState();
-  const [videoPathStatus, setVideoPathStatus] = useState(false);
+  const [videoPathIsNullOrEmpty, setVideoPathStatus] = useState(false);
   const mainimagepath = props.location.state;
 
   const { t } = useTranslation();
@@ -85,14 +85,14 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
    setReply(reply);
    setVideoPath(videoPath);
 
-   let videoPathBool = videoPath==''||videoPath==null;
-   setVideoPathStatus(videoPathBool);
+   let isNullOrEmptyvideoPath = videoPath==''||videoPath==null;
+   setVideoPathStatus(isNullOrEmptyvideoPath);
    
    }
   
   const dimensions = {
-    width:"500px",
-    height:"500px",
+    width:"100%",
+    height:"100%",
   }
   const items = [      
     {   
@@ -153,16 +153,17 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
      <CarouselCaption
           captionText={item.caption}         
         />
-          <img src={item.src} alt={item.altText} width={item.width} height={item.height}/>       
+          <img src={item.src} alt={item.altText} class="detail-page-carousel-image" width={item.width} height={item.height}/>       
       </CarouselItem>
     );
   });
  
   return ( 
-    <div>
-    <Row className="margin-maker">    
-    <Col md={{ span: 6, offset: 0}}>
-    <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+    <div className="Container-detail-page">
+      <p></p>
+    <Row>    
+    <Col md={{ span: 3, offset: 4 }}>
+    <Carousel  className="carousel-panel" activeIndex={activeIndex} next={next} previous={previous}>
       <CarouselIndicators
         items={items}
         activeIndex={activeIndex}
@@ -180,29 +181,34 @@ import AssetOptionalVideos from './AssetOptionalVideos' ;
         onClickHandler={next}
       />
     </Carousel>
-    </Col>
-    <Col md={{ span: 6, offset: 0 }}>
-    <div className="hitback-description">
-   
+    </Col>    
+    </Row> 
+    <p></p>
+    <Row> 
+    <Col md={{ span: 6, offset: 3 }}>
+    <div className="hitback-description">   
       <h3> {replyerName} hits back with: </h3>
     
         <p>{reply}</p>
      </div>
     </Col>
     </Row> 
+    <p></p> 
     <Row>  
-    <Col>
-    {!videoPathStatus &&(
+    <Col  md={{ span: 6, offset: 3 }}>
+       
+    <p><h4>{replyerName}'s hit back video available 👇</h4></p>  
+    {!videoPathIsNullOrEmpty &&(
 
-  <div className="body-pannel">
+  <div className="body-pannel">   
        <video width="300px" height="400px" controls>
            <source src={videoPath} type="video/mp4" />
       </video>
   </div>
   )}
   </Col>   
-    </Row> 
-    
+    </Row>
+    <p></p>     
     </div>    
   );
 };

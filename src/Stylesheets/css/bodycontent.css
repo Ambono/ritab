@@ -41,7 +41,7 @@
   .akwaba-lang {
     padding: 10px 16px;    
     top: 0;
-    width: 100%; 
+    width: 100%;    
     background: -webkit-linear-gradient(#eee, #808080); 
   }
   
@@ -175,4 +175,56 @@
    border-radius: 10px; 
    color: blue;
     background-color: cyan;
+}
+
+button.home-search-button{
+  border-radius: 10px; 
+   color: indigo;
+   background-color: orange;
+}
+
+.input[type="text"]:enabled {
+  background: khaki;
+}
+
+.input:invalid {
+  border: 2px solid red;
+}
+
+.input:focus {
+  background-color: cyan;
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color:  goldenrod;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:  goldenrod;
+}
+
+::placeholder {
+  color: goldenrod;
+}
+
+img.detail-page-carousel-image{ 
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+img.home-page-image{ 
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 400px;
+  max-height:400px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px)  {
+
+
 }
