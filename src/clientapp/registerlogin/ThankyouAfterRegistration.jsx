@@ -9,7 +9,7 @@ import Card from "react-bootstrap/Card";
 import {NavLink, HashRouter } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 
-const ThankyouAfterUploaded = () => {
+const ThankyouAfterRegistration = () => {
  
         const { t } = useTranslation();    
         return (             
@@ -17,13 +17,13 @@ const ThankyouAfterUploaded = () => {
     <Row className="margin-maker">    
     <Col md={{ span: 9, offset: 2}}>
     <div>
-      Thank you. Your images are uploaded
+      Thank you. Your Registration was successful
     </div>
-    <NavLink to="/home">
+    <NavLink to="/login">
     <input
          className="btn btn-primary"
          type="submit" 
-         value="return to home page"
+         value="go to login"
             />
      </NavLink>   
     </Col>
@@ -33,4 +33,4 @@ const ThankyouAfterUploaded = () => {
     }  
 
 
-export default ThankyouAfterUploaded
+export default ThankyouAfterRegistration

@@ -4,14 +4,25 @@ import { withTranslation } from "react-i18next";
 import { Redirect } from "react-router";
 import GetApis from '../pages/GetApis';
 import CONFIG from '../../config.json';
+import LocalStorageService from '../services/localStorageService';
+
 
 class Logout extends Component {
   constructor(props) {
     super(props);
     this.state = {
       canLogout: false,
+      email: ""
     };
   }
+
+  loginEmail = () =>{
+     var savedEmail = LocalStorageService.Get("email");
+    this.setState(this.email, savedEmail);
+    return savedEmail;
+  }; 
+   
+  isLoggin = this.loginEmail!="";
 
   execute = (event) => {
    // event.preventDefault();
@@ -19,15 +30,13 @@ class Logout extends Component {
   };
 
   getApiPath = () => {   
-   return  CONFIG.DIRECT_LIVE.LOGOUT;
+   //return  CONFIG.DIRECT_LIVE.LOGOUT;
   //  return GetApis().LOGOUT;
+  return "http://localhost/htdocdev/ritab/src/server/registerlogin/Logout.php"    
   };
 
-  
-
   handleFormSubmit = () => {
-    const API_PATH = this.getApiPath();
-    
+    const API_PATH = this.getApiPath();    
     axios({
       method: "post",
       url: `${API_PATH}`,
@@ -37,6 +46,8 @@ class Logout extends Component {
         if (result.status === 200) {
           console.log("REDIRECTION avec status => ", result.status);
           this.setState({ canLogout: true });
+          localStorage.removeItem("email");
+        //  LocalStorageService.Remove("email");
         }
       })
       .catch(function (error) {
@@ -54,7 +65,6 @@ class Logout extends Component {
     const { t } = this.props;
     const { errors } = this.state;
     if (this.state.canLogout) {
-
       console.log('this state: ', this.state.canLogout)
       return <Redirect to={{ pathname: "/home" }} />;
     }

@@ -48,8 +48,9 @@ const UploadTextInputs = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-   // return GetApis().UPLOADASSET;  
-    return "http://groupakwabatech.com/insertasset.php";
+   // return GetApis().UPLOADASSET; 
+    return  "http://localhost/htdocdev/ritab/src/server/insertasset.php "
+   // return "http://groupakwabatech.com/insertasset.php";
   };
 
 

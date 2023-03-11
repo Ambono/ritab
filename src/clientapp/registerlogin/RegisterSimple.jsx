@@ -7,6 +7,7 @@ import axios from "axios";
 import GetApis from '../pages/GetApis';
 import Select from 'react-select';
 import CONFIG from '../../config.json';
+import { Link } from "react-router-dom";
 
 const RegisterSimple = () => {
   const [fname, setFirstName] = useState('');
@@ -15,13 +16,13 @@ const RegisterSimple = () => {
   const [phonenumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
-  const [usertype, setUserType] = useState('');  
+  //const [usertype, setUserType] = useState('');  
   const [messageSent, setMessageSent] = useState('');
   const [clickedButtonButNotPosted, setClickedButtonButNotPosted] = useState('');
   const [clickedNotPostedMessage, setClickedNotPostedMessage] = useState('');
   const [fnameerrormsg, setFirstNameerrormsg] = useState('');
   const [lnameerrormsg, setLastNameerrormsg] = useState('');
-  const [usertypeerrormsg, setUserTypeerrormsg] = useState('');    
+ // const [usertypeerrormsg, setUserTypeerrormsg] = useState('');    
   const [emailerrormsg, setEmailerrormsg] = useState('');
   const [phonenumbererrormsg, setPhoneNumbererrormsg] = useState('');
   const [passworderrormsg, setPassworderrormsg] = useState('');
@@ -32,14 +33,15 @@ const RegisterSimple = () => {
 
   const handleSubmit = event => {
     console.log('handleSubmit ran');
-   // event.preventDefault(); // 👈️ prevent page refresh
-   const body ={fname, lname, email, phonenumber, usertype,  password, confirmpassword}; 
+    event.preventDefault(); // 👈️ prevent page refresh
+   const body ={fname, lname, email, phonenumber,  password, confirmpassword}; 
 
    setClickedButtonButNotPosted(<p>{t("pages.contact.text.msginvalidform")} </p>);
      if (validate()) {
-      const API_PATH = CONFIG.DIRECT_LIVE.REGISTERSIMPLE;//"https://globalmarveltech.com/RegistrationMakerSimple.php"; 
-     // const API_PATH = GetApis().REGISTERSIMPLE; 
-      console.log('pi path: ', API_PATH )
+     //const API_PATH = CONFIG.DIRECT_LIVE.REGISTERSIMPLE;//"https://globalmarveltech.com/RegistrationMakerSimple.php"; 
+     //const API_PATH = GetApis().REGISTERSIMPLE; 
+     const API_PATH = "http://localhost/htdocdev/ritab/src/server/registerlogin/RegistrationMakerSimple.php"
+     // console.log('pi path: ', API_PATH )
       axios({
         method: "post",
         url: `${API_PATH}`,
@@ -52,9 +54,8 @@ const RegisterSimple = () => {
             setEmail('');
             setPhoneNumber('');
             setPassword('');
-            setConfirmPassword('');
-            setUserType('');            
-            setUserTypeerrormsg('');                
+            setConfirmPassword('');                   
+           // setUserTypeerrormsg('');                
             setPassworderrormsg('');
             setConfirmPassworderrormsg('');                
             setEmailerrormsg('');
@@ -100,10 +101,10 @@ const RegisterSimple = () => {
       setEmailerrormsg(<p>{t("pages.contact.text.emailinvalidmsg")}</p>);
     }
 
-    if (!usertype) {
-      isValid = false;
-      setUserTypeerrormsg(<p>{t("pages.contact.text.usertypeinvalidmsg")}</p>);
-    }
+    // if (!usertype) {
+    //   isValid = false;
+    //   setUserTypeerrormsg(<p>{t("pages.contact.text.usertypeinvalidmsg")}</p>);
+    // }
 
     if (!password) {
       isValid = false;
@@ -138,19 +139,6 @@ const RegisterSimple = () => {
     <div  className="content-akwaba">
       <form action="#">
         <div><p>{t("pages.contact.text.header2")}</p></div>
-        <div className="form-group"> 
-             <label>{t("pages.contact.text.usertype")}</label> 
-             <select name= "user_type" id="user_type" value={usertype}  onChange={event => setUserType(event.target.value)} >
-                <option value="">{t("pages.categories.default")}</option>
-                <option value="T">{t("pages.categories.trainee")}</option>
-                <option value="A">{t("pages.categories.employee")}</option>
-                <option value="P">{t("pages.categories.partner")}</option>
-                <option value="C">{t("pages.categories.customer")}</option>
-                <option value="O">{t("pages.categories.other")}</option>
-              </select>
-          <div className="text-danger">{usertypeerrormsg}</div>
-     </div>
-
         <div className="form-group">
         <label>{t("pages.contact.text.firstname")} </label>
         <input
@@ -189,8 +177,7 @@ const RegisterSimple = () => {
         />
           <div className="text-danger">{emailerrormsg}</div>
       </div>
-
-      <div className="form-group">
+       <div className="form-group">
         <label>{t("pages.contact.text.phone")}</label>
          <input
           id="phone_number"
@@ -201,7 +188,7 @@ const RegisterSimple = () => {
           value={phonenumber}
         />
           <div className="text-danger">{phonenumbererrormsg}</div>
-     </div>   
+        </div>   
 
             <div className="form-group">
               <label>{t("pages.contact.text.password")}</label>
@@ -230,20 +217,25 @@ const RegisterSimple = () => {
                <div className="text-danger">{pswandconfpswdiff}</div>               
              </div> 
       
-       <input
+            <input
               className="btn btn-primary"
               type="submit"
               onClick={(e) =>  {handleSubmit(e)}}
               defaultValue={t("pages.contact.text.submit")}
-            />
+             />
        
         <div>
                {messageSent && (
                 <div>
-                  {t("pages.contact.text.thankyou1")} <br />
-                  {t("pages.contact.text.thankyou2")} <br />                 
-                  {t("pages.contact.text.thankyou3")}{" "}
+                thank you for your registration <br />
+                you may login now <br /> 
+                <div>                
+                  <button><Link to="./login" relative="path">
+                      Login
+                      </Link>
+                      </button>
                 </div>
+                  </div>
               )}
               
               {clickedButtonButNotPosted && (

@@ -4,8 +4,7 @@ import {NavLink, HashRouter } from "react-router-dom";
 import { useTranslation  } from "react-i18next";
 import { Row, Col } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
-import LoginStatus from '../Authentication/LoginStatus';
-import Authservice2 from '../Authentication/AuthService';
+import LocalStorageService from '../services/localStorageService';
 
 const Ul = styled.ul`
   list-style: none;
@@ -33,12 +32,21 @@ const Ul = styled.ul`
 
 // https://react-bootstrap.github.io/components/dropdowns/
 
+
+//function  loginEmail (){return LocalStorageService.Get("email")}; 
+
 function RightNav ({open } )  {
     const { t } = useTranslation();
-    const apprenticelink =  Authservice2().loginStatus === 'out' ? '/login':'/apprenticeship';
-    const traininglink =  Authservice2().loginStatus === 'out' ? '/login':'/trainings';
-    const account = Authservice2().loginStatus === 'out' ? <span>{t("navbar.login")}</span>:<p id='signedin'>SIGNED IN</p>;
-    return (
+var loginEmail = localStorage.getItem("email");
+//var loginEmail2 = LocalStorageService.Get("email");
+
+console.log("log in emai", {loginEmail}); 
+
+var isLoggedin = loginEmail!= null;
+    // const apprenticelink =  Authservice2().loginStatus === 'out' ? '/login':'/apprenticeship';
+    // const traininglink =  Authservice2().loginStatus === 'out' ? '/login':'/trainings';
+    var account = isLoggedin ? <p id='signedin'>SIGNED IN</p>:<span>Log in</span>;
+      return (
     <div>      
       <Row>      
        <Col md={{ span: 12, offset: 0 }}>
@@ -55,9 +63,9 @@ function RightNav ({open } )  {
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
-                           <Dropdown.Item href="#"><NavLink to="/adminpagetemp">
+                           <Dropdown.Item href="#"><NavLink to="/serviceSubscription">
                             <span className="header-akwaba-rightnavbar-navlinks">
-                            My admin
+                            My services
                             {/* {t("pages.marveltechgroup.group.text.solutions")}*/}
                             </span></NavLink> 
                             </Dropdown.Item>

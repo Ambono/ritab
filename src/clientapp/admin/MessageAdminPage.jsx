@@ -32,7 +32,7 @@ dataTable() {
 }
 
   getApiPath = () => { 
-    return"http://localhost/dev/koneautoci/src/server/messages/retrievecontactmessages.php";   
+    return"http://localhost/htdocdev/ritab/src/server/messages/retrievecontactmessages.php";   
    // return GetApis().RETRIEVECONTACTUSMESSAGES;
     //return CONFIG.DIRECT_LIVE.RETRIEVEMYMESSAGES;
   };  

@@ -27,8 +27,8 @@ function Posts() {
   }
 
   const getData = () => {    
-    //axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
-           axios.get('http://groupakwabatech.com/retrieveasset.php')
+    axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
+        //   axios.get('http://groupakwabatech.com/retrieveasset.php')
       .then(res => {
         setPost(res.data)
       })
@@ -39,7 +39,7 @@ function Posts() {
     setIndex(index + 1)
     console.log(index)
     if(index >= post.length){
-      setIsCompleted(true)
+      setIsCompleted(true)      
     } else {
       setIsCompleted(false)
     }
@@ -56,8 +56,8 @@ function Posts() {
       setIsSearchValid(false);
       return
     }
-     // axios.post('http://localhost/htdocdev/ritab/src/server/assets/retrieveassetwithsearch.php', {      
-      axios.post('http://groupakwabatech.com/retrieveassetwithsearch.php', { 
+      axios.post('http://localhost/htdocdev/ritab/src/server/assets/retrieveassetwithsearch.php', {      
+    //  axios.post('http://groupakwabatech.com/retrieveassetwithsearch.php', { 
               siteSearch: siteSearch           
           })
           .then(res => {  
@@ -76,31 +76,34 @@ function Posts() {
         <input type="search"   value={siteSearch} id="siteSearch"
           onChange={event => setSiteSearch(event.target.value)}
          ></input>
-        <button class="home-search-button" onClick ={startSearch}>Search</button>
+        <button className="home-search-button" onClick ={startSearch}>Search</button>
         </div>
       </row>
       <p></p>
       {initialPosts.map((item) => {
         /////////dev env
-        // const mainimage = require(`../../server/assets/${item.PathMainImage}`).default;
-        // const opt1image = require(`../../server/assets/${item.PathFirstOptionalImage}`).default;
-        // const opt2image = require(`../../server/assets/${item.PathSecondOptionalImage}`).default;
-        // const opt3image = require(`../../server/assets/${item.PathThirdOptionalImage}`).default;
-        // const video = require(`../../server/assets/${item.Videopath}`).default;
+        const mainimage = require(`../../server/assets/${item?.PathMainImage}`).default;
+        const opt1image = require(`../../server/assets/${item?.PathFirstOptionalImage}`).default;
+        const opt2image = require(`../../server/assets/${item?.PathSecondOptionalImage}`).default;
+        const opt3image = require(`../../server/assets/${item?.PathThirdOptionalImage}`).default;
+        const emptyText = ""; // falsy
+        var videosrc =  item?.Videopath ?? "videos/thesun.earthrotating.mp4video.mp4"
+        const video = require(`../../server/assets/${videosrc}`).default;
       
-        ////live       
-        const myApp ="groupakwabatech.com";
-        const mainimage = `/${item.PathMainImage}`;
-        const opt1image = `/${item.PathFirstOptionalImage}`;
-        const opt2image = `/${item.PathSecondOptionalImage}`;
-        const opt3image = `/${item.PathThirdOptionalImage}`;
-        const video = `/${item?.Videopath}`??'';
+        ////live       // 
+///"videos/modpleh12345/thesun.earthrotating.mp4video.mp4"
+        // const myApp ="groupakwabatech.com";
+        // const mainimage = `/${item.PathMainImage}`;
+        // const opt1image = `/${item.PathFirstOptionalImage}`;
+        // const opt2image = `/${item.PathSecondOptionalImage}`;
+        // const opt3image = `/${item.PathThirdOptionalImage}`;
+        // const video = `/${item?.Videopath}`??'';
         
-        const assetNote = item.Sellernote;
-        const assetDescription = item.Description;
-        const assetName = item.Name;
-        const assetPrice = item.Price;
-        const reply = item.Sellernote;
+        const assetNote = item?.Sellernote;
+        const assetDescription = item?.Description;
+        const assetName = item?.Name;
+        const assetPrice = item?.Price;
+        const reply = item?.Sellernote;
         const replyerName = item?.ShopOwnerTitle +' '+item?.ShopOwnerName+' '+item?.ShopOwnerSurname;
               
         localStorage.clear();// need this to ensure redirect destination in detail page can reload
@@ -127,21 +130,20 @@ function Posts() {
             prop_assetNote ={assetNote}  prop_assetDescription ={assetDescription}  prop_assetName ={assetName}  prop_assetPrice ={assetPrice}  
             prop_reply ={reply}  prop_replyerName ={replyerName} 
             /> */}                   
-              <div class =""  Style='color: white; font-weight: bold; font-size: 16px'><h1>{item.Name}  published an article about {item.Description} </h1></div>
-              <div class ="" >               
+              <div className =""  Style='color: white; font-weight: bold; font-size: 16px'><h1>{item.Name}  published an article about {item.Description} </h1></div>
+              <div className ="" >               
                 <Link to={{
                   pathname: "/assetoptionals", state: {
                     mainimage, opt1image, opt2image, opt3image,
                     assetNote, assetDescription, assetName, assetPrice, reply, replyerName, video
                   }
             }}>
-              <img src={mainimage} class="home-page-image" width="100%" height="100%" />                           
+              <img src={mainimage} className="home-page-image" width="100%" height="100%" />                           
                <div Style='color: white;' className=""> <h4>See {replyerName}'s reply.</h4></div>
             </Link>
             </div>
             </div>           
-            </div>
-          
+            </div>          
         )
       })}
 

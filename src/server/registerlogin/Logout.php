@@ -4,6 +4,7 @@ include_once('./config.php');
   // Create connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
 
+  $myemail = mysqli_real_escape_string($conn, $data['email']);
 
   function getUserIP() {
     $client = @$_SERVER['HTTP_CLIENT_IP'];
@@ -41,7 +42,7 @@ $count_session = mysqli_num_rows($result);
 
  $query_logoutmanagerupdate = "UPDATE loginmanager
    SET loggedout_created_at = now(),  loginstatus = 'out'
-   WHERE  ips = '$user_ip'  AND  visitor_session = '$visitor_session' ORDER BY loggedin_created_at DESC LIMIT 1 ";
+   WHERE  ips = '$user_ip'  AND  email = '$visitor_session' ORDER BY loggedin_created_at DESC LIMIT 1 ";
 
  $logout_result = mysqli_query($conn, $query_logoutmanagerupdate);
  

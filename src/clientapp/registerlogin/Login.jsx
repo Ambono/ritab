@@ -4,6 +4,7 @@ import { withTranslation } from "react-i18next";
 import { Redirect } from "react-router";
 import GetApis from '../pages/GetApis';
 import CONFIG from '../../config.json';
+import LocalStorageService from '../services/localStorageService';
 
 const validEmailRegex = RegExp(
   /^(([^<>()\\[\]\\.,;:\s@\\"]+(\.[^<>()\\[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@(([^<>()[\]\\.,;:\s@\\"]+\.)+[^<>()[\]\\.,;:\s@\\"]{2,})$/i
@@ -17,6 +18,7 @@ const validateForm = (errors) => {
   );
   return valid;
 };
+  var LS_Services = LocalStorageService;
 
 class Login extends Component {
   constructor(props) {
@@ -67,6 +69,7 @@ class Login extends Component {
   register = () => {
       this.props.history.push('/registersimple');
   }
+
   execute = (event) => {
     event.preventDefault();
     if (validateForm(this.state.errors) && this.validate()) {
@@ -82,7 +85,10 @@ class Login extends Component {
 
   getApiPath = () => {   
     //return GetApis().LOGIN;
-    return CONFIG.DIRECT_LIVE.LOGIN;
+    //return CONFIG.DIRECT_LIVE.LOGIN;
+    //return "groupakwabatech.com/LoginMaker.php"
+    return "http://localhost/htdocdev/ritab/src/server/registerlogin/LoginMaker.php"
+    
   };
 
   handleFormSubmit = (e) => {
@@ -95,20 +101,20 @@ class Login extends Component {
     })
       .then((result) => {
         if (result.status === 200) {
-          let resultemail = this.state.email;
-          // console.log('login data: ', result.data)
-          if (result.data===1) {
+          console.log('login data: ', {result});          
+          if (result.data==='A') {            
             this.setState({ isLoggedInAsAdmin: true });
-          } else if (result.data===2){
-            this.setState({ isLoggedInAsTrainee: true });
-          } else if (result.data===3) {
+          } else if (result.data==='P') {
             this.setState({ isLoggedInAsPartner: true });          
-          } else if (result.data===4) {
+          } else if (result.data==='C') {
           this.setState({ isLoggedInAsCustomer: true });
           } 
           else{
             this.setState({ isLoggedInAsOther: true });
           }
+
+          let resultemail = this.state.email;
+          localStorage.setItem("email", resultemail);
           this.setState({ email:'' });
           this.setState({ password:'' });        
         }
@@ -126,14 +132,13 @@ class Login extends Component {
     const { errors } = this.state;
     if (this.state.isLoggedInAsAdmin) {
       return <Redirect to={{ pathname: "/adminpage" }} />;
-    }else if (this.state.isLoggedInAsTrainee) {
-      return <Redirect to={{ pathname: "/trainings" }} />;
     }
     else if (this.state.isLoggedInAsPartner) {
     return <Redirect to={{ pathname: "/partnerservice" }} />;
     }  
     else if (this.state.isLoggedInAsCustomer || this.state.isLoggedInAsOther) {
-      return <Redirect to={{ pathname: "/home" }} />;
+      //return this.props.history.push('/adminpage');
+      return <Redirect to={{ pathname: "/servicesubscription" }} />;
     }
     return (
       <div className="content-akwaba">

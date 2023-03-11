@@ -14,16 +14,17 @@ import Login from "./clientapp/registerlogin/Login";
 import RetrieveMyMessages from "./clientapp/pages/messages/RetrieveMyMessages_Delete";
 import MessageMyAdmin from "./clientapp/admin/MessageAdminPage";
 import MyAdmin from "./clientapp/admin/MyAdminPage";
-import MyAdminTemp from "./clientapp/admin/MyAdminPageTemp";
+import ServiceSubscription from "./clientapp/admin/ServiceSubscription";
 import Logout from "./clientapp/registerlogin/Logout";
 import Authservice2 from "./clientapp/Authentication/AuthService";
 import Partnerservice from "./clientapp/partners/Partnerservice";
 import UsefullLinks from "./clientapp/admin/UsefullLinks";
 import ThankYouUploaded from "./clientapp/uploadimages/ThankyouAfterUploaded";
-import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage_redundant";
+//import AssetMaster from "./clientapp/uploadimages/DisplayAssetPage_redundant";
 import UploadAssets from "./clientapp/uploadimages/UploadTextInputs";
 import AssetOptionals from "./clientapp/uploadimages/AssetOptionalPage";
 import UploadVideo from "./clientapp/uploadimages/UploadVideo";
+import ThankyouAfterRegistration from "./clientapp/registerlogin/ThankyouAfterRegistration";
 
 class Main extends Component {
   render() {
@@ -32,7 +33,7 @@ class Main extends Component {
         <HashRouter>
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />         
-          <Route path="/assetmaster" component={AssetMaster} />        
+          {/* <Route path="/assetmaster" component={AssetMaster} />         */}
           <Route path="/uploadedthanks" component={ThankYouUploaded} />
           <Route path="/assetoptionals" component={AssetOptionals} />          
           <Route path="/services" component={Services} />
@@ -41,8 +42,9 @@ class Main extends Component {
           <Route path="/booking" component={Booking} />
           <Route path="/register" component={Register} />
           <Route path="/registersimple" component={RegisterSimple} />
+          <Route path="/thankyouregistered" component={ThankyouAfterRegistration} /> 
           <Route path="/adminpage" component={MyAdmin} />
-          <Route path="/adminpagetemp" component={MyAdminTemp} />
+          <Route path="/servicesubscription" component={ServiceSubscription} />
           <Route path="/loginscreen" component={Loginscreen} />
           <Route path="/login" component={Login} />
           <Route path="/contact" component={Contact} />

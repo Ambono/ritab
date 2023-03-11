@@ -18,7 +18,7 @@ print_r("<br> start printing data: ". $data.'<br>');
  $email = mysqli_real_escape_string($conn, $data['email']);
  $upass = mysqli_real_escape_string($conn, $data['password']);
  $teleph = mysqli_real_escape_string($conn, $data['phonenumber']);
- $usertype = mysqli_real_escape_string($conn, $data['usertype']);  
+ //$usertype = mysqli_real_escape_string($conn, $data['usertype']);  
  // password encrypt using SHA256();
  $password = hash('sha256', $upass);
  
@@ -31,13 +31,15 @@ print_r("<br> start printing data: ". $data.'<br>');
  if ($count==0) {
      
   $query = "INSERT INTO users(us_name, first_name, last_name, u_password, email, phone_number, created_at, country, city, occupation, secret_question, secret_answer, usertype) "
-          . "VALUES('','$fname', '$usurname', '$password','$email', '$teleph', Now(), '',"
-          . "'', '', '', '', '$usertype')";
+          . "VALUES('','$fname', '$usurname', '$password','$email', '$teleph', Now(), 'country',"
+          . "'city', 'occupation', 'secret_question', 'secret_answer', 'C')";
   $res = mysqli_query($conn, $query);
   
   if ($res) {
-   $errTyp = "success";
-   $errMSG = "successfully registered, you may login now";   
+  // $errTyp = "success";
+  // $errMSG = "successfully registered, you may login now"; 
+    // header("location: http://localhost:3000/#/thankyouregistered");
+   // header("location: http://groupakwabatech.com/#/thankyouregistered");       
   } else {
    $errTyp = "danger";
    $errMSG = "Something went wrong, try again later..."; 

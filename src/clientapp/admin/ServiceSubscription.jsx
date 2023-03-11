@@ -5,18 +5,27 @@ import { Redirect } from "react-router";
 import { Row, Col } from "react-bootstrap";
 import Authservice2 from '../Authentication/AuthService';
 import LoginStatus from '../Authentication/LoginStatus';
+import LocalStorageService from '../services/localStorageService';
 
 
-function MyAdminTemp(){
+function ServiceSubscription(){
 
- 
+  function loginEmail (){
+    return localStorage.getItem("email")
+  }; 
+
+ const email = loginEmail();
+
+  console.log({email}); 
+
+  const isLoggedin = email!=null;
+
   const { t } = useTranslation(); 
       return (       
         <div className="container">    
      
      <div className="akwaba-content-admin"> 
            <Row>
-           <LoginStatus/>
             <Col md={{ span: 2, offset: 4 }}>
               {" "}             
               <p></p>
@@ -26,19 +35,27 @@ function MyAdminTemp(){
             <HashRouter>
               <Col md={{ span: 4 , offset: 3}}>
                 {" "}
-                <div>
+               {isLoggedin && (<div>
                   <NavLink to="/uploadassets">
                     <div className="admin-link-to-post">
                     Click to post your hit back <br/>                            
                     </div>
                   </NavLink> 
                   <div className="admin-home">
-                    1-Fill your personal info<br/>
-                    2-Fill the info about the incident<br/>
-                    3-Fill info about the Place where you are<br/>
-                    4-Upload mandatory picture and optional picture(maximum 3)<br/>
-                    5-Upload a 1mn authentication video of yourself explaining the incident <br/> </div>                
-                </div>
+                    <ol>
+                    <li>Fill your personal info<br/></li>
+                    <li>Fill the info about the incident<br/></li>
+                    <li>Fill info about the Place where you are<br/></li>
+                    <li>Upload mandatory picture and optional picture(maximum 3)<br/></li>
+                    <li>Upload a 1mn authentication video of yourself explaining the incident <br/> </li>
+                    </ol>
+                    </div>                
+                    
+                </div>)}
+                {!isLoggedin && (<div>
+                  <span>Please Login. If not registered yet please register and login</span>
+                  </div>)}
+                
               </Col>
              
             </HashRouter>
@@ -56,4 +73,4 @@ function MyAdminTemp(){
     )
   }
  
-export default (MyAdminTemp);
+export default (ServiceSubscription);

@@ -19,7 +19,7 @@ $password = hash('sha256', $upass);
 
 $sql = "SELECT id, usertype FROM users WHERE email ='$myemail'  AND u_password = '$password'";
 $result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$row = mysqli_fetch_assoc($result);
 
 $count = mysqli_num_rows($result);
 
@@ -42,21 +42,27 @@ function getUserIP() {
 
 $user_ip = getUserIP();
 
-
+//printf($row["usertype"]);
+//printf($count);
 if ($count == 1) { 
-
     //clean up and delete previous logins
-    $Delete_login = "DELETE FROM loginmanager WHERE ips = '$user_ip' AND visitor_session = '$myemail'  OR visitor_session = '' ";
+    printf($row["usertype"]);
+
+    $Delete_login = "DELETE FROM loginmanager WHERE ips = '$user_ip' AND email = '$myemail' ";
     $deletelogin = mysqli_query($conn, $Delete_login );    
   
     $queryvisitors = "INSERT INTO sitevisits(visitor_session, created_at, usertype, ips) 
     VALUES('$myemail', now(),'registered','$user_ip')";
     $sessions_result = mysqli_query($conn, $queryvisitors);
 
-    $queryloginmanager = "INSERT INTO loginmanager(visitor_session, loggedin_created_at, loginstatus, ips)
-    VALUES('$myemail', now(),'in','$user_ip')";
+    $queryloginmanager = "INSERT INTO loginmanager(loggedin_created_at, loginstatus, email, ips)
+    VALUES( now(),'in','$myemail','$user_ip')";
     $login_result = mysqli_query($conn, $queryloginmanager);
    
+    if (!$deletelogin) {
+        die;
+    } 
+
     if (!$sessions_result) {
         die;
     } 
@@ -65,35 +71,10 @@ if ($count == 1) {
         die;
     } 
 
-
-    //echo "id: " . $row['id']. "<br>";
-    
-    if($row['usertype']=='A' ) 
-    {
-        echo'1';
-        $query_logoutmanagerupdate = "UPDATE loginmanager
-   SET loggedout_created_at = now(),  loginstatus = 'out'
-   WHERE   DATE(loggedIn_created_at) = SUBDATE(CURDATE(),1)";
-    $logout_result = mysqli_query($conn, $query_logoutmanagerupdate);
-    }   
-    else if($row['usertype']=='T')
-    {
-    echo'2';
-    }
-    else if($row['usertype']=='P')
-    {
-    echo'3';
-    }
-    else if($row['usertype']=='C')
-    {
-    echo'4';
-    }
-    else if($row['usertype']=='O') 
-    {
-    echo'5';
-    }
-    else
-    echo'6';
+  
+   mysqli_free_result($result);
+   // echo "id: " . $row['id']. "<br>";
+   
   
 } //end count >0
 else if ($count == 0){
@@ -103,6 +84,6 @@ else if ($count == 0){
         die;
     }
 }
-//print json_encode($data);
+print json_encode($data);
 $conn->close();
 

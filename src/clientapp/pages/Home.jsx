@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import AssetMaster from '../uploadimages/DisplayAssetPage_redundant';
+//import AssetMaster from '../uploadimages/DisplayAssetPage_redundant';
 import LoadMoreAssets from '../uploadimages/LoadMoreAssets';
 
 class Home extends Component {

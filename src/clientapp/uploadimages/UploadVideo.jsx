@@ -38,8 +38,10 @@ import { createBrowserHistory } from 'history';
     <Row>    
     <Col md={{ span: 9, offset: 2}}> 
     <div>
-  <form action="http://groupakwabatech.com/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
-    
+  {/* <form action="http://groupakwabatech.com/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
+  */}
+  <form action="http://localhost/htdocdev/ritab/src/server/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
+     
        <div className="form-group">
         <label>Re-enter Email</label>
         <input
