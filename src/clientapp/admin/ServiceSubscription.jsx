@@ -16,8 +16,6 @@ function ServiceSubscription(){
 
  const email = loginEmail();
 
-  console.log({email}); 
-
   const isLoggedin = email!=null;
 
   const { t } = useTranslation(); 
@@ -36,12 +34,8 @@ function ServiceSubscription(){
               <Col md={{ span: 4 , offset: 3}}>
                 {" "}
                {isLoggedin && (<div>
-                  <NavLink to="/uploadassets">
-                    <div className="admin-link-to-post">
-                    Click to post your hit back <br/>                            
-                    </div>
-                  </NavLink> 
-                  <div className="admin-home">
+                <span><b>Follow these steps to do your hit back</b></span> 
+                <div className="admin-home">                                
                     <ol>
                     <li>Fill your personal info<br/></li>
                     <li>Fill the info about the incident<br/></li>
@@ -49,7 +43,14 @@ function ServiceSubscription(){
                     <li>Upload mandatory picture and optional picture(maximum 3)<br/></li>
                     <li>Upload a 1mn authentication video of yourself explaining the incident <br/> </li>
                     </ol>
-                    </div>                
+                    </div>  
+                    <div></div> 
+                  <NavLink to="/uploadassets">
+                    <div className="admin-link-to-post">
+                    <b>Click here to do your hit back</b> <br/>                            
+                    </div>
+                  </NavLink> 
+                              
                     
                 </div>)}
                 {!isLoggedin && (<div>

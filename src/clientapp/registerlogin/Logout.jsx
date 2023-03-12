@@ -44,7 +44,6 @@ class Logout extends Component {
     })
       .then((result) => {
         if (result.status === 200) {
-          console.log("REDIRECTION avec status => ", result.status);
           this.setState({ canLogout: true });
           localStorage.removeItem("email");
         //  LocalStorageService.Remove("email");

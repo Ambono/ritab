@@ -53,7 +53,13 @@ const UploadTextInputs = () => {
    // return "http://groupakwabatech.com/insertasset.php";
   };
 
+  function loginEmail (){
+    return localStorage.getItem("email")
+  }; 
 
+ const email = loginEmail();
+
+  const isLoggedin = email!=null;
   const handleSubmit = event => {
     console.log('handleSubmit ran');
    event.preventDefault(); // 👈️ prevent page refresh
@@ -173,8 +179,8 @@ const UploadTextInputs = () => {
   };
   
   return (
-    <div  className="content-akwaba">
-      <form action="#">
+   <div  className="content-akwaba">
+    {isLoggedin && (  <form action="#">
         <div className="case-form" Style=""><p>Fill this form to populate your case</p></div>   
         <Accordion defaultActiveKey="0">  
     <Card>
@@ -492,7 +498,7 @@ const UploadTextInputs = () => {
           {clickedNotPostedMessage} <br />                  
         </div>
          )}
-      </form>
+      </form>)} 
     </div>
   );
 };

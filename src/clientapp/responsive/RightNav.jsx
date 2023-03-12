@@ -1,10 +1,11 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {NavLink, HashRouter } from "react-router-dom";
 import { useTranslation  } from "react-i18next";
 import { Row, Col } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import LocalStorageService from '../services/localStorageService';
+import Button from 'react-bootstrap/Button';
 
 const Ul = styled.ul`
   list-style: none;
@@ -23,6 +24,7 @@ const Ul = styled.ul`
     height: auto;
     width: auto;
     padding-top: 3.5rem;
+    z-index:1;
     transition: transform 0.3s ease-in-out;
     li {
       color: #fff;
@@ -37,29 +39,30 @@ const Ul = styled.ul`
 
 function RightNav ({open } )  {
     const { t } = useTranslation();
-var loginEmail = localStorage.getItem("email");
-//var loginEmail2 = LocalStorageService.Get("email");
 
-console.log("log in emai", {loginEmail}); 
+    const[longStatus, setLoginStatus] = useState('');
 
-var isLoggedin = loginEmail!= null;
-    // const apprenticelink =  Authservice2().loginStatus === 'out' ? '/login':'/apprenticeship';
-    // const traininglink =  Authservice2().loginStatus === 'out' ? '/login':'/trainings';
-    var account = isLoggedin ? <p id='signedin'>SIGNED IN</p>:<span>Log in</span>;
+    var loginEmail = localStorage.getItem("email");
+
+    useEffect(()=>{
+      updateLoginStatus();
+    },[])
+
+function updateLoginStatus () {
+  setLoginStatus(localStorage.getItem("email"));
+}
+
       return (
     <div>      
       <Row>      
-       <Col md={{ span: 12, offset: 0 }}>
-       {/* <LoginStatus/> */}
+       <Col md={{ span: 12, offset: 0 }}>      
         <Ul open={open} id="menu"> 
         <HashRouter>
-          <p></p>
-          {/* <p><NavLink to="/adminpagetemp">
-                My admin</NavLink></p>              */}
+          <p></p>         
                    <li>
                       <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          {t("navbar.services")}
+                         <Button variant = "primary">{t("navbar.services")}</Button> 
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
@@ -70,47 +73,14 @@ var isLoggedin = loginEmail!= null;
                             </span></NavLink> 
                             </Dropdown.Item>
                          
-                           {/* <Dropdown.Item href="#">
-                            <NavLink to="/marveltechconsulting">
-                            <span className ="header-akwaba-rightnavbar-navlinks">
-                              {t("pages.marveltechgroup.group.text.consulting")}</span></NavLink>
-                            </Dropdown.Item>
-                          
-                           <Dropdown.Item href="#"><NavLink to="/marveltechgaming">
-                              <span className ="header-akwaba-rightnavbar-navlinks">
-                              {t("pages.marveltechgroup.group.text.media")}</span></NavLink>
-                            </Dropdown.Item>
-                          
-                           <Dropdown.Item href="#"> <NavLink to="/marveltechtrade">
-                           <span className ="header-akwaba-rightnavbar-navlinks">
-                            {t("pages.marveltechgroup.group.text.ecommerce")}</span></NavLink>
-                            </Dropdown.Item>   */}
                           </Dropdown.Menu>                       
                       </Dropdown>
                     </li>               
-                   {/* <li>                   
-                    <Dropdown>
-                          <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          {t("navbar.partners")}
-                          </Dropdown.Toggle>
-
-                          <Dropdown.Menu>
-                           <Dropdown.Item href="#"> <NavLink to="/marveltechpartners">
-                            <span className ="header-akwaba-rightnavbar-navlinks">
-                              {t("navbar.ourpartners")}</span></NavLink> 
-                         </Dropdown.Item>
-                         <Dropdown.Item href="#"> <NavLink to="/partnerservice">
-                            <span className ="header-akwaba-rightnavbar-navlinks">
-                              {t("navbar.partnersrvice")}</span></NavLink> 
-                         </Dropdown.Item>
-                          </Dropdown.Menu>
-                      </Dropdown> 
-                    </li> */}
-                   
+                                     
                     <li>                           
                           <Dropdown>
-                          <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          {t("navbar.account")}
+                          <Dropdown.Toggle variant="success" id="dropdown-basic">                          
+                          <Button variant = "primary" onClick ={updateLoginStatus}>{t("navbar.account")}</Button>
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
@@ -118,14 +88,14 @@ var isLoggedin = loginEmail!= null;
                               <span className ="header-akwaba-rightnavbar-navlinks">
                                 {t("navbar.register")}</span></NavLink>
                                 </Dropdown.Item>
-                            <Dropdown.Item href="#"><NavLink to="/login">
-                              <span className ="header-akwaba-rightnavbar-navlinks">
-                                {/* {t("navbar.login")} */}{account}</span></NavLink>            
-                                 </Dropdown.Item>
-                            <Dropdown.Item href="#"><NavLink to="/logout">
-                              <span className ="header-akwaba-rightnavbar-navlinks">
-                                {t("navbar.logout")}</span></NavLink>            
-                                </Dropdown.Item>
+                                { !loginEmail && (<Dropdown.Item href="#"><NavLink to="/login">
+                             <span className ="header-akwaba-rightnavbar-navlinks">
+                                {/* {t("navbar.login")} */}Log in</span></NavLink>            
+                                 </Dropdown.Item>)}
+                                 {loginEmail && (<Dropdown.Item href="#"><NavLink to="/logout">
+                            <span className ="header-akwaba-rightnavbar-navlinks">
+                              Log out</span></NavLink>            
+                                </Dropdown.Item>)}
                                 <Dropdown.Divider />
                                 <Dropdown.Item href="#"> <NavLink to="/myplace">
                                   <span className ="header-akwaba-rightnavbar-navlinks">
@@ -137,7 +107,7 @@ var isLoggedin = loginEmail!= null;
                     <li>                   
                     <Dropdown>
                           <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          {t("navbar.contact")}
+                          <Button variant = "primary"> {t("navbar.contact")}</Button>
                           </Dropdown.Toggle>
 
                           <Dropdown.Menu>
@@ -152,7 +122,6 @@ var isLoggedin = loginEmail!= null;
         </HashRouter>       
         </Ul>
       </Col>
-              
       </Row>  
   </div>
   )

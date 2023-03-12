@@ -100,7 +100,8 @@ class Login extends Component {
       data: this.state,
     })
       .then((result) => {
-        if (result.status === 200) {
+        if (result.status === 200) {          
+          localStorage.setItem("email", result.data.email);
           console.log('login data: ', {result});          
           if (result.data==='A') {            
             this.setState({ isLoggedInAsAdmin: true });
@@ -112,9 +113,7 @@ class Login extends Component {
           else{
             this.setState({ isLoggedInAsOther: true });
           }
-
-          let resultemail = this.state.email;
-          localStorage.setItem("email", resultemail);
+        
           this.setState({ email:'' });
           this.setState({ password:'' });        
         }
