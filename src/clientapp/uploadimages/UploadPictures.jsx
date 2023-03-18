@@ -1,13 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { React,useState} from "react";
-import axios from "axios";
-import GetApis from '../pages/GetApis';
-import Select from 'react-select';
-import CONFIG from '../../config.json';
-import Accordion from 'react-bootstrap/Accordion';
-import Card from "react-bootstrap/Card";
-import UploadVideo from './UploadVideo';
 import { useEffect } from 'react';
+import GetUrl from "../services/urlService";
 
 const UploadPictures = () => {
     const [mainimage, setImage] = useState('');
@@ -44,18 +38,18 @@ const UploadPictures = () => {
     setPicturesSent(true);
 }
 
-const getApiPath = () => { 
-  // return GetApis().UPLOADASSET;  
-   return "http://groupakwabatech.com/uploaderMkDir.php";
+function getApiPath (){ 
+  return GetUrl("uploadPics") 
+   //return "http://groupakwabatech.com/uploaderMkDirPics.php";
  };
   
   const { t } = useTranslation();    
         return (             
         <div className='col-md-9'>
-  {/* <form action={getApiPath} method="post" enctype="multipart/form-data"> */}
+  <form action={getApiPath()} method="post" enctype="multipart/form-data">
   
-  <form action="http://groupakwabatech.com/uploaderMkDir.php" method="post" enctype="multipart/form-data">
-     
+  {/* <form action="http://groupakwabatech.com/uploaderMkDirPics.php" method="post" enctype="multipart/form-data">
+      */}
     <div className="form-group">
         <label>Re-enter your {t("pages.contact.text.email")}</label>
         <input

@@ -19,8 +19,11 @@
      "LOGOUT": "http://localhost/htdocdev/ritab/src/server/registerlogin/Logout.php",
      "UPLOADASSET":"http://localhost/htdocdev/ritab/src/server/assets/insertasset.php",
      "RETRIEVEASSET":"http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php",
-     "DISPLAYASSET":"http://localhost/htdocdev/ritab/src/server/assets/displayasset.php"
-      },
+     "DISPLAYASSET":"http://localhost/htdocdev/ritab/src/server/assets/displayasset.php",
+     "UPLOADMkDirVideo":"http://localhost/htdocdev/ritab/src/server/uploaderMkDirVideo.php",
+     "UPLOADMkDirPics":"http://localhost/htdocdev/ritab/src/server/uploaderMkDirPics.php" 
+    
+    },
 
   "TEST_BASE": "groupakwabatech.com",
   
@@ -51,7 +54,8 @@
         "INSERTASSET":"http://groupakwabatech.com/insertasset.php",
         "RETRIEVEASSET":"http://groupakwabatech.com/retrieveasset.php",
         "DISPLAYASSET":"http://groupakwabatech.com/displayasset.php",
-        "UPLOADMkDirVideo": "http://groupakwabatech.com/uploaderMkDir.php"        
+        "UPLOADMkDirVideo": "http://groupakwabatech.com/uploaderMkDir.php",
+        "UPLOADMkDirPics":"http://groupakwabatech.com/uploaderMkDirPics.php"        
       },
 
       "DIRECT_LIVE":{
@@ -59,9 +63,9 @@
       },
 
   "ENVIRONMENT": {
-    "DEV": false,
-    "LIVE": true,
-    "MANUAL":false
+    "DEV": true,
+    "LIVE": false,
+    "TEST":false
   },
 
   "CREDENTIALS": {

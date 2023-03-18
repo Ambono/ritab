@@ -4,6 +4,7 @@ import axios from "axios";
 import { Row, Col } from "react-bootstrap";
 import { useTranslation  } from "react-i18next";
 import { createBrowserHistory } from 'history';
+import GetUrl from "../services/urlService";
 
 //https://codesandbox.io/s/c53q2?file=/src/App.js:58-172
 
@@ -13,9 +14,10 @@ import { createBrowserHistory } from 'history';
   const [contactEmail, setContactEmail] = useState(localStorage.getItem('userEmail'));
   const [emailerrormsg, setEmailerrormsg] = useState('');
 
-  const getApiPath = () => { 
+  function getApiPath (){ 
     // return GetApis().UPLOADASSET;  
-     return "http://groupakwabatech.com/uploaderMkDirVideo.php";
+   //  return "http://groupakwabatech.com/uploaderMkDirVideo.php";
+   return GetUrl("uploadVideo")
    };
 
   const { t } = useTranslation();
@@ -38,10 +40,9 @@ import { createBrowserHistory } from 'history';
     <Row>    
     <Col md={{ span: 9, offset: 2}}> 
     <div>
-  {/* <form action="http://groupakwabatech.com/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
-  */}
-  <form action="http://localhost/htdocdev/ritab/src/server/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
-     
+  <form action = {getApiPath()} method="post" enctype="multipart/form-data"> 
+  {/* <form action="http://localhost/htdocdev/ritab/src/server/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
+      */}
        <div className="form-group">
         <label>Re-enter Email</label>
         <input

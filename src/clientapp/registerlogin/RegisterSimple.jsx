@@ -4,10 +4,8 @@
 import { useTranslation } from 'react-i18next';
 import { React,useState} from "react";
 import axios from "axios";
-import GetApis from '../pages/GetApis';
-import Select from 'react-select';
-import CONFIG from '../../config.json';
 import { Link } from "react-router-dom";
+import GetUrl from "../services/urlService";
 
 const RegisterSimple = () => {
   const [fname, setFirstName] = useState('');
@@ -39,8 +37,8 @@ const RegisterSimple = () => {
    setClickedButtonButNotPosted(<p>{t("pages.contact.text.msginvalidform")} </p>);
      if (validate()) {
      //const API_PATH = CONFIG.DIRECT_LIVE.REGISTERSIMPLE;//"https://globalmarveltech.com/RegistrationMakerSimple.php"; 
-     //const API_PATH = GetApis().REGISTERSIMPLE; 
-     const API_PATH = "http://localhost/htdocdev/ritab/src/server/registerlogin/RegistrationMakerSimple.php"
+     const API_PATH = GetUrl("registerSimple")
+    // const API_PATH = "http://localhost/htdocdev/ritab/src/server/registerlogin/RegistrationMakerSimple.php"
      // console.log('pi path: ', API_PATH )
       axios({
         method: "post",

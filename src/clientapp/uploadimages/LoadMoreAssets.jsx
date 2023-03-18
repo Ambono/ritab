@@ -2,14 +2,10 @@ import axios from "axios";
 import { withTranslation } from "react-i18next";
 import { Redirect } from "react-router";
 import CONFIG from "../../config.json";
-
-import DataTable from './DisplayDataTable_redundant';
-import GetApis from "../pages/GetApis";
-import AssetOptionalPage from "./AssetOptionalPage";
-import AssetOptionalVideos from "./AssetOptionalVideos";
 import React, { useState, useEffect } from 'react';
 import { slice } from 'lodash';
 import { NavLink, Link, HashRouter } from "react-router-dom";
+import GetUrl from "../services/urlService";
 
 function Posts() {
   const [post, setPost] = useState([])
@@ -22,13 +18,15 @@ function Posts() {
   const initialPosts = slice(post, 0, index)
   
 
-  const getApiPath = () => {     
-    return GetApis().RETRIEVEASSET;   
+  function getApiPath () {     
+    return GetUrl("retrieveAsset");   
   }
 
-  const getData = () => {    
-    axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
+  const getData = () => {   
+    const url =  getApiPath();
+    //axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
         //   axios.get('http://groupakwabatech.com/retrieveasset.php')
+        axios.get(url)
       .then(res => {
         setPost(res.data)
       })
@@ -50,15 +48,18 @@ function Posts() {
   }, [])
 
   const  startSearch = (e) =>{
+
+    const url = getApiPath();
     if(siteSearch=="")
     {
       setIndex(0);
       setIsSearchValid(false);
       return
     }
-      axios.post('http://localhost/htdocdev/ritab/src/server/assets/retrieveassetwithsearch.php', {      
+      //axios.post('http://localhost/htdocdev/ritab/src/server/assets/retrieveassetwithsearch.php', {      
     //  axios.post('http://groupakwabatech.com/retrieveassetwithsearch.php', { 
-              siteSearch: siteSearch           
+      axios.post(url, {         
+       siteSearch: siteSearch           
           })
           .then(res => {  
            setPost(res.data);

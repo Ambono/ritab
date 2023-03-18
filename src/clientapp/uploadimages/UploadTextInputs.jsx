@@ -11,6 +11,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
 import DateTimePicker from 'react-datetime-picker';
 import UploadPictures from './UploadPictures';
+import GetUrl from "../services/urlService";
 
 const UploadTextInputs = () => {
   const [fname, setFirstName] = useState('');
@@ -47,9 +48,10 @@ const UploadTextInputs = () => {
   
   const { t } = useTranslation();
 
-  const getApiPath = () => { 
+  function getApiPath () { 
+    return GetUrl("insertAsset")
    // return GetApis().UPLOADASSET; 
-    return  "http://localhost/htdocdev/ritab/src/server/insertasset.php "
+    //return  "http://localhost/htdocdev/ritab/src/server/insertasset.php "
    // return "http://groupakwabatech.com/insertasset.php";
   };
 

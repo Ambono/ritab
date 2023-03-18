@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import { Redirect } from "react-router";
-import GetApis from '../pages/GetApis';
-import CONFIG from '../../config.json';
 import LocalStorageService from '../services/localStorageService';
+import GetUrl from "../services/urlService";
+import {NavLink, HashRouter } from "react-router-dom";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\\[\]\\.,;:\s@\\"]+(\.[^<>()\\[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@(([^<>()[\]\\.,;:\s@\\"]+\.)+[^<>()[\]\\.,;:\s@\\"]{2,})$/i
@@ -17,37 +17,31 @@ const validateForm = (errors) => {
     (val) => val.length > 0 && (valid = false)
   );
   return valid;
-};
-  var LS_Services = LocalStorageService;
+}; 
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      password: "",
-      email: "",
-      isLoggedInAsAdmin: false,
-      isLoggedInAsTrainee: false,
-      isLoggedInAsCustomer: false,
-      isLoggedInAsPartner: false,     
-      isLoggedInAsOther:false,
-      mailSent: false,
-      error: null,
-      errors: { password: "", email: "" },
-    };
-  }
+ function Login(){     
+      const [password, setPassword] = useState('');
+      const [email, setEmail] = useState('');
+      const [isLoggedInAsAdmin, setIsLoggedInAsAdmin ] = useState(false);
+      const [isLoggedInAsTrainee, setIsLoggedInAsTrainee ] = useState(false);
+      const [isLoggedInAsCustomer, setIsLoggedInAsCustomer] = useState(false); 
+      const [isLoggedInAsPartner,setIsLoggedInAsPartner ] = useState(false);   
+      const [isLoggedInAsOther,setIsLoggedInAsOther] = useState(false);
+      const [mailSent, setMailSent ] = useState(false);
+      const [error, setErrors] = useState();
+      const [formErrors, setFormErrors] = useState({ password: "", email: "" });
 
-  validate = () => {
-    if (!this.state.password || !this.state.email) {
+ function validate () {
+    if (!password || !email) {
       return false;
     }
     return true;
   };
 
-  handleChange = (event) => {
+  function handleChange (event)  {
     event.preventDefault();
     const { name, value } = event.target;
-    let errors = this.state.errors;
+    let errors = formErrors;
 
     switch (name) {
       case "password":
@@ -63,59 +57,52 @@ class Login extends Component {
       default:
         break;
     }
-    this.setState({ errors, [name]: value });
+    setFormErrors(formErrors);
   };
-
-  register = () => {
-      this.props.history.push('/registersimple');
-  }
-
-  execute = (event) => {
+ 
+  function execute (event)  {
     event.preventDefault();
-    if (validateForm(this.state.errors) && this.validate()) {
+    if (validateForm(formErrors) && validate()) {
       console.info("Valid Form");
 
-      this.handleFormSubmit(event);
-      // this.props.history.push('/adminpage');
+      handleFormSubmit(event);    
     } else {
       console.error("Invalid Form");
       return;
     }
   };
 
-  getApiPath = () => {   
-    //return GetApis().LOGIN;
-    //return CONFIG.DIRECT_LIVE.LOGIN;
-    //return "groupakwabatech.com/LoginMaker.php"
-    return "http://localhost/htdocdev/ritab/src/server/registerlogin/LoginMaker.php"
-    
+  function getApiPath () {   
+      return GetUrl("login");
   };
 
-  handleFormSubmit = (e) => {
-    const API_PATH = this.getApiPath();
-    e.preventDefault();
+  function handleFormSubmit (e) {
+    const API_PATH = getApiPath();
+    e.preventDefault(); // 👈️ prevent page refresh
+    const body ={email, password}; 
+ 
     axios({
       method: "post",
       url: `${API_PATH}`,
-      data: this.state,
+      data: body,
     })
       .then((result) => {
-        if (result.status === 200) {          
-          localStorage.setItem("email", result.data.email);
+        if (result.status === 200) { 
+          LocalStorageService("set", "email", result.data.email)
           console.log('login data: ', {result});          
           if (result.data==='A') {            
-            this.setState({ isLoggedInAsAdmin: true });
+            setIsLoggedInAsAdmin(true);
           } else if (result.data==='P') {
-            this.setState({ isLoggedInAsPartner: true });          
+            setIsLoggedInAsPartner(true);          
           } else if (result.data==='C') {
-          this.setState({ isLoggedInAsCustomer: true });
+            setIsLoggedInAsCustomer(true);
           } 
           else{
-            this.setState({ isLoggedInAsOther: true });
+            setIsLoggedInAsOther(true);
           }
         
-          this.setState({ email:'' });
-          this.setState({ password:'' });        
+          setEmail('');
+          setPassword('');        
         }
         else{
           return;
@@ -126,16 +113,15 @@ class Login extends Component {
       });
   };
 
-  render() {
-    const { t } = this.props;
-    const { errors } = this.state;
-    if (this.state.isLoggedInAsAdmin) {
+  const { t } = useTranslation();
+
+    if (isLoggedInAsAdmin) {
       return <Redirect to={{ pathname: "/adminpage" }} />;
     }
-    else if (this.state.isLoggedInAsPartner) {
+    else if (isLoggedInAsPartner) {
     return <Redirect to={{ pathname: "/partnerservice" }} />;
     }  
-    else if (this.state.isLoggedInAsCustomer || this.state.isLoggedInAsOther) {
+    else if (isLoggedInAsCustomer || isLoggedInAsOther) {
       //return this.props.history.push('/adminpage');
       return <Redirect to={{ pathname: "/servicesubscription" }} />;
     }
@@ -149,13 +135,13 @@ class Login extends Component {
               id="email"
               name="email"
               placeholder="Your email"
-              value={this.state.email}
+              value={email}
               onChange={(e) => {
-                this.setState({ email: e.target.value });
-                this.handleChange(e);
+                setEmail(e.target.value );
+                handleChange(e);
               }}
             />
-            {errors.email.length > 0 && <div>{errors.email}</div>}
+            {formErrors.email.length > 0 && <div>{formErrors.email}</div>}
             <br />
 
             <label>Password</label>
@@ -164,33 +150,29 @@ class Login extends Component {
               id="password"
               name="password"
               placeholder="Password"
-              value={this.state.password}
+              value={password}
               onChange={(e) => {
-                this.setState({ password: e.target.value });
-                this.handleChange(e);
+                setPassword(e.target.value);
+                handleChange(e);
               }}
             />
-            {errors.password.length > 0 && <div>{errors.password}</div>}
+            {formErrors.password.length > 0 && <div>{formErrors.password}</div>}
             <br />
             <input
               type="submit"
-              onClick={(e) => this.execute(e)}
+              onClick={(e) => execute(e)}
               value={t("pages.contact.text.submit")}
             />      
 
             <br />
             <div>{t("pages.contact.text.notregisteredyet")}</div>
-            <input
-              type="submit"
-              onClick={(e) => this.register()}
-              value={t("pages.contact.text.register")}
-            />
+            <NavLink to="/registersimple">
+            <b>{t("pages.contact.text.register")}</b>
+             </NavLink>
 
           </form>
         </div>
       </div>
     );
   }
-}
-
-export default withTranslation()(Login);
+export default (Login);

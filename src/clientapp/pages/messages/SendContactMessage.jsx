@@ -6,7 +6,7 @@ import { React,useState} from "react";
 import axios from "axios";
 import GetApis from '../GetApis';
 import Select from 'react-select';
-import CONFIG from '../../../config.json';
+import GetUrl from '../../services/urlService';
 
 const Contact = () => {
   const [fname, setFirstName] = useState('');
@@ -30,8 +30,7 @@ const Contact = () => {
   const { t } = useTranslation();
 
   const getApiPath = () => { 
-    return GetApis().CONTACTUS;
-    //return CONFIG.DIRECT_LIVE.CONTACTUS;
+    return GetUrl("contactUs")
   };
 
   const handleSubmit = event => {
