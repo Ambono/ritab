@@ -70,6 +70,8 @@
 
   "CREDENTIALS": {
     "ADMIN_EMAIL": "admin.ritoab@gmail.com",
-    "CUSTOMER_EMAIL": "info@ritoab.com"
+    "CUSTOMER_EMAIL": "info@ritoab.com",
+    "localhosttestuser":"yahoo.co.uk",
+    "localhosttestpw":"a1"
   }
 }

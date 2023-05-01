@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import config from '../../config.json';
 
- 
+
  function getEnvironment(){   
     if(config.ENVIRONMENT.DEV)
     return "dev";
@@ -171,7 +171,7 @@ export default function GetUrl(targetUrl){
     switch(targetUrl){
         case "contactUs":
         return getContactUsUrl(); 
-        
+
         case "retrieveMessages":
         return retrieveMessagesUrl(); 
 

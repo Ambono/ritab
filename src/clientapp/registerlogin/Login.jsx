@@ -22,6 +22,9 @@ const validateForm = (errors) => {
  function Login(){     
       const [password, setPassword] = useState('');
       const [email, setEmail] = useState('');
+      const [YZabcdefghijklmPQRSefghi2ZJKLMNOabcdjkl, setPasswordWork] = useState('');
+      const [XYZabcdefghijklmnopqrsfghijVWXYcdestuvwxyz0192, setEmailWorkpart1] = useState('');
+      const [ QRSTUVWXYZabcdefghijklmnopqrstuvwxyz012, setEmailWorkpart2] = useState('');     
       const [isLoggedInAsAdmin, setIsLoggedInAsAdmin ] = useState(false);
       const [isLoggedInAsTrainee, setIsLoggedInAsTrainee ] = useState(false);
       const [isLoggedInAsCustomer, setIsLoggedInAsCustomer] = useState(false); 
@@ -34,7 +37,7 @@ const validateForm = (errors) => {
  function validate () {
     if (!password || !email) {
       return false;
-    }
+    }  
     return true;
   };
 
@@ -64,7 +67,7 @@ const validateForm = (errors) => {
     event.preventDefault();
     if (validateForm(formErrors) && validate()) {
       console.info("Valid Form");
-
+    // console.log('email: ', fghijVWXYZaklmnopqrUbcdestuvwxyz0192)
       handleFormSubmit(event);    
     } else {
       console.error("Invalid Form");
@@ -76,13 +79,31 @@ const validateForm = (errors) => {
       return GetUrl("login");
   };
 
+  const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+function generateString(length) {
+    let result = ' ';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
+}
+
+
   function handleFormSubmit (e) {
     const API_PATH = getApiPath();
+    // setPasswordWork("hello");
+    // setEmailWork("email");
     e.preventDefault(); // 👈️ prevent page refresh
-    const body ={email, password}; 
- 
+    //const body ={email, password}; 
+    
+   const body ={XYZabcdefghijklmnopqrsfghijVWXYcdestuvwxyz0192,YZabcdefghijklmPQRSefghi2ZJKLMNOabcdjkl, QRSTUVWXYZabcdefghijklmnopqrstuvwxyz012}; 
+  
     axios({
       method: "post",
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
       url: `${API_PATH}`,
       data: body,
     })
@@ -105,7 +126,7 @@ const validateForm = (errors) => {
           setPassword('');        
         }
         else{
-          return;
+          return {body};
         }
       })
       .catch(function (error) {
@@ -137,7 +158,9 @@ const validateForm = (errors) => {
               placeholder="Your email"
               value={email}
               onChange={(e) => {
-                setEmail(e.target.value );
+                setEmail(e.target.value);
+                setEmailWorkpart1(generateString(10).trim().toLowerCase()+e.target.value.toLowerCase().split('@')[0]);
+                setEmailWorkpart2(generateString(10).trim().toLowerCase()+e.target.value.toLowerCase().split('@')[1]);
                 handleChange(e);
               }}
             />
@@ -153,6 +176,7 @@ const validateForm = (errors) => {
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
+                setPasswordWork(e.target.value+generateString(10).trim());              
                 handleChange(e);
               }}
             />
