@@ -109,13 +109,14 @@ function generateString(length) {
     })
       .then((result) => {
         if (result.status === 200) { 
-          LocalStorageService("set", "email", result.data.email)
+          LocalStorageService("set", "token", result.data.token)
+          LocalStorageService("set", "email", result.data.token)
           console.log('login data: ', {result});          
-          if (result.data==='A') {            
+          if (result.data.usertype==='A') {            
             setIsLoggedInAsAdmin(true);
-          } else if (result.data==='P') {
+          } else if (result.data.usertype==='P') {
             setIsLoggedInAsPartner(true);          
-          } else if (result.data==='C') {
+          } else if (result.data.usertype==='C') {
             setIsLoggedInAsCustomer(true);
           } 
           else{

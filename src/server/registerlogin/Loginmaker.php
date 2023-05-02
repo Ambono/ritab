@@ -72,7 +72,7 @@ if ($count == 1) { //test user: modpleh"yahoo.co.uk, a1
     $jwt = JWT::encode($payload, $secret_key, 'HS256');
     
     header('Content-type: application/json');
-    echo json_encode(array('token' => $jwt));
+    echo json_encode(array('token' => $jwt, 'usertype' =>$row["usertype"], 'email' =>$myemail));
 
    // printf($row["usertype"]);
 

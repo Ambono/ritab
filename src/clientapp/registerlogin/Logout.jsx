@@ -40,7 +40,7 @@ const[email, setEmail] = useState('');
         if (result.status === 200) {
           setCanLogout(true);
          // localStorage.removeItem("email");
-          LocalStorageService("remove","email" );
+         Logout();
         }
       })
       .catch(function (error) {

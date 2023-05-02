@@ -12,6 +12,10 @@ import Card from "react-bootstrap/Card";
 import DateTimePicker from 'react-datetime-picker';
 import UploadPictures from './UploadPictures';
 import GetUrl from "../services/urlService";
+import LocalStorageService from '../services/localStorageService';
+import VerifyToken from '../services/localStorageService';
+
+const jwt = require('jsonwebtoken');
 
 const UploadTextInputs = () => {
   const [fname, setFirstName] = useState('');
@@ -56,10 +60,16 @@ const UploadTextInputs = () => {
   };
 
   function loginEmail (){
-    return localStorage.getItem("email")
+    return LocalStorageService("get", "email")
   }; 
 
+  function loginToken (){
+    return LocalStorageService("get", "token")
+  }; 
+
+
  const email = loginEmail();
+ const token = loginToken();
 
   const isLoggedin = email!=null;
   const handleSubmit = event => {
@@ -73,9 +83,11 @@ const UploadTextInputs = () => {
     
    setClickedButtonButNotPosted(<p>{t("pages.contact.text.msginvalidform")} </p>);
      if (validate()) {            
-      const API_PATH = getApiPath();    
+      const API_PATH = getApiPath(); 
+      VerifyToken(); //protected   
       axios({
         method: "post",
+     
         url: `${API_PATH}`,
         data: body,
       })
