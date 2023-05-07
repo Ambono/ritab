@@ -223,7 +223,7 @@
        "confirmpasswordlinvalidmsg": "Please confirm password",
        "passwordlinvalidmsg": "Please enter password",
        "pswandconfpswdiff":"Password and confirmed password are different",
-       "msginvalidform":"Data on the form is invalid",
+       "msginvalidform":"Data on the form is invalid or some fields are missing",
        "notregisteredyet":"Not registered yet? register now",
        "register":"Register",
        "subjectinvalidmsg":"Invalid content"

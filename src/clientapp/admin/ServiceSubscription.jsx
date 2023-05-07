@@ -11,12 +11,18 @@ import LocalStorageService from '../services/localStorageService';
 function ServiceSubscription(){
 
   function loginEmail (){
-    return localStorage.getItem("email")
+    return LocalStorageService("get", "userEmail"); 
+  }; 
+  
+  function getToken (){
+    return LocalStorageService("get", "token"); 
   }; 
 
  const email = loginEmail();
 
-  const isLoggedin = email!=null;
+ const token = getToken();
+
+  const isLoggedin = token!=null;
 
   const { t } = useTranslation(); 
       return (       

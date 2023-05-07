@@ -1,4 +1,4 @@
-import ConfigData from "../../config.json";
+import ConfigData from "../../config";
 
  const GetApis = () => {
   

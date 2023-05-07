@@ -24,6 +24,7 @@ import ThankYouUploaded from "./clientapp/uploadimages/ThankyouAfterUploaded";
 import UploadAssets from "./clientapp/uploadimages/UploadTextInputs";
 import AssetOptionals from "./clientapp/uploadimages/AssetOptionalPage";
 import UploadVideo from "./clientapp/uploadimages/UploadVideo";
+import UploadPictures from "./clientapp/uploadimages/UploadPictures";
 import ThankyouAfterRegistration from "./clientapp/registerlogin/ThankyouAfterRegistration";
 
 class Main extends Component {
@@ -56,6 +57,7 @@ class Main extends Component {
           <Route path="/authservice2" component={Authservice2} />         
           <Route path="/uploadassets" component={UploadAssets} />
           <Route path="/uploadvideos" component={UploadVideo} />
+          <Route path="/uploadpictures" component={UploadPictures} />
           
           <Route />
         </HashRouter>

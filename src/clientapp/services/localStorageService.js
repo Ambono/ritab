@@ -1,33 +1,25 @@
 
-import React, { Component } from "react";
+ export default function LocalStorageService(service, key, data){
 
-class LocalStorageService extends Component {
-    constructor(props) {
-      super(props);  
-    }
-    Get (key) {        
-        return localStorage.getItem(key);
-    }
+   
+        switch(service){
+            case "get":
+            return localStorage.getItem(key);
 
-    Set(key, data) {
-        localStorage.setItem(key, data);
-    }
+            case "set":
+            return localStorage.setItem(key, data); 
 
-    Remove(key) {
-        localStorage.removeItem(key);
-    }
+            case "remove":
+            return localStorage.removeItem(key);
 
-    Clear() {
-        localStorage.clear();
-    }
+            case "clear":
+            return localStorage.clear();
 
-    Has(key){
-        return this.get(key) !== null;
-    }
+            case "has":
+            return  this.get(key) !== null;
 
-    get length(){
-        return localStorage.length;
-    }
+            case "length":
+            return localStorage.length;
+ }
 }
 
-export default  LocalStorageService; 

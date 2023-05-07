@@ -2,14 +2,11 @@ import axios from "axios";
 import { withTranslation } from "react-i18next";
 import { Redirect } from "react-router";
 import CONFIG from "../../config.json";
-
-import DataTable from './DisplayDataTable_redundant';
-import GetApis from "../pages/GetApis";
-import AssetOptionalPage from "./AssetOptionalPage";
-import AssetOptionalVideos from "./AssetOptionalVideos";
 import React, { useState, useEffect } from 'react';
 import { slice } from 'lodash';
 import { NavLink, Link, HashRouter } from "react-router-dom";
+import GetUrl from "../services/urlService";
+import GetEnvironment  from "../services/getEnvironment";
 
 function Posts() {
   const [post, setPost] = useState([])
@@ -19,16 +16,25 @@ function Posts() {
   const [isSearchValid,  setIsSearchValid] = useState(true)
   const [siteSearch,  setSiteSearch] = useState('')
   const [siteSearchIndex,  setSiteSearchIndex] = useState('')
+
+  // const [mainimage,  setMainImage] = useState('')
+  // const [opt1image,  setOpt1Image] = useState('')
+  // const [opt2image,  setOpt2Image] = useState('')
+  // const [opt3image,  setOpt3Image] = useState('')
+  // const [video,  setVideo] = useState('')
+
   const initialPosts = slice(post, 0, index)
   
 
-  const getApiPath = () => {     
-    return GetApis().RETRIEVEASSET;   
+  function getApiPath () {     
+    return GetUrl("retrieveAsset");   
   }
 
-  const getData = () => {    
-    axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
+  const getData = () => {   
+    const url =  getApiPath();
+    //axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
         //   axios.get('http://groupakwabatech.com/retrieveasset.php')
+        axios.get(url)
       .then(res => {
         setPost(res.data)
       })
@@ -49,16 +55,21 @@ function Posts() {
     getData()
   }, [])
 
+  const env = GetEnvironment();
+  
   const  startSearch = (e) =>{
+
+    const url = getApiPath();
     if(siteSearch=="")
     {
       setIndex(0);
       setIsSearchValid(false);
       return
     }
-      axios.post('http://localhost/htdocdev/ritab/src/server/assets/retrieveassetwithsearch.php', {      
+      //axios.post('http://localhost/htdocdev/ritab/src/server/assets/retrieveassetwithsearch.php', {      
     //  axios.post('http://groupakwabatech.com/retrieveassetwithsearch.php', { 
-              siteSearch: siteSearch           
+      axios.post(url, {         
+       siteSearch: siteSearch           
           })
           .then(res => {  
            setPost(res.data);
@@ -81,7 +92,7 @@ function Posts() {
       </row>
       <p></p>
       {initialPosts.map((item) => {
-        /////////dev env
+        //dev 
         const mainimage = require(`../../server/assets/${item?.PathMainImage}`).default;
         const opt1image = require(`../../server/assets/${item?.PathFirstOptionalImage}`).default;
         const opt2image = require(`../../server/assets/${item?.PathSecondOptionalImage}`).default;
@@ -90,14 +101,47 @@ function Posts() {
         var videosrc =  item?.Videopath ?? "videos/thesun.earthrotating.mp4video.mp4"
         const video = require(`../../server/assets/${videosrc}`).default;
       
-        ////live       // 
-///"videos/modpleh12345/thesun.earthrotating.mp4video.mp4"
-        // const myApp ="groupakwabatech.com";
+       
+        ////live 
         // const mainimage = `/${item.PathMainImage}`;
         // const opt1image = `/${item.PathFirstOptionalImage}`;
         // const opt2image = `/${item.PathSecondOptionalImage}`;
         // const opt3image = `/${item.PathThirdOptionalImage}`;
         // const video = `/${item?.Videopath}`??'';
+
+        // const mainimage = env=="dev"?mainimagedev:mainimageprod;
+        // const opt1image =env=="dev"?opt1imagedev:opt1imageprod;
+        // const opt2image =env=="dev"?opt2imagedev:opt2imageprod;
+        // const opt3image =env=="dev"?opt3imagedev:opt3imageprod;
+        // const video =env=="dev"?videodev:videoprod;
+
+          // if(env==="dev")
+          // {
+          //   const mainimagedev = require(`../../server/assets/${item?.PathMainImage}`).default;
+          //   setMainImage(mainimagedev)
+          //   const opt1imagedev = require(`../../server/assets/${item?.PathFirstOptionalImage}`).default;
+          //   setOpt1Image(opt1imagedev)
+          //   const opt2imagedev = require(`../../server/assets/${item?.PathSecondOptionalImage}`).default;
+          //   setOpt2Image(opt2imagedev)
+          //   const opt3imagedev = require(`../../server/assets/${item?.PathThirdOptionalImage}`).default;
+          //   setOpt3Image(opt3imagedev)
+          //   var videosrc =  item?.Videopath ?? "videos/thesun.earthrotating.mp4video.mp4"
+          //   const videodev = require(`../../server/assets/${videosrc}`).default;
+          //    setVideo(videodev)
+          // }
+          // else{
+          //   const mainimageprod = `/${item.PathMainImage}`;       
+          //   setMainImage(mainimageprod)
+          //   const opt1imageprod = `/${item.PathFirstOptionalImage}`;
+          //   setOpt1Image(opt1imageprod)
+          //   const opt2imageprod = `/${item.PathSecondOptionalImage}`;
+          //   setOpt2Image(opt2imageprod)
+          //   const opt3imageprod = `/${item.PathThirdOptionalImage}`;
+          //   setOpt3Image(opt3imageprod)
+          //   const videoprod = `/${item?.Videopath}`??'';
+          //   setVideo(videoprod)
+          // }
+
         
         const assetNote = item?.Sellernote;
         const assetDescription = item?.Description;
@@ -106,7 +150,7 @@ function Posts() {
         const reply = item?.Sellernote;
         const replyerName = item?.ShopOwnerTitle +' '+item?.ShopOwnerName+' '+item?.ShopOwnerSurname;
               
-        localStorage.clear();// need this to ensure redirect destination in detail page can reload
+       // localStorage.clear();// need this to ensure redirect destination in detail page can reload
 
         //  localStorage.setItem('mainimage', mainimage);
         //  localStorage.setItem('opt1image', opt1image);

@@ -11,7 +11,13 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
 import DateTimePicker from 'react-datetime-picker';
 import UploadPictures from './UploadPictures';
+import UploadVideo from './UploadVideo';
+import GetUrl from "../services/urlService";
+import LocalStorageService from '../services/localStorageService';
+//import VerifyToken from '../services/localStorageService';
 
+
+ 
 const UploadTextInputs = () => {
   const [fname, setFirstName] = useState('');
   const [lname, setLastName] = useState('');
@@ -33,7 +39,7 @@ const UploadTextInputs = () => {
   const [datepickeravailto, setavailto] = useState();
   const [note, setNote] = useState('');
   const [dateOfEvents, setDateOfEvents] = useState('');
-  const [messageSent, setMessageSent] = useState('');
+  const [messageSent, setMessageSent] = useState(false);
   const [seesubmitbutton, setSeesubmitbutton] = useState(true);  
   const [clickedButtonButNotPosted, setClickedButtonButNotPosted] = useState('');
   const [clickedNotPostedMessage, setClickedNotPostedMessage] = useState('');
@@ -44,22 +50,46 @@ const UploadTextInputs = () => {
   const [phonenumbererrormsg, setPhoneNumbererrormsg] = useState('');
   const [reasonerrormsg, setReasonerrormsg] = useState('');
   const [seenote, setSeenote] = useState(true);
+  const [isValid, setIsvalid] = useState(false);
   
   const { t } = useTranslation();
 
-  const getApiPath = () => { 
+  function getApiPath () { 
+    return GetUrl("insertAsset")
    // return GetApis().UPLOADASSET; 
-    return  "http://localhost/htdocdev/ritab/src/server/insertasset.php "
+    //return  "http://localhost/htdocdev/ritab/src/server/insertasset.php "
    // return "http://groupakwabatech.com/insertasset.php";
   };
 
-  function loginEmail (){
-    return localStorage.getItem("email")
+  // function loginEmail (){
+  //   return LocalStorageService("get", "userEmail")
+  // }; 
+
+  function loginToken (){
+    return LocalStorageService("get", "token")
   }; 
 
- const email = loginEmail();
 
-  const isLoggedin = email!=null;
+//  const email = loginEmail();
+ const token = loginToken();
+
+  const isLoggedin = token!=null;
+
+  function execute (event)  {
+    event.preventDefault();
+    if (validate()) {
+      console.info("Valid Form");
+    // console.log('email: ', fghijVWXYZaklmnopqrUbcdestuvwxyz0192)
+      handleSubmit(event);    
+    } else {
+        setClickedButtonButNotPosted(true);
+        setClickedNotPostedMessage(<p>{t("pages.contact.text.msginvalidform")} </p>);  
+        console.log("Data was not sent");     
+      console.error("Invalid Form");
+      return;
+    }
+  };
+
   const handleSubmit = event => {
     console.log('handleSubmit ran');
    event.preventDefault(); // 👈️ prevent page refresh
@@ -69,17 +99,21 @@ const UploadTextInputs = () => {
     firstoptionalimage, secondoptionalimage,  datepickeravailfrom, 
      datepickeravailto , dateOfEvents}; 
     
+   validate();
+
    setClickedButtonButNotPosted(<p>{t("pages.contact.text.msginvalidform")} </p>);
-     if (validate()) {            
-      const API_PATH = getApiPath();    
+              
+      const API_PATH = getApiPath(); 
+     // if(token) {
       axios({
-        method: "post",
+        method: "post",     
         url: `${API_PATH}`,
         data: body,
       })
         .then((result) => {
-          if (result.status === 200) {  
-            localStorage.setItem('userEmail', contactEmail);       
+          if (result.status === 200) { 
+            setMessageSent(true); 
+            LocalStorageService("set", "email", contactEmail);       
             setFirstName('');
             setLastName('');
             setTitle('');
@@ -106,8 +140,7 @@ const UploadTextInputs = () => {
             setTitleerrormsg('');
             setEmailerrormsg('');
             setPhoneNumbererrormsg('');
-            setReasonerrormsg('');
-            setMessageSent(true);
+            setReasonerrormsg('');           
             setSeesubmitbutton(false);
             setClickedButtonButNotPosted(false);
             setClickedNotPostedMessage('');            
@@ -116,13 +149,9 @@ const UploadTextInputs = () => {
         .catch(function (error) {    
           console.log(error);
         });     
-    } else { 
-      setClickedButtonButNotPosted(true);
-      setClickedNotPostedMessage(<p>{t("pages.contact.text.msginvalidform")} </p>);  
-      console.log("Data was not sent");
-      return;
-    }
+    
   }
+ // }
 
  const  validate = ()=> {
     let isValid = true; 
@@ -174,6 +203,7 @@ const UploadTextInputs = () => {
       isValid = false;
       setReasonerrormsg(<p>{t("pages.contact.text.subjectinvalidmsg")}</p>);
     }    
+    setIsvalid(isValid);
     return isValid;
   }
   };
@@ -441,13 +471,13 @@ const UploadTextInputs = () => {
 
   <Card>
     <Accordion.Toggle as={Card.Header} eventKey="3">
-     Additional info    
+     Your side of the story   
     </Accordion.Toggle>
     <Accordion.Collapse eventKey="3">
       <Card.Body className="content-accordion">
        <div className ="col-md-9 offset-3"> 
         {seenote && (<div className="form-group ">               
-        <label>Hit back here</label>
+        <span><label>Hit back here</label></span>
         <textarea
           id="note"
           name="note"
@@ -455,17 +485,18 @@ const UploadTextInputs = () => {
           rows={15}
           value={note}          
           onChange={event => setNote(event.target.value)}
-          placeholder={t("pages.contact.text.subjectph")}
+          placeholder="Write up your side of the story"//{t("pages.contact.text.subjectph")}
         />
           <div className="text-danger">{reasonerrormsg}</div>      
        </div>)}
+
       {messageSent && (<span>Click 'picture Uploads' below to continue</span>)} 
         
        {seesubmitbutton && (  <input
               className="btn btn-primary"
               type="submit"
-              onClick={(e) =>  {handleSubmit(e)}}
-              defaultValue={t("pages.contact.text.submit")}
+              onClick={(e) =>  {execute(e)}}
+              //defaultValue={t("pages.contact.text.submit")}
               value="Save and continue"
             />
           )}      
@@ -474,6 +505,7 @@ const UploadTextInputs = () => {
     </Accordion.Collapse>
   </Card> 
   
+  {messageSent && (
   <Card>
     <Accordion.Toggle as={Card.Header} eventKey="4"> 
     Picture upload
@@ -481,20 +513,22 @@ const UploadTextInputs = () => {
     <Accordion.Collapse eventKey="4">
       <Card.Body className="content-accordion">
       <div>      
-       {messageSent && (
+      
         <div className="justify-content">    
         <div className='col-md-9 offset-3'>
+       
         <UploadPictures/>
         </div>
         </div>
-      )} 
+    
       </div>
       </Card.Body>
     </Accordion.Collapse>
   </Card>  
+    )} 
 </Accordion>      
 {clickedButtonButNotPosted && (
-        <div>
+        <div className="text-danger">
           {clickedNotPostedMessage} <br />                  
         </div>
          )}
