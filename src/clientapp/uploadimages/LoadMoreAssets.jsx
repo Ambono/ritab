@@ -92,22 +92,22 @@ function Posts() {
       </row>
       <p></p>
       {initialPosts.map((item) => {
-        ////dev 
-        // const mainimage = require(`../../server/assets/${item?.PathMainImage}`).default;
-        // const opt1image = require(`../../server/assets/${item?.PathFirstOptionalImage}`).default;
-        // const opt2image = require(`../../server/assets/${item?.PathSecondOptionalImage}`).default;
-        // const opt3image = require(`../../server/assets/${item?.PathThirdOptionalImage}`).default;
-        // const emptyText = ""; // falsy
-        // var videosrc =  item?.Videopath ?? "videos/thesun.earthrotating.mp4video.mp4"
-        // const video = require(`../../server/assets/${videosrc}`).default;
+        //dev 
+        const mainimage = require(`../../server/assets/${item?.PathMainImage}`).default;
+        const opt1image = require(`../../server/assets/${item?.PathFirstOptionalImage}`).default;
+        const opt2image = require(`../../server/assets/${item?.PathSecondOptionalImage}`).default;
+        const opt3image = require(`../../server/assets/${item?.PathThirdOptionalImage}`).default;
+        const emptyText = ""; // falsy
+        var videosrc =  item?.Videopath ?? "videos/thesun.earthrotating.mp4video.mp4"
+        const video = require(`../../server/assets/${videosrc}`).default;
       
        
         ////live 
-        const mainimage = `/${item.PathMainImage}`;
-        const opt1image = `/${item.PathFirstOptionalImage}`;
-        const opt2image = `/${item.PathSecondOptionalImage}`;
-        const opt3image = `/${item.PathThirdOptionalImage}`;
-        const video = `/${item?.Videopath}`??'';
+        // const mainimage = `/${item.PathMainImage}`;
+        // const opt1image = `/${item.PathFirstOptionalImage}`;
+        // const opt2image = `/${item.PathSecondOptionalImage}`;
+        // const opt3image = `/${item.PathThirdOptionalImage}`;
+        // const video = `/${item?.Videopath}`??'';
 
         // const mainimage = env=="dev"?mainimagedev:mainimageprod;
         // const opt1image =env=="dev"?opt1imagedev:opt1imageprod;

@@ -110,7 +110,7 @@ function generateString(length) {
       .then((result) => {
         if (result.status === 200) { 
           LocalStorageService("set", "token", result.data.token)
-          LocalStorageService("set", "email", result.data.token)
+          LocalStorageService("set", "userEmail", result.data.email)
           console.log('login data: ', {result});          
           if (result.data.usertype==='A') {            
             setIsLoggedInAsAdmin(true);

@@ -138,8 +138,8 @@ if(!is_dir($directoryname)){
       }  
     else{  
       // $latestinsertedid = mysqli_insert_id($conn); 
-     // header("location: http://localhost:3000/#/thanksuploaded");
-       header("location: http://groupakwabatech.com/#/uploadedthanks");
+      header("location: http://localhost:3000/#/thanksuploaded");
+      // header("location: http://groupakwabatech.com/#/uploadedthanks");
       }
       
         }

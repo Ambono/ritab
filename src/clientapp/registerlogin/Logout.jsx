@@ -4,13 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { Redirect } from "react-router";
 import LocalStorageService from '../services/localStorageService';
 import GetUrl from "../services/urlService";
+import LogUserOut from "../services/logout";
 
 function Logout (){  
 const[canLogout, setCanLogout] = useState(false);
 const[email, setEmail] = useState('');
 
   function getLoginEmail (){
-     var savedEmail = LocalStorageService("get", "email");
+     var savedEmail = LocalStorageService("get", "userEmail");
    // var savedEmail =  localStorage.getItem("email");
     setEmail(savedEmail);
     return email;
@@ -39,8 +40,7 @@ const[email, setEmail] = useState('');
       .then((result) => {
         if (result.status === 200) {
           setCanLogout(true);
-         // localStorage.removeItem("email");
-         Logout();
+          LogUserOut();
         }
       })
       .catch(function (error) {

@@ -20,8 +20,9 @@
      "UPLOADASSET":"http://localhost/htdocdev/ritab/src/server/assets/insertasset.php",
      "RETRIEVEASSET":"http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php",
      "DISPLAYASSET":"http://localhost/htdocdev/ritab/src/server/assets/displayasset.php",
-     "UPLOADMkDirVideo":"http://localhost/htdocdev/ritab/src/server/uploaderMkDirVideo.php",
-     "UPLOADMkDirPics":"http://localhost/htdocdev/ritab/src/server/uploaderMkDirPics.php" 
+     "UPLOADMkDirVideo":"http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDirVideo.php",
+     "UPLOADMkDirPics":"http://localhost/htdocdev/ritab/src/server/assets/uploaderMkDirPics.php" ,
+     "INSERTASSET":"http://localhost/htdocdev/ritab/src/server/assets/insertasset.php" 
     
     },
 
@@ -59,6 +60,19 @@
       },
 
       "DIRECT_LIVE":{
+        "CONTACTUS": "http://groupakwabatech.com/Contactmessage.php",
+        "RETRIEVEMYMESSAGES": "http://groupakwabatech.com/Retrievecontactmessages.php",
+        "BOOKINGS": "http://groupakwabatech.com/MakeBooking.php",
+        "RETRIEVEBOOKINGS": "http://groupakwabatech.com/RetrieveBooking.php",    
+        "REGISTERSIMPLE": "http://groupakwabatech.com/RegistrationMakerSimple.php",        
+        "LOGIN": "http://groupakwabatech.com/LoginMaker.php",
+        "LOGINMANAGER":"http://groupakwabatech.com/LoginManager.php",
+        "LOGOUT": "http://groupakwabatech.com/Logout.php",
+        "INSERTASSET":"http://groupakwabatech.com/insertasset.php",
+        "RETRIEVEASSET":"http://groupakwabatech.com/retrieveasset.php",
+        "DISPLAYASSET":"http://groupakwabatech.com/displayasset.php",
+        "UPLOADMkDirVideo": "http://groupakwabatech.com/uploaderMkDir.php",
+        "UPLOADMkDirPics":"http://groupakwabatech.com/uploaderMkDirPics.php" 
 
       },
 
