@@ -17,12 +17,6 @@ function Posts() {
   const [siteSearch,  setSiteSearch] = useState('')
   const [siteSearchIndex,  setSiteSearchIndex] = useState('')
 
-  // const [mainimage,  setMainImage] = useState('')
-  // const [opt1image,  setOpt1Image] = useState('')
-  // const [opt2image,  setOpt2Image] = useState('')
-  // const [opt3image,  setOpt3Image] = useState('')
-  // const [video,  setVideo] = useState('')
-
   const initialPosts = slice(post, 0, index)
   
 
@@ -32,9 +26,7 @@ function Posts() {
 
   const getData = () => {   
     const url =  getApiPath();
-    //axios.get('http://localhost/htdocdev/ritab/src/server/assets/retrieveasset.php')
-        //   axios.get('http://groupakwabatech.com/retrieveasset.php')
-        axios.get(url)
+    axios.get(url)
       .then(res => {
         setPost(res.data)
       })
@@ -66,9 +58,7 @@ function Posts() {
       setIsSearchValid(false);
       return
     }
-      //axios.post('http://localhost/htdocdev/ritab/src/server/assets/retrieveassetwithsearch.php', {      
-    //  axios.post('http://groupakwabatech.com/retrieveassetwithsearch.php', { 
-      axios.post(url, {         
+    axios.post(url, {         
        siteSearch: siteSearch           
           })
           .then(res => {  
@@ -78,8 +68,7 @@ function Posts() {
        })
        .catch((e) => console.log(e))    
   }
-  // const mainimage = require(`../../server/assets/${this.props.obj.PathMainImage}`).default;
-  return (
+ return (
     <div>
       <row>
         <div class="col-md4 col-offset-0"><h2 className="mb-3">Recent hit backs</h2></div>
@@ -93,56 +82,22 @@ function Posts() {
       <p></p>
       {initialPosts.map((item) => {
         //dev 
-        const mainimage = require(`../../server/assets/${item?.PathMainImage}`).default;
-        const opt1image = require(`../../server/assets/${item?.PathFirstOptionalImage}`).default;
-        const opt2image = require(`../../server/assets/${item?.PathSecondOptionalImage}`).default;
-        const opt3image = require(`../../server/assets/${item?.PathThirdOptionalImage}`).default;
-        const emptyText = ""; // falsy
-        var videosrc =  item?.Videopath ?? "videos/thesun.earthrotating.mp4video.mp4"
-        const video = require(`../../server/assets/${videosrc}`).default;
+        // const mainimage = require(`../../server/assets/${item?.PathMainImage}`).default;
+        // const opt1image = require(`../../server/assets/${item?.PathFirstOptionalImage}`).default;
+        // const opt2image = require(`../../server/assets/${item?.PathSecondOptionalImage}`).default;
+        // const opt3image = require(`../../server/assets/${item?.PathThirdOptionalImage}`).default;
+        // const emptyText = ""; // falsy
+        // var videosrc =  item?.Videopath ?? "videos/thesun.earthrotating.mp4video.mp4"
+        // const video = require(`../../server/assets/${videosrc}`).default;
       
        
-        ////live 
-        // const mainimage = `/${item.PathMainImage}`;
-        // const opt1image = `/${item.PathFirstOptionalImage}`;
-        // const opt2image = `/${item.PathSecondOptionalImage}`;
-        // const opt3image = `/${item.PathThirdOptionalImage}`;
-        // const video = `/${item?.Videopath}`??'';
-
-        // const mainimage = env=="dev"?mainimagedev:mainimageprod;
-        // const opt1image =env=="dev"?opt1imagedev:opt1imageprod;
-        // const opt2image =env=="dev"?opt2imagedev:opt2imageprod;
-        // const opt3image =env=="dev"?opt3imagedev:opt3imageprod;
-        // const video =env=="dev"?videodev:videoprod;
-
-          // if(env==="dev")
-          // {
-          //   const mainimagedev = require(`../../server/assets/${item?.PathMainImage}`).default;
-          //   setMainImage(mainimagedev)
-          //   const opt1imagedev = require(`../../server/assets/${item?.PathFirstOptionalImage}`).default;
-          //   setOpt1Image(opt1imagedev)
-          //   const opt2imagedev = require(`../../server/assets/${item?.PathSecondOptionalImage}`).default;
-          //   setOpt2Image(opt2imagedev)
-          //   const opt3imagedev = require(`../../server/assets/${item?.PathThirdOptionalImage}`).default;
-          //   setOpt3Image(opt3imagedev)
-          //   var videosrc =  item?.Videopath ?? "videos/thesun.earthrotating.mp4video.mp4"
-          //   const videodev = require(`../../server/assets/${videosrc}`).default;
-          //    setVideo(videodev)
-          // }
-          // else{
-          //   const mainimageprod = `/${item.PathMainImage}`;       
-          //   setMainImage(mainimageprod)
-          //   const opt1imageprod = `/${item.PathFirstOptionalImage}`;
-          //   setOpt1Image(opt1imageprod)
-          //   const opt2imageprod = `/${item.PathSecondOptionalImage}`;
-          //   setOpt2Image(opt2imageprod)
-          //   const opt3imageprod = `/${item.PathThirdOptionalImage}`;
-          //   setOpt3Image(opt3imageprod)
-          //   const videoprod = `/${item?.Videopath}`??'';
-          //   setVideo(videoprod)
-          // }
-
-        
+        //live 
+        const mainimage = `/${item.PathMainImage}`;
+        const opt1image = `/${item.PathFirstOptionalImage}`;
+        const opt2image = `/${item.PathSecondOptionalImage}`;
+        const opt3image = `/${item.PathThirdOptionalImage}`;
+        const video = `/${item?.Videopath}`??'';
+       
         const assetNote = item?.Sellernote;
         const assetDescription = item?.Description;
         const assetName = item?.Name;
@@ -150,30 +105,14 @@ function Posts() {
         const reply = item?.Sellernote;
         const replyerName = item?.ShopOwnerTitle +' '+item?.ShopOwnerName+' '+item?.ShopOwnerSurname;
               
-       // localStorage.clear();// need this to ensure redirect destination in detail page can reload
-
-        //  localStorage.setItem('mainimage', mainimage);
-        //  localStorage.setItem('opt1image', opt1image);
-        //  localStorage.setItem('opt2image', opt2image);
-        //  localStorage.setItem('opt3image', opt3image);
-        //  localStorage.setItem('video', video);
-        //  localStorage.setItem('assetNote', assetNote);
-        //  localStorage.setItem('assetDescription', assetDescription);
-        //  localStorage.setItem('assetName', assetName);
-        //  localStorage.setItem('assetPrice', assetPrice);
-        //  localStorage.setItem('reply', reply);
-        //  localStorage.setItem('replyerName', replyerName); 
+      
         return (
           <div>         
           <div
             class="mb-3 card bg-secondary p-2 text-dark bg-opacity-25"
             key={item.Id}
           >
-            {/* <AssetOptionalVideos propsvideopath ={video}  /> */}
-            {/* <AssetOptionalPage  prop_mainimage = {mainimage} prop_opt1image ={opt1image} prop_opt2image ={opt2image} prop_opt3image ={opt3image} 
-            prop_assetNote ={assetNote}  prop_assetDescription ={assetDescription}  prop_assetName ={assetName}  prop_assetPrice ={assetPrice}  
-            prop_reply ={reply}  prop_replyerName ={replyerName} 
-            /> */}                   
+                           
               <div className =""  Style='color: white; font-weight: bold; font-size: 16px'><h1>{item.Name}  published an article about {item.Description} </h1></div>
               <div className ="" >               
                 <Link to={{

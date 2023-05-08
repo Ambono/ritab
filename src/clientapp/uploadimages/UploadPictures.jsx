@@ -30,7 +30,6 @@ const handleSubmit = event => {validate()}
 
 function getApiPath (){ 
   return GetUrl("uploadPics") 
-   //return "http://groupakwabatech.com/uploaderMkDirPics.php";
  };
   
    const { t } = useTranslation();    
@@ -100,18 +99,13 @@ function getApiPath (){
           onChange={event => setOptionalImage3(event.target.value)}  
         />       
         </div>
-        
-        {/* {  validate() && (    */}
+       
         <div> 
-        <div>
-          {/* <input type="submit" value="Upload Pictures" onClick={(e) =>  {handleSubmit(e)}}/>
-           */}
+        <div>        
 
 <input type="submit" value="Upload Image" name="submit" />
 
-          </div>  
-          {/* {  canSendPicture && ( <div>Picture successfully send. please now load your video</div>  )}
-        */}
+          </div>         
         </div>       
 </form>
 </div> 

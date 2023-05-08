@@ -56,21 +56,12 @@ const UploadTextInputs = () => {
 
   function getApiPath () { 
     return GetUrl("insertAsset")
-   // return GetApis().UPLOADASSET; 
-    //return  "http://localhost/htdocdev/ritab/src/server/insertasset.php "
-   // return "http://groupakwabatech.com/insertasset.php";
   };
-
-  // function loginEmail (){
-  //   return LocalStorageService("get", "userEmail")
-  // }; 
 
   function loginToken (){
     return LocalStorageService("get", "token")
   }; 
 
-
-//  const email = loginEmail();
  const token = loginToken();
 
   const isLoggedin = token!=null;
@@ -78,8 +69,7 @@ const UploadTextInputs = () => {
   function execute (event)  {
     event.preventDefault();
     if (validate()) {
-      console.info("Valid Form");
-    // console.log('email: ', fghijVWXYZaklmnopqrUbcdestuvwxyz0192)
+      console.info("Valid Form");  
       handleSubmit(event);    
     } else {
         setClickedButtonButNotPosted(true);
@@ -300,15 +290,7 @@ const UploadTextInputs = () => {
         <div className ="col-md-9 offset-3">
       <div className="form-group">
         <label>{t("category pages.contact.text.firstname")} </label>
-        {/* <input
-          id="category"
-          name="category"
-          type="text"
-          value={category}
-          onChange={event => setCategory(event.target.value)}          
-          placeholder={t("category pages.contact.text.firstnameph")}
-        /> */}
-
+        
           <select name= "category" id="category" value={category}  onChange={event => setCategory(event.target.value)} >
             <option value="">Select default category</option>
             <option value="Tabloids">Tabloids</option>
@@ -367,14 +349,7 @@ const UploadTextInputs = () => {
 
         <div className="form-group">
         <label>Type of incident </label>
-        {/* <input
-          id="size"
-          name="size"
-          type="text"
-          value={size}
-          onChange={event => setSize(event.target.value)}          
-          placeholder={t("size, pages.contact.text.firstnameph")}
-        /> */}
+      
           <select name= "size" id="size" value={size}  onChange={event => setSize(event.target.value)} >
             <option value="">Select incident</option>
             <option value="Diffamation">Diffamation</option>
@@ -403,15 +378,7 @@ const UploadTextInputs = () => {
 
         <div className="form-group">
         <label>Nature of facts </label>
-        {/* <input
-          id="colour"
-          name="colour"
-          type="text"
-          value={colour}
-          onChange={event =>  setColour(event.target.value)}          
-          placeholder={t("colour, pages.contact.text.firstnameph")}
-        /> */}
-
+      
              <select name= "colour" id="colour" value={colour}  onChange={event => setColour(event.target.value)} >
                 <option value="">Choose nature of facts</option>
                 <option value="Racism">Racism</option>

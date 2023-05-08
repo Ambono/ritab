@@ -14,8 +14,6 @@ import GetUrl from "../services/urlService";
   const [emailerrormsg, setEmailerrormsg] = useState('');
 
   function getApiPath (){ 
-    // return GetApis().UPLOADASSET;  
-   //  return "http://groupakwabatech.com/uploaderMkDirVideo.php";
    return GetUrl("uploadVideo")
    };
 
@@ -40,9 +38,7 @@ import GetUrl from "../services/urlService";
     <Col md={{ span: 9, offset: 2}}> 
     <div>
   <form action = {getApiPath()} method="post" enctype="multipart/form-data"> 
-  {/* <form action="http://localhost/htdocdev/ritab/src/server/uploaderMkDirVideo.php" method="post" enctype="multipart/form-data">
-      */}
-       <div className="form-group">
+        <div className="form-group">
         <label>Re-enter Email</label>
         <input
           id="contactEmail"

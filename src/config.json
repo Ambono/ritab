@@ -26,7 +26,7 @@
     
     },
 
-  "TEST_BASE": "groupakwabatech.com",
+  "TEST_BASE": "avengemeup.com",
   
   "BASE_URL_LOCAL": "http://localhost/htdocdev/ritab/src/server/",  
 
@@ -44,41 +44,41 @@
       },
 
       "DIRECT_TEST":{
-        "CONTACTUS": "http://groupakwabatech.com/Contactmessage.php",
-        "RETRIEVEMYMESSAGES": "http://groupakwabatech.com/Retrievecontactmessages.php",
-        "BOOKINGS": "http://groupakwabatech.com/MakeBooking.php",
-        "RETRIEVEBOOKINGS": "http://groupakwabatech.com/RetrieveBooking.php",    
-        "REGISTERSIMPLE": "http://groupakwabatech.com/RegistrationMakerSimple.php",        
-        "LOGIN": "http://groupakwabatech.com/LoginMaker.php",
-        "LOGINMANAGER":"http://groupakwabatech.com/LoginManager.php",
-        "LOGOUT": "http://groupakwabatech.com/Logout.php",
-        "INSERTASSET":"http://groupakwabatech.com/insertasset.php",
-        "RETRIEVEASSET":"http://groupakwabatech.com/retrieveasset.php",
-        "DISPLAYASSET":"http://groupakwabatech.com/displayasset.php",
-        "UPLOADMkDirVideo": "http://groupakwabatech.com/uploaderMkDir.php",
-        "UPLOADMkDirPics":"http://groupakwabatech.com/uploaderMkDirPics.php"        
+        "CONTACTUS": "http://avengemeup.com/Contactmessage.php",
+        "RETRIEVEMYMESSAGES": "http://avengemeup.com/Retrievecontactmessages.php",
+        "BOOKINGS": "http://avengemeup.com/MakeBooking.php",
+        "RETRIEVEBOOKINGS": "http://avengemeup.com/RetrieveBooking.php",    
+        "REGISTERSIMPLE": "http://avengemeup.com/RegistrationMakerSimple.php",        
+        "LOGIN": "http://avengemeup.com/LoginMaker.php",
+        "LOGINMANAGER":"http://avengemeup.com/LoginManager.php",
+        "LOGOUT": "http://avengemeup.com/Logout.php",
+        "INSERTASSET":"http://avengemeup.com/insertasset.php",
+        "RETRIEVEASSET":"http://avengemeup.com/retrieveasset.php",
+        "DISPLAYASSET":"http://avengemeup.com/displayasset.php",
+        "UPLOADMkDirVideo": "http://avengemeup.com/uploaderMkDir.php",
+        "UPLOADMkDirPics":"http://avengemeup.com/uploaderMkDirPics.php"        
       },
 
       "DIRECT_LIVE":{
-        "CONTACTUS": "http://groupakwabatech.com/Contactmessage.php",
-        "RETRIEVEMYMESSAGES": "http://groupakwabatech.com/Retrievecontactmessages.php",
-        "BOOKINGS": "http://groupakwabatech.com/MakeBooking.php",
-        "RETRIEVEBOOKINGS": "http://groupakwabatech.com/RetrieveBooking.php",    
-        "REGISTERSIMPLE": "http://groupakwabatech.com/RegistrationMakerSimple.php",        
-        "LOGIN": "http://groupakwabatech.com/LoginMaker.php",
-        "LOGINMANAGER":"http://groupakwabatech.com/LoginManager.php",
-        "LOGOUT": "http://groupakwabatech.com/Logout.php",
-        "INSERTASSET":"http://groupakwabatech.com/insertasset.php",
-        "RETRIEVEASSET":"http://groupakwabatech.com/retrieveasset.php",
-        "DISPLAYASSET":"http://groupakwabatech.com/displayasset.php",
-        "UPLOADMkDirVideo": "http://groupakwabatech.com/uploaderMkDir.php",
-        "UPLOADMkDirPics":"http://groupakwabatech.com/uploaderMkDirPics.php" 
+        "CONTACTUS": "http://avengemeup.com/Contactmessage.php",
+        "RETRIEVEMYMESSAGES": "http://avengemeup.com/Retrievecontactmessages.php",
+        "BOOKINGS": "http://avengemeup.com/MakeBooking.php",
+        "RETRIEVEBOOKINGS": "http://avengemeup.com/RetrieveBooking.php",    
+        "REGISTERSIMPLE": "http://avengemeup.com/RegistrationMakerSimple.php",        
+        "LOGIN": "http://avengemeup.com/LoginMaker.php",
+        "LOGINMANAGER":"http://avengemeup.com/LoginManager.php",
+        "LOGOUT": "http://avengemeup.com/Logout.php",
+        "INSERTASSET":"http://avengemeup.com/insertasset.php",
+        "RETRIEVEASSET":"http://avengemeup.com/retrieveasset.php",
+        "DISPLAYASSET":"http://avengemeup.com/displayasset.php",
+        "UPLOADMkDirVideo": "http://avengemeup.com/uploaderMkDir.php",
+        "UPLOADMkDirPics":"http://avengemeup.com/uploaderMkDirPics.php" 
 
       },
 
   "ENVIRONMENT": {
-    "DEV": true,
-    "LIVE": false,
+    "DEV": false,
+    "LIVE": true,
     "TEST":false
   },
 
